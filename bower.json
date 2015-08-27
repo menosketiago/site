@@ -1,0 +1,20 @@
+{
+  "name": "menos",
+  "version": "0.1.0",
+  "homepage": "https://github.com/menosketiago/site2015",
+  "authors": [
+    "Tiago Almeida <menosketiago@gmail.com>"
+  ],
+  "description": "Personal web experiment",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "~5.5.2"
+  }
+}
