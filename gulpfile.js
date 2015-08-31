@@ -1,24 +1,15 @@
 var gulp = require('gulp'),
-	connect = require('gulp-connect'),
 	sass = require('gulp-sass'),
 	concat = require('gulp-concat'),
 	handlebars = require('gulp-hb'),
-	rename = require('gulp-rename');
+	rename = require('gulp-rename'),
+	connect = require('gulp-connect');
 
 var path = {
 	'bower': './bower_components',
-	'node': './node_modules',
 	'assets': './source',
 	'templates': './source/templates'
 };
-
-gulp.task('connect', function() {
-	connect.server({
-		root: './build',
-		livereload: true,
-		port: 6069
-	});
-});
 
 gulp.task('styles', function() {
 	return gulp.src([
@@ -30,8 +21,7 @@ gulp.task('styles', function() {
 		]
 	}))
 	.pipe(concat('base.css'))
-	.pipe(gulp.dest('./build/css'))
-	.pipe(connect.reload());
+	.pipe(gulp.dest('./build/css'));
 });
 
 gulp.task('scripts', function() {
@@ -42,28 +32,33 @@ gulp.task('scripts', function() {
 		path.assets + '/scripts/base.js'
 	])
 	.pipe(concat('base.js'))
-	.pipe(gulp.dest('./build/js'))
-	.pipe(connect.reload());
+	.pipe(gulp.dest('./build/js'));
 
 	return gulp.src(path.bower + '/modernizr/modernizr.js')
-		.pipe(gulp.dest('./build/js'))
-		.pipe(connect.reload());
+		.pipe(gulp.dest('./build/js'));
 });
 
 gulp.task('templates', function () {
-    return gulp
-        .src(path.templates + '/*.hbs')
-        .pipe(handlebars({
-            data: '',
-            helpers: '',
-            partials: path.templates + '/partials/**/*.hbs',
-            bustCache: true
-        }))
-        .pipe(rename(function(path) {
+	return gulp
+		.src(path.templates + '/*.hbs')
+		.pipe(handlebars({
+			data: '',
+			helpers: '',
+			partials: path.templates + '/partials/**/*.hbs',
+			bustCache: true
+		}))
+		.pipe(rename(function(path) {
 			path.extname = '.html';
 		}))
-        .pipe(gulp.dest('./build'))
-        .pipe(connect.reload());
+		.pipe(gulp.dest('./build'));
+});
+
+gulp.task('connect', function() {
+	connect.server({
+		root: './build',
+		livereload: true,
+		port: 6069
+	});
 });
 
 gulp.task('watch', function() {
