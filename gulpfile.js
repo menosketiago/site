@@ -1,8 +1,9 @@
 var gulp = require('gulp'),
+	connect = require('gulp-connect'),
 	sass = require('gulp-sass'),
 	concat = require('gulp-concat'),
-	handlebars = require('gulp-hb');
-	rename = require('gulp-rename')
+	handlebars = require('gulp-hb'),
+	rename = require('gulp-rename');
 
 var path = {
 	'bower': './bower_components',
@@ -10,6 +11,14 @@ var path = {
 	'assets': './source',
 	'templates': './source/templates'
 };
+
+gulp.task('connect', function() {
+	connect.server({
+		root: './build',
+		livereload: true,
+		port: 6069
+	});
+});
 
 gulp.task('styles', function() {
 	return gulp.src([
@@ -21,20 +30,24 @@ gulp.task('styles', function() {
 		]
 	}))
 	.pipe(concat('base.css'))
-	.pipe(gulp.dest('./build/css'));
+	.pipe(gulp.dest('./build/css'))
+	.pipe(connect.reload());
 });
 
 gulp.task('scripts', function() {
 	gulp.src([
 		path.bower + '/jquery/dist/jquery.js',
-		path.bower + '/foundation/js/foundation.min.js',
+		path.bower + '/foundation/js/foundation/foundation.js',
+		path.bower + '/foundation/js/foundation/foundation.topbar.js',
 		path.assets + '/scripts/base.js'
 	])
 	.pipe(concat('base.js'))
-	.pipe(gulp.dest('./build/js'));
+	.pipe(gulp.dest('./build/js'))
+	.pipe(connect.reload());
 
 	return gulp.src(path.bower + '/modernizr/modernizr.js')
-		.pipe(gulp.dest('./build/js'));
+		.pipe(gulp.dest('./build/js'))
+		.pipe(connect.reload());
 });
 
 gulp.task('templates', function () {
@@ -43,12 +56,14 @@ gulp.task('templates', function () {
         .pipe(handlebars({
             data: '',
             helpers: '',
-            partials: path.templates + '/partials/**/*.hbs'
+            partials: path.templates + '/partials/**/*.hbs',
+            bustCache: true
         }))
         .pipe(rename(function(path) {
 			path.extname = '.html';
 		}))
-        .pipe(gulp.dest('./build'));
+        .pipe(gulp.dest('./build'))
+        .pipe(connect.reload());
 });
 
 gulp.task('watch', function() {
@@ -57,4 +72,4 @@ gulp.task('watch', function() {
 	gulp.watch(path.templates + '/**/*.hbs', ['templates']);
 });
 
-gulp.task('default', ['styles', 'scripts', 'templates']);
+gulp.task('default', ['styles', 'scripts', 'templates', 'connect', 'watch']);
