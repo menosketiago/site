@@ -1,4 +1,4 @@
 # site2015
 Site design experiences
 
-depends on npm, bower, gulp (gulp-sass and gulp-concat)
+Depends on npm, bower, gulp (gulp-sass and gulp-concat)
