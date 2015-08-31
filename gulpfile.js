@@ -1,8 +1,8 @@
 var gulp = require('gulp'),
 	sass = require('gulp-sass'),
 	concat = require('gulp-concat'),
-	handlebars = require('gulp-compile-handlebars'),
-	rename = require('gulp-rename');
+	hb = require('gulp-hb');
+	rename = require('gulp-rename')
 
 var path = {
 	'bower': './bower_components',
@@ -37,7 +37,7 @@ gulp.task('scripts', function() {
 		.pipe(gulp.dest('./build/js'));
 });
 
-gulp.task('handlebars', function() {
+/*gulp.task('handlebars', function() {
 	var options = {
 		batch : [path.templates + '/partials']
 	}
@@ -48,6 +48,20 @@ gulp.task('handlebars', function() {
 			path.extname = '.html';
 		}))
 		.pipe(gulp.dest('./build'));
+});*/
+
+gulp.task('templates', function () {
+    return gulp
+        .src(path.templates + '/*.hbs')
+        .pipe(hb({
+            data: '',
+            helpers: '',
+            partials: path.templates + '/partials/**/*.hbs'
+        }))
+        .pipe(rename(function(path) {
+			path.extname = '.html';
+		}))
+        .pipe(gulp.dest('./build'));
 });
 
 gulp.task('watch', function() {
@@ -56,4 +70,4 @@ gulp.task('watch', function() {
 	gulp.watch(path.templates + '/**/*.hbs', ['handlebars']);
 });
 
-gulp.task('default', ['styles', 'scripts', 'handlebars']);
+gulp.task('default', ['styles', 'scripts', 'templates']);
