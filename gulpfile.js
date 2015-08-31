@@ -1,7 +1,7 @@
 var gulp = require('gulp'),
 	sass = require('gulp-sass'),
 	concat = require('gulp-concat'),
-	hb = require('gulp-hb');
+	handlebars = require('gulp-hb');
 	rename = require('gulp-rename')
 
 var path = {
@@ -40,7 +40,7 @@ gulp.task('scripts', function() {
 gulp.task('templates', function () {
     return gulp
         .src(path.templates + '/*.hbs')
-        .pipe(hb({
+        .pipe(handlebars({
             data: '',
             helpers: '',
             partials: path.templates + '/partials/**/*.hbs'
