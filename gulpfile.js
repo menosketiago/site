@@ -13,14 +13,14 @@ var path = {
 
 gulp.task('styles', function() {
 	return gulp.src([
-		path.assets + '/styles/app.scss'
+		path.assets + '/styles/base.scss'
 	])
 	.pipe(sass({
 		includePaths: [
 			path.bower + '/foundation/scss'
 		]
 	}))
-	.pipe(concat('app.css'))
+	.pipe(concat('base.css'))
 	.pipe(gulp.dest('./build/css'));
 });
 
@@ -28,9 +28,9 @@ gulp.task('scripts', function() {
 	gulp.src([
 		path.bower + '/jquery/dist/jquery.js',
 		path.bower + '/foundation/js/foundation.min.js',
-		path.assets + '/scripts/app.js'
+		path.assets + '/scripts/base.js'
 	])
-	.pipe(concat('app.js'))
+	.pipe(concat('base.js'))
 	.pipe(gulp.dest('./build/js'));
 
 	return gulp.src(path.bower + '/modernizr/modernizr.js')
