@@ -37,19 +37,6 @@ gulp.task('scripts', function() {
 		.pipe(gulp.dest('./build/js'));
 });
 
-/*gulp.task('handlebars', function() {
-	var options = {
-		batch : [path.templates + '/partials']
-	}
-
-	gulp.src(path.templates + '/*.hbs')
-		.pipe(handlebars(options))
-		.pipe(rename(function(path) {
-			path.extname = '.html';
-		}))
-		.pipe(gulp.dest('./build'));
-});*/
-
 gulp.task('templates', function () {
     return gulp
         .src(path.templates + '/*.hbs')
@@ -67,7 +54,7 @@ gulp.task('templates', function () {
 gulp.task('watch', function() {
 	gulp.watch(path.assets + '/styles/**/*.scss', ['styles']);
 	gulp.watch(path.assets + '/scripts/**/*.js', ['scripts']);
-	gulp.watch(path.templates + '/**/*.hbs', ['handlebars']);
+	gulp.watch(path.templates + '/**/*.hbs', ['templates']);
 });
 
 gulp.task('default', ['styles', 'scripts', 'templates']);
