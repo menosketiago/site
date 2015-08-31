@@ -6282,5 +6282,12 @@ th.hide-for-touch {
   .show-for-print {
     display: none !important; } }
 
+.hero {
+  width: 100%;
+  height: 100vh; }
+
 body {
   background: #FFFFFF; }
+
+.contain-to-grid > div {
+  max-width: 1200px; }

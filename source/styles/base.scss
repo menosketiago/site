@@ -1,5 +1,8 @@
 @import 'vars';
+@import 'components/hero';
 
-body {
-	background: $body-bg;
+body { background: $body-bg; }
+
+.contain-to-grid {
+	> div { max-width: 1200px; }
 }

@@ -8,8 +8,9 @@ var gulp = require('gulp'),
 var path = {
 	'bower': './bower_components',
 	'assets': './source',
-	'templates': './source/templates'
-};
+	'templates': './source/templates',
+	'resources': './source/resources'
+}
 
 gulp.task('styles', function() {
 	return gulp.src([
@@ -17,7 +18,7 @@ gulp.task('styles', function() {
 	])
 	.pipe(sass({
 		includePaths: [
-			path.bower + '/foundation/scss'
+			path.bower + '/foundation/scss',
 		]
 	}))
 	.pipe(concat('base.css'))
@@ -53,10 +54,16 @@ gulp.task('templates', function () {
 		.pipe(gulp.dest('./build'));
 });
 
+gulp.task('resources', function() {
+	return gulp.src([
+		path.resources + '/**/*.{jpg,png,gif}'
+	])
+	.pipe(gulp.dest('./build/resources'));
+});
+
 gulp.task('connect', function() {
 	connect.server({
 		root: './build',
-		livereload: true,
 		port: 6069
 	});
 });
@@ -67,4 +74,6 @@ gulp.task('watch', function() {
 	gulp.watch(path.templates + '/**/*.hbs', ['templates']);
 });
 
-gulp.task('default', ['styles', 'scripts', 'templates', 'connect', 'watch']);
+gulp.task('default', ['styles', 'scripts', 'templates', 'resources']);
+
+gulp.task('serve', ['connect', 'watch']);
