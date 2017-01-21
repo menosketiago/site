@@ -1,5 +1,5 @@
 {
-  "name": "menos",
+  "name": "menosketiago.com",
   "version": "0.1.0",
   "homepage": "https://github.com/menosketiago/site2015",
   "authors": [
@@ -15,7 +15,6 @@
     "tests"
   ],
   "dependencies": {
-    "foundation": "~5.5.2",
     "handlebars": "~3.0.3"
   }
 }

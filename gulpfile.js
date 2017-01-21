@@ -7,36 +7,29 @@ var gulp = require('gulp'),
 
 var path = {
 	'bower': './bower_components',
-	'assets': './source',
-	'templates': './source/templates',
-	'resources': './source/resources'
+	'assets': './src',
+	'templates': './src/templates',
+	'resources': './src/resources'
 }
 
 gulp.task('styles', function() {
 	return gulp.src([
 		path.assets + '/styles/base.scss'
 	])
-	.pipe(sass({
-		includePaths: [
-			path.bower + '/foundation/scss',
-		]
-	}))
 	.pipe(concat('base.css'))
-	.pipe(gulp.dest('./build/css'));
+	.pipe(gulp.dest('./www/css'));
 });
 
 gulp.task('scripts', function() {
 	gulp.src([
 		path.bower + '/jquery/dist/jquery.js',
-		path.bower + '/foundation/js/foundation/foundation.js',
-		path.bower + '/foundation/js/foundation/foundation.topbar.js',
 		path.assets + '/scripts/base.js'
 	])
 	.pipe(concat('base.js'))
-	.pipe(gulp.dest('./build/js'));
+	.pipe(gulp.dest('./www/js'));
 
 	return gulp.src(path.bower + '/modernizr/modernizr.js')
-		.pipe(gulp.dest('./build/js'));
+		.pipe(gulp.dest('./www/js'));
 });
 
 gulp.task('templates', function () {
@@ -51,19 +44,19 @@ gulp.task('templates', function () {
 		.pipe(rename(function(path) {
 			path.extname = '.html';
 		}))
-		.pipe(gulp.dest('./build'));
+		.pipe(gulp.dest('./wwww'));
 });
 
 gulp.task('resources', function() {
 	return gulp.src([
-		path.resources + '/**/*.{jpg,png,gif}'
+		path.resources + '/**/*.{jpg,png,gif,svg}'
 	])
-	.pipe(gulp.dest('./build/resources'));
+	.pipe(gulp.dest('./www/resources'));
 });
 
 gulp.task('connect', function() {
 	connect.server({
-		root: './build',
+		root: './www',
 		port: 6069
 	});
 });
