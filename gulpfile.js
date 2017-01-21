@@ -4,6 +4,7 @@ var gulp = require('gulp'),
 	handlebars = require('gulp-hb'),
 	rename = require('gulp-rename'),
 	connect = require('gulp-connect');
+	browserSync = require('browser-sync').create();
 
 var path = {
 	'bower': './bower_components',
@@ -22,10 +23,10 @@ gulp.task('styles', function() {
 
 gulp.task('scripts', function() {
 	gulp.src([
-		path.bower + '/jquery/dist/jquery.js',
-		path.assets + '/scripts/base.js'
+		path.bower + '/jquery/dist/jquery.min.js',
+		path.assets + '/scripts/index.js'
 	])
-	.pipe(concat('base.js'))
+	.pipe(concat('index.js'))
 	.pipe(gulp.dest('./www/js'));
 
 	return gulp.src(path.bower + '/modernizr/modernizr.js')
@@ -54,19 +55,20 @@ gulp.task('resources', function() {
 	.pipe(gulp.dest('./www/resources'));
 });
 
-gulp.task('connect', function() {
-	connect.server({
-		root: './www',
-		port: 6069
-	});
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        server: {
+            baseDir: "./www/"
+        }
+    });
 });
 
 gulp.task('watch', function() {
-	gulp.watch(path.assets + '/styles/**/*.scss', ['styles']);
-	gulp.watch(path.assets + '/scripts/**/*.js', ['scripts']);
-	gulp.watch(path.templates + '/**/*.hbs', ['templates']);
+	gulp.watch(path.assets + '/styles/**/*.scss', ['styles']).on('change', browserSync.reload);
+	gulp.watch(path.assets + '/scripts/**/*.js', ['scripts']).on('change', browserSync.reload);
+	gulp.watch(path.templates + '/**/*.hbs', ['templates']).on('change', browserSync.reload);
 });
 
 gulp.task('default', ['styles', 'scripts', 'templates', 'resources']);
 
-gulp.task('serve', ['connect', 'watch']);
+gulp.task('start', ['browser-sync', 'watch']);
