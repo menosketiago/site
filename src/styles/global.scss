@@ -1,0 +1,32 @@
+html {
+	@include box-sizing(border-box);
+
+	&:before,
+	&:after {
+		@include box-sizing(inherit);
+	}
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background: $body-bg;
+	font-family: $body-font;
+	font-weight: normal;
+}
+
+section {
+    width: 100vw;
+
+    @include flexbox;
+    @include flex-flow(column);
+    @include justify-content(center);
+    @include align-items(center);
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    background: url(../images/logo_@2X.png) no-repeat center;
+    background-size: contain;
+}

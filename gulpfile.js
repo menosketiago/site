@@ -9,7 +9,8 @@ var path = {
 	'bower': './bower_components',
 	'assets': './src',
 	'templates': './src/templates',
-	'resources': './src/resources'
+	'images': './src/images',
+	'fonts': './src/fonts'
 }
 
 gulp.task('styles', function() {
@@ -48,11 +49,20 @@ gulp.task('templates', function () {
 		.pipe(gulp.dest('./www'));
 });
 
-gulp.task('resources', function() {
-	return gulp.src([
-		path.resources + '/**/*.{jpg,png,gif,svg}'
+gulp.task('images', function() {
+	return gulp
+	.src([
+		path.images + '/**/*.{jpg,png,gif,svg}'
 	])
-	.pipe(gulp.dest('./www/resources'));
+	.pipe(gulp.dest('./www/images'));
+});
+
+gulp.task('fonts', function() {
+	return gulp
+	.src([
+		path.fonts + '/**/*.{eot,svg,ttf,woff}'
+	])
+	.pipe(gulp.dest('./www/fonts'));
 });
 
 gulp.task('browser-sync', function() {
@@ -69,6 +79,6 @@ gulp.task('watch', function() {
 	gulp.watch(path.templates + '/**/*.hbs', ['templates']).on('change', browserSync.reload);
 });
 
-gulp.task('default', ['styles', 'scripts', 'templates', 'resources']);
+gulp.task('default', ['styles', 'scripts', 'templates', 'images', 'fonts']);
 
-gulp.task('start', ['browser-sync', 'watch']);
+gulp.task('serve', ['default', 'browser-sync', 'watch']);

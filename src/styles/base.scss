@@ -1,27 +1,8 @@
 @import 'vars';
 @import 'mixins';
+@import 'flexbox';
+@import 'global';
+@import 'typography';
 
 // COMPONENTS
 @import 'components/hero';
-
-html {
-	box-sizing: border-box;
-
-	&:before,
-	&:after {
-		box-sizing: inherit;
-	}
-}
-
-body {
-	margin: 0;
-	padding: 0;
-	background: $body-bg;
-	font-family: $body-font;
-	font-weight: normal;
-}
-
-p {
-	margin: 0;
-	font-family: $body-font;
-}
