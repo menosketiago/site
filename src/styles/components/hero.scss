@@ -3,7 +3,8 @@
 	height: 100vh;
 	color: white;
 	background: url(../images/mom.jpg) no-repeat center;
-	background-size: cover;
+	background-size: 105%;
+	overflow: hidden;
 
 	.logo {
 	    width: 320px;

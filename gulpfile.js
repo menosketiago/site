@@ -7,31 +7,30 @@ var gulp = require('gulp'),
 
 var path = {
 	'bower': './bower_components',
-	'assets': './src',
+	'styles': './src/styles',
+	'scripts': './src/scripts',
 	'templates': './src/templates',
 	'images': './src/images',
 	'fonts': './src/fonts'
 }
 
 gulp.task('styles', function() {
-	return gulp.src([
-		path.assets + '/styles/base.scss'
+	return gulp
+	.src([
+		path.styles + '/base.scss'
 	])
 	.pipe(sass().on('error', sass.logError))
-	.pipe(concat('base.css'))
+	// .pipe(concat('base.css'))
 	.pipe(gulp.dest('./www/css'));
 });
 
 gulp.task('scripts', function() {
-	gulp.src([
+	return gulp
+	.src([
+		path.bower + '/modernizr/modernizr.js',
 		path.bower + '/jquery/dist/jquery.min.js',
-		path.assets + '/scripts/index.js'
-	])
-	.pipe(concat('index.js'))
+		path.scripts + '/index.js'])
 	.pipe(gulp.dest('./www/js'));
-
-	return gulp.src(path.bower + '/modernizr/modernizr.js')
-		.pipe(gulp.dest('./www/js'));
 });
 
 gulp.task('templates', function () {
@@ -74,8 +73,8 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('watch', function() {
-	gulp.watch(path.assets + '/styles/**/*.scss', ['styles']).on('change', browserSync.reload);
-	gulp.watch(path.assets + '/scripts/**/*.js', ['scripts']).on('change', browserSync.reload);
+	gulp.watch(path.styles + '/**/*.scss', ['styles']).on('change', browserSync.reload);
+	gulp.watch(path.scripts + '/**/*.js', ['scripts']).on('change', browserSync.reload);
 	gulp.watch(path.templates + '/**/*.hbs', ['templates']).on('change', browserSync.reload);
 });
 
