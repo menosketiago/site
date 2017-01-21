@@ -1,33 +1,18 @@
-@import 'foundation/settings';
-@import 'foundation';
+// COLORS
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-// GLOBAL
-///////////////////////////////////////////////////////////////////////////////////////////////////
+$white: #ffffff;
+$black: #000000;
 
-$white       : #FFFFFF;
-$black       : #000000;
-
-$primary-color: #008CBA;
+$primary-color: #008cba;
 $secondary-color: #e7e7e7;
-$alert-color: #f04124;
-$success-color: #43AC6A;
-$warning-color: #f08a24;
-$info-color: #a0d3e8;
 
 $body-bg: $white;
-$body-font-color: $black;
-$body-font-family: $font-family-sans-serif;
-$body-font-weight: $font-weight-normal;
-$body-font-style: normal;
+$body-color: $black;
+
+// TYPOGRAPHY
+
+$body-font: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+
+// OTHER
 
 $site-max-width: 1200px;
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-// TYPOGRAPHY
-///////////////////////////////////////////////////////////////////////////////////////////////////
-
-$font-family-sans-serif: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-$font-weight-normal: normal;
-$font-weight-bold: bold;
-$font-smoothing: antialiased;

@@ -1,8 +1,27 @@
 @import 'vars';
+@import 'mixins';
+
+// COMPONENTS
 @import 'components/hero';
 
-body { background: $body-bg; }
+html {
+	box-sizing: border-box;
 
-.contain-to-grid {
-	> div { max-width: 1200px; }
+	&:before,
+	&:after {
+		box-sizing: inherit;
+	}
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background: $body-bg;
+	font-family: $body-font;
+	font-weight: normal;
+}
+
+p {
+	margin: 0;
+	font-family: $body-font;
 }

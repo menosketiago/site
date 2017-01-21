@@ -3,7 +3,6 @@ var gulp = require('gulp'),
 	concat = require('gulp-concat'),
 	handlebars = require('gulp-hb'),
 	rename = require('gulp-rename'),
-	connect = require('gulp-connect');
 	browserSync = require('browser-sync').create();
 
 var path = {
@@ -17,6 +16,7 @@ gulp.task('styles', function() {
 	return gulp.src([
 		path.assets + '/styles/base.scss'
 	])
+	.pipe(sass().on('error', sass.logError))
 	.pipe(concat('base.css'))
 	.pipe(gulp.dest('./www/css'));
 });
