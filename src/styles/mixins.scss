@@ -8,13 +8,6 @@
   more info: http://www.findmebyip.com/litmus/#css3-properties
 ------------------------------------------------------------- */
 
-
-////
-/// @author Matthieu Aussaguel
-/// @group sass-css3-mixins
-////
-
-
 /// Adds a browser prefix to the property
 /// @param {*} $property Property
 /// @param {*} $value Value
@@ -27,7 +20,6 @@
        -o-#{$property}: #{$value};
           #{$property}: #{$value};
 }
-
 
 /// Background Gradient
 /// @param {Color} $startColor [#3C3C3C] - Start Color
@@ -44,7 +36,6 @@
     filter:            progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$startColor}', endColorStr='#{$endColor}');
 }
 
-
 /// Background Horizontal
 /// @param {Color} $startColor [#3C3C3C] - Start Color
 /// @param {Color} $endColor [#999999] - End Color
@@ -59,7 +50,6 @@
     background-image:         linear-gradient(left, $startColor, $endColor);
     filter:            progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$startColor}', endColorStr='#{$endColor}', gradientType='1');
 }
-
 
 /// Background Radial
 /// @param {Color} $startColor [#3C3C3C] - Start Color
@@ -76,7 +66,6 @@
     background: radial-gradient(ellipse at center, $startColor $startPos,$endColor $endPos);
 }
 
-
 /// Background Size
 /// @param {Size} $width [100%] - Width
 /// @param {Size} $width [$width] - Height
@@ -90,7 +79,6 @@
   }
 }
 
-
 /// Background Color Opacity
 /// @param {Color} $color [100%] - Color
 /// @param {Double} $opacity [0.85] - Opacity
@@ -100,7 +88,6 @@
   background: rgba($color, $opacity);
 }
 
-
 /// Border Radius
 /// @param {Size} $radius [5px] - Radius
 /// @require {mixin} css3-prefix
@@ -108,7 +95,6 @@
 @mixin border-radius($radius: 5px) {
     @include css3-prefix('border-radius', $radius);
 }
-
 
 /// Border Radius Separate
 /// @param {Size} $topLeftRadius [5px] - Top Left
@@ -133,7 +119,6 @@
   border-bottom-left-radius:  $bottomLeftRadius;
 }
 
-
 /// Box
 /// @param {*} $orient [horizontal] - Orientation
 /// @param {*} $pack [center] - Pack
@@ -150,7 +135,6 @@
   @include css3-prefix('box-align', $align);
 }
 
-
 /// Box RGBA
 /// @param {Integer} $r [60] - Red
 /// @param {Integer} $g [3] - Green
@@ -164,7 +148,6 @@
             filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$color}',endColorstr='#{$color}');
             zoom:   1;
 }
-
 
 /// Box Shadow
 /// @param {Size} $x [2px] - X
@@ -181,7 +164,6 @@
   }
 }
 
-
 /// Box Sizing
 /// @param {*} $type [border-box] - Type
 /// @require {mixin} css3-prefix
@@ -189,7 +171,6 @@
 @mixin box-sizing($type: border-box) {
   @include css3-prefix('box-sizing', $type);
 }
-
 
 /// Columns
 /// @param {Integer} $count [3] - Count
@@ -200,7 +181,6 @@
   @include css3-prefix('column-count', $count);
   @include css3-prefix('column-gap', $gap);
 }
-
 
 /// Double Borders
 /// @param {Color} $colorOne [#3C3C3C] - Color One
@@ -217,7 +197,6 @@
   @include border-radius( $radius );
 }
 
-
 /// Flex
 /// @param {Integer} $value [1] - Value
 /// @require {mixin} css3-prefix
@@ -225,7 +204,6 @@
 @mixin flex($value: 1) {
   @include css3-prefix('box-flex', $value);
 }
-
 
 /// Flip
 /// @param {Double} $scaleX [-1] - ScaleX
@@ -236,7 +214,6 @@
   filter:            FlipH;
   -ms-filter:        "FlipH";
 }
-
 
 /// Font Face
 /// @param {Font} $fontFamily [myFont] - Font Family
@@ -253,7 +230,6 @@
        url($svgFileSrc + $svgFontID) format('svg');
 }
 
-
 /// Opacity
 /// @param {Double} $opacity [0.5] - Opacity
 /// @require {mixin} css3-prefix
@@ -266,7 +242,6 @@
     @include css3-prefix('opacity', $opacity);
 }
 
-
 /// Outline Radius
 /// @param {Size} $radius [5px] - Radius
 /// @require {mixin} css3-prefix
@@ -275,7 +250,6 @@
   @include css3-prefix('outline-radius', $radius);
 }
 
-
 /// Resize
 /// @param {*} $directoin [both] - Direction
 /// @require {mixin} css3-prefix
@@ -283,7 +257,6 @@
 @mixin resize($direction: both) {
   @include css3-prefix('resize', $direction);
 }
-
 
 /// Rotate
 ///
@@ -302,7 +275,6 @@
     zoom: 1;
 }
 
-
 /// Text Shadow
 /// @param {Size} $x [2px] - X
 /// @param {Size} $y [2px] - Y
@@ -313,7 +285,6 @@
     text-shadow: $x $y $blur $color;
 }
 
-
 /// Transform
 /// @param {List} $params - Params
 /// @require {mixin} css3-prefix
@@ -322,7 +293,6 @@
   @include css3-prefix('transform', $params);
 }
 
-
 /// Transform-Origin
 /// @param {List} $params - Params
 /// @require {mixin} css3-prefix
@@ -330,7 +300,6 @@
 @mixin transform-origin($params) {
   @include css3-prefix('transform-origin', $params);
 }
-
 
 // Transform-Style
 /// @param {List} $params - Params
@@ -355,7 +324,6 @@
   }
 }
 
-
 /// Triple Borders
 /// @param {Color} $colorOne [#3C3C3C] - Color One
 /// @param {Color} $colorTwo [#999999] - Color Two
@@ -371,7 +339,6 @@
 
     @include css3-prefix('box-shadow', "0 0 0 1px #{$colorTwo}, 0 0 0 2px #{$colorThree}");
 }
-
 
 /// Keyframes
 /// @param {*} $animation-name - Animation name
@@ -395,11 +362,28 @@
   }
 }
 
-
 /// Animation
 /// @param {*} $str - name duration timing-function delay iteration-count direction fill-mode play-state ([http://www.w3schools.com/cssref/css3_pr_animation.asp](http://www.w3schools.com/cssref/css3_pr_animation.asp))
 /// @require {mixin} css3-prefix
 
 @mixin animation($str) {
   @include css3-prefix('animation', $str);
+}
+
+/// Slightly lighten a color
+/// @access public
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+/// Slightly darken a color
+/// @access public
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
 }

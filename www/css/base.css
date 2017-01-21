@@ -263,3 +263,6 @@ h1 {
     text-transform: uppercase;
     text-align: center;
     text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5); }
+
+.work {
+  background-color: #e6f4f8; }
