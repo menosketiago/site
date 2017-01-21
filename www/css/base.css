@@ -249,6 +249,7 @@ h1 {
   height: calc(100vh - 80px);
   color: white;
   background-image: url(../images/mom.jpg);
+  background-color: #008cba;
   background-attachment: fixed;
   background-size: 106%;
   background-repeat: no-repeat;
