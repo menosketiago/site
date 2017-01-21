@@ -44,7 +44,7 @@ gulp.task('templates', function () {
 		.pipe(rename(function(path) {
 			path.extname = '.html';
 		}))
-		.pipe(gulp.dest('./wwww'));
+		.pipe(gulp.dest('./www'));
 });
 
 gulp.task('resources', function() {
