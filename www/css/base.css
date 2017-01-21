@@ -34,6 +34,7 @@ section {
   width: calc(100vw - 80px);
   min-height: calc(100vh - 80px);
   padding: 40px;
+  background-attachment: fixed;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-flex;
@@ -248,7 +249,8 @@ h1 {
   height: calc(100vh - 80px);
   color: white;
   background-image: url(../images/mom.jpg);
-  background-size: 105%;
+  background-attachment: fixed;
+  background-size: 106%;
   background-repeat: no-repeat;
   background-position: top;
   overflow: hidden; }

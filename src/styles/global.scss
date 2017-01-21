@@ -20,6 +20,8 @@ section {
     width: calc(100vw - 80px);
 	min-height: calc(100vh - 80px);
 	padding: 40px;
+	// This creates parallax on bg
+	background-attachment: fixed;
 
     @include flexbox;
     @include flex-flow(column);
