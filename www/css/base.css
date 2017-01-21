@@ -27,10 +27,13 @@ body {
   padding: 0;
   background: #ffffff;
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-  font-weight: normal; }
+  font-weight: normal;
+  overflow-x: hidden; }
 
 section {
-  width: 100vw;
+  width: calc(100vw - 80px);
+  min-height: calc(100vh - 80px);
+  padding: 40px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-flex;
@@ -77,12 +80,177 @@ h1, h2, h3, h4, h5 {
 h1 {
   font-size: 48px; }
 
+@font-face {
+  font-family: 'menosketiago';
+  src: url("fonts/menosketiago.eot?awbke");
+  src: url("fonts/menosketiago.eot?awbke#iefix") format("embedded-opentype"), url("fonts/menosketiago.ttf?awbke") format("truetype"), url("fonts/menosketiago.woff?awbke") format("woff"), url("fonts/menosketiago.svg?awbke#menosketiago") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+.icon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'menosketiago' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-classic-computer:before {
+  content: "\e900"; }
+
+.icon-creative-commons-noncommercial-us:before {
+  content: "\e901"; }
+
+.icon-creative-commons:before {
+  content: "\e902"; }
+
+.icon-chevron-down:before {
+  content: "\e903"; }
+
+.icon-chevron-thin-down:before {
+  content: "\e904"; }
+
+.icon-emoji-flirt:before {
+  content: "\e905"; }
+
+.icon-install:before {
+  content: "\e906"; }
+
+.icon-cake:before {
+  content: "\e907"; }
+
+.icon-camera:before {
+  content: "\e908"; }
+
+.icon-code:before {
+  content: "\e909"; }
+
+.icon-colours:before {
+  content: "\e90a"; }
+
+.icon-emoji-happy:before {
+  content: "\e90b"; }
+
+.icon-game-controller:before {
+  content: "\e90c"; }
+
+.icon-globe:before {
+  content: "\e90d"; }
+
+.icon-graduation-cap:before {
+  content: "\e90e"; }
+
+.icon-hand:before {
+  content: "\e90f"; }
+
+.icon-heart:before {
+  content: "\e910"; }
+
+.icon-language:before {
+  content: "\e911"; }
+
+.icon-light-bulb:before {
+  content: "\e912"; }
+
+.icon-line-graph:before {
+  content: "\e913"; }
+
+.icon-location-pin:before {
+  content: "\e914"; }
+
+.icon-location:before {
+  content: "\e915"; }
+
+.icon-mail:before {
+  content: "\e916"; }
+
+.icon-man:before {
+  content: "\e917"; }
+
+.icon-medal:before {
+  content: "\e918"; }
+
+.icon-menu:before {
+  content: "\e919"; }
+
+.icon-mobile:before {
+  content: "\e91a"; }
+
+.icon-news:before {
+  content: "\e91b"; }
+
+.icon-plus:before {
+  content: "\e91c"; }
+
+.icon-share-alternitive:before {
+  content: "\e91d"; }
+
+.icon-share:before {
+  content: "\e91e"; }
+
+.icon-star:before {
+  content: "\e91f"; }
+
+.icon-thumbs-up:before {
+  content: "\e920"; }
+
+.icon-typing:before {
+  content: "\e921"; }
+
+.icon-user:before {
+  content: "\e922"; }
+
+.icon-behance:before {
+  content: "\e923"; }
+
+.icon-google-drive:before {
+  content: "\e924"; }
+
+.icon-skype:before {
+  content: "\e925"; }
+
+.icon-spotify:before {
+  content: "\e926"; }
+
+.icon-dribbble:before {
+  content: "\e927"; }
+
+.icon-facebook:before {
+  content: "\e928"; }
+
+.icon-github:before {
+  content: "\e929"; }
+
+.icon-instagram:before {
+  content: "\e92a"; }
+
+.icon-linkedin:before {
+  content: "\e92b"; }
+
+.icon-pinterest:before {
+  content: "\e92c"; }
+
+.icon-twitter:before {
+  content: "\e92d"; }
+
+.icon-vimeo:before {
+  content: "\e92e"; }
+
+.icon-youtube:before {
+  content: "\e92f"; }
+
 .hero {
-  width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 80px);
   color: white;
-  background: url(../images/mom.jpg) no-repeat center;
+  background-image: url(../images/mom.jpg);
   background-size: 105%;
+  background-repeat: no-repeat;
+  background-position: top;
   overflow: hidden; }
   .hero .logo {
     width: 320px;

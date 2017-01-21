@@ -13,10 +13,13 @@ body {
 	background: $body-bg;
 	font-family: $body-font;
 	font-weight: normal;
+    overflow-x: hidden;
 }
 
 section {
-    width: 100vw;
+    width: calc(100vw - 80px);
+	min-height: calc(100vh - 80px);
+	padding: 40px;
 
     @include flexbox;
     @include flex-flow(column);
