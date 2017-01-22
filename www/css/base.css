@@ -79,6 +79,7 @@ h1, h2, h3, h4, h5 {
   line-height: 1em; }
 
 h1 {
+  color: #018ac9;
   font-size: 48px; }
 
 @font-face {
@@ -249,7 +250,7 @@ h1 {
   height: calc(100vh - 80px);
   color: white;
   background-image: url(../images/mom.jpg);
-  background-color: #008cba;
+  background-color: #018ac9;
   background-attachment: fixed;
   background-size: 106%;
   background-repeat: no-repeat;
@@ -263,9 +264,10 @@ h1 {
     background-size: contain; }
   .hero h1 {
     max-width: 500px;
+    color: white;
     text-transform: uppercase;
     text-align: center;
     text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5); }
 
 .work {
-  background-color: #e6f4f8; }
+  background-color: #e6f3fa; }

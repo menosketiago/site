@@ -2,7 +2,7 @@
 	height: calc(100vh - 80px);
 	color: white;
 	background-image: url(../images/mom.jpg);
-	background-color: $primary-color;
+	background-color: $blue;
 	background-attachment: fixed;
 	background-size: 106%;
 	background-repeat: no-repeat;
@@ -19,6 +19,7 @@
 
 	h1 {
 		max-width: 500px;
+		color: white;
 		text-transform: uppercase;
 		text-align: center;
 
