@@ -1,10 +1,21 @@
-$(document).ready(function(){
+// IMPORTS
+import './global/fetch';
 
-// Paralax on hero section
-$('#hero-bg').mousemove(function(e){
-    var ammountX = (e.pageX * -0.06);
-    var ammountY = (e.pageY * -0.06);
-    $(this).css('background-position', ammountX + 'px ' + ammountY + 'px');
-});
+// COMPONENTS
+import Modal from './components/Modal';
 
-});
+const tiago = window.tiago = {
+    Modal,
+};
+
+window.onload = () => {
+    // MODALS
+    let modalArray = document.getElementsByClassName('modal');
+
+    if (modalArray) {
+        Array.from(modalArray).forEach(modalDOM => {
+            let modal = new Modal(modalDOM);
+            modal.init();
+        });
+    }
+};

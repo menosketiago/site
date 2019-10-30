@@ -1,15 +1,15 @@
-var gulp = require('gulp'),
-	sass = require('gulp-sass'),
-	concat = require('gulp-concat'),
-	handlebars = require('gulp-hb'),
-	rename = require('gulp-rename'),
-	browserSync = require('browser-sync').create();
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const handlebars = require('gulp-hb');
+const rename = require('gulp-rename');
+const browserSync = require('browser-sync').create();
+const webpack = require('webpack-stream');
 
-var path = {
-	'bower': './bower_components',
+const path = {
 	'styles': './src/styles',
 	'scripts': './src/scripts',
 	'templates': './src/templates',
+	'work': './src/templates/work',
 	'images': './src/images',
 	'fonts': './src/fonts'
 }
@@ -17,25 +17,24 @@ var path = {
 gulp.task('styles', function() {
 	return gulp
 	.src([
-		path.styles + '/base.scss'
+		path.styles + '/index.scss'
 	])
 	.pipe(sass().on('error', sass.logError))
-	// .pipe(concat('base.css'))
-	.pipe(gulp.dest('./www/css'));
+	.pipe(gulp.dest('./www/styles'));
 });
 
 gulp.task('scripts', function() {
 	return gulp
 	.src([
-		path.bower + '/modernizr/modernizr.js',
-		path.bower + '/jquery/dist/jquery.min.js',
-		path.scripts + '/index.js'])
-	.pipe(gulp.dest('./www/js'));
+		path.scripts + '/index.js'
+	])
+	.pipe(webpack(require('./webpack.config.js')))
+	.pipe(gulp.dest('./www/scripts'));
 });
 
 gulp.task('templates', function () {
 	return gulp
-		.src(path.templates + '/*.hbs')
+		.src([path.templates + '/*.hbs'])
 		.pipe(handlebars({
 			data: '',
 			helpers: '',
@@ -46,6 +45,20 @@ gulp.task('templates', function () {
 			path.extname = '.html';
 		}))
 		.pipe(gulp.dest('./www'));
+});
+
+gulp.task('work', function () {
+	return gulp
+		.src([path.work + '/*.hbs'])
+		.pipe(handlebars({
+			data: '',
+			helpers: '',
+			bustCache: true
+		}))
+		.pipe(rename(function(path) {
+			path.extname = '.html';
+		}))
+		.pipe(gulp.dest('./www/work/'));
 });
 
 gulp.task('images', function() {
@@ -78,6 +91,6 @@ gulp.task('watch', function() {
 	gulp.watch(path.templates + '/**/*.hbs', ['templates']).on('change', browserSync.reload);
 });
 
-gulp.task('default', ['styles', 'scripts', 'templates', 'images', 'fonts']);
+gulp.task('default', ['styles', 'scripts', 'templates', 'work', 'images', 'fonts']);
 
 gulp.task('serve', ['default', 'browser-sync', 'watch']);

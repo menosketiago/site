@@ -1,0 +1,11 @@
+@import 'vars';
+@import 'mixins';
+@import 'flexbox';
+@import 'global';
+@import 'typography';
+
+// PARTIALS
+
+@import 'partials/hero';
+@import 'partials/about';
+@import 'partials/work';
