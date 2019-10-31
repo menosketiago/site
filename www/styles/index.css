@@ -88,7 +88,7 @@ h1 {
   background-image: url(../images/mom.jpg);
   background-color: #018ac9;
   background-attachment: fixed;
-  background-size: 106%;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
   overflow: hidden; }
@@ -107,3 +107,6 @@ h1 {
 
 .work {
   background-color: #e6f3fa; }
+
+.modal {
+  padding: 40px; }

@@ -1,12 +1,10 @@
-// IMPORTS
-import './global/fetch';
-
 // COMPONENTS
 import Modal from './components/Modal';
 
 const tiago = window.tiago = {
     Modal,
 };
+
 
 window.onload = () => {
     // MODALS
