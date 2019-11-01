@@ -1,0 +1,29 @@
+// COLORS
+
+$white: #ffffff;
+$black: #464646;
+
+$blue: #008BCC;
+$yellow: #FFEC00;
+$gray-dark: #666666;
+
+$body-bg: $white;
+$body-color: $black;
+
+// TYPOGRAPHY
+
+$body-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$header-font: "Oswald", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+// SIZES
+
+$space-tiny: 4px;
+$space-small: $space-tiny * 2;
+$space-base: $space-tiny * 3;
+$space-large: $space-base * 2;
+
+$nav-width: 48px;
+$footer-width: 16px;
+$main-width: calc(100vw - #{$nav-width} - #{$footer-width});
+
+$max-text-width: 1024px;

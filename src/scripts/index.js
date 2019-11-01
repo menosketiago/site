@@ -1,12 +1,25 @@
 // COMPONENTS
+
 import Modal from './components/Modal';
+import Year from './components/Year';
 
 const tiago = window.tiago = {
     Modal,
+    Year
 };
 
 
 window.onload = () => {
+    // CURRENT YEAR
+    let yearArray = document.querySelectorAll('[data-year]');
+
+    if (yearArray) {
+        Array.from(yearArray).forEach(yearDOM => {
+            let year = new Year(yearDOM);
+            year.init();
+        });
+    }
+
     // MODALS
     let modalArray = document.getElementsByClassName('modal');
 

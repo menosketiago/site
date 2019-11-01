@@ -7,6 +7,60 @@
   note: All CSS3 Properties are being supported by Safari 5
   more info: http://www.findmebyip.com/litmus/#css3-properties
 ------------------------------------------------------------- */
+@import url("https://fonts.googleapis.com/css?family=Oswald:300,600&display=swap");
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-family: "Oswald", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  line-height: 1em;
+  text-transform: uppercase; }
+
+h1 {
+  color: #008BCC;
+  font-size: 36px; }
+
+h4 {
+  display: inline;
+  color: #008BCC;
+  font-size: 18px; }
+
+h5 {
+  display: inline;
+  color: #008BCC;
+  font-size: 12px; }
+
+h6 {
+  display: inline;
+  color: #666666;
+  font-size: 12px;
+  font-weight: 300; }
+
+p {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+a {
+  color: #008BCC;
+  -webkit-transition: all 0.2s ease;
+  -khtml-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease; }
+  a:hover {
+    background: #FFEC00;
+    text-decoration: none; }
+  a:active {
+    color: #ffffff;
+    background: #008BCC;
+    text-decoration: none; }
+    a:active svg {
+      stroke: currentColor; }
+
+mark {
+  color: #FFEC00;
+  background: transparent; }
+
 html {
   -webkit-box-sizing: border-box;
   -khtml-box-sizing: border-box;
@@ -23,18 +77,131 @@ html {
     box-sizing: inherit; }
 
 body {
+  width: 100vw;
   margin: 0;
   padding: 0;
   background: #ffffff;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
-  overflow-x: hidden; }
+  overflow: hidden;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -moz-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex; }
+
+nav {
+  display: inline-block;
+  width: 48px;
+  height: calc(100vh - 24px - 24px);
+  padding: 24px;
+  background: #ffffff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between; }
+  nav .current-section {
+    margin-top: 20vh;
+    writing-mode: vertical-lr;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    -webkit-transform: rotate(180deg);
+    -khtml-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg); }
+    nav .current-section h4, nav .current-section h6 {
+      display: block;
+      text-align: center; }
+    nav .current-section h6 {
+      margin-left: 4px; }
+  nav .social {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center; }
+    nav .social a {
+      width: 30px;
+      height: 30px;
+      margin-top: 8px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      -moz-align-items: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      -moz-justify-content: center;
+      justify-content: center; }
+      nav .social a svg {
+        -webkit-transform: scale(1.2);
+        -khtml-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        -o-transform: scale(1.2);
+        transform: scale(1.2); }
+
+main {
+  display: inline-block;
+  overflow: auto;
+  width: calc(100vw - 48px - 16px);
+  height: calc(100vh - 24px - 24px);
+  margin: 24px 0; }
 
 section {
-  width: calc(100vw - 80px);
-  min-height: calc(100vh - 80px);
+  width: calc(100% - 80px);
+  min-height: calc(100vh - 24px - 24px);
   padding: 40px;
-  background-attachment: fixed;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-flex;
@@ -55,38 +222,35 @@ section {
   -moz-align-items: center;
   align-items: center; }
 
-.logo {
-  width: 50px;
-  height: 50px;
-  background: url(../images/logo_@2X.png) no-repeat center;
-  background-size: contain; }
-
-@font-face {
-  font-family: 'Bebas';
-  src: url("../fonts/BebasNeue-webfont.eot");
-  src: url("../fonts/BebasNeue-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/BebasNeue-webfont.woff") format("woff"), url("../fonts/BebasNeue-webfont.ttf") format("truetype"), url("../fonts/BebasNeue-webfont.svg#BebasNeueRegular") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
-p {
-  margin: 0;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; }
-
-h1, h2, h3, h4, h5 {
-  margin: 0;
-  font-family: "Bebas", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-  font-weight: bold;
-  line-height: 1em; }
-
-h1 {
-  color: #018ac9;
-  font-size: 48px; }
+footer {
+  display: inline-block;
+  width: 16px;
+  height: calc(100vh - 24px - 24px);
+  padding: 24px;
+  background: #ffffff;
+  writing-mode: vertical-lr;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-transform: rotate(180deg);
+  -khtml-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg); }
 
 .hero {
   height: calc(100vh - 80px);
   color: white;
   background-image: url(../images/mom.jpg);
-  background-color: #018ac9;
+  background-color: #008BCC;
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
@@ -109,4 +273,31 @@ h1 {
   background-color: #e6f3fa; }
 
 .modal {
-  padding: 40px; }
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100vh;
+  overflow: auto;
+  padding: 40px;
+  background: #ffffff;
+  -webkit-transform: translate(100%, 0);
+  -khtml-transform: translate(100%, 0);
+  -moz-transform: translate(100%, 0);
+  -ms-transform: translate(100%, 0);
+  -o-transform: translate(100%, 0);
+  transform: translate(100%, 0);
+  -webkit-transition: transform 0.4s ease;
+  -khtml-transition: transform 0.4s ease;
+  -moz-transition: transform 0.4s ease;
+  -ms-transition: transform 0.4s ease;
+  -o-transition: transform 0.4s ease;
+  transition: transform 0.4s ease; }
+  .modal.is-open {
+    -webkit-transform: translate(25%, 0);
+    -khtml-transform: translate(25%, 0);
+    -moz-transform: translate(25%, 0);
+    -ms-transform: translate(25%, 0);
+    -o-transform: translate(25%, 0);
+    transform: translate(25%, 0); }

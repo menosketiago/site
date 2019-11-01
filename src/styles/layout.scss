@@ -1,0 +1,104 @@
+html {
+	@include box-sizing(border-box);
+
+	&:before,
+	&:after {
+		@include box-sizing(inherit);
+	}
+}
+
+body {
+	width: 100vw;
+	margin: 0;
+	padding: 0;
+	background: $body-bg;
+	font-family: $body-font;
+	font-weight: normal;
+    overflow: hidden;
+
+	@include inline-flex();
+}
+
+nav {
+	display: inline-block;
+	width: $nav-width;
+	height: calc(100vh - #{$space-large} - #{$space-large});
+	padding: $space-large;
+	background: $white;
+
+    @include flexbox();
+    @include flex-direction(column);
+	@include align-items(center);
+    @include justify-content(space-between);
+
+    .current-section {
+		margin-top: 20vh;
+		writing-mode: vertical-lr;
+
+		@include flexbox();
+		@include flex-direction(column);
+		@include justify-content(center);
+		@include transform(rotate(180deg));
+
+		h4, h6 {
+			display: block;
+			text-align: center;
+		}
+
+		h6 {
+			margin-left: $space-tiny;
+		}
+    }
+
+	.social {
+		@include flexbox();
+		@include flex-direction(column);
+		@include justify-content(center);
+
+		a {
+			width: 30px;
+			height: 30px;
+			margin-top: $space-small;
+
+			@include flexbox();
+			@include align-items(center);
+			@include justify-content(center);
+
+			svg	{
+				@include transform(scale(1.2));
+			}
+		}
+	}
+}
+
+main {
+	display: inline-block;
+	overflow: auto;
+	width: $main-width;
+	height: calc(100vh - #{$space-large} - #{$space-large});
+	margin: $space-large 0;
+}
+
+section {
+	width: calc(100% - 80px);
+	min-height: calc(100vh - #{$space-large} - #{$space-large});
+	padding: 40px;
+
+	@include flexbox;
+	@include flex-flow(column);
+	@include justify-content(center);
+	@include align-items(center);
+}
+
+footer {
+	display: inline-block;
+	width: $footer-width;
+	height: calc(100vh - #{$space-large} - #{$space-large});
+	padding: $space-large;
+	background: $white;
+    writing-mode: vertical-lr;
+
+    @include flexbox();
+    @include justify-content(space-between);
+    @include transform(rotate(180deg));
+}
