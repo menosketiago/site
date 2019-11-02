@@ -26,4 +26,6 @@ $nav-width: 48px;
 $footer-width: 16px;
 $main-width: calc(100vw - #{$nav-width} - #{$footer-width});
 
+$scroll-btn-width: $space-large * 2;
+
 $max-text-width: 1024px;

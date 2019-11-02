@@ -14,19 +14,19 @@ h1 {
 }
 
 h4 {
-    display: inline;
+    display: inline-block;
     color: $blue;
     font-size: 18px;
 }
 
 h5 {
-    display: inline;
+    display: inline-block;
     color: $blue;
     font-size: 12px;
 }
 
 h6 {
-    display: inline;
+    display: inline-block;
     color: $gray-dark;
     font-size: 12px;
     font-weight: 300;
@@ -51,10 +51,6 @@ a {
         color: $white;
         background: $blue;
         text-decoration: none;
-
-        svg {
-            stroke: currentColor;
-        }
     }
 }
 

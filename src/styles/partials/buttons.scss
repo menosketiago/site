@@ -1,0 +1,32 @@
+button {
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+
+    &.scroll {
+        position: fixed;
+        left: 50%;
+        width: $scroll-btn-width;
+        height: $scroll-btn-width;
+        color: $blue;
+        background: $yellow;
+
+        @include transform(translate(-25%, 0));
+
+        svg {
+            @include transform(scale(1.2));
+        }
+
+        &.up {
+            top: 0;
+        }
+
+        &.down {
+            bottom: 0;
+
+            svg {
+                @include transform(scale(1.2) rotate(180deg));
+            }
+        }
+    }
+}

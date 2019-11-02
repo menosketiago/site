@@ -12,8 +12,11 @@
 
 <body>
 	<nav>
-		<div>
-		    Menu
+		<div class="navigation">
+		    <a href="#home" class="is-current">Home</a>
+		    <a href="#about">About</a>
+		    <a href="#work">Work</a>
+		    <a href="#contact">Contact</a>
 		</div>
 		
 		<div class="current-section">
@@ -29,7 +32,7 @@
 		                <path d="M.818 2.25l6.836 6.266a2 2 0 002.697.006l6.9-6.272h0"/>
 		            </g>
 		        </svg>    </a>
-		    <a href="https://www.linkedin.com/in/menosketiago">
+		    <a href="https://www.linkedin.com/in/menosketiago" target="_blank">
 		        <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg">
 		            <g fill="none" fill-rule="evenodd">
 		                <g fill="currentColor">
@@ -38,17 +41,17 @@
 		                <rect stroke="currentColor" x=".5" y=".5" width="17" height="17" rx="2"/>
 		            </g>
 		        </svg>    </a>
-		    <a href="https://www.facebook.com/thisismenos">
+		    <a href="https://www.facebook.com/thisismenos" target="_blank">
 		        <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg">
 		            <path d="M16.5 17.5a1 1 0 001-1v-15a1 1 0 00-1-1h-15a1 1 0 00-1 1v15a1 1 0 001 1h15zm-7.576-5.986H7V8.018h1.924V6.522c0-2.252 1.391-3.578 3.533-3.578.72 0 1.491.049 1.86.099l.433.059v3.092h-.5l-1.23.001c-.579 0-.69.13-.69.674v1.15h2.511l-.674 3.495h-1.835l.025 5.427V18.5H8.924v-6.986z" stroke="currentColor" fill="none" fill-rule="evenodd" />
 		        </svg>    </a>
-		    <a href="https://www.instagram.com/menosketiago">
+		    <a href="https://www.instagram.com/menosketiago" target="_blank">
 		        <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg">
 		            <g fill="none" fill-rule="evenodd"><rect stroke="currentColor" x=".5" y=".5" width="17" height="17" rx="2"/>
 		            <circle stroke="currentColor" cx="9" cy="9" r="4.5"/>
 		            <circle fill="currentColor" cx="14" cy="4" r="1"/></g>
 		        </svg>    </a>
-		    <a href="https://dribbble.com/menosketiago">
+		    <a href="https://dribbble.com/menosketiago" target="_blank">
 		        <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg">
 		            <g stroke="currentColor" fill="none" fill-rule="evenodd">
 		                <circle cx="9" cy="9" r="8.5" />
@@ -57,6 +60,10 @@
 		        </svg>    </a>
 		</div>	</nav>
 	<main>
+		<button class="scroll up">
+			<svg width="15" height="18" xmlns="http://www.w3.org/2000/svg">
+			    <path d="M14.013 5.97l-7-5.47L0 5.97 7 .5v17" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>		</button>
 		<section id="hero-bg" class="hero">
 		    <div class="logo"></div>
 		    <h1>
@@ -76,6 +83,15 @@
 		        Work
 		    </h1>
 		</section>
+		<section class="contact">
+		    <h1>
+		        Contact me
+		    </h1>
+		</section>
+		<button class="scroll down">
+			<svg width="15" height="18" xmlns="http://www.w3.org/2000/svg">
+			    <path d="M14.013 5.97l-7-5.47L0 5.97 7 .5v17" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>		</button>
 	</main>
 	<footer>
 		<div>
@@ -89,7 +105,7 @@
 		<div>
 			<h6>This site is open source</h6>
 			<h5>
-				<a href="https://github.com/menosketiago/site" target="_blank">Check it on Github!</a>
+				<a href="https://github.com/menosketiago/site" target="_blank">Check it on Github</a>
 			</h5>
 		</div>	</footer>
 	<article id="fetch-target" class="modal">

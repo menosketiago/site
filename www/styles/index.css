@@ -8,7 +8,7 @@
   more info: http://www.findmebyip.com/litmus/#css3-properties
 ------------------------------------------------------------- */
 @import url("https://fonts.googleapis.com/css?family=Oswald:300,600&display=swap");
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, nav .navigation a, h6 {
   margin: 0;
   font-family: "Oswald", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 600;
@@ -20,17 +20,17 @@ h1 {
   font-size: 36px; }
 
 h4 {
-  display: inline;
+  display: inline-block;
   color: #008BCC;
   font-size: 18px; }
 
-h5 {
-  display: inline;
+h5, nav .navigation a {
+  display: inline-block;
   color: #008BCC;
   font-size: 12px; }
 
 h6 {
-  display: inline;
+  display: inline-block;
   color: #666666;
   font-size: 12px;
   font-weight: 300; }
@@ -54,8 +54,6 @@ a {
     color: #ffffff;
     background: #008BCC;
     text-decoration: none; }
-    a:active svg {
-      stroke: currentColor; }
 
 mark {
   color: #FFEC00;
@@ -90,6 +88,61 @@ body {
   display: -ms-inline-flexbox;
   display: inline-flex; }
 
+main {
+  display: inline-block;
+  overflow: auto;
+  width: calc(100vw - 48px - 16px);
+  height: calc(100vh - 24px - 24px);
+  margin: 24px 0; }
+
+section {
+  width: calc(100% - 80px);
+  min-height: calc(100vh - 24px - 24px);
+  padding: 40px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column;
+  -moz-flex-flow: column;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center; }
+
+footer {
+  display: inline-block;
+  width: 16px;
+  height: calc(100vh - 24px - 24px);
+  padding: 24px;
+  background: #ffffff;
+  writing-mode: vertical-lr;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-transform: rotate(180deg);
+  -khtml-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg); }
+
 nav {
   display: inline-block;
   width: 48px;
@@ -117,8 +170,21 @@ nav {
   -webkit-justify-content: space-between;
   -moz-justify-content: space-between;
   justify-content: space-between; }
+  nav .navigation {
+    text-align: center; }
+    nav .navigation a {
+      margin-bottom: 4px;
+      padding: 8px;
+      cursor: pointer; }
+      nav .navigation a:active {
+        color: #ffffff; }
+      nav .navigation a.is-current {
+        color: #008BCC;
+        border: 1px solid #008BCC;
+        text-decoration: none;
+        pointer-events: none; }
   nav .current-section {
-    margin-top: 20vh;
+    margin-top: 5vh;
     writing-mode: vertical-lr;
     display: -webkit-box;
     display: -webkit-flex;
@@ -191,60 +257,41 @@ nav {
         -o-transform: scale(1.2);
         transform: scale(1.2); }
 
-main {
-  display: inline-block;
-  overflow: auto;
-  width: calc(100vw - 48px - 16px);
-  height: calc(100vh - 24px - 24px);
-  margin: 24px 0; }
-
-section {
-  width: calc(100% - 80px);
-  min-height: calc(100vh - 24px - 24px);
-  padding: 40px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: column;
-  -moz-flex-flow: column;
-  -ms-flex-flow: column;
-  flex-flow: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  -moz-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  -moz-align-items: center;
-  align-items: center; }
-
-footer {
-  display: inline-block;
-  width: 16px;
-  height: calc(100vh - 24px - 24px);
-  padding: 24px;
-  background: #ffffff;
-  writing-mode: vertical-lr;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  -webkit-justify-content: space-between;
-  -moz-justify-content: space-between;
-  justify-content: space-between;
-  -webkit-transform: rotate(180deg);
-  -khtml-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  transform: rotate(180deg); }
+button {
+  border: 0;
+  outline: 0;
+  cursor: pointer; }
+  button.scroll {
+    position: fixed;
+    left: 50%;
+    width: 48px;
+    height: 48px;
+    color: #008BCC;
+    background: #FFEC00;
+    -webkit-transform: translate(-25%, 0);
+    -khtml-transform: translate(-25%, 0);
+    -moz-transform: translate(-25%, 0);
+    -ms-transform: translate(-25%, 0);
+    -o-transform: translate(-25%, 0);
+    transform: translate(-25%, 0); }
+    button.scroll svg {
+      -webkit-transform: scale(1.2);
+      -khtml-transform: scale(1.2);
+      -moz-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+      -o-transform: scale(1.2);
+      transform: scale(1.2); }
+    button.scroll.up {
+      top: 0; }
+    button.scroll.down {
+      bottom: 0; }
+      button.scroll.down svg {
+        -webkit-transform: scale(1.2) rotate(180deg);
+        -khtml-transform: scale(1.2) rotate(180deg);
+        -moz-transform: scale(1.2) rotate(180deg);
+        -ms-transform: scale(1.2) rotate(180deg);
+        -o-transform: scale(1.2) rotate(180deg);
+        transform: scale(1.2) rotate(180deg); }
 
 .hero {
   height: calc(100vh - 80px);

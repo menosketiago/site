@@ -1,0 +1,74 @@
+nav {
+	display: inline-block;
+	width: $nav-width;
+	height: calc(100vh - #{$space-large} - #{$space-large});
+	padding: $space-large;
+	background: $white;
+
+    @include flexbox();
+    @include flex-direction(column);
+	@include align-items(center);
+    @include justify-content(space-between);
+
+	.navigation {
+		text-align: center;
+
+		a {
+			@extend h5;
+
+			margin-bottom: $space-tiny;
+			padding: $space-small;
+			cursor: pointer;
+
+			&:active {
+				color: $white;
+			}
+
+			&.is-current {
+				color: $blue;
+				border: 1px solid $blue;
+				text-decoration: none;
+				pointer-events: none;
+			}
+		}
+	}
+
+    .current-section {
+		margin-top: 5vh;
+		writing-mode: vertical-lr;
+
+		@include flexbox();
+		@include flex-direction(column);
+		@include justify-content(center);
+		@include transform(rotate(180deg));
+
+		h4, h6 {
+			display: block;
+			text-align: center;
+		}
+
+		h6 {
+			margin-left: $space-tiny;
+		}
+    }
+
+	.social {
+		@include flexbox();
+		@include flex-direction(column);
+		@include justify-content(center);
+
+		a {
+			width: 30px;
+			height: 30px;
+			margin-top: $space-small;
+
+			@include flexbox();
+			@include align-items(center);
+			@include justify-content(center);
+
+			svg	{
+				@include transform(scale(1.2));
+			}
+		}
+	}
+}
