@@ -95,14 +95,14 @@ button {
 
         &.left,
         &.right {
-            position: absolute;
+            position: fixed;
             top: 50%;
 
             @include transform(translate(0, -50%));
         }
 
         &.left {
-            left: 0;
+            left: $header-width - ($scroll-btn-width / 2);
 
             svg {
                 @include transform(scale(1.2) rotate(180deg));
@@ -124,7 +124,7 @@ button {
         }
 
         &.right {
-            right: 0;
+            right: $footer-width - ($scroll-btn-width / 2);
             left: auto;
 
             &:hover {

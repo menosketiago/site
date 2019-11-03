@@ -11,12 +11,22 @@ header {
     @include justify-content(space-between);
 
 	.logo {
-		width: 100%;
-		height: auto;
-		margin-bottom: $space-large;
+		width: $header-width - ($space-large * 2);
+		height: $header-width - ($space-large * 2);
+
+		&:hover,
+		&:active {
+			background: transparent;
+		}
+
+		img {
+			width: inherit;
+			height: inherit;
+		}
 	}
 
 	nav {
+		margin-top: $space-large;
 		text-align: center;
 
 		a {
@@ -40,6 +50,7 @@ header {
 	}
 
     .current-section {
+		margin-bottom: $space-large;
 		writing-mode: vertical-lr;
 
 		@include flexbox();

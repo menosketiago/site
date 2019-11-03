@@ -1,115 +1,140 @@
 #work {
-	position: relative;
-	width: 100%;
+	width: $main-width;
 	padding: 0;
-	background: tint($blue, 20%);
+	background-image: url('../images/pattern-blue.png');
 
-	@include flex-direction(row);
-	@include flex-wrap(wrap);
-	@include justify-content(flex-start);
-
-	article {
-		position: relative;
-		width: calc(100% / 3);
-		height: calc(100vh / 3 - #{$space-small} - #{$space-small});
-		padding: $space-large ($scroll-btn-width + $space-large);
-		background-color: transparent;
-		background-image: url('../images/thumbs/test.jpg');
-		background-size: cover;
-		background-position: center;
-		transition: all $speed-default ease;
-		cursor: pointer;
+	.wrapper {
+		width: inherit;
+		visibility: hidden;
+		opacity: 0;
 
 		@include flexbox();
-		@include flex(1 1 auto);
-		@include flex-direction(column);
-		@include justify-content(center);
-		@include align-items(center);
+		@include flex-direction(row);
+		@include flex-wrap(wrap);
+		@include justify-content(flex-start);
+		@include align-items(flex-start);
 
-		&::before,
-		&::after {
-			content: '';
-			z-index: 0;
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			opacity: 0;
-		}
-
-		// The filtered image
-
-		&::before {
-			background-image: inherit;
-			background-size: inherit;
-			background-position: inherit;
-
-			@include filter(grayscale, 100%);
-		}
-
-		// The blue overlay
-
-		&::after {
-			background-color: $blue;
-			background-image: url('../images/pattern-white-faded.png');
-		}
-
-		h2 {
-			color: $white;
-			text-align: center;
-		}
-
-		h4 {
-			margin-bottom: $space-base;
-			color: $yellow;
-			font-weight: $regular;
-
-			&::after {
-				content: '';
-				display: block;
-				width: 100%;
-				height: $stroke-height;
-				margin-top: $space-small;
-				background: $yellow;
-			}
-		}
-
-		.view {
-			margin-top: $space-large;
-			padding: $space-small;
-			color: $blue;
-			background: $yellow;
-			font-family: $header-font;
-			font-weight: $regular;
-			text-transform: uppercase;
+		article {
+			position: relative;
+			width: calc(100% / 3);
+			height: calc(100vh / 3 - #{$space-small} - #{$space-small});
+			padding: $space-large;
+			background-color: transparent;
+			background-image: url('../images/thumbs/test.jpg');
+			background-size: cover;
+			background-position: center;
+			transition: all $speed-default ease;
+			cursor: pointer;
 
 			@include flexbox();
+			@include flex(0 0 auto);
+			@include flex-direction(column);
+			@include justify-content(center);
 			@include align-items(center);
 
-			svg {
-				margin-right: $space-tiny;
+			&::before,
+			&::after {
+				content: '';
+				z-index: 0;
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				opacity: 0;
 			}
-		}
 
-		h2, h4, .view {
-			z-index: 1;
-			opacity: 0;
-			transition: inherit;
-		}
+			// The filtered image
 
-		&:hover {
 			&::before {
-				opacity: 1;
+				background-image: inherit;
+				background-size: inherit;
+				background-position: inherit;
+
+				@include filter(grayscale, 100%);
 			}
+
+			// The blue overlay
 
 			&::after {
-				opacity: .8;
+				background-color: $blue;
+				background-image: url('../images/pattern-white-faded.png');
+			}
+
+			h2 {
+				color: $white;
+				text-align: center;
+			}
+
+			h4 {
+				margin-bottom: $space-base;
+				color: $yellow;
+				font-size: 16px;
+				font-weight: $regular;
+
+				&::after {
+					content: '';
+					display: block;
+					width: 100%;
+					height: 2px;
+					margin-top: $space-small;
+					background: $yellow;
+				}
+			}
+
+			.view {
+				margin-top: $space-large;
+				padding: $space-small;
+				color: $blue;
+				background: $yellow;
+				font-family: $header-font;
+				font-weight: $regular;
+				text-transform: uppercase;
+
+				@include flexbox();
+				@include align-items(center);
+
+				svg {
+					margin-right: $space-tiny;
+				}
 			}
 
 			h2, h4, .view {
-				opacity: 1;
+				z-index: 1;
+				opacity: 0;
+				transition: inherit;
 			}
+
+			&:hover {
+				&::before {
+					opacity: 1;
+				}
+
+				&::after {
+					opacity: .8;
+				}
+
+				h2, h4, .view {
+					opacity: 1;
+				}
+			}
+
+			// WORK ITEM CLASSES
+
+			&.trioptima { background-image: url('../images/thumbs/trioptima.jpg'); }
+			&.ericsson { background-image: url('../images/thumbs/ericsson.jpg'); }
+			&.loki { background-image: url('../images/thumbs/loki.jpg'); }
+			&.alien { background-image: url('../images/thumbs/alien.jpg'); }
+			&.goo { background-image: url('../images/thumbs/goo.jpg'); }
+			&.wannaplayer { background-image: url('../images/thumbs/wannaplayer.jpg'); }
+			&.nem-tudo { background-image: url('../images/thumbs/nem-tudo.jpg'); }
+			&.mana { background-image: url('../images/thumbs/mana.jpg'); }
+			&.mamacita { background-image: url('../images/thumbs/mamacita.jpg'); }
+		}
+
+		&.is-visible {
+			visibility: visible;
+			opacity: 1;
 		}
 	}
 }

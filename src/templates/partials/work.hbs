@@ -1,57 +1,24 @@
 <section id="work">
     {{!-- Buttons to scroll work items sideways --}}
-    <button class="scroll left">
+    <button class="scroll left is-hidden">
         {{> icon-chevron}}
     </button>
     <button class="scroll right">
         {{> icon-chevron}}
     </button>
 
-    <article>
-        <h4>Category</h4>
-        <h2>Work item title</h2>
-        {{> view}}
-    </article>
-    <article>
-        <h4>Category</h4>
-        <h2>Work item title</h2>
-        {{> view}}
-    </article>
-    <article>
-        <h4>Category</h4>
-        <h2>Work item title</h2>
-        {{> view}}
-    </article>
-
-    <article>
-        <h4>Category</h4>
-        <h2>Work item title</h2>
-        {{> view}}
-    </article>
-    <article>
-        <h4>Category</h4>
-        <h2>Work item title</h2>
-        {{> view}}
-    </article>
-    <article>
-        <h4>Category</h4>
-        <h2>Work item title</h2>
-        {{> view}}
-    </article>
-
-    <article>
-        <h4>Category</h4>
-        <h2>Work item title</h2>
-        {{> view}}
-    </article>
-    <article>
-        <h4>Category</h4>
-        <h2>Work item title</h2>
-        {{> view}}
-    </article>
-    <article>
-        <h4>Category</h4>
-        <h2>Work item title</h2>
-        {{> view}}
-    </article>
+    {{#work}}
+        {{#each pages}}
+            {{!-- Work items wrapper (one for each 9 items) --}}
+            <div class="wrapper {{#if @first}}is-visible{{/if}}">
+                {{#each page}}
+                    <article class="{{name}}">
+                        <h4>{{category}}</h4>
+                        <h2>{{title}}</h2>
+                        {{> view}}
+                    </article>
+                {{/each}}
+            </div>
+        {{/each}}
+    {{/work}}
 </section>

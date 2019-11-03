@@ -33,7 +33,7 @@ $space-small: $space-tiny * 2;
 $space-base: $space-tiny * 3;
 $space-large: $space-base * 2;
 
-$header-width: 100px;
+$header-width: 120px;
 $footer-width: 66px;
 
 $main-width: calc(100vw - #{$header-width} - #{$footer-width});
@@ -43,4 +43,4 @@ $scroll-btn-width: $space-large * 2;
 
 $max-text-width: 1024px;
 
-$stroke-height: 2px;
+$stroke-height: 3px;

@@ -6,10 +6,11 @@ const browserSync = require('browser-sync').create();
 const webpack = require('webpack-stream');
 
 const path = {
+	'data': './src/data',
 	'styles': './src/styles',
 	'scripts': './src/scripts',
 	'templates': './src/templates',
-	'work': './src/templates/work',
+	'work': './src/templates/work-items',
 	'images': './src/images',
 	'fonts': './src/fonts'
 }
@@ -36,7 +37,7 @@ gulp.task('templates', function () {
 	return gulp
 		.src([path.templates + '/*.hbs'])
 		.pipe(handlebars({
-			data: '',
+			data: path.data + '/*.json',
 			helpers: '',
 			partials: path.templates + '/partials/**/*.hbs',
 			bustCache: true
@@ -81,7 +82,8 @@ gulp.task('browser-sync', function() {
     browserSync.init({
         server: {
             baseDir: "./www/"
-        }
+        },
+		open: false
     });
 });
 
