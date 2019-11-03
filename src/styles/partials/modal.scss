@@ -8,9 +8,9 @@
 	overflow: auto;
     padding: 40px;
     background: $white;
+    transition: transform $speed-slow ease;
 
     @include transform(translate(100%, 0));
-    @include transition(transform 0.4s ease);
 
     &.is-open {
         @include transform(translate(25%, 0));

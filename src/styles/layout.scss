@@ -1,10 +1,11 @@
 html {
-	@include box-sizing(border-box);
+    @include box-sizing(border-box);
+}
 
-	&:before,
-	&:after {
-		@include box-sizing(inherit);
-	}
+*,
+*::before,
+*::after {
+    @include box-sizing(inherit);
 }
 
 body {
@@ -13,7 +14,7 @@ body {
 	padding: 0;
 	background: $body-bg;
 	font-family: $body-font;
-	font-weight: normal;
+	font-weight: $regular;
     overflow: hidden;
 
 	@include inline-flex();
@@ -23,13 +24,13 @@ main {
 	display: inline-block;
 	overflow: auto;
 	width: $main-width;
-	height: calc(100vh - #{$space-large} - #{$space-large});
+	height: $main-height;
 	margin: $space-large 0;
 }
 
 section {
-	width: calc(100% - 80px);
-	min-height: calc(100vh - #{$space-large} - #{$space-large});
+	width: 100%;
+	min-height: $main-height;
 	padding: 40px;
 
 	@include flexbox;
@@ -41,7 +42,7 @@ section {
 footer {
 	display: inline-block;
 	width: $footer-width;
-	height: calc(100vh - #{$space-large} - #{$space-large});
+	height: 100vh;
 	padding: $space-large;
 	background: $white;
     writing-mode: vertical-lr;
@@ -49,4 +50,8 @@ footer {
     @include flexbox();
     @include justify-content(space-between);
     @include transform(rotate(180deg));
+
+	h6 {
+		margin-bottom: $space-small;
+	}
 }

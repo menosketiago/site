@@ -3,7 +3,9 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>menosketiago - Designer &amp; Illustrator</title>
+	<title>menosketiago™ · Designer and Illustrator</title>
+
+	<meta name="description" content="Designer and Illustrator based in Stockholm, Sweden">
 
 	<link rel="stylesheet" href="./styles/index.css">
 
@@ -11,20 +13,26 @@
 </head>
 
 <body>
-	<nav>
-		{{> nav}}
-	</nav>
+	<header>
+		{{> header}}
+	</header>
 	<main>
-		<button class="scroll up">
+		{{!-- Buttons to scroll the content sections --}}
+		<button class="scroll up is-hidden">
 			{{> icon-arrow}}
 		</button>
+		<button class="scroll down">
+			{{> icon-arrow}}
+		</button>
+		<button class="scroll top is-hidden">
+			{{> icon-back-to-top}}
+		</button>
+
+		{{!-- Content sections --}}
 		{{> hero}}
 		{{> about}}
 		{{> work}}
 		{{> contact}}
-		<button class="scroll down">
-			{{> icon-arrow}}
-		</button>
 	</main>
 	<footer>
 		{{> footer}}

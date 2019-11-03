@@ -85,7 +85,7 @@ h1 {
 .hero {
   height: calc(100vh - 80px);
   color: white;
-  background-image: url(../images/mom.jpg);
+  background-image: url(../images/bg-mom.jpg);
   background-color: #018ac9;
   background-attachment: fixed;
   background-size: 106%;
@@ -96,7 +96,7 @@ h1 {
     width: 320px;
     height: 320px;
     margin-bottom: 36px;
-    background: url(../images/logo_@2X.png) no-repeat center;
+    background: url(../images/logo-@2X.png) no-repeat center;
     background-size: contain; }
   .hero h1 {
     max-width: 500px;

@@ -15,6 +15,17 @@ $body-color: $black;
 $body-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $header-font: "Oswald", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
+$regular: 300;
+$bold: 600;
+
+$text-shadow: 0 2px 0 rgba(0, 0, 0, 0.8);
+
+// SPEEDS
+
+$speed-default: .2s;
+$speed-slow: .4s;
+$speed-slowest: .8s;
+
 // SIZES
 
 $space-tiny: 4px;
@@ -22,10 +33,14 @@ $space-small: $space-tiny * 2;
 $space-base: $space-tiny * 3;
 $space-large: $space-base * 2;
 
-$nav-width: 48px;
-$footer-width: 16px;
-$main-width: calc(100vw - #{$nav-width} - #{$footer-width});
+$header-width: 100px;
+$footer-width: 66px;
+
+$main-width: calc(100vw - #{$header-width} - #{$footer-width});
+$main-height: calc(100vh - #{$space-large} - #{$space-large});
 
 $scroll-btn-width: $space-large * 2;
 
 $max-text-width: 1024px;
+
+$stroke-height: 2px;

@@ -1,7 +1,7 @@
-nav {
+header {
 	display: inline-block;
-	width: $nav-width;
-	height: calc(100vh - #{$space-large} - #{$space-large});
+	width: $header-width;
+	height: 100vh;
 	padding: $space-large;
 	background: $white;
 
@@ -10,7 +10,13 @@ nav {
 	@include align-items(center);
     @include justify-content(space-between);
 
-	.navigation {
+	.logo {
+		width: 100%;
+		height: auto;
+		margin-bottom: $space-large;
+	}
+
+	nav {
 		text-align: center;
 
 		a {
@@ -34,7 +40,6 @@ nav {
 	}
 
     .current-section {
-		margin-top: 5vh;
 		writing-mode: vertical-lr;
 
 		@include flexbox();
