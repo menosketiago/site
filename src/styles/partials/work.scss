@@ -12,7 +12,7 @@
 		position: relative;
 		width: calc(100% / 3);
 		height: calc(100vh / 3 - #{$space-small} - #{$space-small});
-		padding: $space-large;
+		padding: $space-large ($scroll-btn-width + $space-large);
 		background-color: transparent;
 		background-image: url('../images/thumbs/test.jpg');
 		background-size: cover;

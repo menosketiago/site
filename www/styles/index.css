@@ -291,7 +291,7 @@ button {
       -o-transform: scale(1.2);
       transform: scale(1.2); }
     button.scroll:hover {
-      color: #ffffff;
+      color: #FFEC00;
       background: #008BCC; }
     button.scroll:active {
       color: #008BCC;
@@ -1180,7 +1180,7 @@ button {
     position: relative;
     width: calc(100% / 3);
     height: calc(100vh / 3 - 8px - 8px);
-    padding: 24px;
+    padding: 24px 72px;
     background-color: transparent;
     background-image: url("../images/thumbs/test.jpg");
     background-size: cover;
