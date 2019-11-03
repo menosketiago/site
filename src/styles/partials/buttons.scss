@@ -6,14 +6,11 @@ button {
     &.scroll {
         z-index: 100;
         position: fixed;
-        left: 50%;
         width: $scroll-btn-width;
         height: $scroll-btn-width;
         color: $blue;
         background: $yellow;
         transition: all $speed-default ease;
-
-        @include transform(translate(-25%, 0));
 
         svg {
             vertical-align: middle;
@@ -31,6 +28,11 @@ button {
             background: $yellow;
         }
 
+        &.up,
+        &.down {
+            left: 50%;
+        }
+
         &.up {
             top: 0;
 
@@ -40,10 +42,18 @@ button {
                     @include animation(anim-arrow-up $speed-slowest infinite linear);
 
                     @include keyframes(anim-arrow-up) {
-                        0% { @include transform(scale(1.2) translate(0, 0)); }
-                        33% { @include transform(scale(1.2) translate(0, -4px)); }
-                        66% { @include transform(scale(1.2) translate(0, 4px)); }
-                        100% { @include transform(scale(1.2) translate(0, 0)); }
+                        0% {
+                            @include transform(scale(1.2) translate(0, 0));
+                        }
+                        33% {
+                            @include transform(scale(1.2) translate(0, -4px));
+                        }
+                        66% {
+                            @include transform(scale(1.2) translate(0, 4px));
+                        }
+                        100% {
+                            @include transform(scale(1.2) translate(0, 0));
+                        }
                     }
                 }
             }
@@ -62,10 +72,18 @@ button {
                     @include animation(anim-arrow-down $speed-slowest infinite linear);
 
                     @include keyframes(anim-arrow-down) {
-                        0% { @include transform(scale(1.2) rotate(180deg) translate(0, 0)); }
-                        33% { @include transform(scale(1.2) rotate(180deg) translate(0, 4px)); }
-                        66% { @include transform(scale(1.2) rotate(180deg) translate(0, -4px)); }
-                        100% { @include transform(scale(1.2) rotate(180deg) translate(0, 0)); }
+                        0% {
+                            @include transform(scale(1.2) rotate(180deg) translate(0, 0));
+                        }
+                        33% {
+                            @include transform(scale(1.2) rotate(180deg) translate(0, 4px));
+                        }
+                        66% {
+                            @include transform(scale(1.2) rotate(180deg) translate(0, -4px));
+                        }
+                        100% {
+                            @include transform(scale(1.2) rotate(180deg) translate(0, 0));
+                        }
                     }
                 }
             }
@@ -82,10 +100,18 @@ button {
                     @include animation(anim-back-top $speed-slowest infinite linear);
 
                     @include keyframes(anim-back-top) {
-                        0% { @include transform(scale(1.2) translate(0, 0)); }
-                        33% { @include transform(scale(1.2) translate(0, -4px)); }
-                        66% { @include transform(scale(1.2) translate(0, 4px)); }
-                        100% { @include transform(scale(1.2) translate(0, 0)); }
+                        0% {
+                            @include transform(scale(1.2) translate(0, 0));
+                        }
+                        33% {
+                            @include transform(scale(1.2) translate(0, -4px));
+                        }
+                        66% {
+                            @include transform(scale(1.2) translate(0, 4px));
+                        }
+                        100% {
+                            @include transform(scale(1.2) translate(0, 0));
+                        }
                     }
                 }
             }
@@ -114,10 +140,18 @@ button {
                     @include animation(anim-move-left $speed-slowest infinite linear);
 
                     @include keyframes(anim-move-left) {
-                        0% { @include transform(scale(1.2) rotate(180deg) translate(0, 0)); }
-                        33% { @include transform(scale(1.2) rotate(180deg) translate(-4px, 0)); }
-                        66% { @include transform(scale(1.2) rotate(180deg) translate(4px, 0)); }
-                        100% { @include transform(scale(1.2) rotate(180deg) translate(0, 0)); }
+                        0% {
+                            @include transform(scale(1.2) rotate(180deg) translate(0, 0));
+                        }
+                        33% {
+                            @include transform(scale(1.2) rotate(180deg) translate(-4px, 0));
+                        }
+                        66% {
+                            @include transform(scale(1.2) rotate(180deg) translate(4px, 0));
+                        }
+                        100% {
+                            @include transform(scale(1.2) rotate(180deg) translate(0, 0));
+                        }
                     }
                 }
             }
@@ -133,10 +167,18 @@ button {
                     @include animation(anim-move-right $speed-slowest infinite linear);
 
                     @include keyframes(anim-move-right) {
-                        0% { @include transform(scale(1.2) translate(0, 0)); }
-                        33% { @include transform(scale(1.2) translate(4px, 0)); }
-                        66% { @include transform(scale(1.2) translate(-4px, 0)); }
-                        100% { @include transform(scale(1.2) translate(0, 0)); }
+                        0% {
+                            @include transform(scale(1.2) translate(0, 0));
+                        }
+                        33% {
+                            @include transform(scale(1.2) translate(4px, 0))
+                        ; }
+                        66% {
+                            @include transform(scale(1.2) translate(-4px, 0)
+                        ); }
+                        100% {
+                            @include transform(scale(1.2) translate(0, 0));
+                        }
                     }
                 }
             }

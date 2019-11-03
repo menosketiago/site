@@ -5,14 +5,7 @@
 
 	.wrapper {
 		width: inherit;
-		visibility: hidden;
-		opacity: 0;
-
-		@include flexbox();
-		@include flex-direction(row);
-		@include flex-wrap(wrap);
-		@include justify-content(flex-start);
-		@include align-items(flex-start);
+		display: none;
 
 		article {
 			position: relative;
@@ -66,11 +59,9 @@
 				text-align: center;
 			}
 
-			h4 {
+			h5 {
 				margin-bottom: $space-base;
 				color: $yellow;
-				font-size: 16px;
-				font-weight: $regular;
 
 				&::after {
 					content: '';
@@ -99,7 +90,7 @@
 				}
 			}
 
-			h2, h4, .view {
+			h2, h5, .view {
 				z-index: 1;
 				opacity: 0;
 				transition: inherit;
@@ -114,7 +105,7 @@
 					opacity: .8;
 				}
 
-				h2, h4, .view {
+				h2, h5, .view {
 					opacity: 1;
 				}
 			}
@@ -133,8 +124,11 @@
 		}
 
 		&.is-visible {
-			visibility: visible;
-			opacity: 1;
+			@include flexbox();
+			@include flex-direction(row);
+			@include flex-wrap(wrap);
+			@include justify-content(flex-start);
+			@include align-items(flex-start);
 		}
 	}
 }
