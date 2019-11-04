@@ -29,7 +29,8 @@ button {
         }
 
         &.up,
-        &.down {
+        &.down,
+        &.top {
             left: 50%;
         }
 
@@ -183,6 +184,25 @@ button {
                 }
             }
         }
+
+        // INVERTED BUTTONS FOR YELLOW SECTIONS
+
+        &.on-yellow {
+            color: $yellow;
+            background: $blue;
+
+            &:hover {
+                color: $blue;
+                background: $yellow;
+            }
+
+            &:active {
+                color: $yellow;
+                background: $blue;
+            }
+        }
+
+        // HIDING CLASS
 
         &.is-hidden {
             opacity: 0;

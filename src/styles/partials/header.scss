@@ -34,6 +34,7 @@ header {
 
 			margin-bottom: $space-tiny;
 			padding: $space-small;
+			border: 1px solid transparent;
 			cursor: pointer;
 
 			&:active {
@@ -42,7 +43,7 @@ header {
 
 			&.is-current {
 				color: $blue;
-				border: 1px solid $blue;
+				border-color: $blue;
 				text-decoration: none;
 				pointer-events: none;
 			}

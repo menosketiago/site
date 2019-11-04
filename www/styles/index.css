@@ -144,7 +144,7 @@ footer {
   -o-transform: rotate(180deg);
   transform: rotate(180deg); }
   footer h6 {
-    margin-bottom: 8px; }
+    margin-bottom: 4px; }
 
 header {
   display: inline-block;
@@ -187,12 +187,13 @@ header {
     header nav a {
       margin-bottom: 4px;
       padding: 8px;
+      border: 1px solid transparent;
       cursor: pointer; }
       header nav a:active {
         color: #ffffff; }
       header nav a.is-current {
         color: #008BCC;
-        border: 1px solid #008BCC;
+        border-color: #008BCC;
         text-decoration: none;
         pointer-events: none; }
   header .current-section {
@@ -295,7 +296,7 @@ button {
     button.scroll:active {
       color: #008BCC;
       background: #FFEC00; }
-    button.scroll.up, button.scroll.down {
+    button.scroll.up, button.scroll.down, button.scroll.top {
       left: 50%; }
     button.scroll.up {
       top: 0; }
@@ -1116,6 +1117,15 @@ button {
     -ms-transform: scale(1.2) translate(0, 0);
     -o-transform: scale(1.2) translate(0, 0);
     transform: scale(1.2) translate(0, 0); } }
+    button.scroll.on-yellow {
+      color: #FFEC00;
+      background: #008BCC; }
+      button.scroll.on-yellow:hover {
+        color: #008BCC;
+        background: #FFEC00; }
+      button.scroll.on-yellow:active {
+        color: #FFEC00;
+        background: #008BCC; }
     button.scroll.is-hidden {
       opacity: 0;
       pointer-events: none; }

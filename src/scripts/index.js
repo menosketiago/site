@@ -1,10 +1,12 @@
 // COMPONENTS
 
 import Modal from './components/Modal';
+import Navigator from './components/Navigator';
 import Year from './components/Year';
 
 const tiago = window.tiago = {
     Modal,
+    Navigator,
     Year
 };
 
@@ -29,4 +31,10 @@ window.onload = () => {
             modal.init();
         });
     }
+
+    // NAVIGATOR
+    let main = document.querySelector('main');
+
+    let navigator = new Navigator(main);
+    navigator.init();
 };
