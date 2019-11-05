@@ -43,6 +43,7 @@ class Navigator {
             this.setButtonVisibility();
         });
 
+        // Listen to click on the main nav links
         Array.from(this.links).forEach(link => {
             link.addEventListener('click', (e) => {
                 var id = e.target.href.split('#')[1];
@@ -53,12 +54,21 @@ class Navigator {
             });
         });
 
+        // Listen to clicks on the scroll up button
+        this.btnUp.addEventListener('click', () => {
+            this.targetSection = this._state.currentSection.previousElementSibling;
+
+            this.navigate(this.targetSection);
+        });
+
+        // Listen to clicks on the scroll down button
         this.btnDown.addEventListener('click', () => {
             this.targetSection = this._state.currentSection.nextElementSibling;
 
             this.navigate(this.targetSection);
         });
 
+        // Listen to clicks on the back to top button
         this.btnTop.addEventListener('click', () => {
             this.navigate(this.initialSection);
         });
