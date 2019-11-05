@@ -23,6 +23,7 @@ class Navigator {
     }
 
     init() {
+        this.checkVisibleSection();
         this.eventHandler();
     }
 
@@ -32,7 +33,8 @@ class Navigator {
     }
 
     _updateDom() {
-        location.hash = "#" + this._state.currentSection.id;
+        this._state.currentSection.scrollIntoView({behavior: 'smooth'});
+        history.replaceState({}, '', '#' + this._state.currentSection.id);
 
         // Set the current section id as the currently viewing title on the header
         this.sectionHeader.textContent = this._state.currentSection.id;
@@ -46,7 +48,9 @@ class Navigator {
         // Listen to click on the main nav links
         Array.from(this.links).forEach(link => {
             link.addEventListener('click', (e) => {
-                var id = e.target.href.split('#')[1];
+                e.preventDefault();
+
+                let id = e.target.href.split('#')[1];
 
                 this.targetSection = this.dom.main.querySelector('section#' + id);
 
