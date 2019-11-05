@@ -10,7 +10,7 @@
     {{#work}}
         {{#each pages}}
             {{!-- Work items wrapper (one for each 9 items) --}}
-            <div class="wrapper {{#if @first}}is-visible{{/if}}">
+            <div id="page-{{@key}}" class="wrapper {{#if @first}}is-visible{{/if}}">
                 {{#each page}}
                     <article class="{{name}}">
                         <h5>{{category}}</h5>

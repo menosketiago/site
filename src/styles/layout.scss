@@ -1,5 +1,6 @@
 html {
     @include box-sizing(border-box);
+	@include scrollbars(0, transparent, transparent);
 }
 
 *,

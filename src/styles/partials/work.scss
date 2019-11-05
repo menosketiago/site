@@ -1,11 +1,21 @@
 #work {
-	width: $main-width;
+	overflow-x: hidden;
+	width: auto;
 	padding: 0;
 	background-image: url('../images/pattern-blue.png');
 
+	@include flex-direction(row);
+	@include justify-content(flex-start);
+
 	.wrapper {
-		width: inherit;
-		display: none;
+		width: $main-width;
+
+		@include flexbox();
+		@include flex-shrink(0);
+		@include flex-direction(row);
+		@include flex-wrap(wrap);
+		@include justify-content(flex-start);
+		@include align-items(flex-start);
 
 		article {
 			position: relative;
@@ -121,14 +131,6 @@
 			&.nem-tudo { background-image: url('../images/thumbs/nem-tudo.jpg'); }
 			&.mana { background-image: url('../images/thumbs/mana.jpg'); }
 			&.mamacita { background-image: url('../images/thumbs/mamacita.jpg'); }
-		}
-
-		&.is-visible {
-			@include flexbox();
-			@include flex-direction(row);
-			@include flex-wrap(wrap);
-			@include justify-content(flex-start);
-			@include align-items(flex-start);
 		}
 	}
 }

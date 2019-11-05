@@ -64,6 +64,16 @@ html {
   -ms-box-sizing: border-box;
   -o-box-sizing: border-box;
   box-sizing: border-box; }
+  html ::-webkit-scrollbar {
+    width: 0;
+    height: 0; }
+  html ::-webkit-scrollbar-thumb {
+    background: transparent; }
+  html ::-webkit-scrollbar-track {
+    background: transparent; }
+  html body {
+    scrollbar-face-color: transparent;
+    scrollbar-track-color: transparent; }
 
 *,
 *::before,
@@ -1174,12 +1184,52 @@ button {
     text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5); }
 
 #work {
-  width: calc(100vw - 120px - 66px);
+  overflow-x: hidden;
+  width: auto;
   padding: 0;
-  background-image: url("../images/pattern-blue.png"); }
+  background-image: url("../images/pattern-blue.png");
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  -moz-justify-content: flex-start;
+  justify-content: flex-start; }
   #work .wrapper {
-    width: inherit;
-    display: none; }
+    width: calc(100vw - 120px - 66px);
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-shrink: 0;
+    -moz-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    -webkit-justify-content: flex-start;
+    -moz-justify-content: flex-start;
+    justify-content: flex-start;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    -webkit-align-items: flex-start;
+    -moz-align-items: flex-start;
+    align-items: flex-start; }
     #work .wrapper article {
       position: relative;
       width: calc(100% / 3);
@@ -1300,32 +1350,6 @@ button {
         background-image: url("../images/thumbs/mana.jpg"); }
       #work .wrapper article.mamacita {
         background-image: url("../images/thumbs/mamacita.jpg"); }
-    #work .wrapper.is-visible {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -moz-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-direction: normal;
-      -webkit-box-orient: horizontal;
-      -webkit-flex-direction: row;
-      -moz-flex-direction: row;
-      -ms-flex-direction: row;
-      flex-direction: row;
-      -webkit-flex-wrap: wrap;
-      -moz-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-      -webkit-box-pack: start;
-      -ms-flex-pack: start;
-      -webkit-justify-content: flex-start;
-      -moz-justify-content: flex-start;
-      justify-content: flex-start;
-      -webkit-box-align: start;
-      -ms-flex-align: start;
-      -webkit-align-items: flex-start;
-      -moz-align-items: flex-start;
-      align-items: flex-start; }
 
 #contact {
   height: calc(100vh - 80px);

@@ -8,17 +8,26 @@ class Navigator {
         this.initialSection = this.dom.main.querySelector('section');
         this.targetSection = undefined;
         this.sectionsArray = this.dom.main.querySelectorAll('section');
+
+        this.logo = document.querySelector('header .logo');
         this.links = document.querySelectorAll('nav a');
 
-        this.sectionHeader = document.querySelector('.current-section h4');
+        this.currentlyViewing = document.querySelector('.current-section h4');
 
         this.btnUp = this.dom.main.querySelector('.scroll.up');
         this.btnDown = this.dom.main.querySelector('.scroll.down');
         this.btnTop = this.dom.main.querySelector('.scroll.top');
+
+        this.initialWrapper = this.dom.main.querySelector('#work .wrapper');
+        this.targetWrapper = undefined;
+        this.wrappersArray = this.dom.main.querySelectorAll('#work .wrapper');
+
         this.btnRight = this.dom.main.querySelector('.scroll.right');
+        this.btnLeft = this.dom.main.querySelector('.scroll.left');
 
         this._state = {
-            currentSection: this.initialSection
+            currentSection: this.initialSection,
+            currentWrapper: this.initialWrapper,
         };
     }
 
@@ -33,16 +42,27 @@ class Navigator {
     }
 
     _updateDom() {
+        // Scroll to the right section
         this._state.currentSection.scrollIntoView({behavior: 'smooth'});
+
+        // Update the URL
         history.replaceState({}, '', '#' + this._state.currentSection.id);
 
-        // Set the current section id as the currently viewing title on the header
-        this.sectionHeader.textContent = this._state.currentSection.id;
+        // Set the currently viewing title on the header
+        this.currentlyViewing.textContent = this._state.currentSection.id;
     }
 
     eventHandler() {
         window.addEventListener('load', () => {
             this.setButtonVisibility();
+        });
+
+        this.logo.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            this.targetSection = this.dom.main.querySelector('#home');
+
+            this.changeSection(this.targetSection);
         });
 
         // Listen to click on the main nav links
@@ -54,7 +74,7 @@ class Navigator {
 
                 this.targetSection = this.dom.main.querySelector('section#' + id);
 
-                this.navigate(this.targetSection);
+                this.changeSection(this.targetSection);
             });
         });
 
@@ -62,19 +82,33 @@ class Navigator {
         this.btnUp.addEventListener('click', () => {
             this.targetSection = this._state.currentSection.previousElementSibling;
 
-            this.navigate(this.targetSection);
+            this.changeSection(this.targetSection);
         });
 
         // Listen to clicks on the scroll down button
         this.btnDown.addEventListener('click', () => {
             this.targetSection = this._state.currentSection.nextElementSibling;
 
-            this.navigate(this.targetSection);
+            this.changeSection(this.targetSection);
         });
 
         // Listen to clicks on the back to top button
         this.btnTop.addEventListener('click', () => {
-            this.navigate(this.initialSection);
+            this.changeSection(this.initialSection);
+        });
+
+        // Listen to clicks on the navigate right button
+        this.btnRight.addEventListener('click', () => {
+            this.targetWrapper = this._state.currentWrapper.nextElementSibling;
+
+            this.changeWrapper(this.targetWrapper);
+        });
+
+        // Listen to clicks on the navigate left button
+        this.btnLeft.addEventListener('click', () => {
+            this.targetWrapper = this._state.currentWrapper.previousElementSibling;
+
+            this.changeWrapper(this.targetWrapper);
         });
 
         // Listen to keypress events
@@ -93,7 +127,7 @@ class Navigator {
                 this._state.currentSection !== this.sectionsArray[0]) {
                     this.targetSection = this._state.currentSection.previousElementSibling;
 
-                    this.navigate(this.targetSection);
+                    this.changeSection(this.targetSection);
             }
 
             // If you press down navigate down
@@ -103,17 +137,21 @@ class Navigator {
                 this._state.currentSection !== this.sectionsArray[this.sectionsArray.length - 1]) {
                     this.targetSection = this._state.currentSection.nextElementSibling;
 
-                    this.navigate(this.targetSection);
+                    this.changeSection(this.targetSection);
             }
 
             // If you are on the work section allow left/right navigation
             if (this._state.currentSection.id === 'work') {
-                if (e.code === 'ArrowLeft' || e.code === 'KeyA') {
-                    // Navigate to the left
+                if (e.code === 'ArrowRight' || e.code === 'KeyD') {
+                    this.targetWrapper = this._state.currentWrapper.nextElementSibling;
+
+                    this.changeWrapper(this.targetWrapper);
                 }
 
-                if (e.code === 'ArrowRight' || e.code === 'KeyD') {
-                    // Navigate to the right
+                if (e.code === 'ArrowLeft' || e.code === 'KeyA') {
+                    this.targetWrapper = this._state.currentWrapper.previousElementSibling;
+
+                    this.changeWrapper(this.targetWrapper);
                 }
             }
         });
@@ -122,9 +160,15 @@ class Navigator {
         this.dom.main.addEventListener('scroll', () => this.checkVisibleSection());
     }
 
-    navigate(targetSection) {
+    changeSection(targetSection) {
         this.setState({currentSection: targetSection});
         this.setCurrentLink();
+        this.setButtonVisibility();
+    }
+
+    changeWrapper(targetWrapper) {
+        this.setState({currentWrapper: targetWrapper});
+        this._state.currentWrapper.scrollIntoView({behavior: 'smooth'});
         this.setButtonVisibility();
     }
 
@@ -167,12 +211,28 @@ class Navigator {
             this.btnDown.classList.remove('on-yellow');
         }
 
-        // Show the button to move right only on the work section
+        // Show the button to move left/right only on the work section
         if (this._state.currentSection.id === 'work') {
             this.btnRight.classList.remove('is-hidden');
+
+            // If the current wrapper is not the first one show the left button
+            if (this._state.currentWrapper !== this.wrappersArray[0]) {
+                this.btnLeft.classList.remove('is-hidden');
+            }
+
+            // If the current wrapper is the first one hide the left button
+            if (this._state.currentWrapper === this.wrappersArray[0]) {
+                this.btnLeft.classList.add('is-hidden');
+            }
+
+            // If the current wrapper is the last one hide the right btn
+            if (this._state.currentWrapper === this.wrappersArray[this.wrappersArray.length - 1]) {
+                this.btnRight.classList.add('is-hidden');
+            }
         }
         else {
             this.btnRight.classList.add('is-hidden');
+            this.btnLeft.classList.add('is-hidden');
         }
     }
 
@@ -182,7 +242,7 @@ class Navigator {
         Array.from(this.sectionsArray).forEach(section => {
             let sectionTop = section.getBoundingClientRect().top;
 
-            if (mainTop === sectionTop) this.navigate(section);
+            if (mainTop === sectionTop) this.changeSection(section);
         });
     }
 
