@@ -192,6 +192,7 @@ header {
       margin-bottom: 4px;
       padding: 8px;
       border: 1px solid transparent;
+      transition: all 0.2s ease;
       cursor: pointer; }
       header nav a:active {
         color: #ffffff; }
@@ -227,7 +228,8 @@ header {
     transform: rotate(180deg); }
     header .current-section h4, header .current-section h6 {
       display: block;
-      text-align: center; }
+      text-align: center;
+      transition: all 0.2s ease; }
     header .current-section h6 {
       margin-left: 4px; }
   header .social {

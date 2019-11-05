@@ -35,6 +35,7 @@ header {
 			margin-bottom: $space-tiny;
 			padding: $space-small;
 			border: 1px solid transparent;
+			transition: all $speed-default ease;
 			cursor: pointer;
 
 			&:active {
@@ -62,6 +63,7 @@ header {
 		h4, h6 {
 			display: block;
 			text-align: center;
+			transition: all $speed-default ease;
 		}
 
 		h6 {

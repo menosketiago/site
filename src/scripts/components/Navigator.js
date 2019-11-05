@@ -7,7 +7,7 @@ class Navigator {
 
         this.initialSection = this.dom.main.querySelector('section');
         this.targetSection = undefined;
-        this.sections = this.dom.main.querySelectorAll('section');
+        this.sectionsArray = this.dom.main.querySelectorAll('section');
         this.links = document.querySelectorAll('nav a');
 
         this.sectionHeader = document.querySelector('.current-section h4');
@@ -84,9 +84,9 @@ class Navigator {
 
             // If you press up navigate up
             if (e.code === 'ArrowUp' &&
-                this._state.currentSection !== this.sections[0] ||
+                this._state.currentSection !== this.sectionsArray[0] ||
                 e.code === 'KeyW' &&
-                this._state.currentSection !== this.sections[0]) {
+                this._state.currentSection !== this.sectionsArray[0]) {
                     this.targetSection = this._state.currentSection.previousElementSibling;
 
                     this.navigate(this.targetSection);
@@ -94,9 +94,9 @@ class Navigator {
 
             // If you press down navigate down
             if (e.code === 'ArrowDown' &&
-                this._state.currentSection !== this.sections[this.sections.length - 1] ||
+                this._state.currentSection !== this.sectionsArray[this.sectionsArray.length - 1] ||
                 e.code === 'KeyS' &&
-                this._state.currentSection !== this.sections[this.sections.length - 1]) {
+                this._state.currentSection !== this.sectionsArray[this.sectionsArray.length - 1]) {
                     this.targetSection = this._state.currentSection.nextElementSibling;
 
                     this.navigate(this.targetSection);
@@ -113,6 +113,9 @@ class Navigator {
                 }
             }
         });
+
+        // Listen to main scroll
+        this.dom.main.addEventListener('scroll', () => this.checkVisibleSection());
     }
 
     navigate(targetSection) {
@@ -133,7 +136,7 @@ class Navigator {
 
     setButtonVisibility() {
         // Show or hide the up button
-        if (this._state.currentSection === this.sections[0]) {
+        if (this._state.currentSection === this.sectionsArray[0]) {
             this.btnUp.classList.add('is-hidden');
         }
         else {
@@ -141,7 +144,7 @@ class Navigator {
         }
 
         // Show or hide the down button and the back to top button
-        if (this._state.currentSection === this.sections[this.sections.length - 1]) {
+        if (this._state.currentSection === this.sectionsArray[this.sectionsArray.length - 1]) {
             this.btnDown.classList.add('is-hidden');
             this.btnTop.classList.remove('is-hidden')
         }
@@ -167,6 +170,16 @@ class Navigator {
         else {
             this.btnRight.classList.add('is-hidden');
         }
+    }
+
+    checkVisibleSection() {
+        let mainTop = this.dom.main.getBoundingClientRect().top;
+
+        Array.from(this.sectionsArray).forEach(section => {
+            let sectionTop = section.getBoundingClientRect().top;
+
+            if (mainTop === sectionTop) this.navigate(section);
+        });
     }
 
 }
