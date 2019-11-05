@@ -26,12 +26,16 @@ main {
 	width: $main-width;
 	height: $main-height;
 	margin: $space-large 0;
+	scroll-snap-type: mandatory;
+  	scroll-snap-points-y: repeat(300px);
+  	scroll-snap-type: y mandatory;
 }
 
 section {
 	width: 100%;
 	min-height: $main-height;
 	padding: 40px;
+	scroll-snap-align: start;
 
 	@include flexbox;
 	@include flex-flow(column);

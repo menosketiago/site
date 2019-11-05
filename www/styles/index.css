@@ -94,12 +94,16 @@ main {
   overflow: auto;
   width: calc(100vw - 120px - 66px);
   height: calc(100vh - 24px - 24px);
-  margin: 24px 0; }
+  margin: 24px 0;
+  scroll-snap-type: mandatory;
+  scroll-snap-points-y: repeat(300px);
+  scroll-snap-type: y mandatory; }
 
 section {
   width: 100%;
   min-height: calc(100vh - 24px - 24px);
   padding: 40px;
+  scroll-snap-align: start;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-flex;

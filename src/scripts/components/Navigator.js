@@ -72,6 +72,47 @@ class Navigator {
         this.btnTop.addEventListener('click', () => {
             this.navigate(this.initialSection);
         });
+
+        // Listen to keypress events
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'ArrowUp'||
+                e.code === 'ArrowRight' ||
+                e.code === 'ArrowLeft' ||
+                e.code === 'ArrowDown') {
+                    e.preventDefault();
+            }
+
+            // If you press up navigate up
+            if (e.code === 'ArrowUp' &&
+                this._state.currentSection !== this.sections[0] ||
+                e.code === 'KeyW' &&
+                this._state.currentSection !== this.sections[0]) {
+                    this.targetSection = this._state.currentSection.previousElementSibling;
+
+                    this.navigate(this.targetSection);
+            }
+
+            // If you press down navigate down
+            if (e.code === 'ArrowDown' &&
+                this._state.currentSection !== this.sections[this.sections.length - 1] ||
+                e.code === 'KeyS' &&
+                this._state.currentSection !== this.sections[this.sections.length - 1]) {
+                    this.targetSection = this._state.currentSection.nextElementSibling;
+
+                    this.navigate(this.targetSection);
+            }
+
+            // If you are on the work section allow left/right navigation
+            if (this._state.currentSection.id === 'work') {
+                if (e.code === 'ArrowLeft' || e.code === 'KeyA') {
+                    // Navigate to the left
+                }
+
+                if (e.code === 'ArrowRight' || e.code === 'KeyD') {
+                    // Navigate to the right
+                }
+            }
+        });
     }
 
     navigate(targetSection) {
