@@ -45,6 +45,7 @@
 				bottom: 0;
 				left: 0;
 				opacity: 0;
+				transition: inherit;
 			}
 
 			// The filtered image
@@ -57,7 +58,7 @@
 				@include filter(grayscale, 100%);
 			}
 
-			// The blue overlay
+			// BLUE OVERLAY
 
 			&::after {
 				background-color: $blue;
@@ -106,7 +107,8 @@
 				transition: inherit;
 			}
 
-			&:hover {
+			&:hover,
+			&:focus {
 				&::before {
 					opacity: 1;
 				}
@@ -117,6 +119,17 @@
 
 				h2, h5, .view {
 					opacity: 1;
+				}
+			}
+
+			&:active {
+				&::before,
+				&::after {
+					opacity: 0;
+				}
+
+				h2, h5, .view {
+					opacity: 0;
 				}
 			}
 

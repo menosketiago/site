@@ -20,6 +20,8 @@ $bold: 600;
 
 $text-shadow: 0 2px 0 rgba(0, 0, 0, 0.8);
 
+$max-text-width: 700px;
+
 // SPEEDS
 
 $speed-default: .2s;
@@ -32,6 +34,7 @@ $space-tiny: 4px;
 $space-small: $space-tiny * 2;
 $space-base: $space-tiny * 3;
 $space-large: $space-base * 2;
+$space-extra: $space-base * 4;
 
 $header-width: 120px;
 $footer-width: 66px;
@@ -41,12 +44,14 @@ $main-height: calc(100vh - #{$space-large} - #{$space-large});
 
 $scroll-btn-width: $space-large * 2;
 
-$max-text-width: 1024px;
-
 $stroke-height: 3px;
+
+// Z-INDEXES
+
+$scroll-btn-index: 100;
+$modal-index: 9999;
 
 // OTHER
 
-$shadow-focus: 0 0 0 $space-small $yellow;
-$btn-scroll-shadow-focus: 0 0 $space-small $space-tiny rgba($yellow, .6);
-$btn-scroll-on-yellow-shadow-focus: 0 0 $space-small $space-tiny rgba($blue, .6);
+$shadow-focus: 0 0 0 $space-tiny $yellow;
+$btn-scroll-shadow-focus: 0 0 0 $space-tiny $blue;

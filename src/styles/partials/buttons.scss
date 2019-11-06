@@ -4,7 +4,7 @@ button {
     cursor: pointer;
 
     &.scroll {
-        z-index: 100;
+        z-index: $scroll-btn-index;
         position: fixed;
         width: $scroll-btn-width;
         height: $scroll-btn-width;
@@ -14,6 +14,7 @@ button {
 
         svg {
             vertical-align: middle;
+            pointer-events: none;
 
             @include transform(scale(1.2));
         }
@@ -28,7 +29,7 @@ button {
             background: $yellow;
         }
 
-        &:focus {
+        &.has-focus {
             box-shadow: $btn-scroll-shadow-focus;
         }
 
@@ -205,8 +206,8 @@ button {
                 background: $blue;
             }
 
-            &:focus {
-                box-shadow: $btn-scroll-on-yellow-shadow-focus;
+            &.has-focus {
+                box-shadow: $shadow-focus;
             }
         }
 
@@ -215,6 +216,39 @@ button {
         &.is-hidden {
             opacity: 0;
             pointer-events: none;
+        }
+    }
+
+    // MODAL CLOSE BUTTON
+
+    &.close {
+        position: absolute;
+        right: $footer-width + $space-extra;
+        width: $scroll-btn-width;
+        height: $scroll-btn-width;
+        color: $blue;
+        background: $yellow;
+        transition: all $speed-default ease;
+
+        svg {
+            vertical-align: middle;
+            pointer-events: none;
+
+            @include transform(scale(1.2));
+        }
+
+        &:hover {
+            color: $yellow;
+            background: $blue;
+        }
+
+        &:active {
+            color: $blue;
+            background: $yellow;
+        }
+
+        &.has-focus {
+            box-shadow: $btn-scroll-shadow-focus;
         }
     }
 }

@@ -3,24 +3,22 @@ class Modal {
     constructor(element) {
         this.dom = {
             modal: element,
+            article: element.querySelector('article'),
             id: element.id
         }
 
-        this.triggers = document.querySelectorAll(`[data-trigger="${this.dom.id}"]`);
+        this.triggersArray = document.querySelectorAll('#work .item');
+        this.btnClose = this.dom.modal.querySelector('.close');
+        this.btnRight = document.querySelector('.scroll.right');
 
         this._state = {
             isVisible: this.dom.modal.classList.contains('is-visible')
-        };
-
-        this.events = {
-            closeModalEvent: new CustomEvent('closeModal', {detail: {id: this.id}}),
-            showModalEvent: new CustomEvent('showModal', {detail: {id: this.id}})
         };
     }
 
     init() {
         this.eventHandler();
-        this.fetchContent();
+        // this.fetchContent();
     }
 
     setState(props) {
@@ -30,30 +28,47 @@ class Modal {
 
     _updateDom() {
         if (this._state.isVisible) {
-            this.dom.modal.classList.add('is-visible');
-            this.dom.modal.dispatchEvent(this.events.showModalEvent);
+            this.dom.modal.classList.add('is-open');
         }
         else {
-            this.dom.modal.classList.remove('is-visible');
-            this.dom.modal.dispatchEvent(this.events.closeModalEvent);
+            this.dom.modal.classList.remove('is-open');
         }
     }
 
     eventHandler() {
+        document.addEventListener('click', (e) => {
+            // Listen to trigger click to open modal
+            Array.from(this.triggersArray).forEach(trigger => {
+                if (e.target === trigger) this.show();
+            });
 
+            // Listen to the close button click
+            if (e.target === this.btnClose) this.hide();
+        });
+
+        document.addEventListener('keyup', (e) => {
+            // Close modal on Esc keypress
+            if (e.key === 'Escape') this.hide();
+
+            // Listen to trigger click to open modal
+            Array.from(this.triggersArray).forEach(trigger => {
+                if (e.target === trigger && e.key === 'Enter') this.show();
+            });
+        });
     }
 
     show() {
         this.setState({isVisible: true});
 
-        // Close Dialog on Esc keypress
-        document.addEventListener('keyup', (e) => {
-            if (e.code === 'Escape') this.hide();
-        }, { once: true });
+        // Hide the work nav button
+        this.btnRight.classList.add('is-hidden');
     }
 
     hide() {
         this.setState({isVisible: false});
+
+        // Show the work nav button
+        this.btnRight.classList.remove('is-hidden');
     }
 
     fetchContent() {

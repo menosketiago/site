@@ -1,18 +1,50 @@
 .modal {
+    z-index: $modal-index;
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    height: 100vh;
 	overflow: auto;
-    padding: 40px;
-    background: $white;
-    transition: transform $speed-slow ease;
+    background: transparent;
+    backdrop-filter: blur(2px);
 
     @include transform(translate(100%, 0));
 
+    article {
+        position: relative;
+        width: 75vw;
+        height: 100vh;
+        margin-left: 25vw;
+        padding: $space-extra;
+        background: $white;
+        transition: transform $speed-slow ease;
+
+        @include transform(translate(100%, 0));
+
+        h1 {
+            margin-bottom: $space-large;
+        }
+
+        p {
+            max-width: $max-text-width;
+        }
+    }
+
+    // MODAL OPENING CLASS
+
     &.is-open {
-        @include transform(translate(25%, 0));
+        margin-right: $footer-width;
+        background: rgba($white, .8);
+        cursor: pointer;
+
+        @include transform(translate(0, 0));
+
+        article {
+            margin-right: $footer-width;
+            cursor: default;
+
+            @include transform(translate(0, 0));
+        }
     }
 }

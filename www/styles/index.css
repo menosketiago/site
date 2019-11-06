@@ -17,6 +17,7 @@ h1, h2, h3, h4, h5, header nav a, h6 {
   text-transform: uppercase; }
 
 h1 {
+  color: #008BCC;
   font-size: 36px; }
 
 h2 {
@@ -53,7 +54,7 @@ a {
     color: #ffffff;
     background: #008BCC;
     text-decoration: none; }
-  a:focus {
+  a.has-focus {
     background: #FFEC00; }
 
 mark {
@@ -195,9 +196,9 @@ header {
     width: 72px;
     height: 72px;
     border-radius: 50%; }
-    header .logo:hover, header .logo:active, header .logo:focus {
+    header .logo:hover, header .logo:active {
       background: transparent; }
-    header .logo:focus {
+    header .logo.has-focus {
       box-shadow: 0 0 0 8px #FFEC00; }
     header .logo img {
       width: inherit;
@@ -309,6 +310,7 @@ button {
     transition: all 0.2s ease; }
     button.scroll svg {
       vertical-align: middle;
+      pointer-events: none;
       -webkit-transform: scale(1.2);
       -khtml-transform: scale(1.2);
       -moz-transform: scale(1.2);
@@ -321,8 +323,8 @@ button {
     button.scroll:active {
       color: #008BCC;
       background: #FFEC00; }
-    button.scroll:focus {
-      box-shadow: 0 0 8px 4px rgba(255, 236, 0, 0.6); }
+    button.scroll.has-focus {
+      box-shadow: 0 0 0 4px #008BCC; }
     button.scroll.up, button.scroll.down, button.scroll.top {
       left: 50%; }
     button.scroll.up {
@@ -1153,11 +1155,36 @@ button {
       button.scroll.on-yellow:active {
         color: #FFEC00;
         background: #008BCC; }
-      button.scroll.on-yellow:focus {
-        box-shadow: 0 0 8px 4px rgba(0, 139, 204, 0.6); }
+      button.scroll.on-yellow.has-focus {
+        box-shadow: 0 0 0 4px #FFEC00; }
     button.scroll.is-hidden {
       opacity: 0;
       pointer-events: none; }
+  button.close {
+    position: absolute;
+    right: 114px;
+    width: 48px;
+    height: 48px;
+    color: #008BCC;
+    background: #FFEC00;
+    transition: all 0.2s ease; }
+    button.close svg {
+      vertical-align: middle;
+      pointer-events: none;
+      -webkit-transform: scale(1.2);
+      -khtml-transform: scale(1.2);
+      -moz-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+      -o-transform: scale(1.2);
+      transform: scale(1.2); }
+    button.close:hover {
+      color: #FFEC00;
+      background: #008BCC; }
+    button.close:active {
+      color: #008BCC;
+      background: #FFEC00; }
+    button.close.has-focus {
+      box-shadow: 0 0 0 4px #008BCC; }
 
 #home {
   height: calc(100vh - 80px);
@@ -1289,7 +1316,8 @@ button {
         right: 0;
         bottom: 0;
         left: 0;
-        opacity: 0; }
+        opacity: 0;
+        transition: inherit; }
       #work .wrapper .item::before {
         background-image: inherit;
         background-size: inherit;
@@ -1339,12 +1367,16 @@ button {
         z-index: 1;
         opacity: 0;
         transition: inherit; }
-      #work .wrapper .item:hover::before {
+      #work .wrapper .item:hover::before, #work .wrapper .item:focus::before {
         opacity: 1; }
-      #work .wrapper .item:hover::after {
+      #work .wrapper .item:hover::after, #work .wrapper .item:focus::after {
         opacity: .8; }
-      #work .wrapper .item:hover h2, #work .wrapper .item:hover h5, #work .wrapper .item:hover header nav a, header nav #work .wrapper .item:hover a, #work .wrapper .item:hover .view {
+      #work .wrapper .item:hover h2, #work .wrapper .item:hover h5, #work .wrapper .item:hover header nav a, header nav #work .wrapper .item:hover a, #work .wrapper .item:hover .view, #work .wrapper .item:focus h2, #work .wrapper .item:focus h5, #work .wrapper .item:focus header nav a, header nav #work .wrapper .item:focus a, #work .wrapper .item:focus .view {
         opacity: 1; }
+      #work .wrapper .item:active::before, #work .wrapper .item:active::after {
+        opacity: 0; }
+      #work .wrapper .item:active h2, #work .wrapper .item:active h5, #work .wrapper .item:active header nav a, header nav #work .wrapper .item:active a, #work .wrapper .item:active .view {
+        opacity: 0; }
       #work .wrapper .item#trioptima {
         background-image: url("../images/thumbs/trioptima.jpg"); }
       #work .wrapper .item#ericsson {
@@ -1380,26 +1412,55 @@ button {
     text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5); }
 
 .modal {
+  z-index: 9999;
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  height: 100vh;
   overflow: auto;
-  padding: 40px;
-  background: #ffffff;
-  transition: transform 0.4s ease;
+  background: transparent;
+  backdrop-filter: blur(2px);
   -webkit-transform: translate(100%, 0);
   -khtml-transform: translate(100%, 0);
   -moz-transform: translate(100%, 0);
   -ms-transform: translate(100%, 0);
   -o-transform: translate(100%, 0);
   transform: translate(100%, 0); }
+  .modal article {
+    position: relative;
+    width: 75vw;
+    height: 100vh;
+    margin-left: 25vw;
+    padding: 48px;
+    background: #ffffff;
+    transition: transform 0.4s ease;
+    -webkit-transform: translate(100%, 0);
+    -khtml-transform: translate(100%, 0);
+    -moz-transform: translate(100%, 0);
+    -ms-transform: translate(100%, 0);
+    -o-transform: translate(100%, 0);
+    transform: translate(100%, 0); }
+    .modal article h1 {
+      margin-bottom: 24px; }
+    .modal article p {
+      max-width: 700px; }
   .modal.is-open {
-    -webkit-transform: translate(25%, 0);
-    -khtml-transform: translate(25%, 0);
-    -moz-transform: translate(25%, 0);
-    -ms-transform: translate(25%, 0);
-    -o-transform: translate(25%, 0);
-    transform: translate(25%, 0); }
+    margin-right: 66px;
+    background: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    -webkit-transform: translate(0, 0);
+    -khtml-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0); }
+    .modal.is-open article {
+      margin-right: 66px;
+      cursor: default;
+      -webkit-transform: translate(0, 0);
+      -khtml-transform: translate(0, 0);
+      -moz-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+      -o-transform: translate(0, 0);
+      transform: translate(0, 0); }

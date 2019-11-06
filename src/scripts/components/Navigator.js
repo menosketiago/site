@@ -123,7 +123,7 @@ class Navigator {
             // If you press up navigate up
             if (e.key === 'ArrowUp' &&
                 this._state.currentSection !== this.sectionsArray[0] ||
-                e.key === 'KeyW' &&
+                e.key === 'w' &&
                 this._state.currentSection !== this.sectionsArray[0]) {
                     this.targetSection = this._state.currentSection.previousElementSibling;
 
@@ -133,7 +133,7 @@ class Navigator {
             // If you press down navigate down
             if (e.key === 'ArrowDown' &&
                 this._state.currentSection !== this.sectionsArray[this.sectionsArray.length - 1] ||
-                e.key === 'KeyS' &&
+                e.key === 's' &&
                 this._state.currentSection !== this.sectionsArray[this.sectionsArray.length - 1]) {
                     this.targetSection = this._state.currentSection.nextElementSibling;
 
@@ -145,7 +145,7 @@ class Navigator {
                 if (this._state.currentWrapper !== this.wrappersArray[this.wrappersArray.length - 1] &&
                     e.key === 'ArrowRight' ||
                     this._state.currentWrapper !== this.wrappersArray[this.wrappersArray.length - 1] &&
-                    e.key === 'KeyD') {
+                    e.key === 'd') {
                         this.targetWrapper = this._state.currentWrapper.nextElementSibling;
 
                         this.changeWrapper(this.targetWrapper);
@@ -154,7 +154,7 @@ class Navigator {
                 if (this._state.currentWrapper !== this.wrappersArray[0] &&
                     e.key === 'ArrowLeft' ||
                     this._state.currentWrapper !== this.wrappersArray[0] &&
-                    e.key === 'KeyA') {
+                    e.key === 'a') {
                         this.targetWrapper = this._state.currentWrapper.previousElementSibling;
 
                         this.changeWrapper(this.targetWrapper);
