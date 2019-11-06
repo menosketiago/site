@@ -43,6 +43,7 @@ p {
 
 a {
     color: $blue;
+    outline: 0;
     transition: all $speed-default ease;
 
     &:hover {
@@ -54,6 +55,10 @@ a {
         color: $white;
         background: $blue;
         text-decoration: none;
+    }
+
+    &:focus {
+        background: $yellow;
     }
 }
 

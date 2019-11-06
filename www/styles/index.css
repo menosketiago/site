@@ -44,6 +44,7 @@ p {
 
 a {
   color: #008BCC;
+  outline: 0;
   transition: all 0.2s ease; }
   a:hover {
     background: #FFEC00;
@@ -52,6 +53,8 @@ a {
     color: #ffffff;
     background: #008BCC;
     text-decoration: none; }
+  a:focus {
+    background: #FFEC00; }
 
 mark {
   color: #FFEC00;
@@ -188,10 +191,14 @@ header {
   -moz-justify-content: space-between;
   justify-content: space-between; }
   header .logo {
+    display: block;
     width: 72px;
-    height: 72px; }
-    header .logo:hover, header .logo:active {
+    height: 72px;
+    border-radius: 50%; }
+    header .logo:hover, header .logo:active, header .logo:focus {
       background: transparent; }
+    header .logo:focus {
+      box-shadow: 0 0 0 8px #FFEC00; }
     header .logo img {
       width: inherit;
       height: inherit; }
@@ -211,6 +218,8 @@ header {
         border-color: #008BCC;
         text-decoration: none;
         pointer-events: none; }
+        header nav a.is-current:focus {
+          background: transparent; }
   header .current-section {
     margin-bottom: 24px;
     writing-mode: vertical-lr;
@@ -312,6 +321,8 @@ button {
     button.scroll:active {
       color: #008BCC;
       background: #FFEC00; }
+    button.scroll:focus {
+      box-shadow: 0 0 8px 4px rgba(255, 236, 0, 0.6); }
     button.scroll.up, button.scroll.down, button.scroll.top {
       left: 50%; }
     button.scroll.up {
@@ -1142,6 +1153,8 @@ button {
       button.scroll.on-yellow:active {
         color: #FFEC00;
         background: #008BCC; }
+      button.scroll.on-yellow:focus {
+        box-shadow: 0 0 8px 4px rgba(0, 139, 204, 0.6); }
     button.scroll.is-hidden {
       opacity: 0;
       pointer-events: none; }
@@ -1230,7 +1243,7 @@ button {
     -webkit-align-items: flex-start;
     -moz-align-items: flex-start;
     align-items: flex-start; }
-    #work .wrapper article {
+    #work .wrapper .item {
       position: relative;
       width: calc(100% / 3);
       height: calc(100vh / 3 - 8px - 8px);
@@ -1268,7 +1281,7 @@ button {
       -webkit-align-items: center;
       -moz-align-items: center;
       align-items: center; }
-      #work .wrapper article::before, #work .wrapper article::after {
+      #work .wrapper .item::before, #work .wrapper .item::after {
         content: '';
         z-index: 0;
         position: absolute;
@@ -1277,7 +1290,7 @@ button {
         bottom: 0;
         left: 0;
         opacity: 0; }
-      #work .wrapper article::before {
+      #work .wrapper .item::before {
         background-image: inherit;
         background-size: inherit;
         background-position: inherit;
@@ -1286,23 +1299,23 @@ button {
         -ms-filter: grayscale(100%);
         -o-filter: grayscale(100%);
         filter: grayscale(100%); }
-      #work .wrapper article::after {
+      #work .wrapper .item::after {
         background-color: #008BCC;
         background-image: url("../images/pattern-white-faded.png"); }
-      #work .wrapper article h2 {
+      #work .wrapper .item h2 {
         color: #ffffff;
         text-align: center; }
-      #work .wrapper article h5, #work .wrapper article header nav a, header nav #work .wrapper article a {
+      #work .wrapper .item h5, #work .wrapper .item header nav a, header nav #work .wrapper .item a {
         margin-bottom: 12px;
         color: #FFEC00; }
-        #work .wrapper article h5::after, #work .wrapper article header nav a::after, header nav #work .wrapper article a::after {
+        #work .wrapper .item h5::after, #work .wrapper .item header nav a::after, header nav #work .wrapper .item a::after {
           content: '';
           display: block;
           width: 100%;
           height: 2px;
           margin-top: 8px;
           background: #FFEC00; }
-      #work .wrapper article .view {
+      #work .wrapper .item .view {
         margin-top: 24px;
         padding: 8px;
         color: #008BCC;
@@ -1320,35 +1333,35 @@ button {
         -webkit-align-items: center;
         -moz-align-items: center;
         align-items: center; }
-        #work .wrapper article .view svg {
+        #work .wrapper .item .view svg {
           margin-right: 4px; }
-      #work .wrapper article h2, #work .wrapper article h5, #work .wrapper article header nav a, header nav #work .wrapper article a, #work .wrapper article .view {
+      #work .wrapper .item h2, #work .wrapper .item h5, #work .wrapper .item header nav a, header nav #work .wrapper .item a, #work .wrapper .item .view {
         z-index: 1;
         opacity: 0;
         transition: inherit; }
-      #work .wrapper article:hover::before {
+      #work .wrapper .item:hover::before {
         opacity: 1; }
-      #work .wrapper article:hover::after {
+      #work .wrapper .item:hover::after {
         opacity: .8; }
-      #work .wrapper article:hover h2, #work .wrapper article:hover h5, #work .wrapper article:hover header nav a, header nav #work .wrapper article:hover a, #work .wrapper article:hover .view {
+      #work .wrapper .item:hover h2, #work .wrapper .item:hover h5, #work .wrapper .item:hover header nav a, header nav #work .wrapper .item:hover a, #work .wrapper .item:hover .view {
         opacity: 1; }
-      #work .wrapper article.trioptima {
+      #work .wrapper .item#trioptima {
         background-image: url("../images/thumbs/trioptima.jpg"); }
-      #work .wrapper article.ericsson {
+      #work .wrapper .item#ericsson {
         background-image: url("../images/thumbs/ericsson.jpg"); }
-      #work .wrapper article.loki {
+      #work .wrapper .item#loki {
         background-image: url("../images/thumbs/loki.jpg"); }
-      #work .wrapper article.alien {
+      #work .wrapper .item#alien {
         background-image: url("../images/thumbs/alien.jpg"); }
-      #work .wrapper article.goo {
+      #work .wrapper .item#goo {
         background-image: url("../images/thumbs/goo.jpg"); }
-      #work .wrapper article.wannaplayer {
+      #work .wrapper .item#wannaplayer {
         background-image: url("../images/thumbs/wannaplayer.jpg"); }
-      #work .wrapper article.nem-tudo {
+      #work .wrapper .item#nem-tudo {
         background-image: url("../images/thumbs/nem-tudo.jpg"); }
-      #work .wrapper article.mana {
+      #work .wrapper .item#mana {
         background-image: url("../images/thumbs/mana.jpg"); }
-      #work .wrapper article.mamacita {
+      #work .wrapper .item#mamacita {
         background-image: url("../images/thumbs/mamacita.jpg"); }
 
 #contact {

@@ -28,6 +28,10 @@ button {
             background: $yellow;
         }
 
+        &:focus {
+            box-shadow: $btn-scroll-shadow-focus;
+        }
+
         &.up,
         &.down,
         &.top {
@@ -199,6 +203,10 @@ button {
             &:active {
                 color: $yellow;
                 background: $blue;
+            }
+
+            &:focus {
+                box-shadow: $btn-scroll-on-yellow-shadow-focus;
             }
         }
 

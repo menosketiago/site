@@ -11,12 +11,19 @@ header {
     @include justify-content(space-between);
 
 	.logo {
+		display: block;
 		width: $header-width - ($space-large * 2);
 		height: $header-width - ($space-large * 2);
+		border-radius: 50%;
 
 		&:hover,
-		&:active {
+		&:active,
+		&:focus {
 			background: transparent;
+		}
+
+		&:focus {
+			box-shadow: $shadow-focus;
 		}
 
 		img {
@@ -47,6 +54,10 @@ header {
 				border-color: $blue;
 				text-decoration: none;
 				pointer-events: none;
+
+				&:focus {
+					background: transparent;
+				}
 			}
 		}
 	}

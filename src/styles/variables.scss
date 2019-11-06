@@ -44,3 +44,9 @@ $scroll-btn-width: $space-large * 2;
 $max-text-width: 1024px;
 
 $stroke-height: 3px;
+
+// OTHER
+
+$shadow-focus: 0 0 0 $space-small $yellow;
+$btn-scroll-shadow-focus: 0 0 $space-small $space-tiny rgba($yellow, .6);
+$btn-scroll-on-yellow-shadow-focus: 0 0 $space-small $space-tiny rgba($blue, .6);

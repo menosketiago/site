@@ -1,10 +1,12 @@
 // COMPONENTS
 
+import Focus from './components/Focus';
 import Modal from './components/Modal';
 import Navigator from './components/Navigator';
 import Year from './components/Year';
 
 const tiago = window.tiago = {
+    Focus,
     Modal,
     Navigator,
     Year
@@ -12,6 +14,10 @@ const tiago = window.tiago = {
 
 
 window.onload = () => {
+    // FOCUS
+    let focus = new Focus(document);
+    focus.init();
+
     // CURRENT YEAR
     let yearArray = document.querySelectorAll('[data-year]');
 

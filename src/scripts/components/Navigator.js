@@ -113,17 +113,17 @@ class Navigator {
 
         // Listen to keypress events
         document.addEventListener('keydown', (e) => {
-            if (e.code === 'ArrowUp'||
-                e.code === 'ArrowRight' ||
-                e.code === 'ArrowLeft' ||
-                e.code === 'ArrowDown') {
+            if (e.key === 'ArrowUp'||
+                e.key === 'ArrowRight' ||
+                e.key === 'ArrowLeft' ||
+                e.key === 'ArrowDown') {
                     e.preventDefault();
             }
 
             // If you press up navigate up
-            if (e.code === 'ArrowUp' &&
+            if (e.key === 'ArrowUp' &&
                 this._state.currentSection !== this.sectionsArray[0] ||
-                e.code === 'KeyW' &&
+                e.key === 'KeyW' &&
                 this._state.currentSection !== this.sectionsArray[0]) {
                     this.targetSection = this._state.currentSection.previousElementSibling;
 
@@ -131,9 +131,9 @@ class Navigator {
             }
 
             // If you press down navigate down
-            if (e.code === 'ArrowDown' &&
+            if (e.key === 'ArrowDown' &&
                 this._state.currentSection !== this.sectionsArray[this.sectionsArray.length - 1] ||
-                e.code === 'KeyS' &&
+                e.key === 'KeyS' &&
                 this._state.currentSection !== this.sectionsArray[this.sectionsArray.length - 1]) {
                     this.targetSection = this._state.currentSection.nextElementSibling;
 
@@ -143,18 +143,18 @@ class Navigator {
             // If you are on the work section allow left/right navigation
             if (this._state.currentSection.id === 'work') {
                 if (this._state.currentWrapper !== this.wrappersArray[this.wrappersArray.length - 1] &&
-                    e.code === 'ArrowRight' ||
+                    e.key === 'ArrowRight' ||
                     this._state.currentWrapper !== this.wrappersArray[this.wrappersArray.length - 1] &&
-                    e.code === 'KeyD') {
+                    e.key === 'KeyD') {
                         this.targetWrapper = this._state.currentWrapper.nextElementSibling;
 
                         this.changeWrapper(this.targetWrapper);
                 }
 
                 if (this._state.currentWrapper !== this.wrappersArray[0] &&
-                    e.code === 'ArrowLeft' ||
+                    e.key === 'ArrowLeft' ||
                     this._state.currentWrapper !== this.wrappersArray[0] &&
-                    e.code === 'KeyA') {
+                    e.key === 'KeyA') {
                         this.targetWrapper = this._state.currentWrapper.previousElementSibling;
 
                         this.changeWrapper(this.targetWrapper);
@@ -181,9 +181,11 @@ class Navigator {
     setCurrentLink() {
         Array.from(this.links).forEach(link => {
             link.classList.remove('is-current');
+            link.tabIndex = 0;
 
             if (link.href.split('#')[1] === this._state.currentSection.id) {
                 link.classList.add('is-current');
+                link.tabIndex = -1;
             }
         });
     }
@@ -192,19 +194,24 @@ class Navigator {
         // Show or hide the up button
         if (this._state.currentSection === this.sectionsArray[0]) {
             this.btnUp.classList.add('is-hidden');
+            this.btnUp.tabIndex = -1;
         }
         else {
             this.btnUp.classList.remove('is-hidden');
+            this.btnUp.tabIndex = 0;
         }
 
         // Show or hide the down button and the back to top button
         if (this._state.currentSection === this.sectionsArray[this.sectionsArray.length - 1]) {
             this.btnDown.classList.add('is-hidden');
-            this.btnTop.classList.remove('is-hidden')
+            this.btnDown.tabIndex = -1;
+            this.btnTop.classList.remove('is-hidden');
+            this.btnTop.tabIndex = 0;
         }
         else {
             this.btnDown.classList.remove('is-hidden');
-            this.btnTop.classList.add('is-hidden')
+            this.btnTop.classList.add('is-hidden');
+            this.btnTop.tabIndex = -1;
         }
 
         // Change the up and down button colors if on the about section
@@ -220,25 +227,31 @@ class Navigator {
         // Show the button to move left/right only on the work section
         if (this._state.currentSection.id === 'work') {
             this.btnRight.classList.remove('is-hidden');
+            this.btnRight.tabIndex = 0;
 
             // If the current wrapper is not the first one show the left button
             if (this._state.currentWrapper !== this.wrappersArray[0]) {
                 this.btnLeft.classList.remove('is-hidden');
+                this.btnLeft.tabIndex = 0;
             }
 
             // If the current wrapper is the first one hide the left button
             if (this._state.currentWrapper === this.wrappersArray[0]) {
                 this.btnLeft.classList.add('is-hidden');
+                this.btnLeft.tabIndex = -1;
             }
 
             // If the current wrapper is the last one hide the right btn
             if (this._state.currentWrapper === this.wrappersArray[this.wrappersArray.length - 1]) {
                 this.btnRight.classList.add('is-hidden');
+                this.btnRight.tabIndex = -1;
             }
         }
         else {
             this.btnRight.classList.add('is-hidden');
+            this.btnRight.tabIndex = -1;
             this.btnLeft.classList.add('is-hidden');
+            this.btnLeft.tabIndex = -1;
         }
     }
 
