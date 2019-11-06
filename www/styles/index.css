@@ -82,6 +82,7 @@ html {
 *,
 *::before,
 *::after {
+  outline: 0;
   -webkit-box-sizing: inherit;
   -khtml-box-sizing: inherit;
   -moz-box-sizing: inherit;
@@ -1162,7 +1163,7 @@ button {
       pointer-events: none; }
   button.close {
     position: absolute;
-    right: 114px;
+    right: 48px;
     width: 48px;
     height: 48px;
     color: #008BCC;

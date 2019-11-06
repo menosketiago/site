@@ -6,6 +6,8 @@ html {
 *,
 *::before,
 *::after {
+	outline: 0;
+
     @include box-sizing(inherit);
 }
 

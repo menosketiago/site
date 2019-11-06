@@ -29,9 +29,11 @@ class Modal {
     _updateDom() {
         if (this._state.isVisible) {
             this.dom.modal.classList.add('is-open');
+            this.dom.article.focus();
         }
         else {
             this.dom.modal.classList.remove('is-open');
+            this.dom.article.blur();
         }
     }
 
@@ -41,6 +43,9 @@ class Modal {
             Array.from(this.triggersArray).forEach(trigger => {
                 if (e.target === trigger) this.show();
             });
+
+            // Listen to veil click
+            if (e.target === this.dom.modal) this.hide();
 
             // Listen to the close button click
             if (e.target === this.btnClose) this.hide();

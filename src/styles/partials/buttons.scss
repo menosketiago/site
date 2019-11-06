@@ -223,7 +223,7 @@ button {
 
     &.close {
         position: absolute;
-        right: $footer-width + $space-extra;
+        right: $space-extra;
         width: $scroll-btn-width;
         height: $scroll-btn-width;
         color: $blue;
