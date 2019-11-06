@@ -142,16 +142,22 @@ class Navigator {
 
             // If you are on the work section allow left/right navigation
             if (this._state.currentSection.id === 'work') {
-                if (e.code === 'ArrowRight' || e.code === 'KeyD') {
-                    this.targetWrapper = this._state.currentWrapper.nextElementSibling;
+                if (this._state.currentWrapper !== this.wrappersArray[this.wrappersArray.length - 1] &&
+                    e.code === 'ArrowRight' ||
+                    this._state.currentWrapper !== this.wrappersArray[this.wrappersArray.length - 1] &&
+                    e.code === 'KeyD') {
+                        this.targetWrapper = this._state.currentWrapper.nextElementSibling;
 
-                    this.changeWrapper(this.targetWrapper);
+                        this.changeWrapper(this.targetWrapper);
                 }
 
-                if (e.code === 'ArrowLeft' || e.code === 'KeyA') {
-                    this.targetWrapper = this._state.currentWrapper.previousElementSibling;
+                if (this._state.currentWrapper !== this.wrappersArray[0] &&
+                    e.code === 'ArrowLeft' ||
+                    this._state.currentWrapper !== this.wrappersArray[0] &&
+                    e.code === 'KeyA') {
+                        this.targetWrapper = this._state.currentWrapper.previousElementSibling;
 
-                    this.changeWrapper(this.targetWrapper);
+                        this.changeWrapper(this.targetWrapper);
                 }
             }
         });
