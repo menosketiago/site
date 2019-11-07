@@ -1,4 +1,20 @@
-@import url('https://fonts.googleapis.com/css?family=Oswald:300,600&display=swap');
+@font-face {
+    font-family: 'Bebas Neue Pro';
+    src: url('../fonts/BebasNeuePro-Bold.woff2') format('woff2'),
+         url('../fonts/BebasNeuePro-Bold.woff') format('woff'),
+         url('../fonts/BebasNeuePro-Bold.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro';
+    src: url('../fonts/BebasNeuePro-Book.woff2') format('woff2'),
+         url('../fonts/BebasNeuePro-Book.woff') format('woff'),
+         url('../fonts/BebasNeuePro-Book.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
 
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
@@ -11,35 +27,44 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     color: $blue;
-    font-size: 36px;
+    font-size: 42px;
 }
 
 h2 {
-    font-size: 24px;
+    font-size: 32px;
+}
+
+h3 {
+    font-size: 16px;
 }
 
 h4 {
     display: inline-block;
     color: $blue;
-    font-size: 18px;
+    font-size: 24px;
 }
 
 h5 {
     display: inline-block;
     color: $blue;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 h6 {
     display: inline-block;
     color: $gray-dark;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: $regular;
 }
 
 p {
 	margin: 0;
-	font-family: $body-font;
+    margin-bottom: $space-base;
+    font-weight: $regular;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
 }
 
 a {

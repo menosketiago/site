@@ -11,24 +11,44 @@
 
     @include transform(translate(100%, 0));
 
-    article {
+    .container {
         position: relative;
         width: 75vw;
-        height: 100vh;
+        min-height: 100vh;
         margin-left: 25vw;
         padding: $space-extra;
-        background: $white;
+        background-color: $white;
+        background-image: url('../images/pattern-blue-faded.png');
         transition: transform $speed-slow ease;
 
         @include transform(translate(100%, 0));
 
-        h1 {
-            margin-bottom: $space-large;
-        }
+       article {
+           padding: $space-extra;
+           max-width: $max-article-width;
+           background: $white;
 
-        p {
-            max-width: $max-text-width;
-        }
+            h1 {
+                margin-bottom: $space-large;
+                font-size: 46px;
+            }
+
+            p {
+                max-width: $max-text-width;
+            }
+
+            img {
+                margin: $space-large 0;
+
+                &:first-child {
+                    margin-top: 0;
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+       }
     }
 
     // MODAL OPENING CLASS

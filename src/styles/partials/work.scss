@@ -65,12 +65,16 @@
 				background-image: url('../images/pattern-white-faded.png');
 			}
 
+			> * {
+				pointer-events: none;
+			}
+
 			h2 {
 				color: $white;
 				text-align: center;
 			}
 
-			h5 {
+			h3 {
 				margin-bottom: $space-base;
 				color: $yellow;
 
@@ -85,7 +89,7 @@
 			}
 
 			.view {
-				margin-top: $space-large;
+				margin-top: $space-base;
 				padding: $space-small;
 				color: $blue;
 				background: $yellow;
@@ -101,7 +105,7 @@
 				}
 			}
 
-			h2, h5, .view {
+			h2, h3, .view {
 				z-index: 1;
 				opacity: 0;
 				transition: inherit;
@@ -117,7 +121,7 @@
 					opacity: .8;
 				}
 
-				h2, h5, .view {
+				h2, h3, .view {
 					opacity: 1;
 				}
 			}
@@ -128,7 +132,7 @@
 					opacity: 0;
 				}
 
-				h2, h5, .view {
+				h2, h3, .view {
 					opacity: 0;
 				}
 			}

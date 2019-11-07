@@ -7,41 +7,58 @@
   note: All CSS3 Properties are being supported by Safari 5
   more info: http://www.findmebyip.com/litmus/#css3-properties
 ------------------------------------------------------------- */
-@import url("https://fonts.googleapis.com/css?family=Oswald:300,600&display=swap");
+@font-face {
+  font-family: 'Bebas Neue Pro';
+  src: url("../fonts/BebasNeuePro-Bold.woff2") format("woff2"), url("../fonts/BebasNeuePro-Bold.woff") format("woff"), url("../fonts/BebasNeuePro-Bold.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Bebas Neue Pro';
+  src: url("../fonts/BebasNeuePro-Book.woff2") format("woff2"), url("../fonts/BebasNeuePro-Book.woff") format("woff"), url("../fonts/BebasNeuePro-Book.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal; }
+
 h1, h2, h3, h4, h5, header nav a, h6 {
   margin: 0;
   color: #464646;
-  font-family: "Oswald", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 600;
+  font-family: "Bebas Neue Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
   line-height: 1em;
   text-transform: uppercase; }
 
 h1 {
   color: #008BCC;
-  font-size: 36px; }
+  font-size: 42px; }
 
 h2 {
-  font-size: 24px; }
+  font-size: 32px; }
+
+h3 {
+  font-size: 16px; }
 
 h4 {
   display: inline-block;
   color: #008BCC;
-  font-size: 18px; }
+  font-size: 24px; }
 
 h5, header nav a {
   display: inline-block;
   color: #008BCC;
-  font-size: 12px; }
+  font-size: 14px; }
 
 h6 {
   display: inline-block;
   color: #666666;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 300; }
 
 p {
   margin: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  margin-bottom: 12px;
+  font-weight: 300; }
+  p:last-child {
+    margin-bottom: 0; }
 
 a {
   color: #008BCC;
@@ -95,14 +112,18 @@ body {
   margin: 0;
   padding: 0;
   background: #ffffff;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Bebas Neue Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
+  font-size: 16px;
   overflow: hidden;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -moz-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex; }
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+img {
+  max-width: 100%; }
 
 main {
   display: inline-block;
@@ -1163,7 +1184,7 @@ button {
       pointer-events: none; }
   button.close {
     position: absolute;
-    right: 48px;
+    right: -24px;
     width: 48px;
     height: 48px;
     color: #008BCC;
@@ -1200,9 +1221,7 @@ button {
   #home .logo {
     width: 320px;
     height: 320px;
-    margin-bottom: 36px;
-    background: url(../images/logo-@2X.png) no-repeat center;
-    background-size: contain; }
+    margin-bottom: 48px; }
   #home h1 {
     max-width: 500px;
     color: #ffffff;
@@ -1331,13 +1350,15 @@ button {
       #work .wrapper .item::after {
         background-color: #008BCC;
         background-image: url("../images/pattern-white-faded.png"); }
+      #work .wrapper .item > * {
+        pointer-events: none; }
       #work .wrapper .item h2 {
         color: #ffffff;
         text-align: center; }
-      #work .wrapper .item h5, #work .wrapper .item header nav a, header nav #work .wrapper .item a {
+      #work .wrapper .item h3 {
         margin-bottom: 12px;
         color: #FFEC00; }
-        #work .wrapper .item h5::after, #work .wrapper .item header nav a::after, header nav #work .wrapper .item a::after {
+        #work .wrapper .item h3::after {
           content: '';
           display: block;
           width: 100%;
@@ -1345,11 +1366,11 @@ button {
           margin-top: 8px;
           background: #FFEC00; }
       #work .wrapper .item .view {
-        margin-top: 24px;
+        margin-top: 12px;
         padding: 8px;
         color: #008BCC;
         background: #FFEC00;
-        font-family: "Oswald", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-family: "Bebas Neue Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-weight: 300;
         text-transform: uppercase;
         display: -webkit-box;
@@ -1364,7 +1385,7 @@ button {
         align-items: center; }
         #work .wrapper .item .view svg {
           margin-right: 4px; }
-      #work .wrapper .item h2, #work .wrapper .item h5, #work .wrapper .item header nav a, header nav #work .wrapper .item a, #work .wrapper .item .view {
+      #work .wrapper .item h2, #work .wrapper .item h3, #work .wrapper .item .view {
         z-index: 1;
         opacity: 0;
         transition: inherit; }
@@ -1372,11 +1393,11 @@ button {
         opacity: 1; }
       #work .wrapper .item:hover::after, #work .wrapper .item:focus::after {
         opacity: .8; }
-      #work .wrapper .item:hover h2, #work .wrapper .item:hover h5, #work .wrapper .item:hover header nav a, header nav #work .wrapper .item:hover a, #work .wrapper .item:hover .view, #work .wrapper .item:focus h2, #work .wrapper .item:focus h5, #work .wrapper .item:focus header nav a, header nav #work .wrapper .item:focus a, #work .wrapper .item:focus .view {
+      #work .wrapper .item:hover h2, #work .wrapper .item:hover h3, #work .wrapper .item:hover .view, #work .wrapper .item:focus h2, #work .wrapper .item:focus h3, #work .wrapper .item:focus .view {
         opacity: 1; }
       #work .wrapper .item:active::before, #work .wrapper .item:active::after {
         opacity: 0; }
-      #work .wrapper .item:active h2, #work .wrapper .item:active h5, #work .wrapper .item:active header nav a, header nav #work .wrapper .item:active a, #work .wrapper .item:active .view {
+      #work .wrapper .item:active h2, #work .wrapper .item:active h3, #work .wrapper .item:active .view {
         opacity: 0; }
       #work .wrapper .item#trioptima {
         background-image: url("../images/thumbs/trioptima.jpg"); }
@@ -1428,13 +1449,14 @@ button {
   -ms-transform: translate(100%, 0);
   -o-transform: translate(100%, 0);
   transform: translate(100%, 0); }
-  .modal article {
+  .modal .container {
     position: relative;
     width: 75vw;
-    height: 100vh;
+    min-height: 100vh;
     margin-left: 25vw;
     padding: 48px;
-    background: #ffffff;
+    background-color: #ffffff;
+    background-image: url("../images/pattern-blue-faded.png");
     transition: transform 0.4s ease;
     -webkit-transform: translate(100%, 0);
     -khtml-transform: translate(100%, 0);
@@ -1442,10 +1464,21 @@ button {
     -ms-transform: translate(100%, 0);
     -o-transform: translate(100%, 0);
     transform: translate(100%, 0); }
-    .modal article h1 {
-      margin-bottom: 24px; }
-    .modal article p {
-      max-width: 700px; }
+    .modal .container article {
+      padding: 48px;
+      max-width: 1024px;
+      background: #ffffff; }
+      .modal .container article h1 {
+        margin-bottom: 24px;
+        font-size: 46px; }
+      .modal .container article p {
+        max-width: 700px; }
+      .modal .container article img {
+        margin: 24px 0; }
+        .modal .container article img:first-child {
+          margin-top: 0; }
+        .modal .container article img:last-child {
+          margin-bottom: 0; }
   .modal.is-open {
     margin-right: 66px;
     background: rgba(255, 255, 255, 0.8);

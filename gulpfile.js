@@ -73,7 +73,7 @@ gulp.task('images', function() {
 gulp.task('fonts', function() {
 	return gulp
 	.src([
-		path.fonts + '/**/*.{eot,svg,ttf,woff}'
+		path.fonts + '/**/*.{eot,svg,ttf,woff,woff2}'
 	])
 	.pipe(gulp.dest('./www/fonts'));
 });

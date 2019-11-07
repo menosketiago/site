@@ -158,8 +158,8 @@
 /// @param {Color} $color [rgba(0,0,0,.4)] - Color
 /// @param {Boolean} $inset - Inset
 
-@mixin box-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0, 0, 0, .4), $inset: "") {
-    @if ($inset !="") {
+@mixin box-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0, 0, 0, .4), $inset: '') {
+    @if ($inset !='') {
         @include css3-prefix('box-shadow', $inset $x $y $blur $color);
     }
 
@@ -216,7 +216,7 @@
 @mixin flip($scaleX: -1) {
     @include css3-prefix('transform', scaleX($scaleX));
     filter: FlipH;
-    -ms-filter: "FlipH";
+    -ms-filter: 'FlipH';
 }
 
 /// Font Face
@@ -242,7 +242,7 @@
     $opacityMultiplied: ($opacity * 100);
 
     filter: alpha(opacity=$opacityMultiplied);
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+ $opacityMultiplied + ")";
+    -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity='+ $opacityMultiplied + ')';
     @include css3-prefix('opacity', $opacity);
 }
 
@@ -323,7 +323,7 @@
     }
 
     @else {
-        @include css3-prefix('transition', "all 0.2s ease-in-out 0s");
+        @include css3-prefix('transition', 'all 0.2s ease-in-out 0s');
     }
 }
 
@@ -340,7 +340,7 @@
 
     @include border-radius($radius);
 
-    @include css3-prefix('box-shadow', "0 0 0 1px #{$colorTwo}, 0 0 0 2px #{$colorThree}");
+    @include css3-prefix('box-shadow', '0 0 0 1px #{$colorTwo}, 0 0 0 2px #{$colorThree}');
 }
 
 /// Keyframes

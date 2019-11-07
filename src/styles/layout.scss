@@ -18,9 +18,14 @@ body {
 	background: $body-bg;
 	font-family: $body-font;
 	font-weight: $regular;
+	font-size: 16px;
     overflow: hidden;
 
-	@include inline-flex();
+	@include flexbox();
+}
+
+img {
+	max-width: 100%;
 }
 
 main {
