@@ -219,11 +219,9 @@ button {
         }
     }
 
-    // MODAL CLOSE BUTTON
+    // CLOSE BUTTON
 
     &.close {
-        position: absolute;
-        right: -($space-extra / 2);
         width: $scroll-btn-width;
         height: $scroll-btn-width;
         color: $blue;

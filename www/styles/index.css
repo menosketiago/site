@@ -122,7 +122,8 @@ body {
   display: -ms-flexbox;
   display: flex; }
 
-img {
+img,
+iframe {
   max-width: 100%; }
 
 main {
@@ -1183,8 +1184,6 @@ button {
       opacity: 0;
       pointer-events: none; }
   button.close {
-    position: absolute;
-    right: -24px;
     width: 48px;
     height: 48px;
     color: #008BCC;
@@ -1440,61 +1439,90 @@ button {
   right: 0;
   bottom: 0;
   left: 0;
-  overflow: auto;
+  overflow-y: auto;
+  width: 100vw;
+  height: 100vh;
   background: transparent;
   backdrop-filter: blur(2px);
+  transition: transform 0.4s ease;
+  cursor: pointer;
   -webkit-transform: translate(100%, 0);
   -khtml-transform: translate(100%, 0);
   -moz-transform: translate(100%, 0);
   -ms-transform: translate(100%, 0);
   -o-transform: translate(100%, 0);
   transform: translate(100%, 0); }
-  .modal .container {
-    position: relative;
-    width: 75vw;
-    min-height: 100vh;
-    margin-left: 25vw;
-    padding: 48px;
-    background-color: #ffffff;
-    background-image: url("../images/pattern-blue-faded.png");
-    transition: transform 0.4s ease;
-    -webkit-transform: translate(100%, 0);
-    -khtml-transform: translate(100%, 0);
-    -moz-transform: translate(100%, 0);
-    -ms-transform: translate(100%, 0);
-    -o-transform: translate(100%, 0);
-    transform: translate(100%, 0); }
-    .modal .container article {
-      padding: 48px;
-      max-width: 1024px;
-      background: #ffffff; }
-      .modal .container article h1 {
-        margin-bottom: 24px;
-        font-size: 46px; }
-      .modal .container article p {
-        max-width: 700px; }
-      .modal .container article img {
-        margin: 24px 0; }
-        .modal .container article img:first-child {
-          margin-top: 0; }
-        .modal .container article img:last-child {
-          margin-bottom: 0; }
+  .modal ~ #close-modal {
+    z-index: 10000;
+    position: fixed;
+    top: 96px;
+    right: 96px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.4s 0.4s ease; }
   .modal.is-open {
-    margin-right: 66px;
     background: rgba(255, 255, 255, 0.8);
-    cursor: pointer;
     -webkit-transform: translate(0, 0);
     -khtml-transform: translate(0, 0);
     -moz-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0); }
-    .modal.is-open article {
-      margin-right: 66px;
-      cursor: default;
-      -webkit-transform: translate(0, 0);
-      -khtml-transform: translate(0, 0);
-      -moz-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
-      -o-transform: translate(0, 0);
-      transform: translate(0, 0); }
+    .modal.is-open ~ #close-modal {
+      visibility: visible;
+      opacity: 1; }
+  .modal .container {
+    width: calc(100% - (120px * 2) - 66px);
+    min-height: 100vh;
+    margin-right: 66px;
+    margin-left: 240px;
+    padding: 48px;
+    background-color: #ffffff;
+    background-image: url("../images/pattern-blue-faded.png");
+    transition: transform 0.4s ease;
+    cursor: default; }
+    .modal .container article {
+      padding: 48px;
+      max-width: 1024px;
+      background: #ffffff;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-direction: normal;
+      -webkit-box-orient: vertical;
+      -webkit-flex-direction: column;
+      -moz-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column; }
+      .modal .container article > * {
+        -webkit-box-flex: 0;
+        -webkit-flex-grow: 0;
+        -moz-flex-grow: 0;
+        -ms-flex-positive: 0;
+        flex-grow: 0; }
+      .modal .container article h1 {
+        margin-bottom: 24px;
+        font-size: 46px; }
+      .modal .container article p {
+        max-width: 700px; }
+      .modal .container article img,
+      .modal .container article iframe,
+      .modal .container article .vimeo {
+        margin: 24px 0; }
+        .modal .container article img:not(:last-of-type),
+        .modal .container article iframe:not(:last-of-type),
+        .modal .container article .vimeo:not(:last-of-type) {
+          margin-bottom: 0; }
+        .modal .container article img:first-child,
+        .modal .container article iframe:first-child,
+        .modal .container article .vimeo:first-child {
+          margin-top: 0; }
+        .modal .container article img:last-child,
+        .modal .container article iframe:last-child,
+        .modal .container article .vimeo:last-child {
+          margin-bottom: 0; }
+      .modal .container article .vimeo {
+        position: relative;
+        padding: 56.25% 0 0 0; }

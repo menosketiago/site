@@ -5,9 +5,9 @@ class Navigator {
             main: element
         }
 
-        this.initialSection = this.dom.main.querySelector('section');
-        this.targetSection = undefined;
         this.sectionsArray = this.dom.main.querySelectorAll('section');
+        this.initialSection = this.dom.main.querySelector(location.hash);
+        this.targetSection = undefined;
 
         this.logo = document.querySelector('header .logo');
         this.links = document.querySelectorAll('nav a');
@@ -18,9 +18,9 @@ class Navigator {
         this.btnDown = this.dom.main.querySelector('.scroll.down');
         this.btnTop = this.dom.main.querySelector('.scroll.top');
 
+        this.wrappersArray = this.dom.main.querySelectorAll('#work .wrapper');
         this.initialWrapper = this.dom.main.querySelector('#work .wrapper');
         this.targetWrapper = undefined;
-        this.wrappersArray = this.dom.main.querySelectorAll('#work .wrapper');
 
         this.btnRight = this.dom.main.querySelector('.scroll.right');
         this.btnLeft = this.dom.main.querySelector('.scroll.left');
@@ -53,6 +53,7 @@ class Navigator {
     }
 
     eventHandler() {
+        // Set the scroll buttons visibility
         window.addEventListener('load', () => {
             this.setButtonVisibility();
         });
@@ -70,8 +71,8 @@ class Navigator {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
 
+                // Get the targer section from the URL
                 let id = e.target.href.split('#')[1];
-
                 this.targetSection = this.dom.main.querySelector('section#' + id);
 
                 this.changeSection(this.targetSection);

@@ -8,7 +8,7 @@ class Modal {
         }
 
         this.triggersArray = document.querySelectorAll('#work .item');
-        this.btnClose = this.dom.modal.querySelector('.close');
+        this.btnClose = document.querySelector('#close-modal');
         this.btnRight = document.querySelector('.scroll.right');
 
         this._state = {

@@ -34,14 +34,17 @@ $space-base: $space-tiny * 3;
 $space-large: $space-base * 2;
 $space-extra: $space-base * 4;
 
+$space-modal: $space-extra;
+
+$max-text-width: 700px;
+$max-article-width: 1024px;
+
 $header-width: 120px;
 $footer-width: 66px;
 
 $main-width: calc(100vw - #{$header-width} - #{$footer-width});
 $main-height: calc(100vh - #{$space-large} - #{$space-large});
 
-$max-text-width: 700px;
-$max-article-width: 1024px;
 
 $scroll-btn-width: $space-large * 2;
 
