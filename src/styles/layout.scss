@@ -18,8 +18,11 @@ body {
 	background: $body-bg;
 	font-family: $body-font;
 	font-weight: $regular;
-	font-size: 16px;
+	font-size: $body-font-size;
+	line-height: 1.4em;
     overflow: hidden;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 
 	@include flexbox();
 }

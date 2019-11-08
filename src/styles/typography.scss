@@ -1,17 +1,17 @@
 @font-face {
     font-family: 'Bebas Neue Pro';
-    src: url('../fonts/BebasNeuePro-Bold.woff2') format('woff2'),
-         url('../fonts/BebasNeuePro-Bold.woff') format('woff'),
-         url('../fonts/BebasNeuePro-Bold.ttf') format('truetype');
+    src: url($path-fonts + 'BebasNeuePro-Bold.woff2') format('woff2'),
+         url($path-fonts + 'BebasNeuePro-Bold.woff') format('woff'),
+         url($path-fonts + 'BebasNeuePro-Bold.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Bebas Neue Pro';
-    src: url('../fonts/BebasNeuePro-Book.woff2') format('woff2'),
-         url('../fonts/BebasNeuePro-Book.woff') format('woff'),
-         url('../fonts/BebasNeuePro-Book.ttf') format('truetype');
+    src: url($path-fonts + 'BebasNeuePro-Book.woff2') format('woff2'),
+         url($path-fonts + 'BebasNeuePro-Book.woff') format('woff'),
+         url($path-fonts + 'BebasNeuePro-Book.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
 }

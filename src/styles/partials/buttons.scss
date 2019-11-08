@@ -6,8 +6,8 @@ button {
     &.scroll {
         z-index: $scroll-btn-index;
         position: fixed;
-        width: $scroll-btn-width;
-        height: $scroll-btn-width;
+        width: $btn-scroll-width;
+        height: $btn-scroll-width;
         color: $blue;
         background: $yellow;
         transition: all $speed-default ease;
@@ -134,7 +134,7 @@ button {
         }
 
         &.left {
-            left: $header-width - ($scroll-btn-width / 2);
+            left: $header-width - ($btn-scroll-width / 2);
 
             svg {
                 @include transform(scale(1.2) rotate(180deg));
@@ -164,7 +164,7 @@ button {
         }
 
         &.right {
-            right: $footer-width - ($scroll-btn-width / 2);
+            right: $footer-width - ($btn-scroll-width / 2);
             left: auto;
 
             &:hover {
@@ -222,8 +222,8 @@ button {
     // CLOSE BUTTON
 
     &.close {
-        width: $scroll-btn-width;
-        height: $scroll-btn-width;
+        width: $btn-scroll-width;
+        height: $btn-scroll-width;
         color: $blue;
         background: $yellow;
         transition: all $speed-default ease;

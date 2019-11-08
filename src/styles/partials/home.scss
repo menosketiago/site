@@ -1,7 +1,7 @@
 #home {
 	height: calc(100vh - 80px);
 	color: white;
-	background-image: url(../images/bg-mom.jpg);
+	background-image: url($path-images + 'bg-mom.jpg');
 	background-color: $blue;
 	background-attachment: fixed;
 	background-size: cover;

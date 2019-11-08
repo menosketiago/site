@@ -23,7 +23,7 @@
 			height: calc(100vh / 3 - #{$space-small} - #{$space-small});
 			padding: $space-large;
 			background-color: transparent;
-			background-image: url('../images/thumbs/test.jpg');
+			background-image: url($path-thumbs + 'test.jpg');
 			background-size: cover;
 			background-position: center;
 			transition: all $speed-default ease;
@@ -62,7 +62,7 @@
 
 			&::after {
 				background-color: $blue;
-				background-image: url('../images/pattern-white-faded.png');
+				background-image: url($path-images + 'pattern-white-faded.png');
 			}
 
 			> * {
@@ -139,15 +139,15 @@
 
 			// WORK ITEM CLASSES
 
-			&#trioptima { background-image: url('../images/thumbs/trioptima.jpg'); }
-			&#ericsson { background-image: url('../images/thumbs/ericsson.jpg'); }
-			&#loki { background-image: url('../images/thumbs/loki.jpg'); }
-			&#alien { background-image: url('../images/thumbs/alien.jpg'); }
-			&#goo { background-image: url('../images/thumbs/goo.jpg'); }
-			&#wannaplayer { background-image: url('../images/thumbs/wannaplayer.jpg'); }
-			&#nem-tudo { background-image: url('../images/thumbs/nem-tudo.jpg'); }
-			&#mana { background-image: url('../images/thumbs/mana.jpg'); }
-			&#mamacita { background-image: url('../images/thumbs/mamacita.jpg'); }
+			&#trioptima { background-image: url($path-thumbs + 'trioptima.jpg'); }
+			&#ericsson { background-image: url($path-thumbs + 'ericsson.jpg'); }
+			&#loki { background-image: url($path-thumbs + 'loki.jpg'); }
+			&#alien { background-image: url($path-thumbs + 'alien.jpg'); }
+			&#goo { background-image: url($path-thumbs + 'goo.jpg'); }
+			&#wannaplayer { background-image: url($path-thumbs + 'wannaplayer.jpg'); }
+			&#nem-tudo { background-image: url($path-thumbs + 'nem-tudo.jpg'); }
+			&#mana { background-image: url($path-thumbs + 'mana.jpg'); }
+			&#mamacita { background-image: url($path-thumbs + 'mamacita.jpg'); }
 		}
 	}
 }

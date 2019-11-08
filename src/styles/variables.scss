@@ -15,6 +15,8 @@ $body-color: $black;
 $body-font: 'Bebas Neue Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $header-font: 'Bebas Neue Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
+$body-font-size: 18px;
+
 $regular: 300;
 $bold: 500;
 
@@ -35,6 +37,7 @@ $space-large: $space-base * 2;
 $space-extra: $space-base * 4;
 
 $space-modal: $space-extra;
+$modal-aside-width: 120px;
 
 $max-text-width: 700px;
 $max-article-width: 1024px;
@@ -45,8 +48,8 @@ $footer-width: 66px;
 $main-width: calc(100vw - #{$header-width} - #{$footer-width});
 $main-height: calc(100vh - #{$space-large} - #{$space-large});
 
-
-$scroll-btn-width: $space-large * 2;
+$btn-scroll-width: $space-large * 2;
+$avatar-width: $space-large;
 
 $stroke-height: 3px;
 
@@ -54,6 +57,13 @@ $stroke-height: 3px;
 
 $scroll-btn-index: 100;
 $modal-index: 9999;
+
+// PATHS
+
+$path-fonts: '../fonts/';
+$path-images: '../images/';
+$path-avatars: '../images/avatars/';
+$path-thumbs: '../images/thumbs/';
 
 // OTHER
 
