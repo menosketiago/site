@@ -15,14 +15,12 @@ body {
 	width: 100vw;
 	margin: 0;
 	padding: 0;
+	color: $black;
 	background: $body-bg;
 	font-family: $body-font;
 	font-weight: $regular;
 	font-size: $body-font-size;
-	line-height: 1.4em;
     overflow: hidden;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
 
 	@include flexbox();
 }

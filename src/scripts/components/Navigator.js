@@ -6,8 +6,15 @@ class Navigator {
         }
 
         this.sectionsArray = this.dom.main.querySelectorAll('section');
-        this.initialSection = this.dom.main.querySelector(location.hash);
-        this.targetSection = undefined;
+
+        if (location.hash) {
+            this.initialSection = this.dom.main.querySelector(location.hash);
+        }
+        else {
+            this.initialSection = this.sectionsArray[0];
+        }
+
+        this.targetSection = '';
 
         this.logo = document.querySelector('header .logo');
         this.links = document.querySelectorAll('nav a');
@@ -20,7 +27,7 @@ class Navigator {
 
         this.wrappersArray = this.dom.main.querySelectorAll('#work .wrapper');
         this.initialWrapper = this.dom.main.querySelector('#work .wrapper');
-        this.targetWrapper = undefined;
+        this.targetWrapper = '';
 
         this.btnRight = this.dom.main.querySelector('.scroll.right');
         this.btnLeft = this.dom.main.querySelector('.scroll.left');
@@ -29,11 +36,6 @@ class Navigator {
             currentSection: this.initialSection,
             currentWrapper: this.initialWrapper,
         };
-    }
-
-    init() {
-        this.checkVisibleSection();
-        this.eventHandler();
     }
 
     setState(props) {
@@ -50,6 +52,11 @@ class Navigator {
 
         // Set the currently viewing title on the header
         this.currentlyViewing.textContent = this._state.currentSection.id;
+    }
+
+    init() {
+        this.checkVisibleSection();
+        this.eventHandler();
     }
 
     eventHandler() {

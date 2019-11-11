@@ -3,15 +3,16 @@
 import Focus from './components/Focus';
 import Modal from './components/Modal';
 import Navigator from './components/Navigator';
+import Tooltip from './components/Tooltip';
 import Year from './components/Year';
 
 const tiago = window.tiago = {
     Focus,
     Modal,
     Navigator,
+    Tooltip,
     Year
 };
-
 
 window.onload = () => {
     // FOCUS
@@ -40,7 +41,17 @@ window.onload = () => {
 
     // NAVIGATOR
     let main = document.querySelector('main');
-
     let navigator = new Navigator(main);
+
     navigator.init();
+
+    // TOOLTIPS
+    let tooltipsArray = document.querySelectorAll('[data-tooltip]');
+
+    if (tooltipsArray) {
+        Array.from(tooltipsArray).forEach(tooltipDOM => {
+            let tooltip = new Tooltip(tooltipDOM);
+            tooltip.init();
+        });
+    }
 };

@@ -4,7 +4,7 @@ $white: #ffffff;
 $black: #464646;
 
 $blue: #008BCC;
-$yellow: #FFEC00;
+$yellow: #FFF800;
 $gray-dark: #666666;
 
 $body-bg: $white;
@@ -12,10 +12,10 @@ $body-color: $black;
 
 // TYPOGRAPHY
 
-$body-font: 'Bebas Neue Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$header-font: 'Bebas Neue Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$body-font: 'Bebas Neue Pro', Helvetica, Arial, sans-serif;
+$header-font: 'Bebas Neue Pro', Helvetica, Arial, sans-serif;
 
-$body-font-size: 18px;
+$body-font-size: 20px;
 
 $regular: 300;
 $bold: 500;
@@ -52,11 +52,13 @@ $btn-scroll-width: $space-large * 2;
 $avatar-width: $space-large;
 
 $stroke-height: 3px;
+$tooltip-caret-width: $space-base;
 
 // Z-INDEXES
 
 $scroll-btn-index: 100;
 $modal-index: 9999;
+$z-index-tooltip: 10000;
 
 // PATHS
 

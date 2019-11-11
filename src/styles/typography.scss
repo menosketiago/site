@@ -1,3 +1,5 @@
+// IMPORT LOCAL FONTS
+
 @font-face {
     font-family: 'Bebas Neue Pro';
     src: url($path-fonts + 'BebasNeuePro-Bold.woff2') format('woff2'),
@@ -61,6 +63,7 @@ p {
 	margin: 0;
     margin-bottom: $space-base;
     font-weight: $regular;
+    line-height: 1.4em;
 
     &:last-child {
         margin-bottom: 0;

@@ -9,16 +9,10 @@ class Modal {
 
         this.triggersArray = document.querySelectorAll('#work .item');
         this.btnClose = document.querySelector('#close-modal');
-        this.btnRight = document.querySelector('.scroll.right');
 
         this._state = {
             isVisible: this.dom.modal.classList.contains('is-visible')
         };
-    }
-
-    init() {
-        this.eventHandler();
-        // this.fetchContent();
     }
 
     setState(props) {
@@ -35,6 +29,11 @@ class Modal {
             this.dom.modal.classList.remove('is-open');
             this.dom.article.blur();
         }
+    }
+
+    init() {
+        this.eventHandler();
+        // this.fetchContent();
     }
 
     eventHandler() {
@@ -64,16 +63,10 @@ class Modal {
 
     show() {
         this.setState({isVisible: true});
-
-        // Hide the work nav button
-        this.btnRight.classList.add('is-hidden');
     }
 
     hide() {
         this.setState({isVisible: false});
-
-        // Show the work nav button
-        this.btnRight.classList.remove('is-hidden');
     }
 
     fetchContent() {

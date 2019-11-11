@@ -1,0 +1,44 @@
+.avatar {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    width: $avatar-width;
+    height: $avatar-width;
+    margin-right: $space-tiny;
+    color: $blue;
+    background: $yellow;
+    border-radius: 50%;
+    font-size: 12px;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    &::before {
+        content: attr(data-initials);
+
+        @include flexbox();
+        @include justify-content(center);
+        @include align-items(center);
+    }
+
+    &:after {
+        background-size: cover;
+    }
+
+    &#mikael::after { background-image: url($path-avatars + 'mikael.png'); }
+    &#patricia::after { background-image: url($path-avatars + 'patricia.png'); }
+    &#johan::after { background-image: url($path-avatars + 'johan.png'); }
+    &#emelie::after { background-image: url($path-avatars + 'emelie.png'); }
+    &#tina::after { background-image: url($path-avatars + 'tina.png'); }
+    &#daniel::after { background-image: url($path-avatars + 'daniel.png'); }
+    &#sidi::after { background-image: url($path-avatars + 'sidi.png'); }
+    &#william::after { background-image: url($path-avatars + 'william.png'); }
+    &#martin::after { background-image: url($path-avatars + 'martin.png'); }
+}
