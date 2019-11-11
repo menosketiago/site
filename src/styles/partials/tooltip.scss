@@ -9,6 +9,7 @@
     text-transform: uppercase;
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
     transition:
         opacity $speed-default ease,
         transform $speed-default ease;
@@ -17,7 +18,7 @@
 
     &::after {
         content: '';
-        z-index: $z-index-tooltip;
+        z-index: $z-index-tooltip - 1;
         position: absolute;
         top: auto;
         right: auto;

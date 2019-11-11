@@ -214,7 +214,8 @@ footer {
   color: #008BCC;
   background: #FFF800;
   border-radius: 50%;
-  font-size: 12px; }
+  font-size: 12px;
+  vertical-align: middle; }
   .avatar::before, .avatar::after {
     content: '';
     position: absolute;
@@ -1400,9 +1401,9 @@ header {
         -o-transform: rotate(180deg);
         transform: rotate(180deg); }
         .modal .container article aside h5, .modal .container article aside header nav a, header nav .modal .container article aside a {
-          margin-top: 4px; }
-        .modal .container article aside h6 {
           margin-top: 12px; }
+        .modal .container article aside h6 {
+          margin-top: 4px; }
       .modal .container article header {
         margin-bottom: 24px;
         padding: 0;
@@ -1428,8 +1429,19 @@ header {
             height: 1px;
             margin-top: 8px;
             background: #008BCC; }
+        .modal .container article header h5, .modal .container article header nav a {
+          margin-right: 4px; }
+        .modal .container article header h6 {
+          margin-right: 12px;
+          line-height: 1.2em; }
+          .modal .container article header h6:last-child {
+            margin-right: 0; }
+        .modal .container article header hgroup {
+          margin-bottom: 12px;
+          line-height: 0; }
         .modal .container article header .team {
-          height: 24px; }
+          height: 24px;
+          line-height: 24px; }
       .modal .container article h2 {
         width: 100%;
         color: #008BCC;
@@ -1462,6 +1474,7 @@ header {
   text-transform: uppercase;
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
   transition: opacity 0.2s ease, transform 0.2s ease;
   -webkit-transform: translate(0, 100%);
   -khtml-transform: translate(0, 100%);
@@ -1471,14 +1484,14 @@ header {
   transform: translate(0, 100%); }
   .tooltip::after {
     content: '';
-    z-index: 10000;
+    z-index: 9999;
     position: absolute;
     top: auto;
     right: auto;
     bottom: 1px;
     left: 50%;
-    width: 12px;
-    height: 12px;
+    width: 8px;
+    height: 8px;
     background: inherit;
     font-size: 1rem;
     user-select: none;

@@ -74,11 +74,11 @@
                 @include transform(rotate(180deg));
 
                 h5 {
-                    margin-top: $space-tiny;
+                    margin-top: $space-base;
                 }
 
                 h6 {
-                    margin-top: $space-base;
+                    margin-top: $space-tiny;
                 }
             }
 
@@ -111,8 +111,27 @@
                     }
                 }
 
+                h5 {
+                    margin-right: $space-tiny;
+                }
+
+                h6 {
+                    margin-right: $space-base;
+                    line-height: 1.2em;
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+
+                hgroup {
+                    margin-bottom: $space-base;
+                    line-height: 0;
+                }
+
                 .team {
                     height: $avatar-width;
+                    line-height: $avatar-width;
                 }
             }
 

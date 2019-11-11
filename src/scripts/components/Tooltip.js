@@ -3,7 +3,7 @@ class Tooltip {
     constructor(element) {
         this.dom = {
             trigger: element,
-            content: element.getAttribute('data-tooltip')
+            content: element.getAttribute('data-tooltip') || false
         };
 
         this.tooltip = document.querySelector('.tooltip');
@@ -30,13 +30,15 @@ class Tooltip {
     }
 
     init() {
-        this.eventHandler();
+        if (this.dom.content) this.eventHandler();
     }
 
     eventHandler() {
         this.dom.trigger.addEventListener('mouseover', (e) => this.setTooltipContent());
 
         this.dom.trigger.addEventListener('mouseout', () => this.hide());
+
+        window.addEventListener('scroll', () => this.hide(), true);
     }
 
     setTooltipContent() {
@@ -48,19 +50,14 @@ class Tooltip {
     }
 
     positionTooltip() {
-        let trigger, tooltip, distance, margin, triggerRect, top, left, offsetTop, offsetRight, offsetLeft;
+        let trigger, tooltip, margin, triggerRect, top, left, offsetTop, offsetRight, offsetLeft;
 
         trigger = this.dom.trigger;
         tooltip = this.tooltip;
-        distance = 4;
-        margin = 12;
+        margin = 8;
 
         // Get the trigger location
         triggerRect = this.dom.trigger.getBoundingClientRect();
-
-        // Store the calculated positions
-        top = 0;
-        left = 0;
 
         offsetTop = triggerRect.top - tooltip.offsetHeight;
         offsetRight = triggerRect.left - tooltip.offsetWidth;
