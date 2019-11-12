@@ -7,7 +7,7 @@ class Navigator {
 
         this.sectionsArray = this.dom.main.querySelectorAll('section');
 
-        if (location.hash !== null) {
+        if (location.hash !== '') {
             this.initialSection = this.dom.main.querySelector(location.hash);
         }
         else {
@@ -55,18 +55,14 @@ class Navigator {
     }
 
     init() {
+        this.changeSection(this.initialSection);
+        this.setCurrentLink();
+        this.setButtonVisibility();
+
         this.eventHandler();
     }
 
     eventHandler() {
-        window.addEventListener('load', () => {
-            // Move tho the section in the URL
-            this.changeSection(this.initialSection);
-
-            // Set the scroll buttons visibility
-            this.setButtonVisibility();
-        });
-
         this.logo.addEventListener('click', (e) => {
             e.preventDefault();
 
@@ -177,6 +173,8 @@ class Navigator {
     }
 
     changeSection(targetSection) {
+        console.log(targetSection);
+
         this.setState({currentSection: targetSection});
         this.setCurrentLink();
         this.setButtonVisibility();
