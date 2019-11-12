@@ -173,8 +173,6 @@ class Navigator {
     }
 
     changeSection(targetSection) {
-        console.log(targetSection);
-
         this.setState({currentSection: targetSection});
         this.setCurrentLink();
         this.setButtonVisibility();

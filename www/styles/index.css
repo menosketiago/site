@@ -66,8 +66,7 @@ a {
   outline: 0;
   transition: all 0.2s ease; }
   a:hover {
-    background: #FFF800;
-    text-decoration: none; }
+    background: #FFF800; }
   a:active {
     color: #ffffff;
     background: #008BCC;
@@ -1378,7 +1377,16 @@ header {
       -webkit-flex-wrap: wrap;
       -moz-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
+      flex-wrap: wrap;
+      -webkit-align-content: flex-start;
+      -moz-align-content: flex-start;
+      -ms-flex-line-pack: start;
+      align-content: flex-start;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      -webkit-justify-content: flex-start;
+      -moz-justify-content: flex-start;
+      justify-content: flex-start; }
       .modal .container article aside {
         position: absolute;
         top: 0;
@@ -1618,12 +1626,35 @@ header {
       .modal.dark-mode .container article {
         color: #ffffff;
         background: #000000; }
+        .modal.dark-mode .container article aside h5, .modal.dark-mode .container article aside header nav a, header nav .modal.dark-mode .container article aside a {
+          color: #FFF800; }
+        .modal.dark-mode .container article header h1, .modal.dark-mode .container article header h5, .modal.dark-mode .container article header nav a {
+          color: #FFF800; }
         .modal.dark-mode .container article header h3 {
           color: #FFF800; }
           .modal.dark-mode .container article header h3::after {
             background: #FFF800; }
+        .modal.dark-mode .container article header .avatar {
+          color: #ffffff;
+          background: #008BCC; }
         .modal.dark-mode .container article h6 {
           color: #ffffff; }
+        .modal.dark-mode .container article a {
+          color: #FFF800; }
+          .modal.dark-mode .container article a:hover {
+            color: #ffffff;
+            background: #008BCC; }
+    .modal.dark-mode ~ #close-modal {
+      color: #FFF800;
+      background: #008BCC; }
+      .modal.dark-mode ~ #close-modal:hover {
+        color: #008BCC;
+        background: #FFF800; }
+      .modal.dark-mode ~ #close-modal:active {
+        color: #FFF800;
+        background: #008BCC; }
+      .modal.dark-mode ~ #close-modal.has-focus {
+        box-shadow: 0 0 0 4px #FFF800; }
 
 .tooltip {
   z-index: 10000;

@@ -52,6 +52,8 @@
 
             @include flexbox();
             @include flex-wrap(wrap);
+            @include align-content(flex-start);
+            @include justify-content(flex-start);
 
             aside {
                 position: absolute;
@@ -230,7 +232,17 @@
                 color: $white;
                 background: $body-bg-dark;
 
+                aside {
+                    h5 {
+                        color: $yellow;
+                    }
+                }
+
                 header {
+                    h1, h5 {
+                        color: $yellow;
+                    }
+
                     h3 {
                         color: $yellow;
 
@@ -238,11 +250,44 @@
                             background: $yellow;
                         }
                     }
+
+                    .avatar {
+                        color: $white;
+                        background: $blue;
+                    }
                 }
 
                 h6 {
                     color: $white;
                 }
+
+                a {
+                    color: $yellow;
+
+                    &:hover {
+                        color: $white ;
+                        background: $blue;
+                    }
+                }
+            }
+        }
+
+        ~ #close-modal {
+            color: $yellow;
+            background: $blue;
+
+            &:hover {
+                color: $blue;
+                background: $yellow;
+            }
+
+            &:active {
+                color: $yellow;
+                background: $blue;
+            }
+
+            &.has-focus {
+                box-shadow: $shadow-focus;
             }
         }
     }
