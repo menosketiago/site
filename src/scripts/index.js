@@ -6,7 +6,11 @@ import Navigator from './components/Navigator';
 import Tooltip from './components/Tooltip';
 import Year from './components/Year';
 
-const tiago = window.tiago = {
+// FETCH POLYFILL
+
+import 'unfetch/polyfill'
+
+const menos = window.menos = {
     Focus,
     Modal,
     Navigator,

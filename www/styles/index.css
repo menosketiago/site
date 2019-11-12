@@ -1377,6 +1377,7 @@ header {
       padding: 48px;
       padding-right: 48px;
       max-width: 1024px;
+      min-height: calc(100vh - (48px * 2));
       background: #ffffff;
       display: -webkit-box;
       display: -webkit-flex;
@@ -1405,11 +1406,11 @@ header {
         .modal .container article aside h6 {
           margin-top: 4px; }
       .modal .container article header {
-        margin-bottom: 24px;
+        margin-right: 120px;
+        margin-bottom: 48px;
         padding: 0;
         width: auto;
         height: auto;
-        margin-bottom: 48px;
         -webkit-box-align: start;
         -ms-flex-align: start;
         -webkit-align-items: flex-start;
@@ -1439,6 +1440,8 @@ header {
         .modal .container article header hgroup {
           margin-bottom: 12px;
           line-height: 0; }
+          .modal .container article header hgroup:last-child {
+            margin-bottom: 0; }
         .modal .container article header .team {
           height: 24px;
           line-height: 24px; }

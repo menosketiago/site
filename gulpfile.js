@@ -10,7 +10,7 @@ const path = {
 	'styles': './src/styles',
 	'scripts': './src/scripts',
 	'templates': './src/templates',
-	'work': './src/templates/work-items',
+	'work': './src/templates/work',
 	'images': './src/images',
 	'fonts': './src/fonts'
 }

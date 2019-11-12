@@ -58,6 +58,7 @@
             padding: $space-modal;
             padding-right: $space-modal;
             max-width: $max-article-width;
+            min-height: calc(100vh - (#{$space-modal} * 2));
             background: $white;
 
             @include flexbox();
@@ -83,11 +84,11 @@
             }
 
             header {
-                margin-bottom: $space-large;
+                margin-right: $modal-aside-width;
+                margin-bottom: $space-extra;
                 padding: 0;
                 width: auto;
                 height: auto;
-                margin-bottom: $space-extra;
 
                 @include align-items(flex-start);
 
@@ -127,6 +128,10 @@
                 hgroup {
                     margin-bottom: $space-base;
                     line-height: 0;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
                 }
 
                 .team {

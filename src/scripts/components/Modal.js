@@ -8,7 +8,7 @@ class Modal {
         }
 
         this.triggersArray = document.querySelectorAll('#work .item');
-        this.btnClose = document.querySelector('#close-modal');
+        this.btnClose = document.getElementById('close-modal');
 
         this._state = {
             isVisible: this.dom.modal.classList.contains('is-visible')
@@ -33,14 +33,17 @@ class Modal {
 
     init() {
         this.eventHandler();
-        // this.fetchContent();
     }
 
     eventHandler() {
         document.addEventListener('click', (e) => {
             // Listen to trigger click to open modal
             Array.from(this.triggersArray).forEach(trigger => {
-                if (e.target === trigger) this.show();
+                if (e.target === trigger) {
+                    this.show();
+
+                    this.fetchContent(trigger.id);
+                }
             });
 
             // Listen to veil click
@@ -69,16 +72,29 @@ class Modal {
         this.setState({isVisible: false});
     }
 
-    fetchContent() {
-        async function fetchHtmlAsText(url) {
-            return await (await fetch(url)).text();
-        }
+    fetchContent(contentID) {
+        fetch('./work/' + contentID + '.html')
+        .then(
+            function(response) {
+                if (response.status !== 200) {
+                    console.log('Looks like there was a problem. Status Code: ' +
+                    response.status);
 
-        async function fetch() {
-            const fetchTarget = document.getElementById('fetch-target');
+                    return;
+                }
 
-            fetchTarget.innerHTML = await fetchHtmlAsText('work/test.html');
-        }
+                response.text().then(
+                    function(html) {
+                        const contentWrapper = document.getElementById('content-wrapper');
+
+                        contentWrapper.innerHTML = html;
+                    }
+                );
+            }
+        )
+        .catch(function(err) {
+            console.log('Fetch Error :-S', err);
+        });
     }
 
 }

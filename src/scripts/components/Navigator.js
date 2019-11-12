@@ -7,7 +7,7 @@ class Navigator {
 
         this.sectionsArray = this.dom.main.querySelectorAll('section');
 
-        if (location.hash) {
+        if (location.hash !== null) {
             this.initialSection = this.dom.main.querySelector(location.hash);
         }
         else {
@@ -55,13 +55,15 @@ class Navigator {
     }
 
     init() {
-        this.checkVisibleSection();
         this.eventHandler();
     }
 
     eventHandler() {
-        // Set the scroll buttons visibility
         window.addEventListener('load', () => {
+            // Move tho the section in the URL
+            this.changeSection(this.initialSection);
+
+            // Set the scroll buttons visibility
             this.setButtonVisibility();
         });
 
