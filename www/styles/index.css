@@ -1472,15 +1472,15 @@ header {
           width: 96px;
           height: 96px;
           color: #008BCC;
-          background-image: url("../images/logo.png");
+          background-image: url("../images/pencil.svg");
           background-repeat: no-repeat;
           background-size: contain;
-          -webkit-animation: anim-loading 2s infinite ease;
-          -khtml-animation: anim-loading 2s infinite ease;
-          -moz-animation: anim-loading 2s infinite ease;
-          -ms-animation: anim-loading 2s infinite ease;
-          -o-animation: anim-loading 2s infinite ease;
-          animation: anim-loading 2s infinite ease; }
+          -webkit-animation: anim-loading 3s infinite ease;
+          -khtml-animation: anim-loading 3s infinite ease;
+          -moz-animation: anim-loading 3s infinite ease;
+          -ms-animation: anim-loading 3s infinite ease;
+          -o-animation: anim-loading 3s infinite ease;
+          animation: anim-loading 3s infinite ease; }
 
 @-webkit-keyframes anim-loading {
   0% {

@@ -91,6 +91,7 @@ gulp.task('watch', function() {
 	gulp.watch(path.styles + '/**/*.scss', ['styles']).on('change', browserSync.reload);
 	gulp.watch(path.scripts + '/**/*.js', ['scripts']).on('change', browserSync.reload);
 	gulp.watch(path.templates + '/**/*.hbs', ['templates']).on('change', browserSync.reload);
+	gulp.watch(path.data + '/**/*.json', ['templates']).on('change', browserSync.reload);
 });
 
 gulp.task('default', ['styles', 'scripts', 'templates', 'work', 'images', 'fonts']);
