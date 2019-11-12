@@ -4,7 +4,7 @@
             {{!-- Work items wrapper (one for each 9 items) --}}
             <div id="page-{{@key}}" class="wrapper">
                 {{#each page}}
-                    <a id="{{name}}" class="item" tabindex="0">
+                    <a id="{{name}}" class="item" tabindex="0" {{#if dark-mode}}data-dark{{/if}}>
                         <h3>{{category}}</h3>
                         <h2>{{title}}</h2>
                         {{> view}}

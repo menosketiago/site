@@ -10,7 +10,8 @@
                 {
                     "category": "Product Design",
                     "title": "Ericsson Design System",
-                    "name": "ericsson"
+                    "name": "ericsson",
+                    "dark-mode": true
                 },
                 {
                     "category": "Product Design • Frontend",
@@ -20,7 +21,8 @@
                 {
                     "category": "Illustration",
                     "title": "Alien 1979",
-                    "name": "alien"
+                    "name": "alien",
+                    "dark-mode": true
                 },
                 {
                     "category": "Product Design • Web Development",

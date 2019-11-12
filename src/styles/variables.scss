@@ -8,6 +8,7 @@ $yellow: #FFF800;
 $gray-dark: #666666;
 
 $body-bg: $white;
+$body-bg-dark: #000000;
 $body-color: $black;
 
 // TYPOGRAPHY
@@ -27,6 +28,7 @@ $text-shadow: 0 2px 0 rgba(0, 0, 0, 0.8);
 $speed-default: .2s;
 $speed-slow: .4s;
 $speed-slowest: .8s;
+$speed-loading: 2s;
 
 // SIZES
 
@@ -52,6 +54,7 @@ $btn-scroll-width: $space-large * 2;
 $avatar-width: $space-large;
 
 $stroke-height: 3px;
+$loading-width: $space-extra * 2;
 $tooltip-caret-width: $space-small;
 
 // Z-INDEXES

@@ -24,10 +24,15 @@ class Modal {
         if (this._state.isVisible) {
             this.dom.modal.classList.add('is-open');
             this.dom.article.focus();
+            this.dom.article.classList.add('is-loading');
         }
         else {
             this.dom.modal.classList.remove('is-open');
             this.dom.article.blur();
+
+            // Remove the previous fetched content abd the dark mode class
+            this.dom.article.innerHTML = '';
+            this.dom.modal.classList.remove('dark-mode');
         }
     }
 
@@ -42,7 +47,7 @@ class Modal {
                 if (e.target === trigger) {
                     this.show();
 
-                    this.fetchContent(trigger.id);
+                    this.fetchContent(trigger);
                 }
             });
 
@@ -72,8 +77,13 @@ class Modal {
         this.setState({isVisible: false});
     }
 
-    fetchContent(contentID) {
-        fetch('./work/' + contentID + '.html')
+    fetchContent(trigger) {
+        // Check if the modal should open in dark mode
+        if (trigger.hasAttribute('data-dark')) {
+            this.dom.modal.classList.add('dark-mode');
+        }
+
+        fetch('./work/' + trigger.id + '.html')
         .then(
             function(response) {
                 if (response.status !== 200) {
@@ -87,14 +97,24 @@ class Modal {
                     function(html) {
                         const contentWrapper = document.getElementById('content-wrapper');
 
-                        contentWrapper.innerHTML = html;
+                        contentWrapper.classList.add('is-fading');
+
+                        setTimeout(() => {
+                            contentWrapper.classList.remove('is-fading');
+                            contentWrapper.classList.remove('is-loading');
+                            contentWrapper.innerHTML = html;
+                        }, 200);
                     }
                 );
             }
         )
-        .catch(function(err) {
-            console.log('Fetch Error :-S', err);
+        .catch(function(error) {
+            console.log('Fetch Error :-S', error);
         });
+    }
+
+    hideLoading() {
+
     }
 
 }

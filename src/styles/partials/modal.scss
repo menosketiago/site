@@ -8,8 +8,10 @@
 	overflow-y: auto;
     width: 100vw;
     height: 100vh;
-    background: transparent;
+    background: rgba($white, .8);
     backdrop-filter: blur(2px);
+    visibility: hidden;
+    opacity: 0;
     transition: transform $speed-slow ease;
     cursor: pointer;
 
@@ -27,19 +29,6 @@
         transition: opacity $speed-slow $speed-slow ease;
 
         @include transform(translate(-50%, 0));
-    }
-
-    // MODAL OPENING CLASS
-
-    &.is-open {
-        background: rgba($white, .8);
-
-        @include transform(translate(0, 0));
-
-        ~ #close-modal {
-            visibility: visible;
-            opacity: 1;
-        }
     }
 
     .container {
@@ -89,6 +78,7 @@
                 padding: 0;
                 width: auto;
                 height: auto;
+                background: transparent;
 
                 @include align-items(flex-start);
 
@@ -168,6 +158,91 @@
                 display: block;
                 width: 100%;
                 padding: 56.25% 0 0 0;
+            }
+
+            // LOADING CLASS
+
+            &.is-loading {
+                @include justify-content(center);
+                @include align-content(center);
+
+                &::before {
+                    content: '';
+                    width: $loading-width;
+                    height: $loading-width;
+                    color: $blue;
+                    background-image: url($path-images + 'logo.png');
+                    background-repeat: no-repeat;
+                    background-size: contain;
+
+                    @include animation(anim-loading $speed-loading infinite ease);
+
+                    @include keyframes(anim-loading) {
+                        0% {
+                            @include transform(rotate(0deg));
+                        }
+                        100% {
+                            @include transform(rotate(360deg));
+                        }
+                    }
+                }
+
+                &.is-fading::before {
+                    @include animation(anim-loading-fade $speed-default 1 ease forwards);
+
+                    @include keyframes(anim-loading-fade) {
+                        0% {
+                            opacity: 1;
+                        }
+                        100% {
+                            opacity: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // MODAL OPENING CLASS
+
+    &.is-open {
+        visibility: visible;
+        opacity: 1;
+
+        @include transform(translate(0, 0));
+
+        ~ #close-modal {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    // DARK MODE
+
+    &.dark-mode {
+        background: rgba($body-bg-dark, .95);
+
+        .container {
+            background-color: $body-bg-dark;
+            background-image: url($path-images + 'pattern-white-faded.png');
+
+            article {
+                color: $white;
+                background: $body-bg-dark;
+
+                header {
+                    h3 {
+                        color: $yellow;
+
+                        &::after {
+                            background: $yellow;
+                        }
+                    }
+                }
+
+                h6 {
+                    color: $white;
+                }
             }
         }
     }
