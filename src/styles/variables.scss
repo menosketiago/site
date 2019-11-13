@@ -18,7 +18,8 @@ $header-font: 'Bebas Neue Pro', Helvetica, Arial, sans-serif;
 
 $body-font-size: 20px;
 
-$regular: 300;
+$book: 300;
+$regular: 400;
 $bold: 500;
 
 $text-shadow: 0 2px 0 rgba(0, 0, 0, 0.8);
@@ -53,7 +54,7 @@ $main-height: calc(100vh - #{$space-large} - #{$space-large});
 $btn-scroll-width: $space-large * 2;
 $avatar-width: $space-large;
 
-$stroke-height: 3px;
+$stroke-height: 2px;
 $loading-width: $space-extra * 2;
 $tooltip-caret-width: $space-small;
 

@@ -41,7 +41,7 @@ main {
   	scroll-snap-type: y mandatory;
 }
 
-section {
+main > section {
 	width: 100%;
 	min-height: $main-height;
 	padding: 40px;
@@ -53,17 +53,24 @@ section {
 	@include align-items(center);
 }
 
-footer {
+body > footer {
 	display: inline-block;
 	width: $footer-width;
 	height: 100vh;
 	padding: $space-large;
-	background: $white;
-    writing-mode: vertical-lr;
+	// Fix for text alignment
+	padding-right: $space-large - 2px;
 
     @include flexbox();
+	@include flex-direction(column);
     @include justify-content(space-between);
-    @include transform(rotate(180deg));
+
+	hgroup {
+		display: inline-block;
+		writing-mode: vertical-lr;
+
+		@include transform(rotate(180deg));
+	}
 
 	h6 {
 		margin-bottom: $space-tiny;

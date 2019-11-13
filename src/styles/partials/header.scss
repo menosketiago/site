@@ -1,9 +1,8 @@
-header {
+body > header {
 	display: inline-block;
 	width: $header-width;
 	height: 100vh;
 	padding: $space-large;
-	background: $white;
 
     @include flexbox();
     @include flex-direction(column);

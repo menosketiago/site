@@ -77,12 +77,6 @@
             header {
                 margin-right: $modal-aside-width;
                 margin-bottom: $space-extra;
-                padding: 0;
-                width: auto;
-                height: auto;
-                background: transparent;
-
-                @include align-items(flex-start);
 
                 h1 {
                     font-size: 48px;
@@ -90,6 +84,7 @@
                 }
 
                 h3 {
+                    display: inline-block;
                     margin-bottom: $space-base;
                     color: $blue;
                     font-weight: $regular;
@@ -119,16 +114,10 @@
 
                 hgroup {
                     margin-bottom: $space-base;
-                    line-height: 0;
 
                     &:last-child {
                         margin-bottom: 0;
                     }
-                }
-
-                .team {
-                    height: $avatar-width;
-                    line-height: $avatar-width;
                 }
             }
 
@@ -232,17 +221,7 @@
                 color: $white;
                 background: $body-bg-dark;
 
-                aside {
-                    h5 {
-                        color: $yellow;
-                    }
-                }
-
                 header {
-                    h1, h5 {
-                        color: $yellow;
-                    }
-
                     h3 {
                         color: $yellow;
 
@@ -250,44 +229,11 @@
                             background: $yellow;
                         }
                     }
-
-                    .avatar {
-                        color: $white;
-                        background: $blue;
-                    }
                 }
 
                 h6 {
                     color: $white;
                 }
-
-                a {
-                    color: $yellow;
-
-                    &:hover {
-                        color: $white ;
-                        background: $blue;
-                    }
-                }
-            }
-        }
-
-        ~ #close-modal {
-            color: $yellow;
-            background: $blue;
-
-            &:hover {
-                color: $blue;
-                background: $yellow;
-            }
-
-            &:active {
-                color: $yellow;
-                background: $blue;
-            }
-
-            &.has-focus {
-                box-shadow: $shadow-focus;
             }
         }
     }

@@ -15,43 +15,55 @@
 
 @font-face {
   font-family: 'Bebas Neue Pro';
+  src: url("../fonts/BebasNeuePro-Regular.woff2") format("woff2"), url("../fonts/BebasNeuePro-Regular.woff") format("woff"), url("../fonts/BebasNeuePro-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Bebas Neue Pro';
   src: url("../fonts/BebasNeuePro-Book.woff2") format("woff2"), url("../fonts/BebasNeuePro-Book.woff") format("woff"), url("../fonts/BebasNeuePro-Book.ttf") format("truetype");
   font-weight: 300;
   font-style: normal; }
 
-h1, h2, h3, h4, h5, header nav a, h6 {
+h1, h2, h3, h4, h5, body > header nav a, h6 {
   margin: 0;
   color: #464646;
   font-family: "Bebas Neue Pro", Helvetica, Arial, sans-serif;
-  font-weight: 500;
   line-height: 1em;
   text-transform: uppercase; }
 
 h1 {
   color: #008BCC;
-  font-size: 42px; }
+  font-size: 42px;
+  font-weight: 500; }
 
 h2 {
-  font-size: 32px; }
+  font-size: 32px;
+  font-weight: 500; }
 
 h3 {
-  font-size: 16px; }
+  font-size: 16px;
+  font-weight: 400; }
 
 h4 {
   display: inline-block;
   color: #008BCC;
   font-size: 24px; }
 
-h5, header nav a {
+h5, body > header nav a {
   display: inline-block;
   color: #008BCC;
-  font-size: 14px; }
+  font-size: 14px;
+  font-weight: 500; }
 
 h6 {
   display: inline-block;
   color: #666666;
   font-size: 14px;
   font-weight: 300; }
+
+hgroup {
+  line-height: 1em; }
 
 p {
   margin: 0;
@@ -114,7 +126,7 @@ body {
   color: #464646;
   background: #ffffff;
   font-family: "Bebas Neue Pro", Helvetica, Arial, sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 20px;
   overflow: hidden;
   display: -webkit-box;
@@ -137,7 +149,7 @@ main {
   scroll-snap-points-y: repeat(300px);
   scroll-snap-type: y mandatory; }
 
-section {
+main > section {
   width: 100%;
   min-height: calc(100vh - 24px - 24px);
   padding: 40px;
@@ -162,30 +174,38 @@ section {
   -moz-align-items: center;
   align-items: center; }
 
-footer {
+body > footer {
   display: inline-block;
   width: 66px;
   height: 100vh;
   padding: 24px;
-  background: #ffffff;
-  writing-mode: vertical-lr;
+  padding-right: 22px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   -webkit-justify-content: space-between;
   -moz-justify-content: space-between;
-  justify-content: space-between;
-  -webkit-transform: rotate(180deg);
-  -khtml-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  transform: rotate(180deg); }
-  footer h6 {
+  justify-content: space-between; }
+  body > footer hgroup {
+    display: inline-block;
+    writing-mode: vertical-lr;
+    -webkit-transform: rotate(180deg);
+    -khtml-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg); }
+  body > footer h6 {
     margin-bottom: 4px; }
 
 #about {
@@ -1163,12 +1183,11 @@ button {
     text-align: center;
     text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5); }
 
-header {
+body > header {
   display: inline-block;
   width: 120px;
   height: 100vh;
   padding: 24px;
-  background: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-flex;
@@ -1190,38 +1209,38 @@ header {
   -webkit-justify-content: space-between;
   -moz-justify-content: space-between;
   justify-content: space-between; }
-  header .logo {
+  body > header .logo {
     display: block;
     width: 72px;
     height: 72px;
     border-radius: 50%; }
-    header .logo:hover, header .logo:active {
+    body > header .logo:hover, body > header .logo:active {
       background: transparent; }
-    header .logo.has-focus {
+    body > header .logo.has-focus {
       box-shadow: 0 0 0 8px #FFF800; }
-    header .logo img {
+    body > header .logo img {
       width: inherit;
       height: inherit; }
-  header nav {
+  body > header nav {
     margin-top: 24px;
     text-align: center; }
-    header nav a {
+    body > header nav a {
       margin-bottom: 4px;
       padding: 8px;
       padding-bottom: 6px;
       border: 1px solid transparent;
       transition: all 0.2s ease;
       cursor: pointer; }
-      header nav a:active {
+      body > header nav a:active {
         color: #ffffff; }
-      header nav a.is-current {
+      body > header nav a.is-current {
         color: #008BCC;
         border-color: #008BCC;
         text-decoration: none;
         pointer-events: none; }
-        header nav a.is-current:focus {
+        body > header nav a.is-current:focus {
           background: transparent; }
-  header .current-section {
+  body > header .current-section {
     margin-bottom: 24px;
     writing-mode: vertical-lr;
     display: -webkit-box;
@@ -1246,13 +1265,13 @@ header {
     -ms-transform: rotate(180deg);
     -o-transform: rotate(180deg);
     transform: rotate(180deg); }
-    header .current-section h4, header .current-section h6 {
+    body > header .current-section h4, body > header .current-section h6 {
       display: block;
       text-align: center;
       transition: all 0.2s ease; }
-    header .current-section h6 {
+    body > header .current-section h6 {
       margin-left: 4px; }
-  header .social {
+  body > header .social {
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-flex;
@@ -1269,7 +1288,7 @@ header {
     -webkit-justify-content: center;
     -moz-justify-content: center;
     justify-content: center; }
-    header .social a {
+    body > header .social a {
       width: 30px;
       height: 30px;
       margin-top: 8px;
@@ -1288,7 +1307,7 @@ header {
       -webkit-justify-content: center;
       -moz-justify-content: center;
       justify-content: center; }
-      header .social a svg {
+      body > header .social a svg {
         -webkit-transform: scale(1.2);
         -khtml-transform: scale(1.2);
         -moz-transform: scale(1.2);
@@ -1400,29 +1419,21 @@ header {
         -ms-transform: rotate(180deg);
         -o-transform: rotate(180deg);
         transform: rotate(180deg); }
-        .modal .container article aside h5, .modal .container article aside header nav a, header nav .modal .container article aside a {
+        .modal .container article aside h5, .modal .container article aside body > header nav a, body > header nav .modal .container article aside a {
           margin-top: 12px; }
         .modal .container article aside h6 {
           margin-top: 4px; }
       .modal .container article header {
         margin-right: 120px;
-        margin-bottom: 48px;
-        padding: 0;
-        width: auto;
-        height: auto;
-        background: transparent;
-        -webkit-box-align: start;
-        -ms-flex-align: start;
-        -webkit-align-items: flex-start;
-        -moz-align-items: flex-start;
-        align-items: flex-start; }
+        margin-bottom: 48px; }
         .modal .container article header h1 {
           font-size: 48px;
           margin-bottom: 12px; }
         .modal .container article header h3 {
+          display: inline-block;
           margin-bottom: 12px;
           color: #008BCC;
-          font-weight: 300; }
+          font-weight: 400; }
           .modal .container article header h3::after {
             content: '';
             display: block;
@@ -1430,7 +1441,7 @@ header {
             height: 1px;
             margin-top: 8px;
             background: #008BCC; }
-        .modal .container article header h5, .modal .container article header nav a {
+        .modal .container article header h5, .modal .container article body > header nav a {
           margin-right: 4px; }
         .modal .container article header h6 {
           margin-right: 12px;
@@ -1438,13 +1449,9 @@ header {
           .modal .container article header h6:last-child {
             margin-right: 0; }
         .modal .container article header hgroup {
-          margin-bottom: 12px;
-          line-height: 0; }
+          margin-bottom: 12px; }
           .modal .container article header hgroup:last-child {
             margin-bottom: 0; }
-        .modal .container article header .team {
-          height: 24px;
-          line-height: 24px; }
       .modal .container article h2 {
         width: 100%;
         color: #008BCC;
@@ -1626,35 +1633,12 @@ header {
       .modal.dark-mode .container article {
         color: #ffffff;
         background: #000000; }
-        .modal.dark-mode .container article aside h5, .modal.dark-mode .container article aside header nav a, header nav .modal.dark-mode .container article aside a {
-          color: #FFF800; }
-        .modal.dark-mode .container article header h1, .modal.dark-mode .container article header h5, .modal.dark-mode .container article header nav a {
-          color: #FFF800; }
         .modal.dark-mode .container article header h3 {
           color: #FFF800; }
           .modal.dark-mode .container article header h3::after {
             background: #FFF800; }
-        .modal.dark-mode .container article header .avatar {
-          color: #ffffff;
-          background: #008BCC; }
         .modal.dark-mode .container article h6 {
           color: #ffffff; }
-        .modal.dark-mode .container article a {
-          color: #FFF800; }
-          .modal.dark-mode .container article a:hover {
-            color: #ffffff;
-            background: #008BCC; }
-    .modal.dark-mode ~ #close-modal {
-      color: #FFF800;
-      background: #008BCC; }
-      .modal.dark-mode ~ #close-modal:hover {
-        color: #008BCC;
-        background: #FFF800; }
-      .modal.dark-mode ~ #close-modal:active {
-        color: #FFF800;
-        background: #008BCC; }
-      .modal.dark-mode ~ #close-modal.has-focus {
-        box-shadow: 0 0 0 4px #FFF800; }
 
 .tooltip {
   z-index: 10000;
@@ -1832,7 +1816,7 @@ header {
         color: #008BCC;
         background: #FFF800;
         font-family: "Bebas Neue Pro", Helvetica, Arial, sans-serif;
-        font-weight: 300;
+        font-weight: 400;
         text-transform: uppercase;
         display: -webkit-box;
         display: -webkit-flex;

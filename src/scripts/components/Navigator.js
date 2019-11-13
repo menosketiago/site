@@ -7,7 +7,7 @@ class Navigator {
 
         this.sectionsArray = this.dom.main.querySelectorAll('section');
 
-        if (location.hash !== '') {
+        if (location.hash) {
             this.initialSection = this.dom.main.querySelector(location.hash);
         }
         else {
@@ -44,77 +44,85 @@ class Navigator {
     }
 
     _updateDom() {
-        // Scroll to the right section
-        this._state.currentSection.scrollIntoView({behavior: 'smooth'});
-
         // Update the URL
         history.replaceState({}, '', '#' + this._state.currentSection.id);
 
         // Set the currently viewing title on the header
         this.currentlyViewing.textContent = this._state.currentSection.id;
+
+        // For WTF reasons when refreshing you need to have a timeout to set the section
+        if (performance.navigation.type == 1) {
+            setTimeout(() => {
+                this._state.currentSection.scrollIntoView({behavior: 'smooth'});
+            }, 0);
+        }
+        else {
+            this._state.currentSection.scrollIntoView({behavior: 'smooth'});
+        }
     }
 
     init() {
-        this.changeSection(this.initialSection);
-        this.setCurrentLink();
-        this.setButtonVisibility();
+        this.changeSection(this._state.currentSection);
 
         this.eventHandler();
     }
 
     eventHandler() {
-        this.logo.addEventListener('click', (e) => {
-            e.preventDefault();
-
-            this.targetSection = this.dom.main.querySelector('#home');
-
-            this.changeSection(this.targetSection);
-        });
-
-        // Listen to click on the main nav links
-        Array.from(this.links).forEach(link => {
-            link.addEventListener('click', (e) => {
+        document.addEventListener('click', (e) => {
+            // Listen for logo clicks
+            if (e.target === this.logo) {
                 e.preventDefault();
 
-                // Get the targer section from the URL
-                let id = e.target.href.split('#')[1];
-                this.targetSection = this.dom.main.querySelector('section#' + id);
+                this.targetSection = this.dom.main.querySelector('#home');
 
                 this.changeSection(this.targetSection);
+            }
+
+            // Listen to click on the main nav links
+            Array.from(this.links).forEach(link => {
+                if (e.target === link) {
+                    e.preventDefault();
+
+                    // Get the targer section from the URL
+                    let id = e.target.href.split('#')[1];
+                    this.targetSection = this.dom.main.querySelector('section#' + id);
+
+                    this.changeSection(this.targetSection);
+                }
             });
-        });
 
-        // Listen to clicks on the scroll up button
-        this.btnUp.addEventListener('click', () => {
-            this.targetSection = this._state.currentSection.previousElementSibling;
+            // Listen to clicks on the scroll up button
+            if (e.target === this.btnUp) {
+                this.targetSection = this._state.currentSection.previousElementSibling;
 
-            this.changeSection(this.targetSection);
-        });
+                this.changeSection(this.targetSection);
+            }
 
-        // Listen to clicks on the scroll down button
-        this.btnDown.addEventListener('click', () => {
-            this.targetSection = this._state.currentSection.nextElementSibling;
+            // Listen to clicks on the scroll down button
+            if (e.target === this.btnDown) {
+                this.targetSection = this._state.currentSection.nextElementSibling;
 
-            this.changeSection(this.targetSection);
-        });
+                this.changeSection(this.targetSection);
+            }
 
-        // Listen to clicks on the back to top button
-        this.btnTop.addEventListener('click', () => {
-            this.changeSection(this.initialSection);
-        });
+            // Listen to clicks on the back to top button
+            if (e.target === this.btnTop) {
+                this.changeSection(this.initialSection);
+            }
 
-        // Listen to clicks on the navigate right button
-        this.btnRight.addEventListener('click', () => {
-            this.targetWrapper = this._state.currentWrapper.nextElementSibling;
+            // Listen to clicks on the navigate right button
+            if (e.target === this.btnRight) {
+                this.targetWrapper = this._state.currentWrapper.nextElementSibling;
 
-            this.changeWrapper(this.targetWrapper);
-        });
+                this.changeWrapper(this.targetWrapper);
+            }
 
-        // Listen to clicks on the navigate left button
-        this.btnLeft.addEventListener('click', () => {
-            this.targetWrapper = this._state.currentWrapper.previousElementSibling;
+            // Listen to clicks on the navigate left button
+            if (e.target === this.btnLeft) {
+                this.targetWrapper = this._state.currentWrapper.previousElementSibling;
 
-            this.changeWrapper(this.targetWrapper);
+                this.changeWrapper(this.targetWrapper);
+            }
         });
 
         // Listen to keypress events
@@ -174,12 +182,14 @@ class Navigator {
 
     changeSection(targetSection) {
         this.setState({currentSection: targetSection});
+
         this.setCurrentLink();
         this.setButtonVisibility();
     }
 
     changeWrapper(targetWrapper) {
         this.setState({currentWrapper: targetWrapper});
+
         this._state.currentWrapper.scrollIntoView({behavior: 'smooth'});
         this.setButtonVisibility();
     }

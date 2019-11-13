@@ -11,6 +11,15 @@
 
 @font-face {
     font-family: 'Bebas Neue Pro';
+    src: url($path-fonts + 'BebasNeuePro-Regular.woff2') format('woff2'),
+         url($path-fonts + 'BebasNeuePro-Regular.woff') format('woff'),
+         url($path-fonts + 'BebasNeuePro-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro';
     src: url($path-fonts + 'BebasNeuePro-Book.woff2') format('woff2'),
          url($path-fonts + 'BebasNeuePro-Book.woff') format('woff'),
          url($path-fonts + 'BebasNeuePro-Book.ttf') format('truetype');
@@ -22,7 +31,6 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
     color: $black;
     font-family: $header-font;
-    font-weight: $bold;
     line-height: 1em;
     text-transform: uppercase;
 }
@@ -30,14 +38,17 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     color: $blue;
     font-size: 42px;
+    font-weight: $bold;
 }
 
 h2 {
     font-size: 32px;
+    font-weight: $bold;
 }
 
 h3 {
     font-size: 16px;
+    font-weight: $regular;
 }
 
 h4 {
@@ -50,19 +61,24 @@ h5 {
     display: inline-block;
     color: $blue;
     font-size: 14px;
+    font-weight: $bold;
 }
 
 h6 {
     display: inline-block;
     color: $gray-dark;
     font-size: 14px;
-    font-weight: $regular;
+    font-weight: $book;
+}
+
+hgroup {
+    line-height: 1em;
 }
 
 p {
 	margin: 0;
     margin-bottom: $space-base;
-    font-weight: $regular;
+    font-weight: $book;
     line-height: 1.4em;
 
     &:last-child {
