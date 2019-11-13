@@ -103,6 +103,9 @@ class Modal {
                             contentWrapper.classList.remove('is-fading');
                             contentWrapper.classList.remove('is-loading');
                             contentWrapper.innerHTML = html;
+
+                            // Reinitialize the JS components
+                            window.initComponents();
                         }, 200);
                     }
                 );
@@ -111,10 +114,6 @@ class Modal {
         .catch(function(error) {
             console.log('Fetch Error :-S', error);
         });
-    }
-
-    hideLoading() {
-
     }
 
 }
