@@ -107,7 +107,7 @@ class Navigator {
 
             // Listen to clicks on the back to top button
             if (e.target === this.btnTop) {
-                this.changeSection(this.initialSection);
+                this.changeSection(this.sectionsArray[0]);
             }
 
             // Listen to clicks on the navigate right button

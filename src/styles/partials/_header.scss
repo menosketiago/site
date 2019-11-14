@@ -39,7 +39,7 @@ body > header {
 
 			margin-bottom: $space-tiny;
 			padding: $space-small;
-			padding-bottom: $space-small - 2px;
+			padding-bottom: $space-small - $text-fix;
 			border: 1px solid transparent;
 			transition: all $speed-default ease;
 			cursor: pointer;

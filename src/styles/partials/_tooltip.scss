@@ -2,7 +2,8 @@
     z-index: $z-index-tooltip;
     position: absolute;
     padding: $space-tiny $space-small;
-    padding-bottom: $space-tiny - 2px;
+    // Fix for text alignment
+    padding-bottom: $space-tiny - $text-fix;
     color: $blue;
     background: $yellow;
     font-size: 16px;

@@ -6,22 +6,26 @@ $black: #464646;
 $blue: #008BCC;
 $yellow: #FFF800;
 $gray-dark: #666666;
+$gray-mid: mix($white, $gray-dark, 33%);
 
+$body-color: $black;
 $body-bg: $white;
 $body-bg-dark: #000000;
-$body-color: $black;
+
+$border-color: #E0E0E0;
 
 // TYPOGRAPHY
 
 $body-font: 'Bebas Neue Pro', Helvetica, Arial, sans-serif;
 $header-font: 'Bebas Neue Pro', Helvetica, Arial, sans-serif;
 
-$body-font-size: 20px;
+$body-font-size: 18px;
 
 $book: 300;
 $regular: 400;
 $bold: 500;
 
+$text-fix: 2px;
 $text-shadow: 0 2px 0 rgba(0, 0, 0, 0.8);
 
 // SPEEDS
@@ -49,14 +53,20 @@ $header-width: 120px;
 $footer-width: 66px;
 
 $main-width: calc(100vw - #{$header-width} - #{$footer-width});
-$main-height: calc(100vh - #{$space-large} - #{$space-large});
+$main-height: calc(100vh - (#{$space-large} * 2));
 
-$btn-scroll-width: $space-large * 2;
+$btn-width: $space-large * 2;
 $avatar-width: $space-large;
+$card-width: $space-extra * 11;
 
-$stroke-height: 2px;
 $loading-width: $space-extra * 2;
 $tooltip-caret-width: $space-small;
+
+$input-width: $space-extra * 8;
+$input-height: $space-extra;
+$input-space: $space-base;
+
+$stroke-height: 2px;
 
 // Z-INDEXES
 
@@ -74,4 +84,4 @@ $path-thumbs: '../images/thumbs/';
 // OTHER
 
 $shadow-focus: 0 0 0 $space-tiny $yellow;
-$btn-scroll-shadow-focus: 0 0 0 $space-tiny $blue;
+$btn-shadow-focus: 0 0 0 $space-tiny $blue;

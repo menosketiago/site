@@ -1,13 +1,7 @@
 #about {
-	height: calc(100vh - 80px);
 	color: white;
 	background-image: url($path-images + 'bg-brownie.jpg');
-	background-color: $blue;
-	background-attachment: fixed;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: top;
-	overflow: hidden;
+	background-color: $yellow;
 
     h1 {
 		color: $white;

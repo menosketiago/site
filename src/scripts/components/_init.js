@@ -1,6 +1,7 @@
 // COMPONENTS
 
 import Focus from './Focus';
+import Input from './Input';
 import Modal from './Modal';
 import Navigator from './Navigator';
 import Tooltip from './Tooltip';
@@ -8,6 +9,7 @@ import Year from './Year';
 
 const menos = window.menos = {
     Focus,
+    Input,
     Modal,
     Navigator,
     Tooltip,
@@ -19,13 +21,13 @@ export function initComponents() {
     let focus = new Focus(document);
     focus.init();
 
-    // CURRENT YEAR
-    let yearArray = document.querySelectorAll('[data-year]');
+    // INPUTS
+    let inputsArray = document.querySelectorAll('.input');
 
-    if (yearArray) {
-        Array.from(yearArray).forEach(yearDOM => {
-            let year = new Year(yearDOM);
-            year.init();
+    if (inputsArray) {
+        Array.from(inputsArray).forEach(inputDOM => {
+            let input = new Input(inputDOM);
+            input.init();
         });
     }
 
@@ -54,6 +56,16 @@ export function initComponents() {
         Array.from(tooltipsArray).forEach(tooltipDOM => {
             let tooltip = new Tooltip(tooltipDOM);
             tooltip.init();
+        });
+    }
+
+    // CURRENT YEAR
+    let yearArray = document.querySelectorAll('[data-year]');
+
+    if (yearArray) {
+        Array.from(yearArray).forEach(yearDOM => {
+            let year = new Year(yearDOM);
+            year.init();
         });
     }
 }

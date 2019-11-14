@@ -1,0 +1,32 @@
+#contact {
+	color: white;
+	background-image: url($path-images + 'bg-phone.jpg');
+
+	@include justify-content(flex-start);
+
+	.card {
+		max-height: calc(100vh - (#{$space-extra} * 4));
+		position: relative;
+		padding-bottom: $space-extra;
+
+		button {
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+
+			@include transform(translate(-50%, 50%));
+		}
+
+		.input {
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+
+			textarea {
+				min-width: 100%;
+				max-height: $input-height * 5;
+			}
+		}
+	}
+}
+

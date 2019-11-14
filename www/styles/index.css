@@ -38,6 +38,7 @@ h1 {
   font-weight: 500; }
 
 h2 {
+  color: #008BCC;
   font-size: 32px;
   font-weight: 500; }
 
@@ -69,7 +70,7 @@ p {
   margin: 0;
   margin-bottom: 12px;
   font-weight: 300;
-  line-height: 1.4em; }
+  line-height: 1.2em; }
   p:last-child {
     margin-bottom: 0; }
 
@@ -127,7 +128,7 @@ body {
   background: #ffffff;
   font-family: "Bebas Neue Pro", Helvetica, Arial, sans-serif;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 18px;
   overflow: hidden;
   display: -webkit-box;
   display: -webkit-flex;
@@ -139,11 +140,16 @@ img,
 iframe {
   max-width: 100%; }
 
+form {
+  margin-top: 24px; }
+  form:first-child {
+    margin-top: 0; }
+
 main {
   display: inline-block;
   overflow: auto;
   width: calc(100vw - 120px - 66px);
-  height: calc(100vh - 24px - 24px);
+  height: calc(100vh - (24px * 2));
   margin: 24px 0;
   scroll-snap-type: mandatory;
   scroll-snap-points-y: repeat(300px);
@@ -151,18 +157,20 @@ main {
 
 main > section {
   width: 100%;
-  min-height: calc(100vh - 24px - 24px);
-  padding: 40px;
+  height: calc(100vh - (24px * 2));
+  padding: 48px;
   scroll-snap-align: start;
+  background-color: #008BCC;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  overflow: hidden;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-flow: column;
-  -moz-flex-flow: column;
-  -ms-flex-flow: column;
-  flex-flow: column;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   -webkit-justify-content: center;
@@ -209,15 +217,9 @@ body > footer {
     margin-bottom: 4px; }
 
 #about {
-  height: calc(100vh - 80px);
   color: white;
   background-image: url("../images/bg-brownie.jpg");
-  background-color: #008BCC;
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
-  overflow: hidden; }
+  background-color: #FFF800; }
   #about h1 {
     color: #ffffff;
     text-align: center;
@@ -281,34 +283,49 @@ body > footer {
     background-image: url("../images/avatars/martin.png"); }
 
 button {
+  display: inline-block;
+  height: 48px;
+  padding: 12px 16px;
+  padding-bottom: 10px;
+  color: #008BCC;
+  background: #FFF800;
   border: 0;
+  font-family: "Bebas Neue Pro", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
+  vertical-align: middle;
   outline: 0;
+  transition: all 0.2s ease;
   cursor: pointer; }
+  button svg {
+    margin-top: -2px;
+    margin-right: 8px;
+    vertical-align: middle;
+    pointer-events: none;
+    -webkit-transform: scale(1.2);
+    -khtml-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2); }
+  button:hover {
+    color: #FFF800;
+    background: #008BCC; }
+  button:active {
+    color: #008BCC;
+    background: #FFF800; }
+  button.has-focus {
+    box-shadow: 0 0 0 4px #008BCC; }
+  button.is-hidden {
+    opacity: 0;
+    pointer-events: none; }
   button.scroll {
     z-index: 100;
     position: fixed;
     width: 48px;
-    height: 48px;
-    color: #008BCC;
-    background: #FFF800;
-    transition: all 0.2s ease; }
+    padding: 0; }
     button.scroll svg {
-      vertical-align: middle;
-      pointer-events: none;
-      -webkit-transform: scale(1.2);
-      -khtml-transform: scale(1.2);
-      -moz-transform: scale(1.2);
-      -ms-transform: scale(1.2);
-      -o-transform: scale(1.2);
-      transform: scale(1.2); }
-    button.scroll:hover {
-      color: #FFF800;
-      background: #008BCC; }
-    button.scroll:active {
-      color: #008BCC;
-      background: #FFF800; }
-    button.scroll.has-focus {
-      box-shadow: 0 0 0 4px #008BCC; }
+      margin: 0; }
     button.scroll.up, button.scroll.down, button.scroll.top {
       left: 50%; }
     button.scroll.up {
@@ -1130,58 +1147,58 @@ button {
     -ms-transform: scale(1.2) translate(0, 0);
     -o-transform: scale(1.2) translate(0, 0);
     transform: scale(1.2) translate(0, 0); } }
-    button.scroll.on-yellow {
-      color: #FFF800;
-      background: #008BCC; }
-      button.scroll.on-yellow:hover {
-        color: #008BCC;
-        background: #FFF800; }
-      button.scroll.on-yellow:active {
-        color: #FFF800;
-        background: #008BCC; }
-      button.scroll.on-yellow.has-focus {
-        box-shadow: 0 0 0 4px #FFF800; }
-    button.scroll.is-hidden {
-      opacity: 0;
-      pointer-events: none; }
-  button.close {
-    width: 48px;
-    height: 48px;
-    color: #008BCC;
-    background: #FFF800;
-    transition: all 0.2s ease; }
-    button.close svg {
-      vertical-align: middle;
-      pointer-events: none;
-      -webkit-transform: scale(1.2);
-      -khtml-transform: scale(1.2);
-      -moz-transform: scale(1.2);
-      -ms-transform: scale(1.2);
-      -o-transform: scale(1.2);
-      transform: scale(1.2); }
-    button.close:hover {
-      color: #FFF800;
-      background: #008BCC; }
-    button.close:active {
+  button.on-yellow {
+    color: #FFF800;
+    background: #008BCC; }
+    button.on-yellow:hover {
       color: #008BCC;
       background: #FFF800; }
-    button.close.has-focus {
-      box-shadow: 0 0 0 4px #008BCC; }
+    button.on-yellow:active {
+      color: #FFF800;
+      background: #008BCC; }
+    button.on-yellow.has-focus {
+      box-shadow: 0 0 0 4px #FFF800; }
+
+.card {
+  width: 528px;
+  margin: 48px;
+  padding: 48px;
+  color: #464646;
+  background: #ffffff; }
+  .card h1 {
+    margin-bottom: 24px; }
+  .card i {
+    color: #008BCC; }
+  .card .input {
+    max-width: 100%; }
 
 #contact {
-  height: calc(100vh - 80px);
   color: white;
   background-image: url("../images/bg-phone.jpg");
-  background-color: #008BCC;
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
-  overflow: hidden; }
-  #contact h1 {
-    color: #ffffff;
-    text-align: center;
-    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5); }
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  -moz-justify-content: flex-start;
+  justify-content: flex-start; }
+  #contact .card {
+    max-height: calc(100vh - (48px * 4));
+    position: relative;
+    padding-bottom: 48px; }
+    #contact .card button {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      -webkit-transform: translate(-50%, 50%);
+      -khtml-transform: translate(-50%, 50%);
+      -moz-transform: translate(-50%, 50%);
+      -ms-transform: translate(-50%, 50%);
+      -o-transform: translate(-50%, 50%);
+      transform: translate(-50%, 50%); }
+    #contact .card .input:last-of-type {
+      margin-bottom: 0; }
+    #contact .card .input textarea {
+      min-width: 100%;
+      max-height: 240px; }
 
 body > header {
   display: inline-block;
@@ -1316,15 +1333,14 @@ body > header {
         transform: scale(1.2); }
 
 #home {
-  height: calc(100vh - 80px);
   color: white;
   background-image: url("../images/bg-mom.jpg");
-  background-color: #008BCC;
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
-  overflow: hidden; }
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column; }
   #home .logo {
     width: 320px;
     height: 320px;
@@ -1334,6 +1350,90 @@ body > header {
     color: #ffffff;
     text-align: center;
     text-shadow: 0 2px 0 rgba(0, 0, 0, 0.8); }
+
+.input {
+  position: relative;
+  width: 100%;
+  max-width: 384px;
+  margin-bottom: 24px; }
+  .input:last-child {
+    margin-bottom: 0; }
+  .input label {
+    position: absolute;
+    top: 26px;
+    left: 12px;
+    padding: 4px;
+    color: #989898;
+    background: #ffffff;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1em;
+    pointer-events: none;
+    transition: all 0.2s ease;
+    -webkit-transform: translate(0, -50%);
+    -khtml-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    transform: translate(0, -50%); }
+  .input input,
+  .input textarea {
+    width: 100%;
+    height: 48px;
+    padding: 12px;
+    padding-bottom: 10px;
+    color: #464646;
+    background-color: #ffffff;
+    font-family: "Bebas Neue Pro", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    border: 1px solid #E0E0E0;
+    transition: border 0.2s ease; }
+    .input input:hover,
+    .input textarea:hover {
+      border-color: #008BCC; }
+    .input input:active, .input input:focus,
+    .input textarea:active,
+    .input textarea:focus {
+      border-color: #008BCC;
+      border-width: 2px; }
+      .input input:active ~ label, .input input:focus ~ label,
+      .input textarea:active ~ label,
+      .input textarea:focus ~ label {
+        top: 2px;
+        left: 10px;
+        color: #008BCC;
+        font-size: 14px; }
+    .input input.is-invalid,
+    .input textarea.is-invalid {
+      border-color: red; }
+      .input input.is-invalid ~ label,
+      .input textarea.is-invalid ~ label {
+        color: red !important; }
+    .input input.has-value ~ label,
+    .input textarea.has-value ~ label {
+      top: 2px;
+      left: 10px;
+      color: #bababa;
+      font-size: 14px; }
+    .input input.has-value:hover ~ label,
+    .input input.has-value:active ~ label,
+    .input input.has-value:focus ~ label,
+    .input textarea.has-value:hover ~ label,
+    .input textarea.has-value:active ~ label,
+    .input textarea.has-value:focus ~ label {
+      color: #008BCC; }
+  .input textarea {
+    max-width: 100%;
+    min-height: 144px; }
+  .input input:-webkit-autofill,
+  .input input:-webkit-autofill:hover,
+  .input input:-webkit-autofill:focus,
+  .input textarea:-webkit-autofill,
+  .input textarea:-webkit-autofill:hover,
+  .input textarea:-webkit-autofill:focus {
+    transition: background-color 999999s ease 0s; }
 
 .modal {
   z-index: 9999;

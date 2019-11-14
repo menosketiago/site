@@ -42,6 +42,7 @@ h1 {
 }
 
 h2 {
+    color: $blue;
     font-size: 32px;
     font-weight: $bold;
 }
@@ -79,7 +80,7 @@ p {
 	margin: 0;
     margin-bottom: $space-base;
     font-weight: $book;
-    line-height: 1.4em;
+    line-height: 1.2em;
 
     &:last-child {
         margin-bottom: 0;

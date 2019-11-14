@@ -1,0 +1,19 @@
+.card {
+    width: $card-width;
+    margin: $space-extra;
+    padding: $space-extra;
+    color: $black;
+    background: $white;
+
+    h1 {
+        margin-bottom: $space-large;
+    }
+
+    i {
+        color: $blue;
+    }
+
+    .input {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,107 @@
+.input {
+    position: relative;
+    width: 100%;
+    max-width: $input-width;
+    margin-bottom: $space-large;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    label {
+        position: absolute;
+        top: ($input-height / 2) + $text-fix;
+        left: $input-space;
+        padding: $space-tiny;
+        color: $gray-mid;
+        background: $white;
+        font-size: 16px;
+        font-weight: $regular;
+        text-transform: uppercase;
+        line-height: 1em;
+        pointer-events: none;
+        transition: all $speed-default ease;
+
+        @include transform(translate(0, -50%));
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        height: $input-height;
+        padding: $input-space;
+        // Fix for text aligment
+        padding-bottom: $space-base - $text-fix;
+        color: $black;
+        background-color: $white;
+        font-family: $body-font;
+        font-size: $body-font-size;
+        font-weight: $book;
+        border: 1px solid $border-color;
+        transition: border $speed-default ease;
+
+        &:hover {
+            border-color: $blue;
+        }
+
+        &:active,
+        &:focus {
+            border-color: $blue;
+            border-width: $stroke-height;
+
+            // LABEL CHANGES ON INPUT FOCUS
+
+            ~ label {
+                top: $text-fix;
+                left: $input-space - $text-fix;
+                color: $blue;
+                font-size: 14px;
+            }
+        }
+
+        &.is-valid  {
+            // border-color: green;
+        }
+
+       &.is-invalid {
+            border-color: red;
+
+            ~ label {
+                color: red !important;
+            }
+        }
+
+        // KEEP LABEL FLOATED IF VALUE EXISTS
+
+        &.has-value {
+            ~ label {
+                top: $text-fix;
+                left: $input-space - $text-fix;
+                color: mix($white, $gray-mid, 33%);
+                font-size: 14px;
+            }
+
+            &:hover ~ label,
+            &:active ~ label,
+            &:focus ~ label {
+                color: $blue;
+            }
+        }
+    }
+
+    textarea {
+        max-width: 100%;
+        min-height: $input-height * 3;
+    }
+
+    // CELAN AUTOCOMPLETE STYLES
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    textarea:-webkit-autofill,
+    textarea:-webkit-autofill:hover,
+    textarea:-webkit-autofill:focus {
+        transition: background-color 999999s ease 0s;
+    }
+}
