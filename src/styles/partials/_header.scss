@@ -68,7 +68,6 @@ body > header {
 	}
 
     .current-section {
-		margin-bottom: $space-large;
 		writing-mode: vertical-lr;
 
 		@include flexbox();

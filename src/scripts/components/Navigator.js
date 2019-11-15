@@ -59,6 +59,11 @@ class Navigator {
         else {
             this._state.currentSection.scrollIntoView({behavior: 'smooth'});
         }
+
+        // Navigate to the right work items page
+        setTimeout(() => {
+            this._state.currentWrapper.scrollIntoView({behavior: 'smooth'});
+        }, 0);
     }
 
     init() {
@@ -190,7 +195,6 @@ class Navigator {
     changeWrapper(targetWrapper) {
         this.setState({currentWrapper: targetWrapper});
 
-        this._state.currentWrapper.scrollIntoView({behavior: 'smooth'});
         this.setButtonVisibility();
     }
 

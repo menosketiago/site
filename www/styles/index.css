@@ -289,7 +289,6 @@ body > header {
         body > header nav a.is-current:focus {
           background: transparent; }
   body > header .current-section {
-    margin-bottom: 24px;
     writing-mode: vertical-lr;
     display: -webkit-box;
     display: -webkit-flex;
