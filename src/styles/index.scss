@@ -6,14 +6,17 @@
 
 // PARTIALS
 
+@import 'partials/header';
+@import 'partials/footer';
+
+@import 'partials/home';
 @import 'partials/about';
+@import 'partials/work';
+@import 'partials/contact';
+
 @import 'partials/avatars';
 @import 'partials/buttons';
 @import 'partials/cards';
-@import 'partials/contact';
-@import 'partials/header';
-@import 'partials/home';
 @import 'partials/inputs';
 @import 'partials/modal';
 @import 'partials/tooltip';
-@import 'partials/work';

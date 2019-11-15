@@ -17,9 +17,6 @@ body {
 	padding: 0;
 	color: $black;
 	background: $body-bg;
-	font-family: $body-font;
-	font-weight: $regular;
-	font-size: $body-font-size;
     overflow: hidden;
 
 	@include flexbox();
@@ -39,7 +36,6 @@ form {
 }
 
 main {
-	display: inline-block;
 	overflow: auto;
 	width: $main-width;
 	height: $main-height;
@@ -50,8 +46,8 @@ main {
 }
 
 main > section {
-	width: 100%;
-	height: $main-height;
+	width: inherit;
+	height: inherit;
 	padding: $space-extra;
 	scroll-snap-align: start;
 	background-color: $blue;
@@ -66,26 +62,23 @@ main > section {
 	@include align-items(center);
 }
 
-body > footer {
-	display: inline-block;
-	width: $footer-width;
-	height: 100vh;
-	padding: $space-large;
-	// Fix for text alignment
-	padding-right: $space-large - $text-fix;
+// MEDIA QUERIES
 
-    @include flexbox();
-	@include flex-direction(column);
-    @include justify-content(space-between);
-
-	hgroup {
-		display: inline-block;
-		writing-mode: vertical-lr;
-
-		@include transform(rotate(180deg));
+@media (max-height: $screen-height-small) {
+	main {
+		width: $main-width-small;
+		height: $main-height-small;
+		margin: $space-base 0;
 	}
 
-	h6 {
-		margin-bottom: $space-tiny;
+	main > section {
+		padding: $space-large;
+	}
+
+	body > footer {
+		width: $footer-width-small;
+		padding: ($space-base + $text-fix) $space-base;
+		// Fix for text alignment
+		padding-right: $space-base - $text-fix;
 	}
 }

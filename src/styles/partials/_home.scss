@@ -5,8 +5,8 @@
 	@include flex-direction(column);
 
 	.logo {
-	    width: 320px;
-	    height: 320px;
+	    width: $logo-home-size;
+	    height: $logo-home-size;
 	    margin-bottom: $space-extra;
 	}
 
@@ -15,5 +15,22 @@
 		color: $white;
 		text-align: center;
 		text-shadow: $text-shadow;
+	}
+
+	// MEDIA QUERIES
+
+	@media (max-height: $screen-height-average) {
+		.logo {
+			width: $logo-home-size-average;
+	    	height: $logo-home-size-average;
+		}
+	}
+
+	@media (max-height: $screen-height-small) {
+		.logo {
+			width: $logo-home-size-small;
+	    	height: $logo-home-size-small;
+			margin-bottom: $space-large;
+		}
 	}
 }

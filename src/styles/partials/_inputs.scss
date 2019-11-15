@@ -11,11 +11,11 @@
     label {
         position: absolute;
         top: ($input-height / 2) + $text-fix;
-        left: $input-space;
+        left: $input-padding;
         padding: $space-tiny;
         color: $gray-mid;
         background: $white;
-        font-size: 16px;
+        font-size: 0.9em; // 16px
         font-weight: $regular;
         text-transform: uppercase;
         line-height: 1em;
@@ -29,16 +29,20 @@
     textarea {
         width: 100%;
         height: $input-height;
-        padding: $input-space;
+        padding: $input-padding;
         // Fix for text aligment
         padding-bottom: $space-base - $text-fix;
         color: $black;
         background-color: $white;
+        background-image: none;
+        background-position-x: 150%;
         font-family: $body-font;
         font-size: $body-font-size;
         font-weight: $book;
         border: 1px solid $border-color;
-        transition: border $speed-default ease;
+        transition:
+            border $speed-default ease,
+            background $speed-default ease;
 
         &:hover {
             border-color: $blue;
@@ -47,27 +51,44 @@
         &:active,
         &:focus {
             border-color: $blue;
-            border-width: $stroke-height;
+            outline: $stroke-height solid $blue;
 
             // LABEL CHANGES ON INPUT FOCUS
 
             ~ label {
                 top: $text-fix;
-                left: $input-space - $text-fix;
+                left: $input-padding - $text-fix;
                 color: $blue;
-                font-size: 14px;
+                font-size: 0.7em;
             }
         }
 
+        &.is-valid,
+        &.is-invalid {
+            background-repeat: no-repeat;
+            background-position-x: calc(100% - #{$input-padding});
+            background-position-y: ($input-height / 2) - ($input-icon-size / 2);
+            background-size: $input-icon-size;
+        }
+
         &.is-valid  {
-            // border-color: green;
+            background-image: url($path-images + 'check.svg');
         }
 
        &.is-invalid {
-            border-color: red;
+            border-color: $red;
+            background-image: url($path-images + 'error.svg');
+
+            &:active,
+            &:focus {
+                outline: $stroke-height solid $red;
+            }
 
             ~ label {
-                color: red !important;
+                top: $text-fix;
+                left: $input-padding - $text-fix;
+                color: $red !important;
+                font-size: 0.7em;
             }
         }
 
@@ -76,9 +97,9 @@
         &.has-value {
             ~ label {
                 top: $text-fix;
-                left: $input-space - $text-fix;
+                left: $input-padding - $text-fix;
                 color: mix($white, $gray-mid, 33%);
-                font-size: 14px;
+                font-size: 0.7em;
             }
 
             &:hover ~ label,
@@ -103,5 +124,61 @@
     textarea:-webkit-autofill:hover,
     textarea:-webkit-autofill:focus {
         transition: background-color 999999s ease 0s;
+    }
+
+    // MEDIA QUERIES
+
+	@media (max-height: $screen-height-average) {
+        margin-bottom: ace-small;
+
+        label {
+            top: ($input-height-small / 2) + $text-fix;
+        }
+
+		input,
+        textarea {
+            height: $input-height-small;
+            font-size: $body-font-size-small;
+
+            &.is-valid,
+            &.is-invalid {
+                background-repeat: no-repeat;
+                background-position-y: ($input-height-small / 2) - ($input-icon-size-small / 2);
+                background-size: $input-icon-size-small;
+            }
+        }
+
+        textarea {
+            min-height: $input-height-small * 2;
+        }
+	}
+
+    @media (max-height: $screen-height-small) {
+        margin-bottom: $space-base;
+
+        label {
+            left: $input-padding-small;
+        }
+
+        input,
+        textarea {
+            padding: $input-padding-small;
+
+            &.is-valid,
+            &.is-invalid {
+                background-position-x: calc(100% - #{$input-padding-small});
+                background-size: 14px;
+            }
+
+            &:active,
+            &:focus,
+            &.is-invalid,
+            &.has-value {
+                ~ label {
+                    left: $input-padding-small - $text-fix;
+                    font-size: 0.8em;
+                }
+            }
+        }
     }
 }

@@ -27,6 +27,12 @@
     font-style: normal;
 }
 
+body {
+    font-family: $body-font;
+	font-weight: $regular;
+	font-size: $body-font-size;
+}
+
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
     color: $black;
@@ -37,38 +43,38 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     color: $blue;
-    font-size: 42px;
+    font-size: 2.3em; // 42px
     font-weight: $bold;
 }
 
 h2 {
     color: $blue;
-    font-size: 32px;
+    font-size: 1.7em; // 32px
     font-weight: $bold;
 }
 
 h3 {
-    font-size: 16px;
+    font-size: 0.8em; // 16px
     font-weight: $regular;
 }
 
 h4 {
     display: inline-block;
     color: $blue;
-    font-size: 24px;
+    font-size: 1.3em; // 24px
 }
 
 h5 {
     display: inline-block;
     color: $blue;
-    font-size: 14px;
+    font-size: 0.7em; // 14px
     font-weight: $bold;
 }
 
 h6 {
     display: inline-block;
     color: $gray-dark;
-    font-size: 14px;
+    font-size: 0.7em; // 14px
     font-weight: $book;
 }
 
@@ -110,4 +116,42 @@ a {
 mark {
     color: $yellow;
     background: transparent;
+}
+
+// MEDIA QUERIES
+
+@media (max-height: $screen-height-average) {
+    body {
+        font-size: $body-font-size-average;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h4 {
+        font-size: 1.1em;
+    }
+
+    h5, h6 {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-height: $screen-height-small) {
+    body {
+        font-size: $body-font-size-small;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h4 {
+        font-size: 1.1em;
+    }
+
+    h5, h6 {
+        font-size: .7em;
+    }
 }

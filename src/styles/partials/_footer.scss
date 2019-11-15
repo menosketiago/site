@@ -1,0 +1,35 @@
+body > footer {
+	display: inline-block;
+	width: $footer-width;
+	height: 100vh;
+	padding: $space-large;
+	// Fix for text alignment
+	padding-right: $space-large - $text-fix;
+
+    @include flexbox();
+	@include flex-direction(column);
+    @include justify-content(space-between);
+
+	hgroup {
+		writing-mode: vertical-lr;
+
+		@include flexbox();
+		@include align-items(center);
+
+		@include transform(rotate(180deg));
+	}
+
+	h6 {
+		margin-bottom: $space-tiny;
+	}
+
+
+	// MEDIA QUERIES
+
+	@media (max-height: $screen-height-small) {
+		width: $footer-width-small;
+		padding: ($space-base + $text-fix) $space-base;
+		// Fix for text alignment
+		padding-right: $space-base - $text-fix;
+	}
+}

@@ -20,7 +20,7 @@
 		.item {
 			position: relative;
 			width: calc(100% / 3);
-			height: calc(100vh / 3 - #{$space-small} - #{$space-small});
+			height: calc((100vh - (#{$space-small} * 2)) / 3);
 			padding: $space-large;
 			background-color: transparent;
 			background-image: url($path-thumbs + 'test.jpg');
@@ -148,6 +148,43 @@
 			&#nem-tudo { background-image: url($path-thumbs + 'nem-tudo.jpg'); }
 			&#mana { background-image: url($path-thumbs + 'mana.jpg'); }
 			&#mamacita { background-image: url($path-thumbs + 'mamacita.jpg'); }
+		}
+	}
+
+	// MEDIA QUERIES
+
+	@media (max-height: $screen-height-small) {
+		.wrapper {
+			width: $main-width-small;
+
+			.item {
+				height: calc((100vh - (#{$space-base} * 2)) / 3);
+
+				h2 {
+					font-size: 1.5em;
+				}
+
+				h3 {
+					margin-bottom: $space-small;
+
+					&::after {
+						height: $stroke-height / 2;
+						margin-top: $space-tiny;
+					}
+				}
+
+				.view {
+					margin-top: $space-small;
+					padding: 6px $space-small;
+
+					svg {
+						width: 18px;
+						height: 18px;
+
+						@include transform(scale(.8));
+					}
+				}
+			}
 		}
 	}
 }

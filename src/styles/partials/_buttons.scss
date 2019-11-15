@@ -1,6 +1,6 @@
 button {
     display: inline-block;
-    height: $btn-width;
+    height: $btn-height;
     padding: $space-base ($space-base + $space-tiny);
     // Fix for text align
     padding-bottom: $space-base - $text-fix;
@@ -8,7 +8,7 @@ button {
     background: $yellow;
     border: 0;
     font-family: $body-font;
-    font-size: 20px;
+    font-size: 1.1em; // 20px
     text-transform: uppercase;
     vertical-align: middle;
     outline: 0;
@@ -51,7 +51,7 @@ button {
     &.scroll {
         z-index: $scroll-btn-index;
         position: fixed;
-        width: $btn-width;
+        width: $btn-height;
         padding: 0;
 
         svg {
@@ -66,86 +66,18 @@ button {
 
         &.up {
             top: 0;
-
-            &:hover {
-                svg {
-                    // Moving up animation
-                    @include animation(anim-arrow-up $speed-slowest infinite linear);
-
-                    @include keyframes(anim-arrow-up) {
-                        0% {
-                            @include transform(scale(1.2) translate(0, 0));
-                        }
-                        33% {
-                            @include transform(scale(1.2) translate(0, -4px));
-                        }
-                        66% {
-                            @include transform(scale(1.2) translate(0, 4px));
-                        }
-                        100% {
-                            @include transform(scale(1.2) translate(0, 0));
-                        }
-                    }
-                }
-            }
         }
 
         &.down {
             bottom: 0;
 
-            svg {
-                @include transform(scale(1.2) rotate(180deg));
-            }
-
-            &:hover {
-                svg {
-                    // Moving down animation
-                    @include animation(anim-arrow-down $speed-slowest infinite linear);
-
-                    @include keyframes(anim-arrow-down) {
-                        0% {
-                            @include transform(scale(1.2) rotate(180deg) translate(0, 0));
-                        }
-                        33% {
-                            @include transform(scale(1.2) rotate(180deg) translate(0, 4px));
-                        }
-                        66% {
-                            @include transform(scale(1.2) rotate(180deg) translate(0, -4px));
-                        }
-                        100% {
-                            @include transform(scale(1.2) rotate(180deg) translate(0, 0));
-                        }
-                    }
-                }
-            }
+            @include transform(rotate(180deg));
         }
 
         // BACK TO TOP
 
         &.top {
             bottom: 0;
-
-            &:hover {
-                svg {
-                    // Moving up animation
-                    @include animation(anim-back-top $speed-slowest infinite linear);
-
-                    @include keyframes(anim-back-top) {
-                        0% {
-                            @include transform(scale(1.2) translate(0, 0));
-                        }
-                        33% {
-                            @include transform(scale(1.2) translate(0, -4px));
-                        }
-                        66% {
-                            @include transform(scale(1.2) translate(0, 4px));
-                        }
-                        100% {
-                            @include transform(scale(1.2) translate(0, 0));
-                        }
-                    }
-                }
-            }
         }
 
         // USED WITHIN THE WORK SECTION
@@ -159,60 +91,18 @@ button {
         }
 
         &.left {
-            left: $header-width - ($btn-width / 2);
+            left: $header-width - ($btn-height / 2);
+
+            @include transform(rotate(180deg));
 
             svg {
-                @include transform(scale(1.2) rotate(180deg));
-            }
-
-            &:hover {
-                svg {
-                    // Moving left animation
-                    @include animation(anim-move-left $speed-slowest infinite linear);
-
-                    @include keyframes(anim-move-left) {
-                        0% {
-                            @include transform(scale(1.2) rotate(180deg) translate(0, 0));
-                        }
-                        33% {
-                            @include transform(scale(1.2) rotate(180deg) translate(-4px, 0));
-                        }
-                        66% {
-                            @include transform(scale(1.2) rotate(180deg) translate(4px, 0));
-                        }
-                        100% {
-                            @include transform(scale(1.2) rotate(180deg) translate(0, 0));
-                        }
-                    }
-                }
+                @include transform(scale(1.2));
             }
         }
 
         &.right {
-            right: $footer-width - ($btn-width / 2);
+            right: $footer-width - ($btn-height / 2);
             left: auto;
-
-            &:hover {
-                svg {
-                    // Moving right animation
-                    @include animation(anim-move-right $speed-slowest infinite linear);
-
-                    @include keyframes(anim-move-right) {
-                        0% {
-                            @include transform(scale(1.2) translate(0, 0));
-                        }
-                        33% {
-                            @include transform(scale(1.2) translate(4px, 0))
-                        ; }
-                        66% {
-                            @include transform(scale(1.2) translate(-4px, 0)
-                        ); }
-                        100% {
-                            @include transform(scale(1.2) translate(0, 0));
-                        }
-                    }
-                }
-            }
         }
     }
 
@@ -234,6 +124,53 @@ button {
 
         &.has-focus {
             box-shadow: $shadow-focus;
+        }
+    }
+
+    // MEDIA QUERIES
+
+	@media (max-height: $screen-height-average) {
+        height: $btn-height-average;
+
+        svg {
+            @include transform(scale(.9));
+        }
+
+        &.scroll {
+            width: $btn-height-average;
+
+            &.left {
+                left: $header-width - ($btn-height-average / 2);
+            }
+
+            &.right {
+                right: $footer-width - ($btn-height-average / 2);
+            }
+        }
+    }
+
+    @media (max-height: $screen-height-small) {
+        height: $btn-height-small;
+        padding: $space-small ($space-small + $space-tiny);
+        // Fix for text align
+        padding-bottom: $space-small - $text-fix;
+
+        svg {
+            margin-right: $space-tiny;
+
+            @include transform(scale(.8));
+        }
+
+        &.scroll {
+            width: $btn-height-small;
+
+            &.left {
+                left: $header-width-small - ($btn-height-small / 2);
+            }
+
+            &.right {
+                right: $footer-width-small - ($btn-height-small / 2);
+            }
         }
     }
 }

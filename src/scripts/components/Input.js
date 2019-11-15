@@ -36,8 +36,6 @@ class Input {
 
         this.dom.input.addEventListener("keyup", () => {
             this.checkValue();
-
-            console.log(this.dom.input.validity.valid);
         });
     }
 

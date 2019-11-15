@@ -5,6 +5,8 @@ $black: #464646;
 
 $blue: #008BCC;
 $yellow: #FFF800;
+$red: #CC0069;
+
 $gray-dark: #666666;
 $gray-mid: mix($white, $gray-dark, 33%);
 
@@ -55,7 +57,9 @@ $footer-width: 66px;
 $main-width: calc(100vw - #{$header-width} - #{$footer-width});
 $main-height: calc(100vh - (#{$space-large} * 2));
 
-$btn-width: $space-large * 2;
+$logo-home-size: $space-extra * 6;
+
+$btn-height: $space-large * 2;
 $avatar-width: $space-large;
 $card-width: $space-extra * 11;
 
@@ -64,7 +68,8 @@ $tooltip-caret-width: $space-small;
 
 $input-width: $space-extra * 8;
 $input-height: $space-extra;
-$input-space: $space-base;
+$input-padding: $space-base;
+$input-icon-size: 18px;
 
 $stroke-height: 2px;
 
@@ -85,3 +90,29 @@ $path-thumbs: '../images/thumbs/';
 
 $shadow-focus: 0 0 0 $space-tiny $yellow;
 $btn-shadow-focus: 0 0 0 $space-tiny $blue;
+
+// MEDIA QUERY SIZES
+
+$screen-height-average: 643px;
+$screen-height-small: 475px;
+
+$body-font-size-average: 14px;
+$body-font-size-small: 12px;
+
+$header-width-small: 80px;
+$footer-width-small: 48px;
+
+$main-width-small: calc(100vw - #{$header-width-small} - #{$footer-width-small});
+$main-height-small: calc(100vh - (#{$space-base} * 2));
+
+$logo-home-size-average: $space-extra * 5;
+$logo-home-size-small: $space-extra * 4;
+
+$btn-height-average: 40px;
+$btn-height-small: 34px;
+
+$card-width-small: 400px;
+
+$input-height-small: $space-large + $space-base;
+$input-padding-small: $space-small;
+$input-icon-size-small: 16px;

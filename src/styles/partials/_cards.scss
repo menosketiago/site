@@ -9,11 +9,22 @@
         margin-bottom: $space-large;
     }
 
-    i {
+    em {
         color: $blue;
+        font-style: normal;
     }
 
     .input {
         max-width: 100%;
+    }
+
+    // MEDIA QUERIES
+
+	@media (max-height: $screen-height-small) {
+        width: $card-width-small;
+
+        h1 {
+            margin-bottom: $space-base + $space-tiny;
+        }
     }
 }

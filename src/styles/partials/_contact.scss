@@ -5,7 +5,7 @@
 	@include justify-content(flex-start);
 
 	.card {
-		max-height: calc(100vh - (#{$space-extra} * 4));
+		max-height: calc(100vh - (#{$space-extra} * 2));
 		position: relative;
 		padding-bottom: $space-extra;
 
@@ -25,6 +25,29 @@
 			textarea {
 				min-width: 100%;
 				max-height: $input-height * 5;
+			}
+		}
+	}
+
+	// MEDIA QUERIES
+
+	@media (max-height: $screen-height-average) {
+		.card {
+			margin: 0 $space-large;
+			padding: $space-large + $space-tiny;
+
+			h1 {
+				font-size: 1.8em;
+			}
+		}
+	}
+
+	@media (max-height: $screen-height-small) {
+		.card {
+			.input {
+				textarea {
+					max-height: $input-height-small * 2;
+				}
 			}
 		}
 	}
