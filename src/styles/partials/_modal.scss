@@ -24,11 +24,17 @@
         position: fixed;
         top: $space-modal * 2;
         left: $header-width * 2;
+        width: $btn-height;
+        padding: 0;
         visibility: hidden;
         opacity: 0;
         transition: opacity $speed-slow $speed-slow ease;
 
         @include transform(translate(-50%, 0));
+
+        svg {
+            margin: 0;
+        }
     }
 
     .container {
@@ -79,7 +85,7 @@
                 margin-bottom: $space-extra;
 
                 h1 {
-                    font-size: 48px;
+                    font-size: 2.6em; // 48px
                     margin-bottom: $space-base;
                 }
 
@@ -221,20 +227,37 @@
                 color: $white;
                 background: $body-bg-dark;
 
-                header {
-                    h3 {
-                        color: $yellow;
-
-                        &::after {
-                            background: $yellow;
-                        }
-                    }
-                }
-
                 h6 {
                     color: $white;
                 }
             }
+        }
+    }
+
+    // MEDIA QUERIES
+
+	@media (max-height: $screen-height-average) {
+        ~ #close-modal {
+            left: $header-width;
+            width: $btn-height-average;
+        }
+
+        .container {
+            width: calc(100% - #{$header-width} - #{$footer-width});
+            margin-left: $header-width;
+        }
+    }
+
+    @media (max-height: $screen-height-small) {
+        ~ #close-modal {
+            left: $header-width-small;
+            width: $btn-height-small;
+        }
+
+        .container {
+            width: calc(100% - #{$header-width-small} - #{$footer-width-small});
+            margin-right: $footer-width-small;
+            margin-left: $header-width-small;
         }
     }
 }

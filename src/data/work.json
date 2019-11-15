@@ -37,7 +37,8 @@
                 {
                     "category": "Illustration",
                     "title": "Nem Tudo o que Reluz é Ouro",
-                    "name": "nem-tudo"
+                    "name": "nem-tudo",
+                    "dark-mode": true
                 },
                 {
                     "category": "Games Journalism • Web Development",

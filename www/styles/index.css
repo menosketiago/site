@@ -1094,6 +1094,8 @@ button {
     position: fixed;
     top: 96px;
     left: 240px;
+    width: 48px;
+    padding: 0;
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.4s 0.4s ease;
@@ -1103,6 +1105,8 @@ button {
     -ms-transform: translate(-50%, 0);
     -o-transform: translate(-50%, 0);
     transform: translate(-50%, 0); }
+    .modal ~ #close-modal svg {
+      margin: 0; }
   .modal .container {
     width: calc(100% - (120px * 2) - 66px);
     min-height: 100vh;
@@ -1159,7 +1163,7 @@ button {
         margin-right: 120px;
         margin-bottom: 48px; }
         .modal .container article header h1 {
-          font-size: 48px;
+          font-size: 2.6em;
           margin-bottom: 12px; }
         .modal .container article header h3 {
           display: inline-block;
@@ -1358,19 +1362,30 @@ button {
       visibility: visible;
       opacity: 1; }
   .modal.dark-mode {
-    background: rgba(0, 0, 0, 0.95); }
+    background: rgba(29, 29, 29, 0.95); }
     .modal.dark-mode .container {
-      background-color: #000000;
+      background-color: #1D1D1D;
       background-image: url("../images/pattern-white-faded.png"); }
       .modal.dark-mode .container article {
         color: #ffffff;
-        background: #000000; }
-        .modal.dark-mode .container article header h3 {
-          color: #FFF800; }
-          .modal.dark-mode .container article header h3::after {
-            background: #FFF800; }
+        background: #1D1D1D; }
         .modal.dark-mode .container article h6 {
           color: #ffffff; }
+  @media (max-height: 643px) {
+    .modal ~ #close-modal {
+      left: 120px;
+      width: 40px; }
+    .modal .container {
+      width: calc(100% - 120px - 66px);
+      margin-left: 120px; } }
+  @media (max-height: 475px) {
+    .modal ~ #close-modal {
+      left: 80px;
+      width: 34px; }
+    .modal .container {
+      width: calc(100% - 80px - 48px);
+      margin-right: 48px;
+      margin-left: 80px; } }
 
 .tooltip {
   z-index: 10000;
@@ -1379,7 +1394,7 @@ button {
   padding-bottom: 2px;
   color: #008BCC;
   background: #FFF800;
-  font-size: 16px;
+  font-size: 0.8em;
   text-transform: uppercase;
   opacity: 0;
   visibility: hidden;
