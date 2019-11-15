@@ -1,4 +1,6 @@
 button {
+    position: relative;
+    overflow: hidden;
     display: inline-block;
     height: $btn-height;
     padding: $space-base ($space-base + $space-tiny);
@@ -15,6 +17,37 @@ button {
     transition: all $speed-default ease;
     cursor: pointer;
 
+    &::before {
+        content: '';
+        // Fix so that the text content can show
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: $blue;
+        transition: transform $speed-default ease;
+
+        @include transform(translate(100%, 0));
+    }
+
+    &:hover {
+        color: $yellow;
+
+        &::before {
+            @include transform(translate(0, 0));
+        }
+    }
+
+    &:active {
+        color: $blue;
+
+        &::before {
+            background: $yellow;
+        }
+    }
+
     svg {
         // Fix for text align
         margin-top: -$text-fix;
@@ -23,16 +56,6 @@ button {
         pointer-events: none;
 
         @include transform(scale(1.2));
-    }
-
-    &:hover {
-        color: $yellow;
-        background: $blue;
-    }
-
-    &:active {
-        color: $blue;
-        background: $yellow;
     }
 
     &.has-focus {
@@ -66,12 +89,30 @@ button {
 
         &.up {
             top: 0;
+
+            &::before {
+                @include transform(translate(0, 100%));
+            }
+
+            &:hover::before {
+                @include transform(translate(0, 0));
+            }
         }
 
         &.down {
             bottom: 0;
 
-            @include transform(rotate(180deg));
+            &::before {
+                @include transform(translate(0, -100%));
+            }
+
+            &:hover::before {
+                @include transform(translate(0, 0));
+            }
+
+            svg {
+                @include transform(rotate(180deg));
+            }
         }
 
         // BACK TO TOP
@@ -93,16 +134,22 @@ button {
         &.left {
             left: $header-width - ($btn-height / 2);
 
-            @include transform(rotate(180deg));
-
             svg {
-                @include transform(scale(1.2));
+                @include transform(rotate(180deg));
             }
         }
 
         &.right {
             right: $footer-width - ($btn-height / 2);
             left: auto;
+
+            &::before {
+                @include transform(translate(-100%, 0));
+            }
+
+            &:hover::before {
+                @include transform(translate(0, 0));
+            }
         }
     }
 
@@ -114,12 +161,22 @@ button {
 
         &:hover {
             color: $blue;
-            background: $yellow;
+
+            &::before {
+                background: $yellow;
+
+                @include transform(translate(100%, 0));
+            }
         }
 
         &:active {
             color: $yellow;
-            background: $blue;
+
+            &::before {
+                background: $blue;
+
+                @include transform(translate(0, 0));
+            }
         }
 
         &.has-focus {

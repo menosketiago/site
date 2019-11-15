@@ -221,11 +221,19 @@
 
         .container {
             background-color: $body-bg-dark;
-            background-image: url($path-images + 'pattern-white-faded.png');
+            background-image: url($path-images + 'pattern-white-faded-2.png');
 
             article {
                 color: $white;
                 background: $body-bg-dark;
+
+                h3 {
+                    color: $white;
+
+                    &::after {
+                        background: $white;;
+                    }
+                }
 
                 h6 {
                     color: $white;

@@ -59,11 +59,6 @@ class Navigator {
         else {
             this._state.currentSection.scrollIntoView({behavior: 'smooth'});
         }
-
-        // Navigate to the right work items page
-        setTimeout(() => {
-            this._state.currentWrapper.scrollIntoView({behavior: 'smooth'});
-        }, 0);
     }
 
     init() {
@@ -78,7 +73,7 @@ class Navigator {
             if (e.target === this.logo) {
                 e.preventDefault();
 
-                this.targetSection = this.dom.main.querySelector('#home');
+                this.targetSection = this.sectionsArray[0];
 
                 this.changeSection(this.targetSection);
             }
@@ -194,6 +189,11 @@ class Navigator {
 
     changeWrapper(targetWrapper) {
         this.setState({currentWrapper: targetWrapper});
+
+        // Navigate to the right work items page
+        setTimeout(() => {
+            this._state.currentWrapper.scrollIntoView({behavior: 'smooth'});
+        }, 0);
 
         this.setButtonVisibility();
     }

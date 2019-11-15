@@ -1,0 +1,38 @@
+main {
+	overflow: auto;
+	width: $main-width;
+	height: $main-height;
+	margin: $space-large 0;
+	scroll-snap-type: mandatory;
+  	scroll-snap-points-y: repeat(300px);
+  	scroll-snap-type: y mandatory;
+
+	> section {
+		width: inherit;
+		height: inherit;
+		padding: $space-extra;
+		scroll-snap-align: start;
+		background-color: $blue;
+		background-attachment: fixed;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: top;
+		overflow: hidden;
+
+		@include flexbox;
+		@include justify-content(center);
+		@include align-items(center);
+	}
+
+	// MEDIA QUERIES
+
+	@media (max-height: $screen-height-small) {
+		width: $main-width-small;
+		height: $main-height-small;
+		margin: $space-base 0;
+
+		> section {
+			padding: $space-large;
+		}
+	}
+}
