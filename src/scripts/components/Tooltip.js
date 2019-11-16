@@ -3,14 +3,15 @@ class Tooltip {
     constructor(element) {
         this.dom = {
             trigger: element,
-            content: element.getAttribute('data-tooltip') || false
+            content: element.getAttribute('data-tooltip') || false,
+            tooltip: document.querySelector('.tooltip')
         };
 
-        this.tooltip = document.querySelector('.tooltip');
         this.main = document.querySelector(`main`);
+        this.isBlue = this.dom.trigger.hasAttribute('data-blue');
 
         this._state = {
-            isVisible: this.tooltip.classList.contains('is-visible')
+            isVisible: this.dom.tooltip.classList.contains('is-visible')
         };
     }
 
@@ -21,11 +22,11 @@ class Tooltip {
 
     _updateDom() {
         if (this._state.isVisible) {
-            this.tooltip.classList.add('is-visible');
+            this.dom.tooltip.classList.add('is-visible');
         }
         else {
-            this.tooltip.classList.remove('is-visible');
-            this.tooltip.removeAttribute('style');
+            this.dom.tooltip.classList.remove('is-visible');
+            this.dom.tooltip.removeAttribute('style');
         }
     }
 
@@ -43,7 +44,14 @@ class Tooltip {
 
     setTooltipContent() {
         // Set the tooltip content according to the data-tooltip content
-        this.tooltip.innerHTML = this.dom.content;
+        this.dom.tooltip.innerHTML = this.dom.content;
+
+        if (this.isBlue) {
+            this.dom.tooltip.classList.add('blue');
+        }
+        else {
+            this.dom.tooltip.classList.remove('blue');
+        }
 
         // Position the tooltip
         this.positionTooltip();
@@ -53,7 +61,7 @@ class Tooltip {
         let trigger, tooltip, margin, triggerRect, top, left, offsetTop, offsetRight, offsetLeft;
 
         trigger = this.dom.trigger;
-        tooltip = this.tooltip;
+        tooltip = this.dom.tooltip;
         margin = 8;
 
         // Get the trigger location
@@ -81,7 +89,7 @@ class Tooltip {
         this.setState({isVisible: false});
 
         // Empty the tooltip
-        this.tooltip.innerHTML = '';
+        this.dom.tooltip.innerHTML = '';
     }
 
 }

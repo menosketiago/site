@@ -41,11 +41,14 @@ class Navigator {
 
     setState(props) {
         this._state = Object.assign(this._state, props);
-        setTimeout(() => this._updateDom(), 0);
+        this._updateDom();
     }
 
     _updateDom() {
-        this._state.currentSection.scrollIntoView({behavior: 'smooth'});
+        // Likely due to racing conditions we need a timeout for the scroll to work
+        setTimeout(() => {
+            this._state.currentSection.scrollIntoView({behavior: 'smooth'});
+        }, 0);
 
         // Set the currently viewing title on the header
         this.currentlyViewing.textContent = this._state.currentSection.id;
@@ -176,8 +179,8 @@ class Navigator {
     changeSection(targetSection) {
         this.setState({currentSection: targetSection});
 
-        // this.setCurrentLink();
-        // this.setButtonVisibility();
+        this.setCurrentLink();
+        this.setButtonVisibility();
     }
 
     changeWrapper(targetWrapper) {
@@ -227,12 +230,12 @@ class Navigator {
 
         // Change the up and down button colors if on the about section
         if (this._state.currentSection.id === 'about') {
-            this.btnUp.classList.add('on-yellow');
-            this.btnDown.classList.add('on-yellow');
+            this.btnUp.classList.add('blue');
+            this.btnDown.classList.add('blue');
         }
         else {
-            this.btnUp.classList.remove('on-yellow');
-            this.btnDown.classList.remove('on-yellow');
+            this.btnUp.classList.remove('blue');
+            this.btnDown.classList.remove('blue');
         }
 
         // Show the button to move left/right only on the work section

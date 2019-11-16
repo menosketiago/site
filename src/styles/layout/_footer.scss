@@ -17,12 +17,23 @@ body > footer {
 		@include align-items(center);
 
 		@include transform(rotate(180deg));
-	}
 
-	h6 {
-		margin-bottom: $space-tiny;
-	}
+		h6 {
+			margin-bottom: $space-tiny;
 
+			&:last-child {
+				margin-top: $space-base;
+			}
+		}
+
+		span {
+			margin: $space-tiny;
+			margin-right: -$space-tiny - 1px;
+			writing-mode: initial;
+
+			@include transform(rotate(180deg));
+		}
+	}
 
 	// MEDIA QUERIES
 

@@ -105,7 +105,7 @@ mark {
 blockquote {
   color: #464646;
   margin: 24px;
-  font-size: 1.5em;
+  font-size: 1.4em;
   text-transform: uppercase;
   line-height: 1.2em; }
   blockquote::before {
@@ -461,8 +461,20 @@ body > footer {
     -ms-transform: rotate(180deg);
     -o-transform: rotate(180deg);
     transform: rotate(180deg); }
-  body > footer h6 {
-    margin-bottom: 4px; }
+    body > footer hgroup h6 {
+      margin-bottom: 4px; }
+      body > footer hgroup h6:last-child {
+        margin-top: 12px; }
+    body > footer hgroup span {
+      margin: 4px;
+      margin-right: -5px;
+      writing-mode: initial;
+      -webkit-transform: rotate(180deg);
+      -khtml-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      transform: rotate(180deg); }
   @media (max-height: 475px) {
     body > footer {
       width: 48px;
@@ -513,17 +525,36 @@ body > footer {
   justify-content: flex-start; }
   #about .card {
     position: relative;
-    overflow: hidden;
-    max-height: calc(100vh - (48px * 4)); }
-    #about .card::after {
-      content: '';
+    max-height: calc(100vh - (48px * 4));
+    margin-top: 108px;
+    padding-top: 84px; }
+    #about .card h1 {
+      margin-bottom: 8px;
+      font-size: 2.2em; }
+    #about .card header {
+      margin-bottom: 24px;
+      text-align: center; }
+      #about .card header h5, #about .card body > header nav a, #about .card header h6 {
+        font-size: 1em; }
+      #about .card header h5, #about .card body > header nav a {
+        margin-right: 4px; }
+      #about .card header h6 {
+        margin-right: 12px; }
+        #about .card header h6:last-child {
+          margin-right: 0; }
+    #about .card .avatar {
       position: absolute;
-      bottom: 0;
-      width: 100%;
-      height: 48px;
-      background: #ffffff; }
-    #about .card h5, #about .card body > header nav a, body > header nav #about .card a, #about .card h6 {
-      font-size: 1em; }
+      top: 0;
+      left: 50%;
+      width: 120px;
+      height: 120px;
+      border: 4px solid #ffffff;
+      -webkit-transform: translate(-50%, -50%);
+      -khtml-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%); }
   #about > blockquote {
     position: absolute;
     right: 96px;
@@ -815,6 +846,8 @@ body > footer {
     align-items: center; }
   .avatar:after {
     background-size: cover; }
+  .avatar#me::after {
+    background-image: url("../images/avatar.jpg"); }
   .avatar#mikael::after {
     background-image: url("../images/avatars/mikael.png"); }
   .avatar#patricia::after {
@@ -981,12 +1014,12 @@ button {
         -ms-transform: translate(0, 0);
         -o-transform: translate(0, 0);
         transform: translate(0, 0); }
-  button.on-yellow {
+  button.blue {
     color: #FFF800;
     background: #008BCC; }
-    button.on-yellow:hover {
+    button.blue:hover {
       color: #008BCC; }
-      button.on-yellow:hover::before {
+      button.blue:hover::before {
         background: #FFF800;
         -webkit-transform: translate(100%, 0);
         -khtml-transform: translate(100%, 0);
@@ -994,9 +1027,9 @@ button {
         -ms-transform: translate(100%, 0);
         -o-transform: translate(100%, 0);
         transform: translate(100%, 0); }
-    button.on-yellow:active {
+    button.blue:active {
       color: #FFF800; }
-      button.on-yellow:active::before {
+      button.blue:active::before {
         background: #008BCC;
         -webkit-transform: translate(0, 0);
         -khtml-transform: translate(0, 0);
@@ -1004,7 +1037,7 @@ button {
         -ms-transform: translate(0, 0);
         -o-transform: translate(0, 0);
         transform: translate(0, 0); }
-    button.on-yellow.has-focus {
+    button.blue.has-focus {
       outline-color: #FFF800; }
   @media (max-height: 643px) {
     button {
@@ -1609,12 +1642,15 @@ button {
 .tooltip {
   z-index: 10000;
   position: absolute;
-  padding: 4px 8px;
-  padding-bottom: 2px;
+  max-width: 176px;
+  padding: 8px 8px;
+  padding-bottom: 6px;
   color: #008BCC;
   background: #FFF800;
-  font-size: 0.8em;
+  font-size: 0.9em;
   text-transform: uppercase;
+  text-align: center;
+  line-height: 1em;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -1644,6 +1680,11 @@ button {
     -ms-transform: translate(-50%, 50%) rotate(45deg);
     -o-transform: translate(-50%, 50%) rotate(45deg);
     transform: translate(-50%, 50%) rotate(45deg); }
+  .tooltip.blue {
+    color: #FFF800;
+    background: #008BCC; }
+    .tooltip.blue::after {
+      background: #008BCC; }
   .tooltip.is-visible {
     opacity: 1;
     visibility: visible;

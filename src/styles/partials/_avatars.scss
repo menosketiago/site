@@ -33,6 +33,8 @@
         background-size: cover;
     }
 
+    &#me::after { background-image: url($path-images + 'avatar.jpg'); }
+
     &#mikael::after { background-image: url($path-avatars + 'mikael.png'); }
     &#patricia::after { background-image: url($path-avatars + 'patricia.png'); }
     &#johan::after { background-image: url($path-avatars + 'johan.png'); }

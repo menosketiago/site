@@ -1,13 +1,16 @@
 .tooltip {
     z-index: $z-index-tooltip;
     position: absolute;
-    padding: $space-tiny $space-small;
+    max-width: $default-width / 3;
+    padding: $space-small $space-small;
     // Fix for text alignment
-    padding-bottom: $space-tiny - $text-fix;
+    padding-bottom: $space-small - $text-fix;
     color: $blue;
     background: $yellow;
-    font-size: 0.8em; // 16px
+    font-size: 0.9em; // 16px
     text-transform: uppercase;
+    text-align: center;
+    line-height: 1em;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -32,6 +35,17 @@
         user-select: none;
 
         @include transform(translate(-50%, 50%) rotate(45deg));
+    }
+
+    // BLUE TOOLTIP
+
+    &.blue {
+        color: $yellow;
+        background: $blue;
+
+        &::after {
+            background: $blue;
+        }
     }
 
     &.is-visible {
