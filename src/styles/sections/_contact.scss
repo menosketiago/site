@@ -1,13 +1,14 @@
 #contact {
+	position: relative;
 	color: white;
 	background-image: url($path-images + 'bg-phone.jpg');
 
 	@include justify-content(flex-start);
 
 	.card {
-		max-height: calc(100vh - (#{$space-extra} * 2));
 		position: relative;
-		padding-bottom: $space-extra;
+		max-height: calc(100vh - (#{$card-space} * 4));
+		padding-bottom: $card-space;
 
 		button {
 			position: absolute;
@@ -26,6 +27,18 @@
 				min-width: 100%;
 				max-height: $input-height * 5;
 			}
+		}
+	}
+
+	> blockquote {
+		position: absolute;
+		right: $space-extra * 1.5;
+		bottom: $space-extra * 1.5;
+		color: $white;
+		text-shadow: $text-shadow;
+
+		&::before {
+			background: $yellow;
 		}
 	}
 

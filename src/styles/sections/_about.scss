@@ -1,13 +1,40 @@
 #about {
-	color: white;
+	position: relative;
+	color: $white;
 	background-image: url($path-images + 'bg-brownie.jpg');
 	background-color: $yellow;
 
-    h1 {
-		color: $white;
-		text-align: center;
+	@include justify-content(flex-start);
 
-		@include text-shadow(2px, 2px, 0, rgba(0,0,0,0.5));
+	.card {
+		position: relative;
+		overflow: hidden;
+		max-height: calc(100vh - (#{$card-space} * 4));
+
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			height: $card-space;
+			background: $white;
+		}
+
+		section {
+			overflow: auto;
+			max-height: $card-space * 10;
+		}
+	}
+
+	> blockquote {
+		position: absolute;
+		right: $space-extra * 2;
+		bottom: $space-extra * 2;
+
+		mark {
+			padding: $space-tiny 0;
+			color: inherit;
+		}
 	}
 }
 

@@ -115,6 +115,7 @@ a {
 
 strong {
     color: $blue;
+    font-weight: $regular;
 }
 
 mark {
@@ -122,6 +123,23 @@ mark {
     color: $blue;
     background: $yellow;
     font-weight: $regular;
+}
+
+blockquote {
+    color: $black;
+    margin: $space-large;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    line-height: 1.2em;
+
+    &::before {
+        content: '';
+        display: block;
+        width: $space-extra * 2;
+        height: $stroke-height * 2;
+        margin-bottom: $space-large;
+        background: $blue;
+    }
 }
 
 // MEDIA QUERIES

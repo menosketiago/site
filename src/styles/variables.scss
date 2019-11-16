@@ -48,8 +48,7 @@ $space-base: $space-tiny * 3;
 $space-large: $space-base * 2;
 $space-extra: $space-base * 4;
 
-$space-modal: $space-extra;
-$modal-aside-width: 120px;
+$default-width: $space-extra * 11;
 
 $max-text-width: 700px;
 $max-article-width: 1024px;
@@ -64,7 +63,8 @@ $logo-home-size: $space-extra * 6;
 
 $btn-height: $space-large * 2;
 $avatar-width: $space-large;
-$card-width: $space-extra * 11;
+$card-width: $default-width;
+$card-space: $space-extra;
 
 $loading-width: $space-extra * 2;
 $tooltip-caret-width: $space-small;
@@ -75,6 +75,9 @@ $input-padding: $space-base;
 $input-icon-size: 18px;
 
 $stroke-height: 2px;
+
+$space-modal: $space-extra;
+$modal-aside-width: 120px;
 
 // Z-INDEXES
 

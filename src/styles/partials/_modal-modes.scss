@@ -1,0 +1,120 @@
+.modal {
+    // DARK MODE
+
+    &.dark-mode {
+        background: rgba($body-bg-dark, .95);
+
+        .container {
+            background-color: $body-bg-dark;
+            background-image: url($path-images + 'pattern-white-faded-2.png');
+
+            aside {
+                h6 > a {
+                    color: $white;
+
+                    &:hover {
+                        background: transparent;
+                    }
+                }
+            }
+
+            article {
+                color: $white;
+                background: $body-bg-dark;
+
+                h3 {
+                    color: $white;
+
+                    &::after {
+                        background: $white;;
+                    }
+                }
+
+                h6 {
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    // GOLD MODAL
+
+    &.gold {
+        .container {
+            article {
+                h1, h2, h3, h4, h5, strong {
+                    color: $gold;
+                }
+
+                h3::after {
+                    background: $gold;
+                }
+
+                figure {
+                    figcaption {
+                        color: $black;
+                        background: $gold;
+                    }
+                }
+            }
+        }
+
+        ~ #close-modal {
+            color: $black;
+            background: $gold;
+
+            &::before {
+                background: $black;
+            }
+
+            &:hover {
+                color: $gold;
+            }
+        }
+    }
+
+    // GOLD MODAL
+
+    &.alien {
+        .container {
+            article {
+                h1, h2, h3, h4, h5, strong {
+                    color: $alien;
+                }
+
+                h1 {
+                    text-shadow: 0 0 $space-base rgba($alien, .5);
+                }
+
+                h3::after {
+                    background: $alien;
+                }
+
+                figure {
+                    figcaption {
+                        color: $black;
+                        background: $alien;
+                    }
+                }
+            }
+        }
+
+        ~ #close-modal {
+            color: $black;
+            background: $alien;
+
+            &::before {
+                background: $black;
+            }
+
+            &:hover {
+                color: $alien;
+            }
+
+            &.has-focus {
+                outline-color: transparent;
+                box-shadow: 0 0 $space-small $space-tiny rgba($alien, .6);
+            }
+        }
+    }
+}

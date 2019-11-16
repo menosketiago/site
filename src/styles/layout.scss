@@ -1,4 +1,6 @@
 html {
+	scroll-behavior: smooth;
+
     @include box-sizing(border-box);
 	@include scrollbars(0, transparent, transparent);
 }
@@ -39,4 +41,12 @@ form {
 
 .no-margin {
 	margin: 0 !important;
+}
+
+// MEDIA QUERIES
+
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
 }

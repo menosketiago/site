@@ -6,7 +6,7 @@ class Navigator {
             section: element.querySelector('#work')
         }
 
-        this.sectionsArray = this.dom.main.querySelectorAll('section');
+        this.sectionsArray = this.dom.main.querySelectorAll('main > section');
 
         if (location.hash) {
             this.initialSection = this.dom.main.querySelector(location.hash);
@@ -41,30 +41,20 @@ class Navigator {
 
     setState(props) {
         this._state = Object.assign(this._state, props);
-        this._updateDom();
+        setTimeout(() => this._updateDom(), 0);
     }
 
     _updateDom() {
-        // Update the URL
-        history.replaceState({}, '', '#' + this._state.currentSection.id);
+        this._state.currentSection.scrollIntoView({behavior: 'smooth'});
 
         // Set the currently viewing title on the header
         this.currentlyViewing.textContent = this._state.currentSection.id;
 
-        // For WTF reasons when refreshing you need to have a timeout to set the section
-        if (performance.navigation.type == 1) {
-            setTimeout(() => {
-                this._state.currentSection.scrollIntoView({behavior: 'smooth'});
-            }, 0);
-        }
-        else {
-            this._state.currentSection.scrollIntoView({behavior: 'smooth'});
-        }
+        // Update the URL
+        history.replaceState({}, '', '#' + this._state.currentSection.id);
     }
 
     init() {
-        this.changeSection(this._state.currentSection);
-
         this.eventHandler();
     }
 
@@ -86,7 +76,8 @@ class Navigator {
 
                     // Get the targer section from the URL
                     let id = e.target.href.split('#')[1];
-                    this.targetSection = this.dom.main.querySelector('section#' + id);
+
+                    this.targetSection = this.dom.main.querySelector('#' + id);
 
                     this.changeSection(this.targetSection);
                 }
@@ -184,8 +175,8 @@ class Navigator {
     changeSection(targetSection) {
         this.setState({currentSection: targetSection});
 
-        this.setCurrentLink();
-        this.setButtonVisibility();
+        // this.setCurrentLink();
+        // this.setButtonVisibility();
     }
 
     changeWrapper(targetWrapper) {

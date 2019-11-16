@@ -22,6 +22,10 @@ main {
 		@include flexbox;
 		@include justify-content(center);
 		@include align-items(center);
+
+		> blockquote {
+			max-width: $default-width / 2.5;
+		}
 	}
 
 	// MEDIA QUERIES
