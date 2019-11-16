@@ -20,9 +20,8 @@
 			background: $white;
 		}
 
-		section {
-			overflow: auto;
-			max-height: $card-space * 10;
+		h5, h6 {
+			font-size: 1em;
 		}
 	}
 

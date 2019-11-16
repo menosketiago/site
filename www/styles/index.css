@@ -522,9 +522,8 @@ body > footer {
       width: 100%;
       height: 48px;
       background: #ffffff; }
-    #about .card section {
-      overflow: auto;
-      max-height: 480px; }
+    #about .card h5, #about .card body > header nav a, body > header nav #about .card a, #about .card h6 {
+      font-size: 1em; }
   #about > blockquote {
     position: absolute;
     right: 96px;

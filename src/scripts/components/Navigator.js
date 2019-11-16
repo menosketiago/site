@@ -56,6 +56,7 @@ class Navigator {
 
     init() {
         this.eventHandler();
+        this.changeSection(this._state.currentSection);
     }
 
     eventHandler() {
