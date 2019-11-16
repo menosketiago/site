@@ -39,7 +39,7 @@ h1, h2, h3, h4, h5, body > header nav a, h6 {
 
 h1 {
   color: #008BCC;
-  font-size: 2.3em;
+  font-size: 2.5em;
   font-weight: 500; }
 
 h2 {
@@ -92,9 +92,14 @@ a {
   a.has-focus {
     background: #FFF800; }
 
+strong {
+  color: #008BCC; }
+
 mark {
-  color: #FFF800;
-  background: transparent; }
+  padding: 0 4px;
+  color: #008BCC;
+  background: #FFF800;
+  font-weight: 400; }
 
 @media (max-height: 643px) {
   body {
@@ -167,6 +172,9 @@ form {
   form:first-child {
     margin-top: 0; }
 
+.no-margin {
+  margin: 0 !important; }
+
 body > header {
   display: inline-block;
   width: 120px;
@@ -202,7 +210,7 @@ body > header {
     body > header .logo:hover, body > header .logo:active {
       background: transparent; }
     body > header .logo.has-focus {
-      box-shadow: 0 0 0 8px #FFF800; }
+      box-shadow: 0 0 0 4px #FFF800; }
     body > header .logo img {
       width: inherit;
       height: inherit; }
@@ -457,6 +465,10 @@ body > footer {
     color: #ffffff;
     text-align: center;
     text-shadow: 0 2px 0 rgba(0, 0, 0, 0.8); }
+    #home h1 mark {
+      color: #FFF800;
+      background: transparent;
+      font-weight: inherit; }
   @media (max-height: 643px) {
     #home .logo {
       width: 240px;
@@ -827,7 +839,7 @@ button {
     -o-transform: scale(1.2);
     transform: scale(1.2); }
   button.has-focus {
-    box-shadow: 0 0 0 4px #008BCC; }
+    outline: 4px solid #008BCC; }
   button.is-hidden {
     opacity: 0;
     pointer-events: none; }
@@ -940,7 +952,7 @@ button {
         -o-transform: translate(0, 0);
         transform: translate(0, 0); }
     button.on-yellow.has-focus {
-      box-shadow: 0 0 0 4px #FFF800; }
+      outline-color: #FFF800; }
   @media (max-height: 643px) {
     button {
       height: 40px; }
@@ -985,9 +997,10 @@ button {
   background: #ffffff; }
   .card h1 {
     margin-bottom: 24px; }
-  .card em {
+  .card mark {
     color: #008BCC;
-    font-style: normal; }
+    background: #FFF800;
+    font-weight: 400; }
   .card .input {
     max-width: 100%; }
   @media (max-height: 475px) {
@@ -1265,14 +1278,37 @@ button {
       .modal .container article p {
         max-width: 700px;
         margin-right: 120px; }
+        .modal .container article p + figure,
+        .modal .container article p + img,
+        .modal .container article p + .vimeo {
+          margin-top: 24px; }
+      .modal .container article mark {
+        color: #008BCC;
+        background: #FFF800; }
       .modal .container article img,
-      .modal .container article iframe,
       .modal .container article .vimeo {
         margin-bottom: 24px; }
         .modal .container article img:last-child,
-        .modal .container article iframe:last-child,
         .modal .container article .vimeo:last-child {
           margin-bottom: 0; }
+      .modal .container article figure {
+        position: relative;
+        margin: 0;
+        margin-bottom: 24px; }
+        .modal .container article figure:last-child {
+          margin-bottom: 0; }
+        .modal .container article figure img {
+          display: block; }
+        .modal .container article figure figcaption {
+          position: absolute;
+          top: 24px;
+          right: -12px;
+          padding: 4px 8px;
+          padding-bottom: 2px;
+          color: #008BCC;
+          background: #FFF800;
+          font-size: .8em;
+          text-transform: uppercase; }
       .modal .container article .vimeo {
         position: relative;
         display: block;
@@ -1436,6 +1472,10 @@ button {
     .modal.dark-mode .container {
       background-color: #1D1D1D;
       background-image: url("../images/pattern-white-faded-2.png"); }
+      .modal.dark-mode .container aside h6 > a {
+        color: #ffffff; }
+        .modal.dark-mode .container aside h6 > a:hover {
+          background: transparent; }
       .modal.dark-mode .container article {
         color: #ffffff;
         background: #1D1D1D; }
@@ -1445,6 +1485,39 @@ button {
             background: #ffffff; }
         .modal.dark-mode .container article h6 {
           color: #ffffff; }
+  .modal.gold .container article h1, .modal.gold .container article h2, .modal.gold .container article h3, .modal.gold .container article h4, .modal.gold .container article h5, .modal.gold .container article body > header nav a, body > header nav .modal.gold .container article a, .modal.gold .container article strong {
+    color: #FFDD60; }
+  .modal.gold .container article h3::after {
+    background: #FFDD60; }
+  .modal.gold .container article figure figcaption {
+    color: #464646;
+    background: #FFDD60; }
+  .modal.gold ~ #close-modal {
+    color: #464646;
+    background: #FFDD60; }
+    .modal.gold ~ #close-modal::before {
+      background: #464646; }
+    .modal.gold ~ #close-modal:hover {
+      color: #FFDD60; }
+  .modal.alien .container article h1, .modal.alien .container article h2, .modal.alien .container article h3, .modal.alien .container article h4, .modal.alien .container article h5, .modal.alien .container article body > header nav a, body > header nav .modal.alien .container article a, .modal.alien .container article strong {
+    color: #3AA550; }
+  .modal.alien .container article h1 {
+    text-shadow: 0 0 12px rgba(58, 165, 80, 0.5); }
+  .modal.alien .container article h3::after {
+    background: #3AA550; }
+  .modal.alien .container article figure figcaption {
+    color: #464646;
+    background: #3AA550; }
+  .modal.alien ~ #close-modal {
+    color: #464646;
+    background: #3AA550; }
+    .modal.alien ~ #close-modal::before {
+      background: #464646; }
+    .modal.alien ~ #close-modal:hover {
+      color: #3AA550; }
+    .modal.alien ~ #close-modal.has-focus {
+      outline-color: transparent;
+      box-shadow: 0 0 8px 4px rgba(58, 165, 80, 0.6); }
   @media (max-height: 643px) {
     .modal ~ #close-modal {
       left: 120px;

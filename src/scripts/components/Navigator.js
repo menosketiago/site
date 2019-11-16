@@ -2,7 +2,8 @@ class Navigator {
 
     constructor(element) {
         this.dom = {
-            main: element
+            main: element,
+            section: element.querySelector('#work')
         }
 
         this.sectionsArray = this.dom.main.querySelectorAll('section');
@@ -192,7 +193,10 @@ class Navigator {
 
         // Navigate to the right work items page
         setTimeout(() => {
-            this._state.currentWrapper.scrollIntoView({behavior: 'smooth'});
+            let leftPosition = this._state.currentWrapper.getBoundingClientRect().left;
+
+            this.dom.section.scrollTo({left: leftPosition, behavior: 'smooth'});
+            // this._state.currentWrapper.scrollIntoView({behavior: 'smooth'});
         }, 0);
 
         this.setButtonVisibility();
@@ -214,24 +218,19 @@ class Navigator {
         // Show or hide the up button
         if (this._state.currentSection === this.sectionsArray[0]) {
             this.btnUp.classList.add('is-hidden');
-            this.btnUp.tabIndex = -1;
         }
         else {
             this.btnUp.classList.remove('is-hidden');
-            this.btnUp.tabIndex = 0;
         }
 
         // Show or hide the down button and the back to top button
         if (this._state.currentSection === this.sectionsArray[this.sectionsArray.length - 1]) {
             this.btnDown.classList.add('is-hidden');
-            this.btnDown.tabIndex = -1;
             this.btnTop.classList.remove('is-hidden');
-            this.btnTop.tabIndex = 0;
         }
         else {
             this.btnDown.classList.remove('is-hidden');
             this.btnTop.classList.add('is-hidden');
-            this.btnTop.tabIndex = -1;
         }
 
         // Change the up and down button colors if on the about section
@@ -247,31 +246,25 @@ class Navigator {
         // Show the button to move left/right only on the work section
         if (this._state.currentSection.id === 'work') {
             this.btnRight.classList.remove('is-hidden');
-            this.btnRight.tabIndex = 0;
 
             // If the current wrapper is not the first one show the left button
             if (this._state.currentWrapper !== this.wrappersArray[0]) {
                 this.btnLeft.classList.remove('is-hidden');
-                this.btnLeft.tabIndex = 0;
             }
 
             // If the current wrapper is the first one hide the left button
             if (this._state.currentWrapper === this.wrappersArray[0]) {
                 this.btnLeft.classList.add('is-hidden');
-                this.btnLeft.tabIndex = -1;
             }
 
             // If the current wrapper is the last one hide the right btn
             if (this._state.currentWrapper === this.wrappersArray[this.wrappersArray.length - 1]) {
                 this.btnRight.classList.add('is-hidden');
-                this.btnRight.tabIndex = -1;
             }
         }
         else {
             this.btnRight.classList.add('is-hidden');
-            this.btnRight.tabIndex = -1;
             this.btnLeft.classList.add('is-hidden');
-            this.btnLeft.tabIndex = -1;
         }
     }
 

@@ -59,7 +59,7 @@ button {
     }
 
     &.has-focus {
-        box-shadow: $btn-shadow-focus;
+        outline: $space-tiny solid $blue;
     }
 
     // HIDING CLASS
@@ -180,7 +180,7 @@ button {
         }
 
         &.has-focus {
-            box-shadow: $shadow-focus;
+            outline-color: $yellow;
         }
     }
 

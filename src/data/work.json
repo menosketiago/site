@@ -22,7 +22,8 @@
                     "category": "Illustration",
                     "title": "Alien 1979",
                     "name": "alien",
-                    "dark-mode": true
+                    "dark-mode": true,
+                    "extra": "alien"
                 },
                 {
                     "category": "Product Design • Web Development",
@@ -38,7 +39,8 @@
                     "category": "Illustration",
                     "title": "Nem Tudo o que Reluz é Ouro",
                     "name": "nem-tudo",
-                    "dark-mode": true
+                    "dark-mode": true,
+                    "extra": "gold"
                 },
                 {
                     "category": "Games Journalism • Web Development",

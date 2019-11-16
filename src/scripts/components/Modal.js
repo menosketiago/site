@@ -30,9 +30,11 @@ class Modal {
             this.dom.modal.classList.remove('is-open');
             this.dom.article.blur();
 
-            // Remove the previous fetched content abd the dark mode class
+            // Remove the previous fetched content and add the dark mode class
             this.dom.article.innerHTML = '';
             this.dom.modal.classList.remove('dark-mode');
+            this.dom.modal.classList.remove('gold');
+            this.dom.modal.classList.remove('alien');
         }
     }
 
@@ -81,6 +83,16 @@ class Modal {
         // Check if the modal should open in dark mode
         if (trigger.hasAttribute('data-dark')) {
             this.dom.modal.classList.add('dark-mode');
+        }
+
+        // Gold modal
+        if (trigger.classList.contains('gold')) {
+            this.dom.modal.classList.add('gold');
+        }
+
+        // Alien modal
+        if (trigger.classList.contains('alien')) {
+            this.dom.modal.classList.add('alien');
         }
 
         fetch('./work/' + trigger.id + '.html')

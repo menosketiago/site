@@ -43,7 +43,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     color: $blue;
-    font-size: 2.3em; // 42px
+    font-size: 2.5em; // 42px
     font-weight: $bold;
 }
 
@@ -113,9 +113,15 @@ a {
     }
 }
 
+strong {
+    color: $blue;
+}
+
 mark {
-    color: $yellow;
-    background: transparent;
+    padding: 0 $space-tiny;
+    color: $blue;
+    background: $yellow;
+    font-weight: $regular;
 }
 
 // MEDIA QUERIES

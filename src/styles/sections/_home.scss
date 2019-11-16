@@ -15,6 +15,12 @@
 		color: $white;
 		text-align: center;
 		text-shadow: $text-shadow;
+
+		mark {
+			color: $yellow;
+			background: transparent;
+			font-weight: inherit;
+		}
 	}
 
 	// MEDIA QUERIES

@@ -9,9 +9,10 @@
         margin-bottom: $space-large;
     }
 
-    em {
+    mark {
         color: $blue;
-        font-style: normal;
+        background: $yellow;
+        font-weight: $regular;
     }
 
     .input {

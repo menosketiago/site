@@ -136,15 +136,52 @@
             p {
                 max-width: $max-text-width;
                 margin-right: $modal-aside-width;
+
+                + figure,
+                + img,
+                + .vimeo {
+                    margin-top: $space-large;
+                }
+            }
+
+            mark {
+                color: $blue;
+                background: $yellow;
             }
 
             img,
-            iframe,
             .vimeo {
                 margin-bottom: $space-large;
 
                 &:last-child {
                     margin-bottom: 0;
+                }
+            }
+
+            figure {
+                position: relative;
+                margin: 0;
+                margin-bottom: $space-large;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                img {
+                    display: block;
+                }
+
+                figcaption {
+                    position: absolute;
+                    top: $space-large;
+                    right: -$space-base;
+                    padding: $space-tiny $space-small;
+                    // Fix for vertical alignment
+                    padding-bottom: $space-tiny - $text-fix;
+                    color: $blue;
+                    background: $yellow;
+                    font-size: .8em;
+                    text-transform: uppercase;
                 }
             }
 
@@ -223,6 +260,16 @@
             background-color: $body-bg-dark;
             background-image: url($path-images + 'pattern-white-faded-2.png');
 
+            aside {
+                h6 > a {
+                    color: $white;
+
+                    &:hover {
+                        background: transparent;
+                    }
+                }
+            }
+
             article {
                 color: $white;
                 background: $body-bg-dark;
@@ -238,6 +285,87 @@
                 h6 {
                     color: $white;
                 }
+            }
+        }
+    }
+
+    // GOLD MODAL
+
+    &.gold {
+        .container {
+            article {
+                h1, h2, h3, h4, h5, strong {
+                    color: $gold;
+                }
+
+                h3::after {
+                    background: $gold;
+                }
+
+                figure {
+                    figcaption {
+                        color: $black;
+                        background: $gold;
+                    }
+                }
+            }
+        }
+
+        ~ #close-modal {
+            color: $black;
+            background: $gold;
+
+            &::before {
+                background: $black;
+            }
+
+            &:hover {
+                color: $gold;
+            }
+        }
+    }
+
+    // GOLD MODAL
+
+    &.alien {
+        .container {
+            article {
+                h1, h2, h3, h4, h5, strong {
+                    color: $alien;
+                }
+
+                h1 {
+                    text-shadow: 0 0 $space-base rgba($alien, .5);
+                }
+
+                h3::after {
+                    background: $alien;
+                }
+
+                figure {
+                    figcaption {
+                        color: $black;
+                        background: $alien;
+                    }
+                }
+            }
+        }
+
+        ~ #close-modal {
+            color: $black;
+            background: $alien;
+
+            &::before {
+                background: $black;
+            }
+
+            &:hover {
+                color: $alien;
+            }
+
+            &.has-focus {
+                outline-color: transparent;
+                box-shadow: 0 0 $space-small $space-tiny rgba($alien, .6);
             }
         }
     }
