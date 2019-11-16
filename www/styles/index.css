@@ -1220,6 +1220,11 @@ button {
       -moz-align-content: flex-start;
       -ms-flex-line-pack: start;
       align-content: flex-start;
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      -webkit-align-items: flex-start;
+      -moz-align-items: flex-start;
+      align-items: flex-start;
       -webkit-box-pack: start;
       -ms-flex-pack: start;
       -webkit-justify-content: flex-start;
