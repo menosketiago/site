@@ -19,6 +19,9 @@ $border-color: #E0E0E0;
 $gold: #FFDD60;
 $alien: #3AA550;
 
+$progress-fill-color: $blue;
+$progress-bg-color: $border-color;
+
 // TYPOGRAPHY
 
 $body-font: 'Bebas Neue Pro', Helvetica, Arial, sans-serif;
@@ -59,14 +62,20 @@ $max-article-width: 1024px;
 $header-width: 120px;
 $footer-width: 66px;
 
+$main-margin: $space-large;
 $main-width: calc(100vw - #{$header-width} - #{$footer-width});
-$main-height: calc(100vh - (#{$space-large} * 2));
+$main-height: calc(100vh - (#{$main-margin} * 2));
 
+$section-padding: $space-extra;
 $logo-home-size: $space-extra * 6;
 
+$grid-gutter: $space-large;
+
 $btn-height: $space-large * 2;
-$avatar-width: $space-large;
-$avatar-width-large: $space-extra * 2.5;
+
+$avatar-size: $space-large;
+$avatar-size-large: 84px;
+
 $card-width: $default-width;
 $card-space: $space-extra;
 
@@ -83,8 +92,11 @@ $stroke-height: 2px;
 $space-modal: $space-extra;
 $modal-aside-width: 120px;
 
-$timeline-height: 50px;
+$timeline-height: 55px;
 $timeline-event-size: $space-base;
+
+$progress-height: $space-large;
+$tag-height: $space-large;
 
 // Z-INDEXES
 
@@ -114,21 +126,28 @@ $body-font-size-small: 12px;
 $header-width-small: 80px;
 $footer-width-small: 48px;
 
+$main-margin-small: $space-base;
 $main-width-small: calc(100vw - #{$header-width-small} - #{$footer-width-small});
-$main-height-small: calc(100vh - (#{$space-base} * 2));
+$main-height-small: calc(100vh - (#{$main-margin-small} * 2));
+
+$section-padding-small: $space-large;
 
 $logo-home-size-average: $space-extra * 5;
 $logo-home-size-small: $space-extra * 4;
 
 $btn-height-average: 40px;
 $btn-height-small: 34px;
-$avatar-width-small: $space-extra * 1.5;
+
+$avatar-size-small: 60px;
 
 $card-width-average: 480px;
 $card-width-small: 400px;
+$card-space-small: $space-large + $space-small;
 
 $input-height-small: $space-large + $space-base;
 $input-padding-small: $space-small;
 $input-icon-size-small: 16px;
 
 $timeline-event-size-small: $space-small;
+$progress-height-small: 20px;
+$tag-height-small: 20px;

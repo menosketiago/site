@@ -112,8 +112,8 @@ blockquote {
     content: '';
     display: block;
     width: 96px;
-    height: 4px;
-    margin-bottom: 24px;
+    height: 3px;
+    margin-bottom: 16px;
     background: #008BCC; }
 
 @media (max-height: 643px) {
@@ -489,6 +489,48 @@ body > footer {
       padding: 14px 12px;
       padding-right: 10px; } }
 
+.grid .wrapper {
+  margin: -12px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: flex-start;
+  -moz-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start; }
+  .grid .wrapper > * {
+    max-width: 100%;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -moz-box-flex: 1;
+    -moz-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto; }
+  .grid .wrapper .col {
+    margin: 12px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-align-content: flex-start;
+    -moz-align-content: flex-start;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    -webkit-align-items: flex-start;
+    -moz-align-items: flex-start;
+    align-items: flex-start; }
+    .grid .wrapper .col.col-50 {
+      width: 50%; }
+
 #home {
   color: white;
   background-image: url("../images/bg-mom.jpg");
@@ -533,37 +575,38 @@ body > footer {
   justify-content: flex-start; }
   #about .card {
     position: relative;
-    max-height: calc(100vh - (48px * 4));
-    margin-top: 48px;
-    padding-top: 84px;
-    padding-bottom: 72px; }
+    padding-bottom: 24px; }
+    #about .card .avatar {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 84px;
+      height: 84px;
+      margin: 0;
+      border: 4px solid #ffffff;
+      -webkit-transform: translate(-50%, -50%);
+      -khtml-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%); }
     #about .card header {
-      margin-bottom: 48px;
-      text-align: center; }
-      #about .card header h1 {
-        margin-bottom: 8px;
-        font-size: 2.2em; }
-      #about .card header h5, #about .card body > header nav a, #about .card header h6 {
-        font-size: .9em; }
-      #about .card header h5, #about .card body > header nav a {
-        margin-right: 4px; }
-      #about .card header h6 {
-        margin-right: 12px; }
-        #about .card header h6:last-child {
-          margin-right: 0; }
-      #about .card header .avatar {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        width: 120px;
-        height: 120px;
-        border: 4px solid #ffffff;
-        -webkit-transform: translate(-50%, -50%);
-        -khtml-transform: translate(-50%, -50%);
-        -moz-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        -o-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%); }
+      margin-bottom: 36px; }
+      #about .card header h2 {
+        margin-bottom: 12px; }
+    #about .card h4 {
+      display: block;
+      width: 100%;
+      margin-bottom: 12px;
+      font-size: 1em; }
+    #about .card h5, #about .card body > header nav a, body > header nav #about .card a {
+      margin-right: 4px; }
+    #about .card .grid {
+      margin-bottom: 24px; }
+      #about .card .grid .tag {
+        margin-bottom: 6px; }
+        #about .card .grid .tag:nth-last-child(1), #about .card .grid .tag:nth-last-child(2), #about .card .grid .tag:nth-last-child(3) {
+          margin-bottom: 0; }
     #about .card button {
       position: absolute;
       bottom: 0;
@@ -599,18 +642,34 @@ body > footer {
       max-width: 176px;
       right: 24px;
       bottom: 24px; } }
-  @media (max-height: 475px) {
+  @media (max-height: 643px) {
     #about .card {
-      padding-top: 60px;
-      padding-bottom: 48px; }
+      margin: 32px 20px;
+      padding: 32px; }
       #about .card header {
         margin-bottom: 24px; }
-        #about .card header .avatar {
-          width: 72px;
-          height: 72px; }
-      #about .card .timeline .event {
-        width: 8px;
-        height: 8px; }
+      #about .card .timeline {
+        margin-bottom: 24px; } }
+  @media (max-height: 475px) {
+    #about .card {
+      padding-bottom: 15px; }
+      #about .card .avatar {
+        width: 60px;
+        height: 60px; }
+      #about .card header {
+        margin-bottom: 16px; }
+      #about .card h2 {
+        font-size: 1.5em; }
+      #about .card h4 {
+        margin-bottom: 8px; }
+      #about .card .timeline {
+        height: 45px;
+        margin-bottom: 16px; }
+        #about .card .timeline .event {
+          width: 8px;
+          height: 8px; }
+      #about .card .grid .tag {
+        margin-bottom: 4px; }
     #about > blockquote {
       max-width: 132px;
       right: 12px;
@@ -831,7 +890,6 @@ body > footer {
   justify-content: flex-start; }
   #contact .card {
     position: relative;
-    max-height: calc(100vh - (48px * 4));
     padding-bottom: 48px; }
     #contact .card .input:last-of-type {
       margin-bottom: 0; }
@@ -863,13 +921,13 @@ body > footer {
       bottom: 24px; } }
   @media (max-height: 643px) {
     #contact .card {
-      margin: 0 24px;
-      padding: 28px; }
+      margin: 32px;
+      padding: 32px; }
       #contact .card h1 {
         font-size: 1.8em; } }
   @media (max-height: 475px) {
     #contact .card {
-      max-height: calc(100vh - (48px * 2)); }
+      padding-bottom: 15px; }
       #contact .card .input textarea {
         max-height: 72px; }
     #contact > blockquote {
@@ -944,6 +1002,7 @@ button {
   height: 48px;
   margin-right: 8px;
   padding: 12px 16px;
+  padding-bottom: 8px;
   color: #008BCC;
   background: #FFF800;
   box-shadow: 0 1px 1px 0 rgba(70, 70, 70, 0.2), 0 2px 4px 0 rgba(70, 70, 70, 0.1);
@@ -952,7 +1011,6 @@ button {
   font-family: "Bebas Neue Pro", Helvetica, Arial, sans-serif;
   font-size: 1.1em;
   text-transform: uppercase;
-  line-height: 1.5em;
   transition: all 0.2s ease;
   cursor: pointer; }
   button::before {
@@ -1112,7 +1170,8 @@ button {
       outline-color: #FFF800; }
   @media (max-height: 643px) {
     button {
-      height: 40px; }
+      height: 40px;
+      padding-bottom: 6px; }
       button svg {
         -webkit-transform: scale(0.9);
         -khtml-transform: scale(0.9);
@@ -1163,6 +1222,9 @@ button {
   @media (max-width: 1024px) {
     .card {
       width: 480px; } }
+  @media (max-width: 643px) {
+    .card {
+      padding: 32px; } }
   @media (max-height: 475px) {
     .card {
       width: 400px; }
@@ -1711,12 +1773,83 @@ button {
     color: #3AA550; }
   .modal.alien ~ #close-modal.has-focus {
     outline-color: transparent;
-    box-shadow: 0 0 8px 4px rgba(58, 165, 80, 0.6); }
+    box-shadow: 0 0 12px 4px rgba(58, 165, 80, 0.8); }
+
+.progress {
+  position: relative;
+  width: 100%;
+  margin-bottom: 4px; }
+  .progress:last-child {
+    margin-bottom: 0; }
+  .progress label {
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    color: #ffffff;
+    font-size: .7em;
+    font-weight: 300;
+    text-transform: uppercase;
+    -webkit-transform: translate(0, -50%);
+    -khtml-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    transform: translate(0, -50%); }
+  .progress progress {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 24px;
+    border: 0; }
+    .progress progress::-webkit-progress-bar {
+      background-color: #E0E0E0; }
+    .progress progress::-webkit-progress-value {
+      background-color: #008BCC; }
+    .progress progress::-moz-progress-bar {
+      background-color: #008BCC; }
+    .progress progress::-ms-fill {
+      background-color: #008BCC;
+      border: 0; }
+  @media (max-height: 475px) {
+    .progress label {
+      left: 4px;
+      font-size: .8em;
+      -webkit-transform: translate(0, -50%);
+      -khtml-transform: translate(0, -50%);
+      -moz-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+      -o-transform: translate(0, -50%);
+      transform: translate(0, -50%); }
+    .progress progress {
+      height: 20px; } }
+
+.tag {
+  display: inline-block;
+  height: 24px;
+  margin-right: 4px;
+  margin-bottom: 4px;
+  padding: 4px 6px;
+  color: #008BCC;
+  background: transparent;
+  border: 1px solid #008BCC;
+  font-size: 13px;
+  font-weight: 400;
+  text-transform: uppercase; }
+  @media (max-height: 643px) {
+    .tag {
+      padding: 4px 5px; } }
+  @media (max-height: 475px) {
+    .tag {
+      height: initial;
+      height: 20px;
+      padding-bottom: 2px;
+      font-size: .8em; } }
 
 .timeline {
-  height: 50px;
+  height: 55px;
   margin: 0;
-  margin-bottom: 12px;
+  margin-bottom: 36px;
   padding: 0;
   list-style-type: none;
   display: -webkit-box;
@@ -1871,11 +2004,6 @@ button {
     -ms-transform: translate(-50%, 50%) rotate(45deg);
     -o-transform: translate(-50%, 50%) rotate(45deg);
     transform: translate(-50%, 50%) rotate(45deg); }
-  .tooltip.blue {
-    color: #FFF800;
-    background: #008BCC; }
-    .tooltip.blue::after {
-      background: #008BCC; }
   .tooltip.is-visible {
     opacity: 1;
     visibility: visible;

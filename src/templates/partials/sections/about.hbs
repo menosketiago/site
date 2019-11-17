@@ -1,23 +1,34 @@
 <section id="about">
     <div class="card">
+        <div id="me" class="avatar" data-initials="TA"></div>
+
         <header>
-            <div id="me" class="avatar" data-initials="TA"></div>
+            <h2>About me</h2>
 
-            <h1>Tiago Miguel dos Santos Almeida</h1>
-
-            <h5>Born</h5>
-            <h6>Lisbon, Portugal</h6>
-
-            <h5>Located in</h5>
-            <h6>Stockholm, Sweden</h6>
+            <p>
+                I'm a Portuguese Designer and in-training Frontend Developer, on a journey to become more Swedish and learning to have a more lagom life 🇵🇹🇸🇪
+            </p>
         </header>
 
+        <h4 class="no-margin">Professional timeline</h4>
+
         {{> timeline}}
+
+        <div class="grid">
+            <div class="wrapper">
+                <div class="col col-50">
+                    {{> skill-chart}}
+                </div>
+                <div class="col col-50">
+                    {{> keywords}}
+                </div>
+            </div>
+        </div>
 
         <button>{{> icons/download}} Download CV and Portfolio</button>
     </div>
 
     <blockquote>
-        Two generations of barechested designers with a 🐩 named Brownie
+        Two generations of designers with a 🐩 named Brownie
     </blockquote>
 </section>

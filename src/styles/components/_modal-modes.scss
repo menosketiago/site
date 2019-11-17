@@ -113,7 +113,7 @@
 
             &.has-focus {
                 outline-color: transparent;
-                box-shadow: 0 0 $space-small $space-tiny rgba($alien, .6);
+                box-shadow: 0 0 $space-base $space-tiny rgba($alien, .8);
             }
         }
     }

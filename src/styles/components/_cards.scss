@@ -25,6 +25,10 @@
 		width: $card-width-average;
 	}
 
+    @media (max-width: $screen-height-average) {
+		padding: $card-space-small;
+	}
+
 	@media (max-height: $screen-height-small) {
         width: $card-width-small;
 

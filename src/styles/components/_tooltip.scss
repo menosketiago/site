@@ -39,17 +39,6 @@
         @include transform(translate(-50%, 50%) rotate(45deg));
     }
 
-    // BLUE TOOLTIP
-
-    &.blue {
-        color: $yellow;
-        background: $blue;
-
-        &::after {
-            background: $blue;
-        }
-    }
-
     &.is-visible {
         opacity: 1;
         visibility: visible;

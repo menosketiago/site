@@ -1,0 +1,27 @@
+.grid {
+	.wrapper {
+		margin: -($grid-gutter / 2);
+
+		@include flexbox();
+		@include align-content(flex-start);
+
+		> * {
+			max-width: 100%;
+
+			@include flex(1 1 auto);
+		}
+
+		.col {
+			margin: $grid-gutter / 2;
+
+			@include flexbox();
+			@include flex-wrap(wrap);
+			@include align-content(flex-start);
+			@include align-items(flex-start);
+
+			&.col-50 {
+				width: 50%;
+			}
+		}
+	}
+}

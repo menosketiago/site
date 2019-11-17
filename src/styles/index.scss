@@ -9,6 +9,7 @@
 @import 'layout/header';
 @import 'layout/main';
 @import 'layout/footer';
+@import 'layout/grid';
 
 @import 'sections/home';
 @import 'sections/about';
@@ -20,5 +21,7 @@
 @import 'components/cards';
 @import 'components/inputs';
 @import 'components/modal';
+@import 'components/progress';
+@import 'components/tags';
 @import 'components/timeline';
 @import 'components/tooltip';

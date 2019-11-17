@@ -10,7 +10,7 @@ main {
 	> section {
 		width: inherit;
 		height: inherit;
-		padding: $space-extra;
+		padding: $section-padding;
 		scroll-snap-align: start;
 		background-color: $blue;
 		background-attachment: fixed;
@@ -36,7 +36,7 @@ main {
 		margin: $space-base 0;
 
 		> section {
-			padding: $space-large;
+			padding: $section-padding-small;
 		}
 	}
 }

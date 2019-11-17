@@ -23,18 +23,14 @@ class Modal {
     _updateDom() {
         if (this._state.isVisible) {
             this.dom.modal.classList.add('is-open');
-            this.dom.article.focus();
             this.dom.article.classList.add('is-loading');
         }
         else {
             this.dom.modal.classList.remove('is-open');
-            this.dom.article.blur();
 
-            // Remove the previous fetched content and add the dark mode class
+            // Remove the previous fetched content and any theme classes
             this.dom.article.innerHTML = '';
-            this.dom.modal.classList.remove('dark-mode');
-            this.dom.modal.classList.remove('gold');
-            this.dom.modal.classList.remove('alien');
+            this.dom.modal.className = 'modal';
         }
     }
 
@@ -59,6 +55,14 @@ class Modal {
 
             // Listen to the close button click
             if (e.target === this.btnClose) this.hide();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Tab') {
+                e.preventDefault();
+
+                this.btnClose.focus();
+            }
         });
 
         document.addEventListener('keyup', (e) => {

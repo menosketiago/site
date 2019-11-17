@@ -7,7 +7,7 @@
 
 	.card {
 		position: relative;
-		max-height: calc(100vh - (#{$card-space} * 4));
+		// max-height: $section-card-height;
 		padding-bottom: $card-space;
 
 		.input {
@@ -54,8 +54,9 @@
 
 	@media (max-height: $screen-height-average) {
 		.card {
-			margin: 0 $space-large;
-			padding: $space-large + $space-tiny;
+			// max-height: $section-card-height-small;
+			margin: $card-space-small;
+			padding: $card-space-small;
 
 			h1 {
 				font-size: 1.8em;
@@ -65,7 +66,7 @@
 
 	@media (max-height: $screen-height-small) {
 		.card {
-			max-height: calc(100vh - (#{$card-space} * 2));
+			padding-bottom: $card-space-small - ($btn-height-small / 2);
 
 			.input {
 				textarea {

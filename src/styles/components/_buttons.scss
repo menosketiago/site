@@ -6,6 +6,8 @@ button {
     height: $btn-height;
     margin-right: $space-small;
     padding: $space-base ($space-base + $space-tiny);
+    // Fix for text align
+    padding-bottom: $space-base - 4px;
     color: $blue;
     background: $yellow;
     box-shadow: $default-box-shadow;
@@ -14,8 +16,6 @@ button {
     font-family: $body-font;
     font-size: 1.1em; // 20px
     text-transform: uppercase;
-    // Fix for text align
-    line-height: 1.5em;
     transition: all $speed-default ease;
     cursor: pointer;
 
@@ -190,6 +190,8 @@ button {
 
 	@media (max-height: $screen-height-average) {
         height: $btn-height-average;
+        // Fix for text align
+        padding-bottom: $space-small - $text-fix;
 
         svg {
             @include transform(scale(.9));

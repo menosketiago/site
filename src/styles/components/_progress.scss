@@ -1,0 +1,71 @@
+.progress {
+    position: relative;
+    width: 100%;
+    margin-bottom: $space-tiny;
+
+    &:last-child {
+            margin-bottom: 0;
+        }
+
+    label {
+        position: absolute;
+        top: 50%;
+        left: $space-small;
+        color: $white;
+        font-size: .7em;
+        font-weight: $book;
+        text-transform: uppercase;
+
+        @include transform(translate(0, -50%));
+    }
+
+    progress {
+        // Reset default appearance
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: 100%;
+        height: $progress-height;
+        border: 0;
+
+        // CHROME
+
+        &::-webkit-progress {
+            &-bar {
+                background-color: $progress-bg-color;
+            }
+
+            &-value {
+                background-color: $progress-fill-color;
+            }
+        }
+
+        // FIREFOX
+
+        &::-moz-progress-bar {
+            background-color: $progress-fill-color;
+        }
+
+        // IE
+
+        &::-ms-fill {
+            background-color: $progress-fill-color;
+            border: 0;
+        }
+    }
+
+    // MEDIA QUERIES
+
+    @media (max-height: $screen-height-small) {
+        label {
+            left: $space-tiny;
+            font-size: .8em;
+
+            @include transform(translate(0, -50%));
+        }
+
+        progress {
+            height: $progress-height-small;
+        }
+	}
+}

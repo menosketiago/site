@@ -136,8 +136,8 @@ blockquote {
         content: '';
         display: block;
         width: $space-extra * 2;
-        height: $stroke-height * 2;
-        margin-bottom: $space-large;
+        height: $stroke-height + 1px;
+        margin-bottom: $space-small * 2;
         background: $blue;
     }
 }

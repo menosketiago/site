@@ -8,7 +8,6 @@ class Tooltip {
         };
 
         this.main = document.querySelector(`main`);
-        this.isBlue = this.dom.trigger.hasAttribute('data-blue');
 
         this._state = {
             isVisible: this.dom.tooltip.classList.contains('is-visible')
@@ -45,13 +44,6 @@ class Tooltip {
     setTooltipContent() {
         // Set the tooltip content according to the data-tooltip content
         this.dom.tooltip.innerHTML = this.dom.content;
-
-        if (this.isBlue) {
-            this.dom.tooltip.classList.add('blue');
-        }
-        else {
-            this.dom.tooltip.classList.remove('blue');
-        }
 
         // Position the tooltip
         this.positionTooltip();

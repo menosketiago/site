@@ -1,0 +1,26 @@
+.tag {
+    display: inline-block;
+    height: $tag-height;
+    margin-right: $space-tiny;
+    margin-bottom: $space-tiny;
+    padding: $space-tiny ($space-tiny + 2px);
+    color: $blue;
+    background: transparent;
+    border: 1px solid $blue;
+    font-size: 13px;
+    font-weight: $regular;
+    text-transform: uppercase;
+
+    // MEDIA QUERIES
+
+	@media (max-height: $screen-height-average) {
+		padding: $space-tiny ($space-tiny + 1px);
+	}
+
+    @media (max-height: $screen-height-small) {
+        height: initial;
+        height: $tag-height-small;
+        padding-bottom: 2px;
+		font-size: .8em;
+	}
+}
