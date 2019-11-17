@@ -73,7 +73,7 @@ hgroup {
 
 p {
   margin: 0;
-  margin-bottom: 24px;
+  margin-bottom: 12px;
   font-weight: 300;
   line-height: 1.2em; }
   p:last-child {
@@ -134,7 +134,13 @@ blockquote {
   h4 {
     font-size: 1.1em; }
   h5, body > header nav a, h6 {
-    font-size: .7em; } }
+    font-size: .7em; }
+  blockquote {
+    font-size: 1.2em; }
+    blockquote::before {
+      width: 48px;
+      height: 2px;
+      margin-bottom: 12px; } }
 
 html {
   scroll-behavior: smooth;
@@ -231,6 +237,8 @@ body > header {
       background: transparent; }
     body > header .logo.has-focus {
       box-shadow: 0 0 0 4px #FFF800; }
+    body > header .logo > * {
+      pointer-events: none; }
     body > header .logo img {
       width: inherit;
       height: inherit; }
@@ -335,12 +343,12 @@ body > header {
       -moz-justify-content: center;
       justify-content: center; }
       body > header .social a svg {
-        -webkit-transform: scale(1.2);
-        -khtml-transform: scale(1.2);
-        -moz-transform: scale(1.2);
-        -ms-transform: scale(1.2);
-        -o-transform: scale(1.2);
-        transform: scale(1.2); }
+        -webkit-transform: scale(1.1);
+        -khtml-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        transform: scale(1.1); }
   @media (max-height: 643px) {
     body > header .social a {
       width: 28px;
@@ -464,7 +472,7 @@ body > footer {
     body > footer hgroup h6 {
       margin-bottom: 4px; }
       body > footer hgroup h6:last-child {
-        margin-top: 12px; }
+        margin-top: 24px; }
     body > footer hgroup span {
       margin: 4px;
       margin-right: -5px;
@@ -526,48 +534,98 @@ body > footer {
   #about .card {
     position: relative;
     max-height: calc(100vh - (48px * 4));
-    margin-top: 108px;
-    padding-top: 84px; }
-    #about .card h1 {
-      margin-bottom: 8px;
-      font-size: 2.2em; }
+    margin-top: 48px;
+    padding-top: 84px;
+    padding-bottom: 72px; }
     #about .card header {
-      margin-bottom: 24px;
+      margin-bottom: 48px;
       text-align: center; }
+      #about .card header h1 {
+        margin-bottom: 8px;
+        font-size: 2.2em; }
       #about .card header h5, #about .card body > header nav a, #about .card header h6 {
-        font-size: 1em; }
+        font-size: .9em; }
       #about .card header h5, #about .card body > header nav a {
         margin-right: 4px; }
       #about .card header h6 {
         margin-right: 12px; }
         #about .card header h6:last-child {
           margin-right: 0; }
-    #about .card .avatar {
+      #about .card header .avatar {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 120px;
+        height: 120px;
+        border: 4px solid #ffffff;
+        -webkit-transform: translate(-50%, -50%);
+        -khtml-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%); }
+    #about .card button {
       position: absolute;
-      top: 0;
+      bottom: 0;
       left: 50%;
-      width: 120px;
-      height: 120px;
-      border: 4px solid #ffffff;
-      -webkit-transform: translate(-50%, -50%);
-      -khtml-transform: translate(-50%, -50%);
-      -moz-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      -o-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%); }
+      -webkit-transform: translate(-50%, 50%);
+      -khtml-transform: translate(-50%, 50%);
+      -moz-transform: translate(-50%, 50%);
+      -ms-transform: translate(-50%, 50%);
+      -o-transform: translate(-50%, 50%);
+      transform: translate(-50%, 50%); }
+      #about .card button::before {
+        -webkit-transform: translate(0, -101%);
+        -khtml-transform: translate(0, -101%);
+        -moz-transform: translate(0, -101%);
+        -ms-transform: translate(0, -101%);
+        -o-transform: translate(0, -101%);
+        transform: translate(0, -101%); }
+      #about .card button:hover::before {
+        -webkit-transform: translate(0, 0);
+        -khtml-transform: translate(0, 0);
+        -moz-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+        -o-transform: translate(0, 0);
+        transform: translate(0, 0); }
   #about > blockquote {
     position: absolute;
     right: 96px;
-    bottom: 96px; }
-    #about > blockquote mark {
-      padding: 4px 0;
-      color: inherit; }
+    bottom: 96px;
+    color: #000000;
+    text-shadow: 0 0 12px #FFF800, 0 0 48px #FFF800; }
+  @media (max-width: 1024px) {
+    #about > blockquote {
+      max-width: 176px;
+      right: 24px;
+      bottom: 24px; } }
+  @media (max-height: 475px) {
+    #about .card {
+      padding-top: 60px;
+      padding-bottom: 48px; }
+      #about .card header {
+        margin-bottom: 24px; }
+        #about .card header .avatar {
+          width: 72px;
+          height: 72px; }
+      #about .card .timeline .event {
+        width: 8px;
+        height: 8px; }
+    #about > blockquote {
+      max-width: 132px;
+      right: 12px;
+      bottom: 24px; } }
 
 #work {
   overflow-x: hidden;
   width: auto;
   padding: 0;
   background-image: url("../images/pattern-blue.png");
+  background-color: #ffffff;
+  background-attachment: initial;
+  background-size: initial;
+  background-repeat: repeat;
+  background-position: initial;
   -webkit-box-direction: normal;
   -webkit-box-orient: horizontal;
   -webkit-flex-direction: row;
@@ -775,6 +833,11 @@ body > footer {
     position: relative;
     max-height: calc(100vh - (48px * 4));
     padding-bottom: 48px; }
+    #contact .card .input:last-of-type {
+      margin-bottom: 0; }
+    #contact .card .input textarea {
+      min-width: 100%;
+      max-height: 240px; }
     #contact .card button {
       position: absolute;
       bottom: 0;
@@ -785,11 +848,6 @@ body > footer {
       -ms-transform: translate(-50%, 50%);
       -o-transform: translate(-50%, 50%);
       transform: translate(-50%, 50%); }
-    #contact .card .input:last-of-type {
-      margin-bottom: 0; }
-    #contact .card .input textarea {
-      min-width: 100%;
-      max-height: 240px; }
   #contact > blockquote {
     position: absolute;
     right: 72px;
@@ -798,6 +856,11 @@ body > footer {
     text-shadow: 0 2px 0 rgba(0, 0, 0, 0.8); }
     #contact > blockquote::before {
       background: #FFF800; }
+  @media (max-width: 1024px) {
+    #contact > blockquote {
+      max-width: 176px;
+      right: 24px;
+      bottom: 24px; } }
   @media (max-height: 643px) {
     #contact .card {
       margin: 0 24px;
@@ -805,8 +868,14 @@ body > footer {
       #contact .card h1 {
         font-size: 1.8em; } }
   @media (max-height: 475px) {
-    #contact .card .input textarea {
-      max-height: 72px; } }
+    #contact .card {
+      max-height: calc(100vh - (48px * 2)); }
+      #contact .card .input textarea {
+        max-height: 72px; }
+    #contact > blockquote {
+      max-width: 132px;
+      right: 12px;
+      bottom: 24px; } }
 
 .avatar {
   position: relative;
@@ -868,20 +937,22 @@ body > footer {
     background-image: url("../images/avatars/martin.png"); }
 
 button {
+  z-index: 0;
   position: relative;
   overflow: hidden;
   display: inline-block;
   height: 48px;
+  margin-right: 8px;
   padding: 12px 16px;
-  padding-bottom: 10px;
   color: #008BCC;
   background: #FFF800;
+  box-shadow: 0 1px 1px 0 rgba(70, 70, 70, 0.2), 0 2px 4px 0 rgba(70, 70, 70, 0.1);
   border: 0;
+  outline: 0;
   font-family: "Bebas Neue Pro", Helvetica, Arial, sans-serif;
   font-size: 1.1em;
   text-transform: uppercase;
-  vertical-align: middle;
-  outline: 0;
+  line-height: 1.5em;
   transition: all 0.2s ease;
   cursor: pointer; }
   button::before {
@@ -894,12 +965,12 @@ button {
     left: 0;
     background: #008BCC;
     transition: transform 0.2s ease;
-    -webkit-transform: translate(100%, 0);
-    -khtml-transform: translate(100%, 0);
-    -moz-transform: translate(100%, 0);
-    -ms-transform: translate(100%, 0);
-    -o-transform: translate(100%, 0);
-    transform: translate(100%, 0); }
+    -webkit-transform: translate(101%, 0);
+    -khtml-transform: translate(101%, 0);
+    -moz-transform: translate(101%, 0);
+    -ms-transform: translate(101%, 0);
+    -o-transform: translate(101%, 0);
+    transform: translate(101%, 0); }
   button:hover {
     color: #FFF800; }
     button:hover::before {
@@ -914,16 +985,16 @@ button {
     button:active::before {
       background: #FFF800; }
   button svg {
-    margin-top: -2px;
+    margin-top: -4px;
     margin-right: 8px;
     vertical-align: middle;
     pointer-events: none;
-    -webkit-transform: scale(1.2);
-    -khtml-transform: scale(1.2);
-    -moz-transform: scale(1.2);
-    -ms-transform: scale(1.2);
-    -o-transform: scale(1.2);
-    transform: scale(1.2); }
+    -webkit-transform: scale(1.1);
+    -khtml-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1); }
   button.has-focus {
     outline: 4px solid #008BCC; }
   button.is-hidden {
@@ -941,12 +1012,12 @@ button {
     button.scroll.up {
       top: 0; }
       button.scroll.up::before {
-        -webkit-transform: translate(0, 100%);
-        -khtml-transform: translate(0, 100%);
-        -moz-transform: translate(0, 100%);
-        -ms-transform: translate(0, 100%);
-        -o-transform: translate(0, 100%);
-        transform: translate(0, 100%); }
+        -webkit-transform: translate(0, 101%);
+        -khtml-transform: translate(0, 101%);
+        -moz-transform: translate(0, 101%);
+        -ms-transform: translate(0, 101%);
+        -o-transform: translate(0, 101%);
+        transform: translate(0, 101%); }
       button.scroll.up:hover::before {
         -webkit-transform: translate(0, 0);
         -khtml-transform: translate(0, 0);
@@ -957,12 +1028,12 @@ button {
     button.scroll.down {
       bottom: 0; }
       button.scroll.down::before {
-        -webkit-transform: translate(0, -100%);
-        -khtml-transform: translate(0, -100%);
-        -moz-transform: translate(0, -100%);
-        -ms-transform: translate(0, -100%);
-        -o-transform: translate(0, -100%);
-        transform: translate(0, -100%); }
+        -webkit-transform: translate(0, -101%);
+        -khtml-transform: translate(0, -101%);
+        -moz-transform: translate(0, -101%);
+        -ms-transform: translate(0, -101%);
+        -o-transform: translate(0, -101%);
+        transform: translate(0, -101%); }
       button.scroll.down:hover::before {
         -webkit-transform: translate(0, 0);
         -khtml-transform: translate(0, 0);
@@ -1001,12 +1072,12 @@ button {
       right: 42px;
       left: auto; }
       button.scroll.right::before {
-        -webkit-transform: translate(-100%, 0);
-        -khtml-transform: translate(-100%, 0);
-        -moz-transform: translate(-100%, 0);
-        -ms-transform: translate(-100%, 0);
-        -o-transform: translate(-100%, 0);
-        transform: translate(-100%, 0); }
+        -webkit-transform: translate(-101%, 0);
+        -khtml-transform: translate(-101%, 0);
+        -moz-transform: translate(-101%, 0);
+        -ms-transform: translate(-101%, 0);
+        -o-transform: translate(-101%, 0);
+        transform: translate(-101%, 0); }
       button.scroll.right:hover::before {
         -webkit-transform: translate(0, 0);
         -khtml-transform: translate(0, 0);
@@ -1021,12 +1092,12 @@ button {
       color: #008BCC; }
       button.blue:hover::before {
         background: #FFF800;
-        -webkit-transform: translate(100%, 0);
-        -khtml-transform: translate(100%, 0);
-        -moz-transform: translate(100%, 0);
-        -ms-transform: translate(100%, 0);
-        -o-transform: translate(100%, 0);
-        transform: translate(100%, 0); }
+        -webkit-transform: translate(101%, 0);
+        -khtml-transform: translate(101%, 0);
+        -moz-transform: translate(101%, 0);
+        -ms-transform: translate(101%, 0);
+        -o-transform: translate(101%, 0);
+        transform: translate(101%, 0); }
     button.blue:active {
       color: #FFF800; }
       button.blue:active::before {
@@ -1089,6 +1160,9 @@ button {
     font-weight: 400; }
   .card .input {
     max-width: 100%; }
+  @media (max-width: 1024px) {
+    .card {
+      width: 480px; } }
   @media (max-height: 475px) {
     .card {
       width: 400px; }
@@ -1639,12 +1713,127 @@ button {
     outline-color: transparent;
     box-shadow: 0 0 8px 4px rgba(58, 165, 80, 0.6); }
 
+.timeline {
+  height: 50px;
+  margin: 0;
+  margin-bottom: 12px;
+  padding: 0;
+  list-style-type: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center; }
+  .timeline > li.edge {
+    width: 20px;
+    cursor: pointer; }
+    .timeline > li.edge:first-child {
+      margin-right: 12px;
+      text-align: left; }
+    .timeline > li.edge:last-child {
+      margin-left: 12px;
+      text-align: right; }
+  .timeline > li.line {
+    width: 100%;
+    height: 1px;
+    background: #E0E0E0; }
+    .timeline > li.line ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: distribute;
+      -webkit-justify-content: space-around;
+      -moz-justify-content: space-around;
+      justify-content: space-around;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      -moz-align-items: center;
+      align-items: center; }
+      .timeline > li.line ul li {
+        position: relative; }
+        .timeline > li.line ul li::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 50%;
+          width: 1px;
+          height: 4px;
+          background: #E0E0E0;
+          border-radius: 1px;
+          -webkit-transform: translate(-50%, -40%);
+          -khtml-transform: translate(-50%, -40%);
+          -moz-transform: translate(-50%, -40%);
+          -ms-transform: translate(-50%, -40%);
+          -o-transform: translate(-50%, -40%);
+          transform: translate(-50%, -40%); }
+        .timeline > li.line ul li:nth-child(1)::before, .timeline > li.line ul li:nth-child(6)::before, .timeline > li.line ul li:nth-child(11)::before, .timeline > li.line ul li:nth-child(16)::before, .timeline > li.line ul li:nth-child(21)::before {
+          width: 2px;
+          height: 8px;
+          -webkit-transform: translate(-50%, -40%);
+          -khtml-transform: translate(-50%, -40%);
+          -moz-transform: translate(-50%, -40%);
+          -ms-transform: translate(-50%, -40%);
+          -o-transform: translate(-50%, -40%);
+          transform: translate(-50%, -40%); }
+        .timeline > li.line ul li h6 {
+          position: absolute;
+          top: 16px;
+          left: 50%;
+          color: #a8a8a8;
+          -webkit-transform: translate(-50%, 0);
+          -khtml-transform: translate(-50%, 0);
+          -moz-transform: translate(-50%, 0);
+          -ms-transform: translate(-50%, 0);
+          -o-transform: translate(-50%, 0);
+          transform: translate(-50%, 0); }
+        .timeline > li.line ul li .event {
+          position: absolute;
+          top: 0;
+          left: 50%;
+          width: 12px;
+          height: 12px;
+          background: #ffffff;
+          border-radius: 50%;
+          border: 1px solid #989898;
+          transition: border 0.2s ease, transform 0.2s ease;
+          cursor: pointer;
+          -webkit-transform: translate(-50%, -50%);
+          -khtml-transform: translate(-50%, -50%);
+          -moz-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          -o-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
+          .timeline > li.line ul li .event:hover {
+            border-width: 2px;
+            border-color: #008BCC;
+            -webkit-transform: translate(-50%, -50%) scale(1.5);
+            -khtml-transform: translate(-50%, -50%) scale(1.5);
+            -moz-transform: translate(-50%, -50%) scale(1.5);
+            -ms-transform: translate(-50%, -50%) scale(1.5);
+            -o-transform: translate(-50%, -50%) scale(1.5);
+            transform: translate(-50%, -50%) scale(1.5); }
+          .timeline > li.line ul li .event.focus {
+            border-color: #008BCC;
+            box-shadow: 0 1px 1px 0 rgba(70, 70, 70, 0.2), 0 2px 4px 0 rgba(70, 70, 70, 0.1); }
+            .timeline > li.line ul li .event.focus:hover {
+              border-color: #008BCC; }
+
 .tooltip {
   z-index: 10000;
   position: absolute;
   max-width: 176px;
-  padding: 8px 8px;
-  padding-bottom: 6px;
+  padding: 8px 12px;
   color: #008BCC;
   background: #FFF800;
   font-size: 0.9em;
@@ -1654,6 +1843,7 @@ button {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  box-shadow: 0 1px 1px 0 rgba(70, 70, 70, 0.2), 0 2px 4px 0 rgba(70, 70, 70, 0.1);
   transition: opacity 0.2s ease, transform 0.2s ease;
   -webkit-transform: translate(0, 100%);
   -khtml-transform: translate(0, 100%);
@@ -1669,11 +1859,12 @@ button {
     right: auto;
     bottom: 1px;
     left: 50%;
-    width: 8px;
-    height: 8px;
+    width: 12px;
+    height: 12px;
     background: inherit;
     font-size: 1rem;
     user-select: none;
+    box-shadow: 1px 1px 1px 0 rgba(70, 70, 70, 0.2), 1px 2px 4px 0 rgba(70, 70, 70, 0.1);
     -webkit-transform: translate(-50%, 50%) rotate(45deg);
     -khtml-transform: translate(-50%, 50%) rotate(45deg);
     -moz-transform: translate(-50%, 50%) rotate(45deg);

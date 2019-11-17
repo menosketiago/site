@@ -33,14 +33,14 @@
 		</hgroup>
 		
 		<address class="social">
-		    <a href="#contact">
+		    <a href="#contact" data-tooltip="Email">
 		        <svg width="18" height="16" xmlns="http://www.w3.org/2000/svg">
 		            <g transform="translate(0 -1)" stroke="currentColor" fill="none" fill-rule="evenodd">
 		                <rect x=".5" y="2" width="17" height="14" rx="2"/>
 		                <path d="M.818 2.25l6.836 6.266a2 2 0 002.697.006l6.9-6.272h0"/>
 		            </g>
 		        </svg>    </a>
-		    <a href="https://www.linkedin.com/in/menosketiago" target="_blank">
+		    <a href="https://www.linkedin.com/in/menosketiago" target="_blank" data-tooltip="LinkedIn">
 		        <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg">
 		            <g fill="none" fill-rule="evenodd">
 		                <g fill="currentColor">
@@ -49,17 +49,23 @@
 		                <rect stroke="currentColor" x=".5" y=".5" width="17" height="17" rx="2"/>
 		            </g>
 		        </svg>    </a>
-		    <a href="https://www.facebook.com/thisismenos" target="_blank">
+		    <a href="https://medium.com/@menosketiago" target="_blank" data-tooltip="Medium">
+		        <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg">
+		            <g fill="none" fill-rule="evenodd"><rect stroke="currentColor" x=".5" y=".5" width="17" height="17" rx="1"/>
+		                <path d="M5.186 6.7a.418.418 0 00-.126-.343l-.934-1.18V5h2.9l2.24 5.159L11.236 5H14v.176l-.798.804a.251.251 0 00-.089.235v5.903c-.014.09.02.18.089.236l.78.803v.176H10.06v-.176l.807-.823c.08-.083.08-.108.08-.235V7.327L8.7 13.314h-.303L5.783 7.327v4.012a.57.57 0 00.145.46l1.05 1.338v.177H4v-.177L5.05 11.8a.551.551 0 00.136-.46V6.7z" fill="currentColor" fill-rule="nonzero"/>
+		            </g>
+		        </svg>    </a>
+		    <a href="https://www.facebook.com/thisismenos" target="_blank" data-tooltip="Facebook">
 		        <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg">
 		            <path d="M16.5 17.5a1 1 0 001-1v-15a1 1 0 00-1-1h-15a1 1 0 00-1 1v15a1 1 0 001 1h15zm-7.576-5.986H7V8.018h1.924V6.522c0-2.252 1.391-3.578 3.533-3.578.72 0 1.491.049 1.86.099l.433.059v3.092h-.5l-1.23.001c-.579 0-.69.13-.69.674v1.15h2.511l-.674 3.495h-1.835l.025 5.427V18.5H8.924v-6.986z" stroke="currentColor" fill="none" fill-rule="evenodd" />
 		        </svg>    </a>
-		    <a href="https://www.instagram.com/menosketiago" target="_blank">
+		    <a href="https://www.instagram.com/menosketiago" target="_blank" data-tooltip="Instagram">
 		        <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg">
 		            <g fill="none" fill-rule="evenodd"><rect stroke="currentColor" x=".5" y=".5" width="17" height="17" rx="2"/>
 		            <circle stroke="currentColor" cx="9" cy="9" r="4.5"/>
 		            <circle fill="currentColor" cx="14" cy="4" r="1"/></g>
 		        </svg>    </a>
-		    <a href="https://dribbble.com/menosketiago" target="_blank">
+		    <a href="https://dribbble.com/menosketiago" target="_blank" data-tooltip="Dribbble">
 		        <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg">
 		            <g stroke="currentColor" fill="none" fill-rule="evenodd">
 		                <circle cx="9" cy="9" r="8.5" />
@@ -97,15 +103,74 @@
 		            <h1>Tiago Miguel dos Santos Almeida</h1>
 		
 		            <h5>Born</h5>
-		            <h6>Lisbon, Portugal 🇵🇹</h6>
+		            <h6>Lisbon, Portugal</h6>
 		
-		            <h5>Living</h5>
-		            <h6>Stockholm, Sweden 🇸🇪</h6>
+		            <h5>Located in</h5>
+		            <h6>Stockholm, Sweden</h6>
 		        </header>
+		
+		        <ul class="timeline">
+		            <li class="edge" data-tooltip="<b>29-02-1984</b><br>Tiago 1.0.0 released">👶🏻</li>
+		            <li class="line">
+		                <ul>
+		                    <li>
+		                        <h6>2000</h6>
+		                        <a class="event" data-tooltip="<b>2000</b><br>First freelance job doing Digital Coloring for comics"></a>
+		                    </li>
+		                    <li></li>
+		                    <li>
+		                        <a class="event" data-tooltip="<b>2002</b><br>Finished High School<br>Interned at <b>InLisboa.com</b>"></a>
+		                    </li>
+		                    <li></li>
+		                    <li></li>
+		                    <li>
+		                        <h6>2005</h6>
+		                        <a class="event" data-tooltip="<b>2015</b><br>Editorial Designer at <b>Impresa</b>"></a>
+		                    </li>
+		                    <li></li>
+		                    <li></li>
+		                    <li>
+		                        <a class="event focus" data-tooltip="<b>2008</b><br>Graduated on the <b>Industrial Design</b> from <b>Lisbon's Fine Arts School</b>"></a>
+		                    </li>
+		                    <li></li>
+		                    <li>
+		                        <h6>2010</h6>
+		                        <a class="event" data-tooltip="<b>2010</b><br>Full-time freelancer"></a>
+		                    </li>
+		                    <li></li>
+		                    <li></li>
+		                    <li>
+		                        <a class="event" data-tooltip="<b>2013</b><br>UI/UX Designer and Growth Hacker at <b>WannaPlayer</b><br>Started <b>Mana Gaming</b>"></a>
+		                    </li>
+		                    <li>
+		                        <a class="event focus" data-tooltip="<b>2014</b><br>Moved to Stockholm 🇸🇪<br>UI/UX Designer at <b>Goo Technologies</b>"></a>
+		                    </li>
+		                    <li>
+		                        <h6>2015</h6>
+		                        <a class="event focus" data-tooltip="<b>2015</b><br>Product Designer at <b>Ericsson</b>"></a>
+		                    </li>
+		                    <li></li>
+		                    <li>
+		                        <a class="event focus" data-tooltip="<b>2017</b><br>Product Designer at <b>TriOptima</b>"></a>
+		                    </li>
+		                    <li></li>
+		                    <li>
+		                        <a class="event" data-tooltip="<b>2019</b><br>Looking for a new challenge!"></a>
+		                    </li>
+		                    <li>
+		                        <h6>2020</h6>
+		                    </li>
+		                </ul>
+		            </li>
+		            <li class="edge" data-tooltip="<b>Tomorrow</b><br>Becoming a unicorn...">🦄</li>
+		        </ul>
+		        <button><svg width="18" height="18" xmlns="http://www.w3.org/2000/svg">
+		    <path d="M15.382 0a1 1 0 01.894.553l1.618 3.236a1 1 0 01.106.447V17a1 1 0 01-1 1H1a1 1 0 01-1-1V1a1 1 0 011-1h14.382zM4 1H1v16h1V8h14v9h1V4.236L15.382 1H14v6H4V1zm11 8H3v8h12V9zm-2-8H5v5h8V1zm-1 1v3h-1V2h1z" fill="currentColor" fill-rule="nonzero"/>
+		</svg> Download CV and Portfolio</button>
 		    </div>
 		
 		    <blockquote>
-		        <mark>Two generations of barechested designers with a poodle 🐩</mark>
+		        Two generations of barechested designers with a 🐩 named Brownie
 		    </blockquote>
 		</section>
 		<section id="work">
@@ -213,7 +278,7 @@
 		            <div id="page-1" class="wrapper">
 		                    <a id="test" class="item " tabindex="0" >
 		                        <h3>Category</h3>
-		                        <h2>Loki</h2>
+		                        <h2>LoTestki</h2>
 		                        <div class="view">
 		                            <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg">
 		                                <g fill="none" fill-rule="evenodd">
@@ -224,7 +289,7 @@
 		                    </a>
 		                    <a id="test" class="item " tabindex="0" >
 		                        <h3>Category</h3>
-		                        <h2>Loki</h2>
+		                        <h2>Test</h2>
 		                        <div class="view">
 		                            <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg">
 		                                <g fill="none" fill-rule="evenodd">
@@ -235,7 +300,7 @@
 		                    </a>
 		                    <a id="test" class="item " tabindex="0" >
 		                        <h3>Category</h3>
-		                        <h2>Loki</h2>
+		                        <h2>Test</h2>
 		                        <div class="view">
 		                            <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg">
 		                                <g fill="none" fill-rule="evenodd">
@@ -246,7 +311,7 @@
 		                    </a>
 		                    <a id="test" class="item " tabindex="0" >
 		                        <h3>Category</h3>
-		                        <h2>Loki</h2>
+		                        <h2>Test</h2>
 		                        <div class="view">
 		                            <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg">
 		                                <g fill="none" fill-rule="evenodd">
@@ -257,7 +322,7 @@
 		                    </a>
 		                    <a id="test" class="item " tabindex="0" >
 		                        <h3>Category</h3>
-		                        <h2>Loki</h2>
+		                        <h2>Test</h2>
 		                        <div class="view">
 		                            <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg">
 		                                <g fill="none" fill-rule="evenodd">
@@ -268,7 +333,7 @@
 		                    </a>
 		                    <a id="test" class="item " tabindex="0" >
 		                        <h3>Category</h3>
-		                        <h2>Loki</h2>
+		                        <h2>Test</h2>
 		                        <div class="view">
 		                            <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg">
 		                                <g fill="none" fill-rule="evenodd">
@@ -279,7 +344,7 @@
 		                    </a>
 		                    <a id="test" class="item " tabindex="0" >
 		                        <h3>Category</h3>
-		                        <h2>Loki</h2>
+		                        <h2>Test</h2>
 		                        <div class="view">
 		                            <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg">
 		                                <g fill="none" fill-rule="evenodd">
@@ -290,18 +355,7 @@
 		                    </a>
 		                    <a id="test" class="item " tabindex="0" >
 		                        <h3>Category</h3>
-		                        <h2>Loki</h2>
-		                        <div class="view">
-		                            <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg">
-		                                <g fill="none" fill-rule="evenodd">
-		                                    <circle stroke="currentColor" cx="9" cy="9" r="8.5"/><path d="M9 4c.49 0 .965.07 1.413.203A3.002 3.002 0 0011.5 10c1.037 0 1.95-.526 2.49-1.325A5 5 0 119 4z" fill="currentColor"/>
-		                                </g>
-		                            </svg>                            View
-		                        </div>
-		                    </a>
-		                    <a id="test" class="item " tabindex="0" >
-		                        <h3>Category</h3>
-		                        <h2>Loki</h2>
+		                        <h2>Test</h2>
 		                        <div class="view">
 		                            <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg">
 		                                <g fill="none" fill-rule="evenodd">
@@ -323,11 +377,11 @@
 		        <h1>Get in touch</h1>
 		
 		        <p>
-		            Like most wild <mark>designerus millenius</mark>, I can be easily spooked with phone calls, as a ringtone is a noise deeply associated with one of our primal predators, the <mark>telemarketerus obnoscius</mark>.
+		            Like most wild <mark>designerus millenius</mark>, I can be easily spooked with phone calls, as a ringtone is a noise deeply associated with one of our primal predators, the <mark>telemarketerus obnoscius</mark>
 		        </p>
 		
 		        <p>
-		            To get in touch, use the form or email me at <mark>hello[at]menosketiago.com</mark>...
+		            But emails are a safe bet! Use the form below or email me at <mark>hello[at]menosketiago.com</mark>
 		        </p>
 		
 		        <form action="https://formspree.io/xyyyddgr" method="POST">
@@ -374,9 +428,8 @@
 			<h6>Copyright</h6>
 			<h5>
 				Tiago Almeida
-				<time>2006</time>/<time data-year>2019</time>
+				<time>2006</time> / <time data-year>2019</time>
 			</h5>
-		
 			<h6>Made with <span>❤️</span> in <span>🇸🇪</span></h6>
 		</hgroup>	</footer>
 	<div class="modal">

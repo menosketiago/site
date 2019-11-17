@@ -26,6 +26,10 @@ body > header {
 			box-shadow: 0 0 0 $space-tiny $yellow;
 		}
 
+		> * {
+			pointer-events: none;
+		}
+
 		img {
 			width: inherit;
 			height: inherit;
@@ -101,7 +105,7 @@ body > header {
 			@include justify-content(center);
 
 			svg	{
-				@include transform(scale(1.2));
+				@include transform(scale(1.1));
 			}
 		}
 	}

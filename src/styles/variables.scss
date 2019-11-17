@@ -49,6 +49,9 @@ $space-large: $space-base * 2;
 $space-extra: $space-base * 4;
 
 $default-width: $space-extra * 11;
+$default-box-shadow:
+    0 1px 1px 0 rgba($black, .2),
+    0 2px 4px 0 rgba($black, .1);
 
 $max-text-width: 700px;
 $max-article-width: 1024px;
@@ -68,7 +71,7 @@ $card-width: $default-width;
 $card-space: $space-extra;
 
 $loading-width: $space-extra * 2;
-$tooltip-caret-width: $space-small;
+$tooltip-caret-width: $space-base;
 
 $input-width: $space-extra * 8;
 $input-height: $space-extra;
@@ -79,6 +82,9 @@ $stroke-height: 2px;
 
 $space-modal: $space-extra;
 $modal-aside-width: 120px;
+
+$timeline-height: 50px;
+$timeline-event-size: $space-base;
 
 // Z-INDEXES
 
@@ -95,8 +101,12 @@ $path-thumbs: '../images/thumbs/';
 
 // MEDIA QUERY SIZES
 
+$screen-width-average: 1024px;
+
 $screen-height-average: 643px;
 $screen-height-small: 475px;
+
+// SMALLER SIZES
 
 $body-font-size-average: 14px;
 $body-font-size-small: 12px;
@@ -112,9 +122,13 @@ $logo-home-size-small: $space-extra * 4;
 
 $btn-height-average: 40px;
 $btn-height-small: 34px;
+$avatar-width-small: $space-extra * 1.5;
 
+$card-width-average: 480px;
 $card-width-small: 400px;
 
 $input-height-small: $space-large + $space-base;
 $input-padding-small: $space-small;
 $input-icon-size-small: 16px;
+
+$timeline-event-size-small: $space-small;

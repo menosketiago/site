@@ -84,7 +84,7 @@ hgroup {
 
 p {
 	margin: 0;
-    margin-bottom: $space-large;
+    margin-bottom: $space-base;
     font-weight: $book;
     line-height: 1.2em;
 
@@ -177,5 +177,15 @@ blockquote {
 
     h5, h6 {
         font-size: .7em;
+    }
+
+    blockquote {
+        font-size: 1.2em;
+
+        &::before {
+            width: $space-extra;
+            height: $stroke-height;
+            margin-bottom: $space-base;
+        }
     }
 }

@@ -6,7 +6,7 @@ class Navigator {
             section: element.querySelector('#work')
         }
 
-        this.sectionsArray = this.dom.main.querySelectorAll('main > section');
+        this.sectionsArray = document.querySelectorAll('main > section');
 
         if (location.hash) {
             this.initialSection = this.dom.main.querySelector(location.hash);
@@ -58,8 +58,9 @@ class Navigator {
     }
 
     init() {
-        this.eventHandler();
         this.changeSection(this._state.currentSection);
+
+        this.eventHandler();
     }
 
     eventHandler() {
@@ -68,9 +69,7 @@ class Navigator {
             if (e.target === this.logo) {
                 e.preventDefault();
 
-                this.targetSection = this.sectionsArray[0];
-
-                this.changeSection(this.targetSection);
+                this.changeSection(this.sectionsArray[0]);
             }
 
             // Listen to click on the main nav links
@@ -269,7 +268,13 @@ class Navigator {
         Array.from(this.sectionsArray).forEach(section => {
             let sectionTop = section.getBoundingClientRect().top;
 
-            if (mainTop === sectionTop) this.changeSection(section);
+            if (mainTop === sectionTop) {
+                // Set the currently viewing title on the header
+                this.currentlyViewing.textContent = this._state.currentSection.id;
+
+                // Update the URL
+                history.replaceState({}, '', '#' + this._state.currentSection.id);
+            }
         });
     }
 

@@ -21,6 +21,10 @@
 
     // MEDIA QUERIES
 
+    @media (max-width: $screen-width-average) {
+		width: $card-width-average;
+	}
+
 	@media (max-height: $screen-height-small) {
         width: $card-width-small;
 

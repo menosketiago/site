@@ -50,6 +50,7 @@ class Modal {
                     this.show();
 
                     this.fetchContent(trigger);
+                    this.setModalTheme(trigger);
                 }
             });
 
@@ -66,7 +67,12 @@ class Modal {
 
             // Listen to trigger click to open modal
             Array.from(this.triggersArray).forEach(trigger => {
-                if (e.target === trigger && e.key === 'Enter') this.show();
+                if (e.target === trigger && e.key === 'Enter') {
+                    this.show();
+
+                    this.fetchContent(trigger);
+                    this.setModalTheme(trigger);
+                }
             });
         });
     }
@@ -80,21 +86,6 @@ class Modal {
     }
 
     fetchContent(trigger) {
-        // Check if the modal should open in dark mode
-        if (trigger.hasAttribute('data-dark')) {
-            this.dom.modal.classList.add('dark-mode');
-        }
-
-        // Gold modal
-        if (trigger.classList.contains('gold')) {
-            this.dom.modal.classList.add('gold');
-        }
-
-        // Alien modal
-        if (trigger.classList.contains('alien')) {
-            this.dom.modal.classList.add('alien');
-        }
-
         fetch('./work/' + trigger.id + '.html')
         .then(
             function(response) {
@@ -126,6 +117,23 @@ class Modal {
         .catch(function(error) {
             console.log('Fetch Error :-S', error);
         });
+    }
+
+    setModalTheme(trigger) {
+        // Check if the modal should open in dark mode
+        if (trigger.hasAttribute('data-dark')) {
+            this.dom.modal.classList.add('dark-mode');
+        }
+
+        // Gold modal
+        if (trigger.classList.contains('gold')) {
+            this.dom.modal.classList.add('gold');
+        }
+
+        // Alien modal
+        if (trigger.classList.contains('alien')) {
+            this.dom.modal.classList.add('alien');
+        }
     }
 
 }

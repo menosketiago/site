@@ -3,6 +3,11 @@
 	width: auto;
 	padding: 0;
 	background-image: url('../images/pattern-blue.png');
+	background-color: $white;
+	background-attachment: initial;
+	background-size: initial;
+	background-repeat: repeat;
+	background-position: initial;
 
 	@include flex-direction(row);
 	@include justify-content(flex-start);

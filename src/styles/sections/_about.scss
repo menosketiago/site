@@ -9,20 +9,21 @@
 	.card {
 		position: relative;
 		max-height: calc(100vh - (#{$card-space} * 4));
-		margin-top: $card-space + ($avatar-width-large / 2);
+		margin-top: $card-space;
 		padding-top: $card-space + ($avatar-width-large / 2) - $space-large;
-
-		h1 {
-			margin-bottom: $space-small;
-			font-size: 2.2em;
-		}
+		padding-bottom: $card-space + ($btn-height / 2);
 
 		header {
-			margin-bottom: $space-large;
+			margin-bottom: $space-extra;
 			text-align: center;
 
+			h1 {
+				margin-bottom: $space-small;
+				font-size: 2.2em;
+			}
+
 			h5, h6 {
-				font-size: 1em;
+				font-size: .9em;
 			}
 
 			h5 {
@@ -36,17 +37,35 @@
 					margin-right: 0;
 				}
 			}
+
+			.avatar {
+				position: absolute;
+				top: 0;
+				left: 50%;
+				width: $avatar-width-large;
+				height: $avatar-width-large;
+				border: $space-tiny solid $white;
+
+				@include transform(translate(-50%, -50%));
+			}
 		}
 
-		.avatar {
+		button {
 			position: absolute;
-			top: 0;
+			bottom: 0;
 			left: 50%;
-			width: $avatar-width-large;
-			height: $avatar-width-large;
-			border: $space-tiny solid $white;
 
-			@include transform(translate(-50%, -50%));
+			@include transform(translate(-50%, 50%));
+
+			&::before {
+				@include transform(translate(0, -101%));
+			}
+
+			&:hover {
+				&::before {
+					@include transform(translate(0, 0));
+				}
+			}
 		}
 	}
 
@@ -54,10 +73,46 @@
 		position: absolute;
 		right: $space-extra * 2;
 		bottom: $space-extra * 2;
+		color: #000000;
+		text-shadow: 0 0 $space-base $yellow, 0 0 $space-extra $yellow;
+	}
 
-		mark {
-			padding: $space-tiny 0;
-			color: inherit;
+	// MEDIA QUERIES
+
+	@media (max-width: $screen-width-average) {
+		> blockquote {
+			max-width: $default-width / 3;
+			right: $space-large;
+			bottom: $space-large;
+		}
+	}
+
+	@media (max-height: $screen-height-small) {
+		.card {
+			padding-top: $card-space + ($avatar-width-small / 2) - $space-large;
+			padding-bottom: $card-space;
+
+			header {
+				margin-bottom: $space-large;
+
+				.avatar {
+					width: $avatar-width-small;
+					height: $avatar-width-small;
+				}
+			}
+
+			.timeline {
+				.event {
+					width: $timeline-event-size-small;
+					height: $timeline-event-size-small;
+				}
+			}
+		}
+
+		> blockquote {
+			max-width: $default-width / 4;
+			right: $space-base;
+			bottom: $space-large;
 		}
 	}
 }

@@ -1,0 +1,115 @@
+.timeline {
+    height: $timeline-height;
+    margin: 0;
+    margin-bottom: $space-base;
+    padding: 0;
+    list-style-type: none;
+
+    @include flexbox();
+    @include align-items(center);
+
+    > li {
+       &.edge {
+            width: 20px;
+            cursor: pointer;
+
+            &:first-child {
+                margin-right: $space-base;
+                text-align: left;
+            }
+
+            &:last-child {
+                margin-left: $space-base;
+                text-align: right;
+            }
+        }
+
+        &.line {
+            width: 100%;
+            height: $stroke-height / 2;
+            background: $border-color;
+
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+
+                @include flexbox();
+                @include justify-content(space-around);
+                @include align-items(center);
+
+                li {
+                    position: relative;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 50%;
+                        width: $stroke-height / 2;
+                        height: $space-tiny;
+                        background: $border-color;
+                        border-radius: 1px;
+
+                        @include transform(translate(-50%, -40%));
+                    }
+
+                    &:nth-child(1),
+                    &:nth-child(6),
+                    &:nth-child(11),
+                    &:nth-child(16),
+                    &:nth-child(21) {
+                        &::before {
+                            width: $stroke-height;
+                            height: $space-small;
+
+                            @include transform(translate(-50%, -40%));
+                        }
+                    }
+
+                    h6 {
+                        position: absolute;
+                        top: $space-small * 2;
+                        left: 50%;
+                        color: shade($border-color, 25%);
+
+                        @include transform(translate(-50%, 0));
+                    }
+
+                    .event {
+                        position: absolute;
+                        top: 0;
+                        left: 50%;
+                        width: $timeline-event-size;
+                        height: $timeline-event-size;
+                        background: $white;
+                        border-radius: 50%;
+                        border: 1px solid $gray-mid;
+                        transition:
+                            border $speed-default ease,
+                            transform $speed-default ease;
+                        cursor: pointer;
+
+                        @include transform(translate(-50%, -50%));
+
+                        &:hover {
+                            border-width: $stroke-height;
+                            border-color: $blue;
+
+                            @include transform(translate(-50%, -50%) scale(1.5));
+                        }
+
+                        &.focus {
+                            border-color: $blue;
+                            box-shadow: $default-box-shadow;
+
+                            &:hover {
+                                border-color: $blue;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
