@@ -50,6 +50,10 @@
                     background: $gold;
                 }
 
+                a {
+                    color: $gold;
+                }
+
                 figure {
                     figcaption {
                         color: $black;
@@ -59,6 +63,7 @@
             }
         }
 
+        button,
         ~ #close-modal {
             color: $black;
             background: $gold;
@@ -90,6 +95,10 @@
                     background: $alien;
                 }
 
+                a {
+                    color: $alien;
+                }
+
                 figure {
                     figcaption {
                         color: $black;
@@ -99,8 +108,9 @@
             }
         }
 
+        article > button,
         ~ #close-modal {
-            color: $black;
+            color: #000000;
             background: $alien;
 
             &::before {

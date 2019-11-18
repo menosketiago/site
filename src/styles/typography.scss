@@ -84,7 +84,7 @@ hgroup {
 
 p {
 	margin: 0;
-    margin-bottom: $space-base;
+    margin-bottom: $space-large;
     font-weight: $book;
     line-height: 1.2em;
 
@@ -101,6 +101,7 @@ span {
 a {
     color: $blue;
     outline: 0;
+    font-weight: inherit;
     transition: all $speed-default ease;
 
     &:hover {
@@ -182,6 +183,10 @@ blockquote {
 
     h5, h6 {
         font-size: .7em;
+    }
+
+    p {
+        margin-bottom: $space-base;
     }
 
     blockquote {

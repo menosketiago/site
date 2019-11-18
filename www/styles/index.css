@@ -73,7 +73,7 @@ hgroup {
 
 p {
   margin: 0;
-  margin-bottom: 12px;
+  margin-bottom: 24px;
   font-weight: 300;
   line-height: 1.2em; }
   p:last-child {
@@ -86,6 +86,7 @@ span {
 a {
   color: #008BCC;
   outline: 0;
+  font-weight: inherit;
   transition: all 0.2s ease; }
   a:hover {
     background: #FFF800; }
@@ -139,6 +140,8 @@ blockquote {
     font-size: 1.1em; }
   h5, body > header nav a, h6 {
     font-size: .7em; }
+  p {
+    margin-bottom: 12px; }
   blockquote {
     font-size: 1.2em; }
     blockquote::before {
@@ -1605,7 +1608,8 @@ button {
         margin: 24px 0; }
       .modal .container article p {
         max-width: 700px;
-        margin-right: 120px; }
+        margin-right: 120px;
+        line-height: 1.4em; }
         .modal .container article p + figure,
         .modal .container article p + img,
         .modal .container article p + .vimeo {
@@ -1840,15 +1844,21 @@ button {
 .modal.gold .container article h3::after {
   background: #FFDD60; }
 
+.modal.gold .container article a {
+  color: #FFDD60; }
+
 .modal.gold .container article figure figcaption {
   color: #464646;
   background: #FFDD60; }
 
+.modal.gold button,
 .modal.gold ~ #close-modal {
   color: #464646;
   background: #FFDD60; }
+  .modal.gold button::before,
   .modal.gold ~ #close-modal::before {
     background: #464646; }
+  .modal.gold button:hover,
   .modal.gold ~ #close-modal:hover {
     color: #FFDD60; }
 
@@ -1861,17 +1871,24 @@ button {
 .modal.alien .container article h3::after {
   background: #3AA550; }
 
+.modal.alien .container article a {
+  color: #3AA550; }
+
 .modal.alien .container article figure figcaption {
   color: #464646;
   background: #3AA550; }
 
+.modal.alien article > button,
 .modal.alien ~ #close-modal {
-  color: #464646;
+  color: #000000;
   background: #3AA550; }
+  .modal.alien article > button::before,
   .modal.alien ~ #close-modal::before {
     background: #464646; }
+  .modal.alien article > button:hover,
   .modal.alien ~ #close-modal:hover {
     color: #3AA550; }
+  .modal.alien article > button.has-focus,
   .modal.alien ~ #close-modal.has-focus {
     outline-color: transparent;
     box-shadow: 0 0 12px 4px rgba(58, 165, 80, 0.8); }

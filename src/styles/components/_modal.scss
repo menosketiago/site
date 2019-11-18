@@ -138,6 +138,7 @@
             p {
                 max-width: $max-text-width;
                 margin-right: $modal-aside-width;
+                line-height: 1.4em;
 
                 + figure,
                 + img,
@@ -283,4 +284,6 @@
     }
 }
 
-@import 'modal-modes';
+// IMPORT THE DIFFERENT COLOR THEMES
+
+@import 'modal-themes';
