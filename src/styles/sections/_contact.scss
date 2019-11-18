@@ -6,18 +6,22 @@
 	@include justify-content(flex-start);
 
 	.card {
+		width: $card-width + ($space-extra * 2);
 		position: relative;
-		// max-height: $section-card-height;
 		padding-bottom: $card-space;
 
-		.input {
-			&:last-of-type {
-				margin-bottom: 0;
-			}
+		form {
+			margin-top: $space-extra;
 
-			textarea {
-				min-width: 100%;
-				max-height: $input-height * 5;
+			.input {
+				&:last-of-type {
+					margin-bottom: 0;
+				}
+
+				textarea {
+					min-width: 100%;
+					max-height: $input-height * 5;
+				}
 			}
 		}
 
@@ -44,7 +48,19 @@
 
 	// MEDIA QUERIES
 
-	@media (max-width: $screen-width-average) {
+	@media screen and (min-width: $screen-width-laptop) {
+		.card {
+			margin-left: $card-space * 2;
+		}
+	}
+
+	@media screen and (min-width: $screen-width-full-hd) {
+		.card {
+			margin-left: $card-space * 3;
+		}
+	}
+
+	@media screen and (max-width: $screen-width-average) {
 		> blockquote {
 			max-width: $default-width / 3;
 			right: $space-large;
@@ -52,25 +68,37 @@
 		}
 	}
 
-	@media (max-height: $screen-height-average) {
+	@media screen and (max-height: $screen-height-average) {
 		.card {
-			// max-height: $section-card-height-small;
+			width: $card-width-average;
 			margin: $card-space-small;
 			padding: $card-space-small;
 
 			h1 {
 				font-size: 1.8em;
 			}
+
+			form {
+				margin-top: $space-large;
+			}
 		}
 	}
 
-	@media (max-height: $screen-height-small) {
+	@media screen and (max-height: $screen-height-small) {
 		.card {
-			padding-bottom: $card-space-small - ($btn-height-small / 2);
+			width: $card-width-small;
+			padding-bottom: $card-space-small;
 
-			.input {
+			h1 {
+				margin-bottom: $space-base;
+				font-size: 1.7em;
+			}
+
+			form {
+				.input {
 				textarea {
-					max-height: $input-height-small * 2;
+						max-height: $input-height-small * 2;
+					}
 				}
 			}
 		}

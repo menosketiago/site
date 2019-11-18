@@ -1,20 +1,26 @@
 {
     "keyword": [
         { "key": "Design Systems" },
-        { "key": "Figma" },
+        { "key": "Pattern Libraries" },
         { "key": "Sketch" },
+        { "key": "Figma" },
         { "key": "Zeplin" },
         { "key": "Principle" },
+        { "key": "Invision" },
+        { "key": "Balsamiq" },
         { "key": "Illustrator" },
         { "key": "Photoshop" },
-        { "key": "Premiere" },
         { "key": "After Effects" },
+        { "key": "Premiere" },
+        { "key": "3D Studio Max" },
+        { "key": "Solidworks" },
         { "key": "JIRA" },
         { "key": "Confluence" },
         { "key": "HTML" },
         { "key": "CSS" },
         { "key": "JS (ES5)" },
+        { "key": "React" },
         { "key": "Handlebars" },
-        { "key": "React" }
+        { "key": "Build tools" }
     ]
 }

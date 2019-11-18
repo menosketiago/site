@@ -21,15 +21,15 @@
 
     // MEDIA QUERIES
 
-    @media (max-width: $screen-width-average) {
+    @media screen and (max-width: $screen-width-average) {
 		width: $card-width-average;
 	}
 
-    @media (max-width: $screen-height-average) {
+    @media screen and (max-width: $screen-height-average) {
 		padding: $card-space-small;
 	}
 
-	@media (max-height: $screen-height-small) {
+	@media screen and (max-height: $screen-height-small) {
         width: $card-width-small;
 
         h1 {

@@ -128,7 +128,7 @@
 
     // MEDIA QUERIES
 
-	@media (max-height: $screen-height-average) {
+	@media screen and (max-height: $screen-height-average) {
         margin-bottom: ace-small;
 
         label {
@@ -137,7 +137,7 @@
 
 		input,
         textarea {
-            height: $input-height-small;
+            height: $input-height-average;
             font-size: $body-font-size-small;
 
             &.is-valid,
@@ -149,11 +149,11 @@
         }
 
         textarea {
-            min-height: $input-height-small * 2;
+            min-height: $input-height-average * 2;
         }
 	}
 
-    @media (max-height: $screen-height-small) {
+    @media screen and (max-height: $screen-height-small) {
         margin-bottom: $space-base;
 
         label {
@@ -162,6 +162,7 @@
 
         input,
         textarea {
+            height: $input-height-small;
             padding: $input-padding-small;
 
             &.is-valid,
@@ -179,6 +180,10 @@
                     font-size: 0.8em;
                 }
             }
+        }
+
+        textarea {
+            min-height: $input-height-small * 2;
         }
     }
 }

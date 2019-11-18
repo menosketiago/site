@@ -112,7 +112,7 @@ body > header {
 
 	// MEDIA QUERIES
 
-	@media (max-height: $screen-height-average) {
+	@media screen and (max-height: $screen-height-average) {
 		.social {
 			a {
 				width: 28px;
@@ -125,7 +125,7 @@ body > header {
 		}
 	}
 
-	@media (max-height: $screen-height-small) {
+	@media screen and (max-height: $screen-height-small) {
 		width: $header-width-small;
 		padding: ($space-base + $text-fix) $space-base;
 		// Fix for text alignment

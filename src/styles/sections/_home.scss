@@ -25,14 +25,14 @@
 
 	// MEDIA QUERIES
 
-	@media (max-height: $screen-height-average) {
+	@media screen and (max-height: $screen-height-average) {
 		.logo {
 			width: $logo-home-size-average;
 	    	height: $logo-home-size-average;
 		}
 	}
 
-	@media (max-height: $screen-height-small) {
+	@media screen and (max-height: $screen-height-small) {
 		.logo {
 			width: $logo-home-size-small;
 	    	height: $logo-home-size-small;

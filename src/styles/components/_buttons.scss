@@ -188,7 +188,7 @@ button {
 
     // MEDIA QUERIES
 
-	@media (max-height: $screen-height-average) {
+	@media screen and (max-height: $screen-height-average) {
         height: $btn-height-average;
         // Fix for text align
         padding-bottom: $space-small - $text-fix;
@@ -210,7 +210,7 @@ button {
         }
     }
 
-    @media (max-height: $screen-height-small) {
+    @media screen and (max-height: $screen-height-small) {
         height: $btn-height-small;
         padding: $space-small ($space-small + $space-tiny);
         // Fix for text align

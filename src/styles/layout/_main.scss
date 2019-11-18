@@ -30,7 +30,7 @@ main {
 
 	// MEDIA QUERIES
 
-	@media (max-height: $screen-height-small) {
+	@media screen and (max-height: $screen-height-small) {
 		width: $main-width-small;
 		height: $main-height-small;
 		margin: $space-base 0;

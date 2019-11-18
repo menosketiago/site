@@ -93,6 +93,11 @@ p {
     }
 }
 
+span {
+    font-weight: inherit;
+    line-height: inherit;
+}
+
 a {
     color: $blue;
     outline: 0;
@@ -144,7 +149,7 @@ blockquote {
 
 // MEDIA QUERIES
 
-@media (max-height: $screen-height-average) {
+@media screen and (max-height: $screen-height-average) {
     body {
         font-size: $body-font-size-average;
     }
@@ -162,7 +167,7 @@ blockquote {
     }
 }
 
-@media (max-height: $screen-height-small) {
+@media screen and (max-height: $screen-height-small) {
     body {
         font-size: $body-font-size-small;
     }

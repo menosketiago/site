@@ -18,11 +18,15 @@ body > footer {
 
 		@include transform(rotate(180deg));
 
+		h5, h6 {
+			letter-spacing: $letter-spacing;
+		}
+
 		h6 {
 			margin-bottom: $space-tiny;
 
 			&:last-child {
-				margin-top: $space-large;
+				margin-top: $space-base;
 			}
 		}
 
@@ -37,7 +41,7 @@ body > footer {
 
 	// MEDIA QUERIES
 
-	@media (max-height: $screen-height-small) {
+	@media screen and (max-height: $screen-height-small) {
 		width: $footer-width-small;
 		padding: ($space-base + $text-fix) $space-base;
 		// Fix for text alignment

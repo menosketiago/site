@@ -1,7 +1,13 @@
 <h4>Keywords</h4>
 
-{{#keywords}}
-    {{#each keyword}}
-        <span class="tag">{{key}}</span>
-    {{/each}}
-{{/keywords}}
+<div class="keywords">
+    {{#keywords}}
+        {{#each keyword}}
+            {{#if @first}}
+                <h6>{{key}}</h6>
+            {{else}}
+                <span>•</span><h6>{{key}}</h6>
+            {{/if}}
+        {{/each}}
+    {{/keywords}}
+</div>

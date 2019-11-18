@@ -13,6 +13,7 @@
     visibility: hidden;
     opacity: 0;
     transition: transform $speed-slow ease;
+    will-change: transform;
     cursor: pointer;
 
     @include transform(translate(100%, 0));
@@ -256,7 +257,7 @@
 
     // MEDIA QUERIES
 
-	@media (max-height: $screen-height-average) {
+	@media screen and (max-height: $screen-height-average) {
         ~ #close-modal {
             left: $header-width;
             width: $btn-height-average;
@@ -268,7 +269,7 @@
         }
     }
 
-    @media (max-height: $screen-height-small) {
+    @media screen and (max-height: $screen-height-small) {
         ~ #close-modal {
             left: $header-width-small;
             width: $btn-height-small;

@@ -33,6 +33,8 @@ $book: 300;
 $regular: 400;
 $bold: 500;
 
+$letter-spacing: .05em;
+
 $text-fix: 2px;
 $text-shadow: 0 2px 0 rgba(0, 0, 0, 0.8);
 
@@ -113,6 +115,8 @@ $path-thumbs: '../images/thumbs/';
 
 // MEDIA QUERY SIZES
 
+$screen-width-full-hd: 1920px;
+$screen-width-laptop: 1366px;
 $screen-width-average: 1024px;
 
 $screen-height-average: 643px;
@@ -144,10 +148,11 @@ $card-width-average: 480px;
 $card-width-small: 400px;
 $card-space-small: $space-large + $space-small;
 
-$input-height-small: $space-large + $space-base;
+$input-height-average: 35px;
+$input-height-small: 30px;
 $input-padding-small: $space-small;
 $input-icon-size-small: 16px;
 
 $timeline-event-size-small: $space-small;
-$progress-height-small: 20px;
-$tag-height-small: 20px;
+$progress-height-small: 18px;
+$tag-height-small: 18px;
