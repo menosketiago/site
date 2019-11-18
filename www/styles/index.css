@@ -532,7 +532,7 @@ body > footer {
       body > footer hgroup h6:last-child {
         margin-top: 12px; }
     body > footer hgroup span {
-      margin: 4px;
+      margin-bottom: 4px;
       margin-right: -5px;
       writing-mode: initial;
       -webkit-transform: rotate(180deg);
