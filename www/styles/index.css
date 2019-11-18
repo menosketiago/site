@@ -97,9 +97,10 @@ a {
   a.has-focus {
     background: #FFF800; }
 
-strong {
+em {
   color: #008BCC;
-  font-weight: 400; }
+  font-weight: 400;
+  font-style: normal; }
 
 mark {
   padding: 0 4px;
@@ -209,7 +210,7 @@ form {
   html {
     scroll-behavior: auto; } }
 
-@media only screen and (min-device-width: 375px) and (max-device-width: 812px) {
+@media only screen and (min-device-width: 375px) and (max-device-width: 799px) {
   body {
     color: white;
     background-image: url("../images/bg-mom.jpg");
@@ -529,7 +530,7 @@ body > footer {
     -o-transform: rotate(180deg);
     transform: rotate(180deg); }
     body > footer hgroup h5, body > footer hgroup body > header nav a, body > header nav body > footer hgroup a, body > footer hgroup h6 {
-      letter-spacing: 0.05em; }
+      letter-spacing: 0.04em; }
     body > footer hgroup h6 {
       margin-bottom: 4px; }
       body > footer hgroup h6:last-child {
@@ -641,8 +642,8 @@ body > footer {
       position: absolute;
       top: 0;
       left: 50%;
-      width: 84px;
-      height: 84px;
+      width: 100px;
+      height: 100px;
       margin: 0;
       border: 4px solid #ffffff;
       -webkit-transform: translate(-50%, -50%);
@@ -1076,23 +1077,43 @@ body > footer {
   .avatar#me::after {
     background-image: url("../images/avatar.jpg"); }
   .avatar#mikael::after {
-    background-image: url("../images/avatars/mikael.png"); }
+    background-image: url("../images/avatars/mikael.jpeg"); }
   .avatar#patricia::after {
-    background-image: url("../images/avatars/patricia.png"); }
+    background-image: url("../images/avatars/patricia.jpeg"); }
   .avatar#johan::after {
-    background-image: url("../images/avatars/johan.png"); }
+    background-image: url("../images/avatars/johan.jpeg"); }
   .avatar#emelie::after {
-    background-image: url("../images/avatars/emelie.png"); }
+    background-image: url("../images/avatars/emelie.jpeg"); }
   .avatar#tina::after {
-    background-image: url("../images/avatars/tina.png"); }
+    background-image: url("../images/avatars/tina.jpeg"); }
   .avatar#daniel::after {
-    background-image: url("../images/avatars/daniel.png"); }
+    background-image: url("../images/avatars/daniel.jpeg"); }
   .avatar#sidi::after {
-    background-image: url("../images/avatars/sidi.png"); }
+    background-image: url("../images/avatars/sidi.jpeg"); }
   .avatar#william::after {
-    background-image: url("../images/avatars/william.png"); }
+    background-image: url("../images/avatars/william.jpeg"); }
   .avatar#martin::after {
-    background-image: url("../images/avatars/martin.png"); }
+    background-image: url("../images/avatars/martin.jpeg"); }
+  .avatar#didier::after {
+    background-image: url("../images/avatars/didier.jpeg"); }
+  .avatar#herlitz::after {
+    background-image: url("../images/avatars/herlitz.jpeg"); }
+  .avatar#magnus::after {
+    background-image: url("../images/avatars/magnus.jpeg"); }
+  .avatar#strandgren::after {
+    background-image: url("../images/avatars/strandgren.jpeg"); }
+  .avatar#hugo::after {
+    background-image: url("../images/avatars/hugo.jpeg"); }
+  .avatar#sterling::after {
+    background-image: url("../images/avatars/sterling.jpeg"); }
+  .avatar#jon::after {
+    background-image: url("../images/avatars/jon.jpeg"); }
+  .avatar#adrian::after {
+    background-image: url("../images/avatars/adrian.jpeg"); }
+  .avatar#carl::after {
+    background-image: url("../images/avatars/carl.jpeg"); }
+  .avatar#puneesh::after {
+    background-image: url("../images/avatars/puneesh.jpeg"); }
 
 button {
   z-index: 0;
@@ -1562,6 +1583,7 @@ button {
         right: 0;
         width: 120px;
         padding: 48px;
+        letter-spacing: 0.04em;
         writing-mode: vertical-lr;
         -webkit-transform: rotate(180deg);
         -khtml-transform: rotate(180deg);
@@ -1907,7 +1929,7 @@ button {
     font-size: .7em;
     font-weight: 300;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.04em;
     text-shadow: 1px 1px 0 #008BCC;
     -webkit-transform: translate(0, -50%);
     -khtml-transform: translate(0, -50%);

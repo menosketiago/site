@@ -33,6 +33,7 @@
     },
     "dependencies": {
         "babel-loader": "^8.0.6",
+        "gulp-imagemin": "^4.1.0",
         "handlebars": "^4.5.1",
         "lodash.template": ">=4.5.0",
         "smoothscroll-polyfill": "^0.4.4",

@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const handlebars = require('gulp-hb');
+const imagemin = require('gulp-imagemin');
 const rename = require('gulp-rename');
 const browserSync = require('browser-sync').create();
 const webpack = require('webpack-stream');
@@ -14,6 +15,8 @@ const path = {
 	'images': './src/images',
 	'fonts': './src/fonts'
 }
+
+const interval = 500;
 
 gulp.task('styles', function() {
 	return gulp
@@ -65,8 +68,9 @@ gulp.task('work', function () {
 gulp.task('images', function() {
 	return gulp
 	.src([
-		path.images + '/**/*.{jpg,png,gif,svg}'
+		path.images + '/**/*.{jpg,jpeg,png,gif,svg}'
 	])
+	.pipe(imagemin())
 	.pipe(gulp.dest('./www/images'));
 });
 
@@ -88,11 +92,21 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('watch', function() {
-	gulp.watch(path.styles + '/**/*.scss', ['styles']).on('change', browserSync.reload);
-	gulp.watch(path.scripts + '/**/*.js', ['scripts']).on('change', browserSync.reload);
-	gulp.watch(path.templates + '/**/*.hbs', ['templates']).on('change', browserSync.reload);
-	gulp.watch(path.work + '/**/*.hbs', ['work']).on('change', browserSync.reload);
-	gulp.watch(path.data + '/**/*.json', ['templates']).on('change', browserSync.reload);
+	gulp.watch(
+		path.styles + '/**/*.scss', {interval: interval}, ['styles']
+	).on('change', browserSync.reload);
+	gulp.watch(
+		path.scripts + '/**/*.js', {interval: interval}, ['scripts']
+	).on('change', browserSync.reload);
+	gulp.watch(
+		path.templates + '/**/*.hbs', {interval: interval}, ['templates']
+	).on('change', browserSync.reload);
+	gulp.watch(
+		path.work + '/**/*.hbs', {interval: interval}, ['work']
+	).on('change', browserSync.reload);
+	gulp.watch(
+		path.data + '/**/*.json', {interval: interval}, ['templates']
+	).on('change', browserSync.reload);
 });
 
 gulp.task('default', ['styles', 'scripts', 'templates', 'work', 'images', 'fonts']);

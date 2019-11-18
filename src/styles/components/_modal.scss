@@ -69,6 +69,7 @@
                 right: 0;
                 width: $modal-aside-width;
                 padding: $space-modal;
+                letter-spacing: $letter-spacing;
                 writing-mode: vertical-lr;
 
                 @include transform(rotate(180deg));

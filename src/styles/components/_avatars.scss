@@ -35,13 +35,31 @@
 
     &#me::after { background-image: url($path-images + 'avatar.jpg'); }
 
-    &#mikael::after { background-image: url($path-avatars + 'mikael.png'); }
-    &#patricia::after { background-image: url($path-avatars + 'patricia.png'); }
-    &#johan::after { background-image: url($path-avatars + 'johan.png'); }
-    &#emelie::after { background-image: url($path-avatars + 'emelie.png'); }
-    &#tina::after { background-image: url($path-avatars + 'tina.png'); }
-    &#daniel::after { background-image: url($path-avatars + 'daniel.png'); }
-    &#sidi::after { background-image: url($path-avatars + 'sidi.png'); }
-    &#william::after { background-image: url($path-avatars + 'william.png'); }
-    &#martin::after { background-image: url($path-avatars + 'martin.png'); }
+    // TRIOPTIMA
+
+    &#mikael::after { background-image: url($path-avatars + 'mikael.jpeg'); }
+    &#patricia::after { background-image: url($path-avatars + 'patricia.jpeg'); }
+    &#johan::after { background-image: url($path-avatars + 'johan.jpeg'); }
+    &#emelie::after { background-image: url($path-avatars + 'emelie.jpeg'); }
+    &#tina::after { background-image: url($path-avatars + 'tina.jpeg'); }
+    &#daniel::after { background-image: url($path-avatars + 'daniel.jpeg'); }
+    &#sidi::after { background-image: url($path-avatars + 'sidi.jpeg'); }
+    &#william::after { background-image: url($path-avatars + 'william.jpeg'); }
+    &#martin::after { background-image: url($path-avatars + 'martin.jpeg'); }
+
+    // ERICSSON
+
+    &#didier::after { background-image: url($path-avatars + 'didier.jpeg'); }
+
+    // GOO
+
+    &#herlitz::after { background-image: url($path-avatars + 'herlitz.jpeg'); }
+    &#magnus::after { background-image: url($path-avatars + 'magnus.jpeg'); }
+    &#strandgren::after { background-image: url($path-avatars + 'strandgren.jpeg'); }
+    &#hugo::after { background-image: url($path-avatars + 'hugo.jpeg'); }
+    &#sterling::after { background-image: url($path-avatars + 'sterling.jpeg'); }
+    &#jon::after { background-image: url($path-avatars + 'jon.jpeg'); }
+    &#adrian::after { background-image: url($path-avatars + 'adrian.jpeg'); }
+    &#carl::after { background-image: url($path-avatars + 'carl.jpeg'); }
+    &#puneesh::after { background-image: url($path-avatars + 'puneesh.jpeg'); }
 }

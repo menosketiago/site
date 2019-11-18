@@ -119,9 +119,10 @@ a {
     }
 }
 
-strong {
+em {
     color: $blue;
     font-weight: $regular;
+    font-style: normal;
 }
 
 mark {
