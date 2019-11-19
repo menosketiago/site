@@ -186,6 +186,13 @@
                     background: $yellow;
                     font-size: .8em;
                     text-transform: uppercase;
+
+                    // BOTTOM POSITIONED
+
+                    &.bottom {
+                        top: auto;
+                        bottom: $space-large;
+                    }
                 }
             }
 

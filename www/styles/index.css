@@ -253,7 +253,7 @@ form {
       background-size: cover;
       background-repeat: no-repeat; }
     body::after {
-      content: "I'm currently working on the mobile version of this site, in the meantime please visit on a laptop or tablet...";
+      content: "I'm currently working on the mobile layout, please visit on a laptop or tablet...";
       font-size: 5em;
       text-transform: uppercase;
       text-shadow: 0 2px 0 rgba(0, 0, 0, 0.8);
@@ -1076,6 +1076,8 @@ body > footer {
     background-size: cover; }
   .avatar#me::after {
     background-image: url("../images/avatar.jpg"); }
+  .avatar#cabral::after {
+    background-image: url("../images/avatars/cabral.jpeg"); }
   .avatar#mikael::after {
     background-image: url("../images/avatars/mikael.jpeg"); }
   .avatar#patricia::after {
@@ -1663,6 +1665,9 @@ button {
           background: #FFF800;
           font-size: .8em;
           text-transform: uppercase; }
+          .modal .container article figure figcaption.bottom {
+            top: auto;
+            bottom: 24px; }
       .modal .container article .vimeo {
         position: relative;
         display: block;
