@@ -5,6 +5,7 @@
 	<meta charset="UTF-8">
 	<title>menosketiago™ · Designer and Illustrator</title>
 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Designer and Illustrator based in Stockholm, Sweden">
 
 	<link rel="shortcut icon" href="./images/favicon.png" type="image/png">
@@ -19,9 +20,9 @@
 	</header>
 	<main>
 		{{!-- Buttons to scroll the content sections --}}
-		<button class="scroll up is-hidden" tabindex="-1">{{> icons/arrow}}</button>
-		<button class="scroll down" tabindex="-1">{{> icons/arrow}}</button>
-		<button class="scroll top is-hidden" tabindex="-1">{{> icons/back-to-top}}</button>
+		<button class="scroll up is-hidden" tabindex="-1" aria-label="Scroll up">{{> icons/arrow}}</button>
+		<button class="scroll down" tabindex="-1" aria-label="Scroll down">{{> icons/arrow}}</button>
+		<button class="scroll top is-hidden" tabindex="-1" aria-label="Back to top">{{> icons/back-to-top}}</button>
 
 		{{!-- Content sections --}}
 		{{> sections/home}}

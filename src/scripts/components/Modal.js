@@ -124,20 +124,13 @@ class Modal {
     }
 
     setModalTheme(trigger) {
+        let modalTheme = trigger.getAttribute('data-theme');
+
         // Check if the modal should open in dark mode
-        if (trigger.hasAttribute('data-dark')) {
-            this.dom.modal.classList.add('dark-mode');
-        }
+        if (trigger.hasAttribute('data-dark')) this.dom.modal.classList.add('dark-mode');
 
-        // Gold modal
-        if (trigger.classList.contains('gold')) {
-            this.dom.modal.classList.add('gold');
-        }
-
-        // Alien modal
-        if (trigger.classList.contains('alien')) {
-            this.dom.modal.classList.add('alien');
-        }
+        // Check if a theme exists and assign it
+        if (modalTheme) this.dom.modal.classList.add(modalTheme);
     }
 
 }

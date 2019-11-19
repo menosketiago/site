@@ -84,6 +84,7 @@
             }
 
             header {
+                width: calc(100% - #{$modal-aside-width});
                 margin-right: $modal-aside-width;
                 margin-bottom: $space-extra;
 
@@ -137,6 +138,7 @@
             }
 
             p {
+                width: calc(100% - #{$modal-aside-width});
                 max-width: $max-text-width;
                 margin-right: $modal-aside-width;
                 line-height: 1.4em;

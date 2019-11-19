@@ -3,15 +3,15 @@
         {
             "page": [
                 {
-                    "category": "Product Design • Frontend",
-                    "title": "TriOptima Design System",
-                    "name": "trioptima"
-                },
-                {
                     "category": "Product Design",
                     "title": "Ericsson Design System",
                     "name": "ericsson",
                     "dark-mode": true
+                },
+                {
+                    "category": "Product Design • Frontend",
+                    "title": "TriOptima Design System",
+                    "name": "trioptima"
                 },
                 {
                     "category": "Product Design • Frontend",
@@ -23,7 +23,7 @@
                     "title": "Alien 1979",
                     "name": "alien",
                     "dark-mode": true,
-                    "extra": "alien"
+                    "theme": "alien"
                 },
                 {
                     "category": "Product Design • Web Development",
@@ -40,61 +40,19 @@
                     "title": "Nem Tudo o que Reluz é Ouro",
                     "name": "nem-tudo",
                     "dark-mode": true,
-                    "extra": "gold"
+                    "theme": "gold"
                 },
                 {
                     "category": "Games Journalism • Web Development",
                     "title": "Mana Gaming",
-                    "name": "mana"
+                    "name": "mana",
+                    "dark-mode": true,
+                    "theme": "mana"
                 },
                 {
                     "category": "Illustration",
-                    "title": "La Mamacita Yorn",
+                    "title": "La Mamacita",
                     "name": "mamacita"
-                }
-            ]
-        },
-        {
-            "page": [
-                {
-                    "category": "Category",
-                    "title": "LoTestki",
-                    "name": "test"
-                },
-                {
-                    "category": "Category",
-                    "title": "Test",
-                    "name": "test"
-                },
-                {
-                    "category": "Category",
-                    "title": "Test",
-                    "name": "test"
-                },
-                {
-                    "category": "Category",
-                    "title": "Test",
-                    "name": "test"
-                },
-                {
-                    "category": "Category",
-                    "title": "Test",
-                    "name": "test"
-                },
-                {
-                    "category": "Category",
-                    "title": "Test",
-                    "name": "test"
-                },
-                {
-                    "category": "Category",
-                    "title": "Test",
-                    "name": "test"
-                },
-                {
-                    "category": "Category",
-                    "title": "Test",
-                    "name": "test"
                 }
             ]
         }

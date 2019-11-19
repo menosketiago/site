@@ -1078,6 +1078,10 @@ body > footer {
     background-image: url("../images/avatar.jpg"); }
   .avatar#cabral::after {
     background-image: url("../images/avatars/cabral.jpeg"); }
+  .avatar#menaka::after {
+    background-image: url("../images/avatars/menaka.jpeg"); }
+  .avatar#rseustress::after {
+    background-image: url("../images/avatars/rseustress.jpeg"); }
   .avatar#mikael::after {
     background-image: url("../images/avatars/mikael.jpeg"); }
   .avatar#patricia::after {
@@ -1598,6 +1602,7 @@ button {
         .modal .container article aside h6 {
           margin-top: 4px; }
       .modal .container article header {
+        width: calc(100% - 120px);
         margin-right: 120px;
         margin-bottom: 48px; }
         .modal .container article header h1 {
@@ -1631,6 +1636,7 @@ button {
         color: #008BCC;
         margin: 24px 0; }
       .modal .container article p {
+        width: calc(100% - 120px);
         max-width: 700px;
         margin-right: 120px;
         line-height: 1.4em; }
@@ -1858,14 +1864,10 @@ button {
     .modal.dark-mode .container article {
       color: #ffffff;
       background: #1D1D1D; }
-      .modal.dark-mode .container article h3 {
-        color: #ffffff; }
-        .modal.dark-mode .container article h3::after {
-          background: #ffffff; }
       .modal.dark-mode .container article h6 {
         color: #ffffff; }
 
-.modal.gold .container article h1, .modal.gold .container article h2, .modal.gold .container article h3, .modal.gold .container article h4, .modal.gold .container article h5, .modal.gold .container article body > header nav a, body > header nav .modal.gold .container article a, .modal.gold .container article strong {
+.modal.gold .container article h1, .modal.gold .container article h2, .modal.gold .container article h3, .modal.gold .container article h4, .modal.gold .container article h5, .modal.gold .container article body > header nav a, body > header nav .modal.gold .container article a, .modal.gold .container article em {
   color: #FFDD60; }
 
 .modal.gold .container article h3::after {
@@ -1873,6 +1875,9 @@ button {
 
 .modal.gold .container article a {
   color: #FFDD60; }
+  .modal.gold .container article a:hover {
+    color: #ffffff;
+    background: #FFDD60; }
 
 .modal.gold .container article figure figcaption {
   color: #464646;
@@ -1889,7 +1894,7 @@ button {
   .modal.gold ~ #close-modal:hover {
     color: #FFDD60; }
 
-.modal.alien .container article h1, .modal.alien .container article h2, .modal.alien .container article h3, .modal.alien .container article h4, .modal.alien .container article h5, .modal.alien .container article body > header nav a, body > header nav .modal.alien .container article a, .modal.alien .container article strong {
+.modal.alien .container article h1, .modal.alien .container article h2, .modal.alien .container article h3, .modal.alien .container article h4, .modal.alien .container article h5, .modal.alien .container article body > header nav a, body > header nav .modal.alien .container article a, .modal.alien .container article em {
   color: #3AA550; }
 
 .modal.alien .container article h1 {
@@ -1900,6 +1905,9 @@ button {
 
 .modal.alien .container article a {
   color: #3AA550; }
+  .modal.alien .container article a:hover {
+    color: #ffffff;
+    background: #3AA550; }
 
 .modal.alien .container article figure figcaption {
   color: #464646;
@@ -1919,6 +1927,35 @@ button {
   .modal.alien ~ #close-modal.has-focus {
     outline-color: transparent;
     box-shadow: 0 0 12px 4px rgba(58, 165, 80, 0.8); }
+
+.modal.mana .container article h1, .modal.mana .container article h2, .modal.mana .container article h3, .modal.mana .container article h4, .modal.mana .container article h5, .modal.mana .container article body > header nav a, body > header nav .modal.mana .container article a, .modal.mana .container article em {
+  color: #fc6104; }
+
+.modal.mana .container article h3::after {
+  background: #fc6104; }
+
+.modal.mana .container article a {
+  color: #fc6104; }
+  .modal.mana .container article a:hover {
+    color: #ffffff;
+    background: #fc6104; }
+
+.modal.mana .container article figure figcaption {
+  background: #fc6104; }
+
+.modal.mana article > button,
+.modal.mana ~ #close-modal {
+  color: #ffffff;
+  background: #fc6104; }
+  .modal.mana article > button::before,
+  .modal.mana ~ #close-modal::before {
+    background: #ffffff; }
+  .modal.mana article > button:hover,
+  .modal.mana ~ #close-modal:hover {
+    color: #fc6104; }
+  .modal.mana article > button.has-focus,
+  .modal.mana ~ #close-modal.has-focus {
+    outline-color: #ffffff; }
 
 .progress {
   position: relative;

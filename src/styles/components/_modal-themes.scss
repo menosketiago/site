@@ -22,14 +22,6 @@
                 color: $white;
                 background: $body-bg-dark;
 
-                h3 {
-                    color: $white;
-
-                    &::after {
-                        background: $white;;
-                    }
-                }
-
                 h6 {
                     color: $white;
                 }
@@ -37,12 +29,12 @@
         }
     }
 
-    // GOLD MODAL
+    // GOLD
 
     &.gold {
         .container {
             article {
-                h1, h2, h3, h4, h5, strong {
+                h1, h2, h3, h4, h5, em {
                     color: $gold;
                 }
 
@@ -52,6 +44,11 @@
 
                 a {
                     color: $gold;
+
+                    &:hover {
+                        color: $white;
+                        background: $gold;
+                    }
                 }
 
                 figure {
@@ -78,31 +75,36 @@
         }
     }
 
-    // GOLD MODAL
+    // ALIEN
 
     &.alien {
         .container {
             article {
-                h1, h2, h3, h4, h5, strong {
-                    color: $alien;
+                h1, h2, h3, h4, h5, em {
+                    color: $alien-color;
                 }
 
                 h1 {
-                    text-shadow: 0 0 $space-base rgba($alien, .5);
+                    text-shadow: 0 0 $space-base rgba($alien-color, .5);
                 }
 
                 h3::after {
-                    background: $alien;
+                    background: $alien-color;
                 }
 
                 a {
-                    color: $alien;
+                    color: $alien-color;
+
+                    &:hover {
+                        color: $white;
+                        background: $alien-color;
+                    }
                 }
 
                 figure {
                     figcaption {
                         color: $black;
-                        background: $alien;
+                        background: $alien-color;
                     }
                 }
             }
@@ -111,19 +113,69 @@
         article > button,
         ~ #close-modal {
             color: #000000;
-            background: $alien;
+            background: $alien-color;
 
             &::before {
                 background: $black;
             }
 
             &:hover {
-                color: $alien;
+                color: $alien-color;
             }
 
             &.has-focus {
                 outline-color: transparent;
-                box-shadow: 0 0 $space-base $space-tiny rgba($alien, .8);
+                box-shadow: 0 0 $space-base $space-tiny rgba($alien-color, .8);
+            }
+        }
+    }
+
+    // MANA
+
+    &.mana {
+        .container {
+            article {
+                h1, h2, h3, h4, h5, em {
+                    color: $mana-color;
+                }
+
+                h3::after {
+                    background: $mana-color;
+                }
+
+                a {
+                    color: $mana-color;
+
+                    &:hover {
+                        color: $white;
+                        background: $mana-color;
+                    }
+                }
+
+                figure {
+                    figcaption {
+                        // color: $black;
+                        background: $mana-color;
+                    }
+                }
+            }
+        }
+
+        article > button,
+        ~ #close-modal {
+            color: $white;
+            background: $mana-color;
+
+            &::before {
+                background: $white;
+            }
+
+            &:hover {
+                color: $mana-color;
+            }
+
+            &.has-focus {
+                outline-color: $white;
             }
         }
     }

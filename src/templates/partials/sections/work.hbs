@@ -4,7 +4,7 @@
             {{!-- Work items wrapper (one for each 9 items) --}}
             <div id="page-{{@key}}" class="wrapper">
                 {{#each page}}
-                    <a id="{{name}}" class="item {{#if extra}}{{extra}}{{/if}}" tabindex="0" {{#if dark-mode}}data-dark{{/if}}>
+                    <a id="{{name}}" class="item" tabindex="0" {{#if dark-mode}}data-dark{{/if}} {{#if theme}}data-theme="{{theme}}"{{/if}}>
                         <h3>{{category}}</h3>
                         <h2>{{title}}</h2>
                         <div class="view">
@@ -18,6 +18,6 @@
     {{/work}}
 
     {{!-- Buttons to scroll work items sideways --}}
-    <button class="scroll left is-hidden" tabindex="-1">{{> icons/chevron}}</button>
-    <button class="scroll right is-hidden" tabindex="-1">{{> icons/chevron}}</button>
+    <button class="scroll left is-hidden" tabindex="-1" aria-label="More work items">{{> icons/chevron}}</button>
+    <button class="scroll right is-hidden" tabindex="-1" aria-label="Previous work items">{{> icons/chevron}}</button>
 </section>
