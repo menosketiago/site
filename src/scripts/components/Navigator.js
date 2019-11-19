@@ -190,7 +190,6 @@ class Navigator {
             let leftPosition = this._state.currentWrapper.getBoundingClientRect().left;
 
             this.dom.section.scrollTo({left: leftPosition, behavior: 'smooth'});
-            // this._state.currentWrapper.scrollIntoView({behavior: 'smooth'});
         }, 0);
 
         this.setButtonVisibility();
@@ -269,11 +268,7 @@ class Navigator {
             let sectionTop = section.getBoundingClientRect().top;
 
             if (mainTop === sectionTop) {
-                // Set the currently viewing title on the header
-                this.currentlyViewing.textContent = this._state.currentSection.id;
-
-                // Update the URL
-                history.replaceState({}, '', '#' + this._state.currentSection.id);
+                this.changeSection(section);
             }
         });
     }
