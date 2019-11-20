@@ -1,27 +1,34 @@
 .grid {
-	.wrapper {
-		margin: -($grid-gutter / 2);
+	width: 100%;
 
+	@include flexbox();
+	@include align-content(flex-start);
+
+	> * {
+		max-width: 100%;
+
+		@include flex(1 1 auto);
+	}
+
+	.col {
 		@include flexbox();
+		@include flex-wrap(wrap);
 		@include align-content(flex-start);
+		@include align-items(flex-start);
 
-		> * {
-			max-width: 100%;
+		&.col-50 {
+			width: 50%;
+			margin-right: $grid-gutter;
 
-			@include flex(1 1 auto);
+			&:nth-child(2) {
+				margin-right: 0;
+			}
 		}
 
-		.col {
-			margin: $grid-gutter / 2;
+		// VERTICAL ALIGN CONTENT
 
-			@include flexbox();
-			@include flex-wrap(wrap);
-			@include align-content(flex-start);
-			@include align-items(flex-start);
-
-			&.col-50 {
-				width: 50%;
-			}
+		&.center {
+			@include align-content(center);
 		}
 	}
 }

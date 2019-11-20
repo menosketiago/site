@@ -8,23 +8,43 @@
             background-color: $body-bg-dark;
             background-image: url($path-images + 'pattern-white-faded-2.png');
 
-            aside {
-                h6 > a {
-                    color: $white;
-
-                    &:hover {
-                        background: transparent;
-                    }
-                }
-            }
-
             article {
                 color: $white;
                 background: $body-bg-dark;
 
+                aside {
+                    h6 > a {
+                        color: $white;
+
+                        &:hover {
+                            background: $blue;
+                        }
+                    }
+                }
+
                 h6 {
                     color: $white;
+
+                     a {
+                        color: $white;
+
+                        &:hover {
+                            background: $blue;
+                        }
+                    }
                 }
+            }
+        }
+    }
+
+    // ERICSSON
+
+    &.ericsson {
+        .container {
+            background-color: #000000;
+
+            article {
+                background-color: inherit;
             }
         }
     }
@@ -34,6 +54,17 @@
     &.gold {
         .container {
             article {
+                aside {
+                    a {
+                        color: $gold;
+
+                        &:hover {
+                            color: $white;
+                            background: $gold;
+                        }
+                    }
+                }
+
                 h1, h2, h3, h4, h5, em {
                     color: $gold;
                 }
@@ -134,7 +165,11 @@
 
     &.mana {
         .container {
+            background-color: #000000;
+
             article {
+                background-color: inherit;
+
                 h1, h2, h3, h4, h5, em {
                     color: $mana-color;
                 }

@@ -6,17 +6,19 @@
                     "category": "Product Design",
                     "title": "Ericsson Design System",
                     "name": "ericsson",
+                    "dark-mode": true,
+                    "theme": "ericsson"
+                },
+                {
+                    "category": "Art Direction",
+                    "title": "Ericsson Security Manager VR",
+                    "name": "esm-vr",
                     "dark-mode": true
                 },
                 {
                     "category": "Product Design • Frontend",
                     "title": "TriOptima Design System",
-                    "name": "trioptima"
-                },
-                {
-                    "category": "Product Design • Frontend",
-                    "title": "Loki",
-                    "name": "loki"
+                    "name": "trids"
                 },
                 {
                     "category": "Illustration",

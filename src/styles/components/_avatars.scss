@@ -34,6 +34,7 @@
     }
 
     &#me::after { background-image: url($path-images + 'avatar.jpg'); }
+
     &#cabral::after { background-image: url($path-avatars + 'cabral.jpeg'); }
     &#menaka::after { background-image: url($path-avatars + 'menaka.jpeg'); }
     &#rseustress::after { background-image: url($path-avatars + 'rseustress.jpeg'); }
@@ -53,6 +54,11 @@
     // ERICSSON
 
     &#didier::after { background-image: url($path-avatars + 'didier.jpeg'); }
+    &#juan::after { background-image: url($path-avatars + 'juan.jpeg'); }
+    &#onur::after { background-image: url($path-avatars + 'onur.jpeg'); }
+    &#ariane::after { background-image: url($path-avatars + 'ariane.jpeg'); }
+    &#linda::after { background-image: url($path-avatars + 'linda.jpeg'); }
+    &#johannes::after { background-image: url($path-avatars + 'johannes.jpeg'); }
 
     // GOO
 

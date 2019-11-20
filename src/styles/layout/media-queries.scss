@@ -1,0 +1,58 @@
+
+// MEDIA QUERIES
+
+// Reduced motion
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
+// This should cover most smartphones
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 799px) {
+	body {
+		color: white;
+		background-image: url($path-images + 'bg-mom.jpg');
+		background-color: $blue;
+		background-attachment: fixed;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: top;
+		text-align: center;
+
+		@include flexbox();
+		@include flex-direction(column);
+		@include justify-content(center);
+		@include align-items(center);
+
+		&::before,
+		&::after {
+			content: '';
+			max-width: 80vw;
+		}
+
+		&::before {
+			width: 600px;
+			height: 600px;
+			max-height: 80vw;
+			margin-bottom: $space-extra;
+			background-image: url($path-images + 'logo.png');
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+
+		&::after {
+			content: "I'm currently working on the mobile layout, please visit on a laptop or tablet...";
+			font-size: 5em;
+			text-transform: uppercase;
+			text-shadow: $text-shadow;
+			line-height: 1em;
+		}
+
+		> * {
+			display: none !important;
+		}
+	}
+}
