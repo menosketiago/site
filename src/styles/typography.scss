@@ -101,7 +101,7 @@ span {
 a {
     color: $blue;
     outline: 0;
-    font-weight: inherit;
+    font-weight: $regular;
     transition: all $speed-default ease;
 
     &:hover {
