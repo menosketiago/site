@@ -1,6 +1,9 @@
+const csso = require('gulp-csso');
+const del = require('del');
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const handlebars = require('gulp-hb');
+const htmlmin = require('gulp-htmlmin');
 const imagemin = require('gulp-imagemin');
 const rename = require('gulp-rename');
 const browserSync = require('browser-sync').create();
@@ -9,11 +12,12 @@ const webpack = require('webpack-stream');
 const path = {
 	'data': './src/data',
 	'styles': './src/styles',
+	'fonts': './src/fonts',
+	'images': './src/images',
 	'scripts': './src/scripts',
 	'templates': './src/templates',
 	'work': './src/templates/work',
-	'images': './src/images',
-	'fonts': './src/fonts'
+	'files': './src/files'
 }
 
 const interval = 500;
@@ -24,7 +28,9 @@ gulp.task('styles', function() {
 		path.styles + '/index.scss'
 	])
 	.pipe(sass().on('error', sass.logError))
-	.pipe(gulp.dest('./www/styles'));
+	// .pipe(csso())
+	// .pipe(rename({ extname: '.min.css' }))
+	.pipe(gulp.dest('./www/'))
 });
 
 gulp.task('scripts', function() {
@@ -33,7 +39,7 @@ gulp.task('scripts', function() {
 		path.scripts + '/index.js'
 	])
 	.pipe(webpack(require('./webpack.config.js')))
-	.pipe(gulp.dest('./www/scripts'));
+	.pipe(gulp.dest('./www/'));
 });
 
 gulp.task('templates', function () {
@@ -44,6 +50,9 @@ gulp.task('templates', function () {
 			helpers: '',
 			partials: path.templates + '/partials/**/*.hbs',
 			bustCache: true
+		}))
+		.pipe(htmlmin({
+			removeComments: true
 		}))
 		.pipe(rename(function(path) {
 			path.extname = '.html';
@@ -82,10 +91,16 @@ gulp.task('fonts', function() {
 	.pipe(gulp.dest('./www/fonts'));
 });
 
+gulp.task('files', () => {
+	return gulp
+	.src(path.files + '**/*')
+    .pipe(gulp.dest('./www/'));
+});
+
 gulp.task('browser-sync', function() {
     browserSync.init({
         server: {
-            baseDir: "./www/"
+            baseDir: './www/'
         },
 		open: false
     });
@@ -94,6 +109,9 @@ gulp.task('browser-sync', function() {
 gulp.task('watch', function() {
 	gulp.watch(
 		path.styles + '/**/*.scss', {interval: interval}, ['styles']
+	).on('change', browserSync.reload);
+	gulp.watch(
+		path.images + '/**/*', {interval: interval}, ['images']
 	).on('change', browserSync.reload);
 	gulp.watch(
 		path.scripts + '/**/*.js', {interval: interval}, ['scripts']
@@ -107,8 +125,27 @@ gulp.task('watch', function() {
 	gulp.watch(
 		path.data + '/**/*.json', {interval: interval}, ['templates']
 	).on('change', browserSync.reload);
+	gulp.watch(
+		path.files + '/**/*', {interval: interval}, ['files']
+	).on('change', browserSync.reload);
 });
 
-gulp.task('default', ['styles', 'scripts', 'templates', 'work', 'images', 'fonts']);
+gulp.task('clean', function() {
+	return del(['./www/*']);
+});
 
-gulp.task('serve', ['default', 'browser-sync', 'watch']);
+gulp.task('default', [
+	'styles',
+	'images',
+	'fonts',
+	'scripts',
+	'templates',
+	'work',
+	'files'
+]);
+
+gulp.task('serve', [
+	'default',
+	'watch',
+	'browser-sync'
+]);
