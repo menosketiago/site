@@ -186,13 +186,6 @@
                         background: $mana-color;
                     }
                 }
-
-                figure {
-                    figcaption {
-                        // color: $black;
-                        background: $mana-color;
-                    }
-                }
             }
         }
 
@@ -211,6 +204,37 @@
 
             &.has-focus {
                 outline-color: $white;
+            }
+        }
+    }
+
+    // TRIOPTIMA
+
+    &.trioptima {
+        .container {
+            article {
+                h1, h2, h3, h4, h5, em {
+                    color: $trids-color;
+                }
+
+                h3::after {
+                    background: $trids-color;
+                }
+
+                a {
+                    color: $trids-color;
+
+                    &:hover {
+                        color: $white;
+                        background: $trids-color;
+                    }
+                }
+
+                figure {
+                    figcaption {
+                        color: $trids-color;
+                    }
+                }
             }
         }
     }

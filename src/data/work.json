@@ -3,6 +3,12 @@
         {
             "page": [
                 {
+                    "category": "Product Design • Frontend",
+                    "title": "TriOptima Design System",
+                    "name": "trioptima",
+                    "theme": "trioptima"
+                },
+                {
                     "category": "Product Design",
                     "title": "Ericsson Design System",
                     "name": "ericsson",
@@ -14,11 +20,6 @@
                     "title": "Ericsson Security Manager VR",
                     "name": "esm-vr",
                     "dark-mode": true
-                },
-                {
-                    "category": "Product Design • Frontend",
-                    "title": "TriOptima Design System",
-                    "name": "trids"
                 },
                 {
                     "category": "Illustration",
