@@ -51,6 +51,7 @@ body > header {
 			// Fix for vertical align
 			padding-bottom: $space-small - $text-fix;
 			border: 1px solid transparent;
+			text-decoration: none;
 			transition: all $speed-default ease;
 			cursor: pointer;
 
@@ -70,25 +71,6 @@ body > header {
 			}
 		}
 	}
-
-    .current-section {
-		writing-mode: vertical-lr;
-
-		@include flexbox();
-		@include flex-direction(column);
-		@include justify-content(center);
-		@include transform(rotate(180deg));
-
-		h4, h6 {
-			display: block;
-			text-align: center;
-			transition: all $speed-default ease;
-		}
-
-		h6 {
-			margin-left: $space-tiny;
-		}
-    }
 
 	.social {
 		@include flexbox();

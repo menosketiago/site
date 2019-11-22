@@ -20,8 +20,6 @@ class Navigator {
         this.logo = document.querySelector('header .logo');
         this.links = document.querySelectorAll('nav a');
 
-        this.currentlyViewing = document.querySelector('.current-section h4');
-
         this.btnUp = this.dom.main.querySelector('.scroll.up');
         this.btnDown = this.dom.main.querySelector('.scroll.down');
         this.btnTop = this.dom.main.querySelector('.scroll.top');
@@ -49,9 +47,6 @@ class Navigator {
         setTimeout(() => {
             this._state.currentSection.scrollIntoView({behavior: 'smooth'});
         }, 0);
-
-        // Set the currently viewing title on the header
-        this.currentlyViewing.textContent = this._state.currentSection.id;
 
         // Update the URL
         history.replaceState({}, '', '#' + this._state.currentSection.id);
