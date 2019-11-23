@@ -55,9 +55,9 @@
 	</header>
 	<main>
 		{{!-- Buttons to scroll the content sections --}}
-		<button class="scroll up is-hidden" tabindex="-1" aria-label="Scroll up">{{> icons/arrow}}</button>
-		<button class="scroll down" tabindex="-1" aria-label="Scroll down">{{> icons/arrow}}</button>
-		<button class="scroll top is-hidden" tabindex="-1" aria-label="Back to top">{{> icons/back-to-top}}</button>
+		<button id="btn-scroll-up" class="scroll up is-hidden" tabindex="-1" aria-label="Scroll up">{{> icons/arrow}}</button>
+		<button id="btn-scroll-down" class="scroll down" tabindex="-1" aria-label="Scroll down">{{> icons/arrow}}</button>
+		<button id="btn-scroll-top" class="scroll top is-hidden" tabindex="-1" aria-label="Back to top">{{> icons/back-to-top}}</button>
 
 		{{!-- Content sections --}}
 		{{> sections/home}}
