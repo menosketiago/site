@@ -5,19 +5,19 @@ main {
 	margin: $space-large 0;
 	scroll-snap-type: mandatory;
   	scroll-snap-points-y: repeat(300px);
-  	scroll-snap-type: y mandatory;
+	scroll-snap-type: y mandatory;
 
 	> section {
+		overflow: hidden;
 		width: inherit;
 		height: inherit;
 		padding: $section-padding;
-		scroll-snap-align: start;
 		background-color: $blue;
 		background-attachment: fixed;
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: top;
-		overflow: hidden;
+		scroll-snap-align: start;
 
 		@include flexbox;
 		@include justify-content(center);

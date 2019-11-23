@@ -1,20 +1,22 @@
+// REDUCED MOTION
 
-// MEDIA QUERIES
-
-// Reduced motion
 @media screen and (prefers-reduced-motion: reduce) {
 	html {
 		scroll-behavior: auto;
 	}
 }
 
-// This should cover most smartphones
+// SMARPHONE TEMP FIX
+
 @media only screen
 and (min-device-width: 375px)
 and (max-device-width: 799px) {
 	body {
+		overflow: auto;
+		min-height: 100vh;
+		padding: $space-extra;
 		color: white;
-		background-image: url($path-images + 'bg-mom.jpg');
+		background-image: url($path-images + 'bg-mom-mobile.jpg');
 		background-color: $blue;
 		background-attachment: fixed;
 		background-size: cover;
@@ -30,13 +32,12 @@ and (max-device-width: 799px) {
 		&::before,
 		&::after {
 			content: '';
-			max-width: 80vw;
+			max-width: 100%;
 		}
 
 		&::before {
-			width: 600px;
-			height: 600px;
-			max-height: 80vw;
+			width: 300px;
+			height: 300px;
 			margin-bottom: $space-extra;
 			background-image: url($path-images + 'logo.png');
 			background-size: cover;
@@ -44,11 +45,11 @@ and (max-device-width: 799px) {
 		}
 
 		&::after {
-			content: "I'm currently working on the mobile layout, please visit on a laptop or tablet...";
-			font-size: 5em;
+			content: "Mobile version coming soon... please visit on a laptop or tablet";
+			font-size: 2em;
 			text-transform: uppercase;
 			text-shadow: $text-shadow;
-			line-height: 1em;
+			line-height: 1.2em;
 		}
 
 		> * {
