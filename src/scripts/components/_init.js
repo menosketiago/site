@@ -3,6 +3,7 @@
 import Focus from './Focus';
 import Input from './Input';
 import Modal from './Modal';
+import Name from './Name';
 import Navigator from './Navigator';
 import Tooltip from './Tooltip';
 import Year from './Year';
@@ -11,6 +12,7 @@ const menos = window.menos = {
     Focus,
     Input,
     Modal,
+    Name,
     Navigator,
     Tooltip,
     Year
@@ -38,6 +40,16 @@ export function initComponents() {
         Array.from(modalArray).forEach(modalDOM => {
             let modal = new Modal(modalDOM);
             modal.init();
+        });
+    }
+
+    // NAME
+    let namesArray = document.getElementsByClassName('name');
+
+    if (namesArray) {
+        Array.from(namesArray).forEach(nameDOM => {
+            let name = new Name(nameDOM);
+            name.init();
         });
     }
 

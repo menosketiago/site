@@ -1,0 +1,20 @@
+.name {
+    position: relative;
+    cursor: pointer;
+
+    &::after {
+        content: 'Hear';
+        position: absolute;
+        top: 0;
+        display: inline-block;
+        height: 20px;
+        margin-left: $space-tiny;
+        padding: 2px 4px;
+        color: $blue;
+        background: $yellow;
+        box-shadow: $text-shadow;
+        text-shadow: none;
+        font-size: 12px;
+        line-height: 17px;
+    }
+}
