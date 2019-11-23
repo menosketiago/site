@@ -1,4 +1,4 @@
-const csso = require('gulp-csso');
+const browserSync = require('browser-sync').create();
 const del = require('del');
 const gulp = require('gulp');
 const sass = require('gulp-sass');
@@ -6,7 +6,7 @@ const handlebars = require('gulp-hb');
 const htmlmin = require('gulp-htmlmin');
 const imagemin = require('gulp-imagemin');
 const rename = require('gulp-rename');
-const browserSync = require('browser-sync').create();
+const sitemap = require('gulp-sitemap');
 const webpack = require('webpack-stream');
 
 const path = {
@@ -97,6 +97,16 @@ gulp.task('files', () => {
     .pipe(gulp.dest('./www/'));
 });
 
+gulp.task('sitemap', function () {
+    gulp.src('www/*.html', {
+            read: false
+        })
+        .pipe(sitemap({
+            siteUrl: 'http://www.menosketiago.com'
+        }))
+        .pipe(gulp.dest('./www/'));
+});
+
 gulp.task('browser-sync', function() {
     browserSync.init({
         server: {
@@ -141,7 +151,8 @@ gulp.task('default', [
 	'scripts',
 	'templates',
 	'work',
-	'files'
+	'files',
+	'sitemap'
 ]);
 
 gulp.task('serve', [
