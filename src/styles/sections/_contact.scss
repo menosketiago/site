@@ -10,8 +10,12 @@
 		position: relative;
 		padding-bottom: $card-space;
 
+		p {
+			font-size: .8em;
+		}
+
 		form {
-			margin-top: $space-extra;
+			margin-top: $space-large;
 
 			.input {
 				&:last-of-type {
