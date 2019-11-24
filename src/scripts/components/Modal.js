@@ -3,7 +3,8 @@ class Modal {
     constructor(element) {
         this.dom = {
             modal: element,
-            article: element.querySelector('article'),
+            loading: element.querySelector('.loading'),
+            content: element.querySelector('#work-content'),
             id: element.id
         }
 
@@ -23,13 +24,13 @@ class Modal {
     _updateDom() {
         if (this._state.isVisible) {
             this.dom.modal.classList.add('is-open');
-            this.dom.article.classList.add('is-loading');
         }
         else {
             this.dom.modal.classList.remove('is-open');
+            this.dom.loading.classList.remove('is-hidden');
 
             // Remove the previous fetched content and any theme classes
-            this.dom.article.innerHTML = '';
+            this.dom.content.innerHTML = '';
             this.dom.modal.className = 'modal';
         }
     }
@@ -102,20 +103,19 @@ class Modal {
 
                 response.text().then(
                     function(html) {
-                        const contentWrapper = document.getElementById('content-wrapper');
+                        const contentWrapper = document.getElementById('work-content');
+                        const loading = contentWrapper.parentElement.querySelector('.loading');
 
+                        // Add the content to the container
+                        contentWrapper.innerHTML = html;
+
+                        // Reinitialize the JS components
+                        window.initComponents();
+
+                        // Remove the loading spinner
                         setTimeout(() => {
-                            contentWrapper.classList.add('is-fading');
-
-                            setTimeout(() => {
-                                contentWrapper.classList.remove('is-fading');
-                                contentWrapper.classList.remove('is-loading');
-                                contentWrapper.innerHTML = html;
-
-                                // Reinitialize the JS components
-                                window.initComponents();
-                            }, 200);
-                        }, 2400);
+                            loading.classList.add('is-hidden');
+                        }, 2000);
                     }
                 );
             }
