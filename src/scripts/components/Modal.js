@@ -104,16 +104,18 @@ class Modal {
                     function(html) {
                         const contentWrapper = document.getElementById('content-wrapper');
 
-                        contentWrapper.classList.add('is-fading');
-
                         setTimeout(() => {
-                            contentWrapper.classList.remove('is-fading');
-                            contentWrapper.classList.remove('is-loading');
-                            contentWrapper.innerHTML = html;
+                            contentWrapper.classList.add('is-fading');
 
-                            // Reinitialize the JS components
-                            window.initComponents();
-                        }, 200);
+                            setTimeout(() => {
+                                contentWrapper.classList.remove('is-fading');
+                                contentWrapper.classList.remove('is-loading');
+                                contentWrapper.innerHTML = html;
+
+                                // Reinitialize the JS components
+                                window.initComponents();
+                            }, 200);
+                        }, 2400);
                     }
                 );
             }
