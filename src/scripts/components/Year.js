@@ -11,9 +11,17 @@ class Year {
     }
 
     setCurrentYear() {
-        let year = new Date().getFullYear();
+        let birth, year;
 
-        this.dom.year.innerHTML = year;
+        birth = 1984;
+        year = new Date().getFullYear();
+
+        if (this.dom.year.hasAttribute('data-age')) {
+            this.dom.year.innerHTML = year - birth;
+        }
+        else {
+            this.dom.year.innerHTML = year;
+        }
     }
 
 }
