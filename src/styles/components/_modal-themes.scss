@@ -33,6 +33,11 @@
                         }
                     }
                 }
+
+                a, em {
+                    // Blue looks darker on blacks
+                    color: tint($blue, 15%);
+                }
             }
         }
     }
