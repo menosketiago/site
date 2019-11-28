@@ -31,6 +31,10 @@ iframe {
 	max-width: 100%;
 }
 
+svg {
+	pointer-events: none;
+}
+
 form {
 	margin-top: $space-large;
 

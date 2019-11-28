@@ -7,14 +7,15 @@
         position: absolute;
         top: 0;
         display: inline-block;
-        height: 20px;
         margin-left: $space-tiny;
-        padding: 2px 4px;
+        padding: $space-tiny;
+        // Fix for vertical alignment
+        padding-bottom: 2px;
         color: $blue;
         background: $yellow;
         box-shadow: $text-shadow;
         text-shadow: none;
-        font-size: 12px;
-        line-height: 17px;
+        font-size: .3em;
+        line-height: 1em;
     }
 }
