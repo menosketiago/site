@@ -53,9 +53,10 @@ class Navigator {
     }
 
     init() {
-        this.changeSection(this._state.currentSection);
-
-        this.eventHandler();
+        if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+            this.changeSection(this._state.currentSection);
+            this.eventHandler();
+        }
     }
 
     eventHandler() {
