@@ -1,7 +1,7 @@
 #about {
 	position: relative;
 	color: $white;
-	background-image: url($path-images + 'bg-brownie.jpg');
+	background-image: url($path-images + 'bg-brownie.webp');
 	background-color: $yellow;
 
 	@include justify-content(flex-start);

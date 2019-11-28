@@ -1,7 +1,7 @@
 #contact {
 	position: relative;
 	color: white;
-	background-image: url($path-images + 'bg-phone.jpg');
+	background-image: url($path-images + 'bg-phone.webp');
 
 	@include justify-content(flex-start);
 

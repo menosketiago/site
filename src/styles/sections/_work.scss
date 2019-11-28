@@ -2,7 +2,7 @@
 	overflow-x: hidden;
 	width: auto;
 	padding: 0;
-	background-image: url('../images/pattern-blue.png');
+	background-image: url('../images/pattern-blue.webp');
 	background-color: $white;
 	background-attachment: initial;
 	background-size: initial;
@@ -28,7 +28,7 @@
 			height: calc((100vh - (#{$space-small} * 2)) / 3);
 			padding: $space-large;
 			background-color: transparent;
-			background-image: url($path-thumbs + 'test.jpg');
+			background-image: url($path-thumbs + 'test.webp');
 			background-size: cover;
 			background-position: center;
 			transition: all $speed-default ease;
@@ -67,7 +67,7 @@
 
 			&::after {
 				background-color: $blue;
-				background-image: url($path-images + 'pattern-white-faded.png');
+				background-image: url($path-images + 'pattern-white-faded.webp');
 			}
 
 			> * {
@@ -145,16 +145,16 @@
 
 			// WORK ITEM CLASSES
 
-			&#trioptima { background-image: url($path-thumbs + 'trioptima.jpg'); }
-			&#ericsson { background-image: url($path-thumbs + 'ericsson.jpg'); }
-			&#esm-vr { background-image: url($path-thumbs + 'esm-vr.jpg'); }
-			&#loki { background-image: url($path-thumbs + 'loki.jpg'); }
-			&#alien { background-image: url($path-thumbs + 'alien.jpg'); }
-			&#goo { background-image: url($path-thumbs + 'goo.jpg'); }
-			&#wannaplayer { background-image: url($path-thumbs + 'wannaplayer.jpg'); }
-			&#nem-tudo { background-image: url($path-thumbs + 'nem-tudo.jpg'); }
-			&#mana { background-image: url($path-thumbs + 'mana.jpg'); }
-			&#mamacita { background-image: url($path-thumbs + 'mamacita.jpg'); }
+			&#trioptima { background-image: url($path-thumbs + 'trioptima.webp'); }
+			&#ericsson { background-image: url($path-thumbs + 'ericsson.webp'); }
+			&#esm-vr { background-image: url($path-thumbs + 'esm-vr.webp'); }
+			&#loki { background-image: url($path-thumbs + 'loki.webp'); }
+			&#alien { background-image: url($path-thumbs + 'alien.webp'); }
+			&#goo { background-image: url($path-thumbs + 'goo.webp'); }
+			&#wannaplayer { background-image: url($path-thumbs + 'wannaplayer.webp'); }
+			&#nem-tudo { background-image: url($path-thumbs + 'nem-tudo.webp'); }
+			&#mana { background-image: url($path-thumbs + 'mana.webp'); }
+			&#mamacita { background-image: url($path-thumbs + 'mamacita.webp'); }
 		}
 	}
 

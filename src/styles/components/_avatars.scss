@@ -33,7 +33,7 @@
         background-size: cover;
     }
 
-    &#me::after { background-image: url($path-images + 'avatar@2x.jpg'); }
+    &#me::after { background-image: url($path-images + 'avatar@2x.webp'); }
 
     &#cabral::after { background-image: url($path-avatars + 'cabral.jpeg'); }
     &#menaka::after { background-image: url($path-avatars + 'menaka.jpeg'); }

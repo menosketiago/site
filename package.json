@@ -32,6 +32,7 @@
         "gulp-rename": "^1.4.0",
         "gulp-sass": "^4.0.2",
         "gulp-sitemap": "^7.6.0",
+        "gulp-webp": "^3.0.0",
         "gulp-wrap": "^0.15.0"
     },
     "dependencies": {
@@ -39,7 +40,7 @@
         "gulp-csso": "^4.0.1",
         "gulp-htmlmin": "^5.0.1",
         "gulp-imagemin": "^4.1.0",
-        "handlebars": "^4.5.1",
+        "handlebars": "^4.5.3",
         "lodash.template": ">=4.5.0",
         "smoothscroll-polyfill": "^0.4.4",
         "unfetch": "^4.1.0",

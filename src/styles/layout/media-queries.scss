@@ -103,7 +103,7 @@ and (max-device-width: 799px) {
 		// HOME
 
 		#home {
-			background-image: url($path-images + 'bg-mom-mobile.jpg');
+			background-image: url($path-images + 'bg-mom-mobile.webp');
 
 			h1 {
 				max-width: 100%;
@@ -114,7 +114,7 @@ and (max-device-width: 799px) {
 		// ABOUT
 
 		#about {
-			background-image: url($path-images + 'bg-brownie-mobile.jpg');
+			background-image: url($path-images + 'bg-brownie-mobile.webp');
 
 			.card {
 				margin: 0;
@@ -164,7 +164,7 @@ and (max-device-width: 799px) {
 		// CONTACT
 
 		#contact {
-			background-image: url($path-images + 'bg-phone-mobile.jpg');
+			background-image: url($path-images + 'bg-phone-mobile.webp');
 
 			.card {
 				margin: 0;

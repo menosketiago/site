@@ -4,9 +4,9 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const handlebars = require('gulp-hb');
 const htmlmin = require('gulp-htmlmin');
-const imagemin = require('gulp-imagemin');
 const rename = require('gulp-rename');
 const sitemap = require('gulp-sitemap');
+const webp = require('gulp-webp');
 const webpack = require('webpack-stream');
 
 const path = {
@@ -79,7 +79,7 @@ gulp.task('images', function() {
 	.src([
 		path.images + '/**/*.{jpg,jpeg,png,gif,svg}'
 	])
-	.pipe(imagemin())
+	.pipe(webp())
 	.pipe(gulp.dest('./www/images'));
 });
 
