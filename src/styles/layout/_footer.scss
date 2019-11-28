@@ -5,6 +5,7 @@ body > footer {
 	padding: $space-large;
 	// Fix for text alignment
 	padding-right: $space-large - $text-fix;
+	background: inherit;
 
     @include flexbox();
 	@include flex-direction(column);
@@ -28,14 +29,18 @@ body > footer {
 			&:last-child {
 				margin-top: $space-base;
 			}
-		}
 
-		span {
-			margin-bottom: $space-tiny;
-			margin-right: -$space-tiny - 1px;
-			writing-mode: initial;
+			a {
+				font-weight: inherit;
+			}
 
-			@include transform(rotate(180deg));
+			span {
+				margin-bottom: $space-tiny;
+				margin-left: $space-small - 1px;
+				writing-mode: initial;
+
+				@include transform(rotate(180deg));
+			}
 		}
 	}
 

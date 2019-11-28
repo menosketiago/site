@@ -3,6 +3,7 @@ body > header {
 	width: $header-width;
 	height: 100vh;
 	padding: $space-large;
+	background: inherit;
 
     @include flexbox();
     @include flex-direction(column);

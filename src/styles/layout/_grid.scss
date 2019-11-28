@@ -1,8 +1,13 @@
 .grid {
 	width: 100%;
+	margin-bottom: $space-large;
 
 	@include flexbox();
 	@include align-content(flex-start);
+
+	&:last-child {
+		margin-bottom: 0;
+	}
 
 	> * {
 		max-width: 100%;
@@ -29,6 +34,27 @@
 
 		&.center {
 			@include align-content(center);
+		}
+	}
+
+	// MEDIA QUERIES
+
+	@media only screen
+	and (min-device-width: 375px)
+	and (max-device-width: 799px) {
+		@include flex-direction(column);
+
+		.col {
+			margin-bottom: $space-large;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			&.col-50 {
+				width: 100%;
+				margin-right: 0;
+			}
 		}
 	}
 }

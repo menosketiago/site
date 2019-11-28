@@ -1,21 +1,29 @@
+// MIXINS
+
+@import 'mixins/mixins';
+@import 'mixins/flexbox';
+
+// GLOBALS
+
 @import 'variables';
-@import 'mixins';
-@import 'flexbox';
 @import 'typography';
-@import 'layout';
+@import 'global';
 
-// PARTIALS
+// LAYOUT
 
-@import 'layout/media-queries';
 @import 'layout/header';
 @import 'layout/main';
 @import 'layout/footer';
 @import 'layout/grid';
 
+// SECTIONS
+
 @import 'sections/home';
 @import 'sections/about';
 @import 'sections/work';
 @import 'sections/contact';
+
+// COMPONENTS
 
 @import 'components/avatars';
 @import 'components/buttons';
@@ -27,3 +35,7 @@
 @import 'components/progress';
 @import 'components/timeline';
 @import 'components/tooltip';
+
+// RESPONSIVENESS
+
+@import 'layout/media-queries';
