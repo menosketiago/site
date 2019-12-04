@@ -41,6 +41,7 @@
         "gulp-htmlmin": "^5.0.1",
         "gulp-imagemin": "^4.1.0",
         "handlebars": "^4.5.3",
+        "imagesloaded": "^4.1.4",
         "lodash.template": ">=4.5.0",
         "smoothscroll-polyfill": "^0.4.4",
         "unfetch": "^4.1.0",

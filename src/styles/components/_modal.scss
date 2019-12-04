@@ -278,7 +278,7 @@
         margin-right: 0;
         visibility: hidden;
         opacity: 0;
-        transition: opaciaty $speed-slow $speed-slow ease;
+        transition: opacity $speed-slow ease;
         transition-delay: $speed-slow;
 
         @include transform(translate(-50%, 0));

@@ -3,13 +3,18 @@ class Navigator {
     constructor(element) {
         this.dom = {
             main: element,
-            section: element.querySelector('#work')
+            work: element.querySelector('#work')
         }
 
         this.sectionsArray = document.querySelectorAll('main > section');
 
         if (location.hash) {
-            this.initialSection = this.dom.main.querySelector(location.hash);
+            // Split the location to get only the hash value
+            this.route = location.hash.split('&');
+            this.hash = this.route[0];
+            this.modalRoute = this.route[1];
+
+            this.initialSection = this.dom.main.querySelector(this.hash);
         }
         else {
             this.initialSection = this.sectionsArray[0];
@@ -49,7 +54,12 @@ class Navigator {
         }, 0);
 
         // Update the URL
-        history.replaceState({}, '', '#' + this._state.currentSection.id);
+        if (this.modalRoute) {
+            history.replaceState({}, '', `#${this._state.currentSection.id}&${this.modalRoute}`);
+        }
+        else {
+            history.replaceState({}, '', `#${this._state.currentSection.id}`);
+        }
     }
 
     init() {
@@ -185,7 +195,7 @@ class Navigator {
         setTimeout(() => {
             let leftPosition = this._state.currentWrapper.getBoundingClientRect().left;
 
-            this.dom.section.scrollTo({left: leftPosition, behavior: 'smooth'});
+            this.dom.work.scrollTo({left: leftPosition, behavior: 'smooth'});
         }, 0);
 
         this.setButtonVisibility();

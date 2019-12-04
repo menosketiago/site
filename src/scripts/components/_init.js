@@ -21,6 +21,7 @@ const menos = window.menos = {
 export function initComponents() {
     // FOCUS
     let focus = new Focus(document);
+
     focus.init();
 
     // INPUTS
@@ -33,14 +34,12 @@ export function initComponents() {
         });
     }
 
-    // MODALS
-    let modalArray = document.getElementsByClassName('modal');
+    // MODAL
+    const workDOM = document.getElementById('modal');
 
-    if (modalArray) {
-        Array.from(modalArray).forEach(modalDOM => {
-            let modal = new Modal(modalDOM);
-            modal.init();
-        });
+    if (workDOM) {
+        const modal = new Modal(workDOM);
+        modal.init();
     }
 
     // NAME
@@ -54,10 +53,10 @@ export function initComponents() {
     }
 
     // NAVIGATOR
-    let main = document.querySelector('main');
+    const mainDOM = document.querySelector('main');
 
-    if (main) {
-        let navigator = new Navigator(main);
+    if (mainDOM) {
+        const navigator = new Navigator(mainDOM);
         navigator.init();
     }
 

@@ -11,6 +11,8 @@ class Modal {
         this.triggersArray = document.querySelectorAll('#work .item');
         this.btnClose = document.getElementById('close-modal');
 
+        if (location.hash) this.modalRoute = location.hash.split('&modal=')[1];
+
         this._state = {
             isVisible: this.dom.modal.classList.contains('is-visible')
         };
@@ -105,6 +107,7 @@ class Modal {
                     function(html) {
                         const contentWrapper = document.getElementById('work-content');
                         const loading = contentWrapper.parentElement.querySelector('.loading');
+                        const imagesLoaded = require('imagesloaded');
 
                         // Add the content to the container
                         contentWrapper.innerHTML = html;
@@ -112,10 +115,10 @@ class Modal {
                         // Reinitialize the JS components
                         window.initComponents();
 
-                        // Remove the loading spinner
-                        setTimeout(() => {
+                        // Remove loading spinner after images are loaded
+                        imagesLoaded(contentWrapper, function() {
                             loading.classList.add('is-hidden');
-                        }, 2000);
+                        });
                     }
                 );
             }
@@ -133,6 +136,15 @@ class Modal {
 
         // Check if a theme exists and assign it
         if (modalTheme) this.dom.modal.classList.add(modalTheme);
+    }
+
+    openFromRoute() {
+        this.show();
+
+        let trigger = document.getElementById(this.modalRoute);
+
+        this.fetchContent(trigger);
+        this.setModalTheme(trigger);
     }
 
 }
