@@ -8,10 +8,12 @@ class Modal {
             id: element.id
         }
 
+        if (location.hash.includes('&modal=')) {
+            this.modalRoute = location.hash.split('&modal=')[1];
+        }
+
         this.triggersArray = document.querySelectorAll('#work .item');
         this.btnClose = document.getElementById('close-modal');
-
-        if (location.hash) this.modalRoute = location.hash.split('&modal=')[1];
 
         this._state = {
             isVisible: this.dom.modal.classList.contains('is-visible')
@@ -34,13 +36,17 @@ class Modal {
             // Remove the previous fetched content and any theme classes
             this.dom.content.innerHTML = '';
             this.dom.modal.className = 'modal';
+
+            // Remove work items from the URL
+            history.replaceState({}, '', `#work`);
         }
     }
 
     init() {
-        this.eventHandler();
+        // Check if the fetch on load ran already
+        if (!window.modalContentFetched && this.modalRoute) this.openFromRoute();
 
-        // if (this.modalRoute) this.openFromRoute();
+        this.eventHandler();
     }
 
     eventHandler() {
@@ -52,6 +58,7 @@ class Modal {
 
                     this.fetchContent(trigger);
                     this.setModalTheme(trigger);
+                    this.setModalRoute(trigger);
                 }
             });
 
@@ -81,6 +88,7 @@ class Modal {
 
                     this.fetchContent(trigger);
                     this.setModalTheme(trigger);
+                    this.setModalRoute(trigger);
                 }
             });
         });
@@ -95,14 +103,14 @@ class Modal {
     }
 
     fetchContent(trigger) {
-        const fetchContent = async () => {
+        const fetchHTML = async () => {
             let response = await fetch(`./work/${trigger.id}.html`);
             let content = await response.text();
 
             return content;
         }
 
-        fetchContent()
+        fetchHTML()
         .then(content => {
             const contentWrapper = document.getElementById('work-content');
             const loading = contentWrapper.parentElement.querySelector('.loading');
@@ -139,8 +147,19 @@ class Modal {
 
         let trigger = document.getElementById(this.modalRoute);
 
-        // this.fetchContent(trigger);
+        this.fetchContent(trigger);
         this.setModalTheme(trigger);
+        setTimeout(() => this.setModalRoute(trigger), 1000);
+
+        // Set the window fetched var to true
+        window.modalContentFetched = true;
+    }
+
+    setModalRoute(trigger) {
+        setTimeout(() => {
+            console.log('modal history change');
+            history.replaceState({}, '', `#work&modal=${trigger.id}`);
+        }, 50);
     }
 
 }

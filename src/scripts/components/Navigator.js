@@ -9,10 +9,9 @@ class Navigator {
         this.sectionsArray = document.querySelectorAll('main > section');
 
         if (location.hash) {
-            // Split the location to get only the hash value
-            this.route = location.hash.split('&');
+            // Split the location into hash and modal route
+            this.route = location.hash.split('&modal=');
             this.hash = this.route[0];
-            this.modalRoute = this.route[1];
 
             this.initialSection = this.dom.main.querySelector(this.hash);
         }
@@ -54,12 +53,8 @@ class Navigator {
         }, 0);
 
         // Update the URL
-        if (this.modalRoute) {
-            history.replaceState({}, '', `#${this._state.currentSection.id}&${this.modalRoute}`);
-        }
-        else {
-            history.replaceState({}, '', `#${this._state.currentSection.id}`);
-        }
+        console.log('navigator history change');
+        history.replaceState({}, '', `#${this._state.currentSection.id}`);
     }
 
     init() {
