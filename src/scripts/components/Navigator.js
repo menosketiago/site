@@ -53,7 +53,6 @@ class Navigator {
         }, 0);
 
         // Update the URL
-        console.log('navigator history change');
         history.replaceState({}, '', `#${this._state.currentSection.id}`);
     }
 

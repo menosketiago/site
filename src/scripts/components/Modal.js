@@ -157,7 +157,6 @@ class Modal {
 
     setModalRoute(trigger) {
         setTimeout(() => {
-            console.log('modal history change');
             history.replaceState({}, '', `#work&modal=${trigger.id}`);
         }, 50);
     }
