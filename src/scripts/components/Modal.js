@@ -39,6 +39,8 @@ class Modal {
 
     init() {
         this.eventHandler();
+
+        // if (this.modalRoute) this.openFromRoute();
     }
 
     eventHandler() {
@@ -93,39 +95,33 @@ class Modal {
     }
 
     fetchContent(trigger) {
-        fetch('./work/' + trigger.id + '.html')
-        .then(
-            function(response) {
-                if (response.status !== 200) {
-                    console.log('Looks like there was a problem. Status Code: ' +
-                    response.status);
+        const fetchContent = async () => {
+            let response = await fetch(`./work/${trigger.id}.html`);
+            let content = await response.text();
 
-                    return;
-                }
+            return content;
+        }
 
-                response.text().then(
-                    function(html) {
-                        const contentWrapper = document.getElementById('work-content');
-                        const loading = contentWrapper.parentElement.querySelector('.loading');
-                        const imagesLoaded = require('imagesloaded');
+        fetchContent()
+        .then(content => {
+            const contentWrapper = document.getElementById('work-content');
+            const loading = contentWrapper.parentElement.querySelector('.loading');
+            const imagesLoaded = require('imagesloaded');
 
-                        // Add the content to the container
-                        contentWrapper.innerHTML = html;
+            // Add the content to the container
+            contentWrapper.innerHTML = content;
 
-                        // Reinitialize the JS components
-                        window.initComponents();
+            // Reinitialize the JS components
+            window.initComponents();
 
-                        // Remove loading spinner after images are loaded
-                        imagesLoaded(contentWrapper, function() {
-                            loading.classList.add('is-hidden');
-                        });
-                    }
-                );
-            }
-        )
+            // Remove loading spinner after images are loaded
+            imagesLoaded(contentWrapper, function() {
+                loading.classList.add('is-hidden');
+            });
+        })
         .catch(function(error) {
             console.log('Fetch Error :-S', error);
-        });
+        })
     }
 
     setModalTheme(trigger) {
@@ -143,7 +139,7 @@ class Modal {
 
         let trigger = document.getElementById(this.modalRoute);
 
-        this.fetchContent(trigger);
+        // this.fetchContent(trigger);
         this.setModalTheme(trigger);
     }
 
