@@ -58,7 +58,6 @@ class Modal {
 
                     this.fetchContent(trigger);
                     this.setModalTheme(trigger);
-                    this.setModalRoute(trigger);
                 }
             });
 
@@ -88,7 +87,6 @@ class Modal {
 
                     this.fetchContent(trigger);
                     this.setModalTheme(trigger);
-                    this.setModalRoute(trigger);
                 }
             });
         });
@@ -126,6 +124,8 @@ class Modal {
             imagesLoaded(contentWrapper, function() {
                 loading.classList.add('is-hidden');
             });
+
+            this.setModalRoute(trigger);
         })
         .catch(function(error) {
             console.log('Fetch Error :-S', error);
@@ -149,16 +149,13 @@ class Modal {
 
         this.fetchContent(trigger);
         this.setModalTheme(trigger);
-        setTimeout(() => this.setModalRoute(trigger), 1000);
 
         // Set the window fetched var to true
         window.modalContentFetched = true;
     }
 
     setModalRoute(trigger) {
-        setTimeout(() => {
-            history.replaceState({}, '', `#work&modal=${trigger.id}`);
-        }, 50);
+        history.replaceState({}, '', `#work&modal=${trigger.id}`);
     }
 
 }

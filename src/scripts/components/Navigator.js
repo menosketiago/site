@@ -12,6 +12,7 @@ class Navigator {
             // Split the location into hash and modal route
             this.route = location.hash.split('&modal=');
             this.hash = this.route[0];
+            this.modalRoute = this.route[1];
 
             this.initialSection = this.dom.main.querySelector(this.hash);
         }
@@ -53,7 +54,9 @@ class Navigator {
         }, 0);
 
         // Update the URL
-        history.replaceState({}, '', `#${this._state.currentSection.id}`);
+        if (!this.modalRoute) {
+            history.replaceState({}, '', `#${this._state.currentSection.id}`);
+        }
     }
 
     init() {
