@@ -53,3 +53,16 @@ body > footer {
 		padding-right: $space-base - $text-fix;
 	}
 }
+
+// NO WEBP
+// (using it to target Safari for now)
+
+.no-webp {
+	body > footer {
+		hgroup {
+			h6:last-child {
+				display: none;
+			}
+		}
+	}
+}

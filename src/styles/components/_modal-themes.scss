@@ -244,3 +244,13 @@
         }
     }
 }
+
+// NO WEBP SUPPORT
+
+.no-webp .modal {
+    &.dark-mode {
+        .container {
+            background-image: url($path-images + 'pattern-white-faded-2.png');
+        }
+    }
+}

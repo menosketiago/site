@@ -115,3 +115,8 @@
 	}
 }
 
+// NO WEBP SUPPORT
+
+.no-webp #contact {
+	background-image: url($path-images + 'bg-phone.jpg');
+}

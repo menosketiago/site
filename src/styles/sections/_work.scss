@@ -194,3 +194,30 @@
 		}
 	}
 }
+
+// NO WEBP SUPPORT
+
+.no-webp #work {
+	background-image: url($path-images + 'pattern-blue.png');
+
+	.wrapper {
+		.item {
+			background-image: url($path-thumbs + 'test.jpg');
+
+			&::after {
+				background-image: url($path-images + 'pattern-white-faded.png');
+			}
+
+			&#trioptima { background-image: url($path-thumbs + 'trioptima.jpg'); }
+			&#ericsson { background-image: url($path-thumbs + 'ericsson.jpg'); }
+			&#esm-vr { background-image: url($path-thumbs + 'esm-vr.jpg'); }
+			&#loki { background-image: url($path-thumbs + 'loki.jpg'); }
+			&#alien { background-image: url($path-thumbs + 'alien.jpg'); }
+			&#goo { background-image: url($path-thumbs + 'goo.jpg'); }
+			&#wannaplayer { background-image: url($path-thumbs + 'wannaplayer.jpg'); }
+			&#nem-tudo { background-image: url($path-thumbs + 'nem-tudo.jpg'); }
+			&#mana { background-image: url($path-thumbs + 'mana.jpg'); }
+			&#mamacita { background-image: url($path-thumbs + 'mamacita.jpg'); }
+		}
+	}
+}

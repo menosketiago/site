@@ -40,3 +40,9 @@
 		}
 	}
 }
+
+// NO WEBP SUPPORT
+
+.no-webp #home {
+	background-image: url($path-images + 'bg-mom.jpg');
+}

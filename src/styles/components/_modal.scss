@@ -176,6 +176,10 @@
 
                 picture {
                     text-align: center;
+
+                    > img {
+                        margin-top: 0;
+                    }
                 }
 
                 figcaption {
@@ -313,6 +317,14 @@
             margin-right: $footer-width-small;
             margin-left: $header-width-small;
         }
+    }
+}
+
+// NO WEBP SUPPORT
+
+.no-webp .modal {
+	.container {
+        background-image: url($path-images + 'pattern-blue-faded.png');
     }
 }
 

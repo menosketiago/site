@@ -79,6 +79,7 @@ gulp.task('images', function() {
 	.src([
 		path.images + '/**/*.{jpg,jpeg,png,gif,svg}'
 	])
+	.pipe(gulp.dest('./www/images'))
 	.pipe(webp())
 	.pipe(gulp.dest('./www/images'));
 });

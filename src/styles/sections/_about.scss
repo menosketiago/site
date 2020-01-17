@@ -173,3 +173,9 @@
 	}
 }
 
+// NO WEBP SUPPORT
+
+.no-webp #about {
+	background-image: url($path-images + 'bg-brownie.jpg');
+}
+

@@ -4,12 +4,13 @@ import 'unfetch/polyfill';
 import smoothscroll from 'smoothscroll-polyfill';
 
 import {initComponents} from './components/_init';
+import {checkWebPSupport} from './components/_webp';
 
 // INIT SMOOTH SCROLL POLYFILL
 
 smoothscroll.polyfill();
 
-// INIT THE COMPONENTS AND SENTRY
+// INIT JS
 
 window.initComponents = initComponents;
 window.modalContentFetched = false;
@@ -17,10 +18,7 @@ window.modalContentFetched = false;
 window.addEventListener('load', () => {
     window.initComponents();
 
-    // Sentry.init({
-    //     dsn: 'https://71704ea997d14762a9e711b9136cdca4@sentry.io/1844808',
-    //     integrations: [
-    //         new Sentry.Integrations.Breadcrumbs({ console: true })
-    //     ]
-    // });
+    checkWebPSupport(function(support) {
+        if (!support) document.querySelector('html').classList.add('no-webp');
+    });
 });

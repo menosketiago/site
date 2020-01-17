@@ -251,4 +251,12 @@ and (max-device-width: 799px) {
 			}
 		}
 	}
+
+	// NO WEBP SUPPORT
+
+	.no-webp {
+		#home { background-image: url($path-images + 'bg-mom-mobile.jpg'); }
+		#about { background-image: url($path-images + 'bg-brownie-mobile.jpg'); }
+		#contavt { background-image: url($path-images + 'bg-phone-mobile.jpg'); }
+	}
 }
