@@ -128,7 +128,7 @@
             }
 
             h3 {
-                font-size: 1.2em;
+                font-size: 1.3em;
                 font-weight: $bold;
             }
 
@@ -142,6 +142,10 @@
                 + img,
                 + video,
                 + .vimeo {
+                    margin-top: $space-large;
+                }
+
+                + h2 {
                     margin-top: $space-large;
                 }
             }
@@ -159,12 +163,16 @@
                 max-width: 100%;
                 height: auto;
                 margin: 0;
-                margin-top: $space-large;
+                margin-bottom: $space-large;
                 color: $gray-mid;
                 font-size: .9em;
 
-                &:first-child {
-                    margin-top: 0;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                + p {
+                    margin-top: $space-base;
                 }
             }
 
@@ -178,7 +186,7 @@
                     text-align: center;
 
                     > img {
-                        margin-top: 0;
+                        margin-bottom: 0;
                     }
                 }
 
