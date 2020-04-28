@@ -1,6 +1,9 @@
 {
     "name": "menos",
     "version": "0.1.0",
+    "engines": {
+        "node": "8.x"
+    },
     "description": "A personal web experiment",
     "main": "index.js",
     "scripts": {
