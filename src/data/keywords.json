@@ -13,14 +13,14 @@
         { "key": "After Effects" },
         { "key": "Premiere" },
         { "key": "3D Studio Max" },
+        { "key": "Blender" },
         { "key": "Solidworks" },
-        { "key": "JIRA" },
-        { "key": "Confluence" },
         { "key": "HTML" },
         { "key": "CSS" },
         { "key": "JavaScript" },
         { "key": "React" },
         { "key": "Handlebars" },
-        { "key": "Build tools" }
+        { "key": "Agile" },
+        { "key": "Scrum" }
     ]
 }

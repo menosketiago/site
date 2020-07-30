@@ -1,26 +1,24 @@
-<section id="about">
+<section id="about" role="region" aria-label="Background image with a picture of me as a kid sitting on a tree with my father and dog on my right side">
     <div class="card">
         <div id="me" class="avatar" data-initials="TA"></div>
 
         <header>
             <h2>About me</h2>
-            <p>
+            <p role="text">
                 I'm a <time data-year data-age>35</time> years old Product Designer with Frontend development knowledge and experience implementing Design Systems
             </p>
         </header>
 
-        <h4 class="no-margin">Professional timeline</h4>
-
         {{> timeline}}
 
-        <section class="grid">
+        <div class="grid">
              <div class="col col-50">
                 {{> skill-chart}}
             </div>
             <div class="col col-50">
                 {{> keywords}}
             </div>
-        </section>
+        </div>
 
         <button id="btn-download-cv" onclick="window.open('./files/tiago-almeida.zip')" aria-label="Download CV and Shortfolio">
             {{> icons/download}}

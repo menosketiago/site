@@ -35,11 +35,11 @@ body > footer {
 			}
 
 			span {
+				margin-top: $space-tiny;
 				margin-bottom: $space-tiny;
-				margin-left: $space-small - 1px;
 				writing-mode: initial;
 
-				@include transform(rotate(180deg));
+				@include transform(rotate(90deg));
 			}
 		}
 	}

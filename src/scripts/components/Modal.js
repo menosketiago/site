@@ -69,7 +69,7 @@ class Modal {
         });
 
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Tab') {
+            if (this._state.isVisible && e.key === 'Tab') {
                 e.preventDefault();
 
                 this.btnClose.focus();

@@ -4,6 +4,8 @@ button {
     overflow: hidden;
     display: inline-block;
     height: $btn-height;
+    // Fix for firefox absolute position bug
+    width: max-content;
     margin-right: $space-small;
     padding: $space-base ($space-base + $space-tiny);
     // Fix for text align
