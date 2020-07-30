@@ -93,13 +93,6 @@ class Modal {
 
     show() {
         this.setState({isVisible: true});
-
-        setTimeout(() => {
-            this.dom.content.focus();
-
-            console.log(this.dom.content);
-            console.log(document.activeElement);
-        }, 1000);
     }
 
     hide() {
