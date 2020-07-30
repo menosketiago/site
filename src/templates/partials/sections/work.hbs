@@ -1,4 +1,4 @@
-<section id="work">
+<section id="work" role="region" aria-label="A grid of thumbnails that link to case studies of my work">
     {{#work}}
         {{#each pages}}
             {{!-- Work items wrapper (one for each 9 items) --}}
@@ -7,7 +7,7 @@
                     <a id="{{name}}" class="item" tabindex="0" {{#if dark-mode}}data-dark{{/if}} {{#if theme}}data-theme="{{theme}}"{{/if}}>
                         <h3>{{category}}</h3>
                         <h2>{{title}}</h2>
-                        <div class="view">
+                        <div class="view" aria-hidden="true">
                             {{> icons/view}}
                             View
                         </div>

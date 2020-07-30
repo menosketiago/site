@@ -8,6 +8,7 @@
 	overflow-y: auto;
     width: 100vw;
     height: 100vh;
+    padding: 0;
     background: rgba($white, .8);
     visibility: hidden;
     opacity: 0;
@@ -267,6 +268,7 @@
     // MODAL OPENING CLASS
 
     &.is-open {
+        display: block;
         visibility: visible;
         opacity: 1;
 

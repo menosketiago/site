@@ -21,7 +21,4 @@ window.addEventListener('load', () => {
     checkWebPSupport(function(support) {
         if (!support) document.querySelector('html').classList.add('no-webp');
     });
-
-    // Set a cookie to avoid issues with Chromium
-    document.cookie = 'Set-Cookie: SameSite=Strict';
 });

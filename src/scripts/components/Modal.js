@@ -55,7 +55,6 @@ class Modal {
             Array.from(this.triggersArray).forEach(trigger => {
                 if (e.target === trigger) {
                     this.show();
-
                     this.fetchContent(trigger);
                     this.setModalTheme(trigger);
                 }
@@ -94,6 +93,13 @@ class Modal {
 
     show() {
         this.setState({isVisible: true});
+
+        setTimeout(() => {
+            this.dom.content.focus();
+
+            console.log(this.dom.content);
+            console.log(document.activeElement);
+        }, 1000);
     }
 
     hide() {

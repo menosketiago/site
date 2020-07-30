@@ -3,7 +3,7 @@
     cursor: pointer;
 
     &::after {
-        content: 'Hear';
+        content: 'Hear' / '';
         position: absolute;
         top: 0;
         display: inline-block;
