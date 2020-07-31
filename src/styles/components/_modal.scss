@@ -5,7 +5,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-	overflow-y: auto;
+	overflow: hidden;
     width: 100vw;
     height: 100vh;
     padding: 0;
@@ -19,6 +19,7 @@
     @include transform(translate(100%, 0));
 
     .container {
+        overflow-y: auto;
         width: calc(100% - (#{$header-width} * 2) - #{$footer-width});
         min-height: 100vh;
         margin-right: $footer-width;
@@ -271,6 +272,9 @@
         display: block;
         visibility: visible;
         opacity: 1;
+
+        @include flexbox();
+        @include flex-direction(column);
 
         @include transform(translate(0, 0));
 
