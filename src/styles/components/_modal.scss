@@ -274,7 +274,7 @@
 
         @include transform(translate(0, 0));
 
-        ~ #close-modal {
+        #close-modal {
             visibility: visible;
             opacity: 1;
         }
@@ -282,7 +282,7 @@
 
     // MODAL CLOSE BUTTON
 
-    ~ #close-modal {
+    #close-modal {
         z-index: $modal-index + 1;
         position: fixed;
         top: $space-modal * 2;
@@ -305,7 +305,7 @@
     // MEDIA QUERIES
 
 	@media screen and (max-height: $screen-height-average) {
-        ~ #close-modal {
+        #close-modal {
             left: $header-width;
             width: $btn-height-average;
         }
@@ -317,7 +317,7 @@
     }
 
     @media screen and (max-height: $screen-height-small) {
-        ~ #close-modal {
+        #close-modal {
             left: $header-width-small;
             width: $btn-height-small;
         }
