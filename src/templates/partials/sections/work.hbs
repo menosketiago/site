@@ -1,10 +1,10 @@
-<section id="work" role="region" aria-label="A grid of thumbnails that link to case studies of my work">
+<section id="work" role="region" aria-label="Work section with a grid of thumbnails that link to case studies of my work">
     {{#work}}
         {{#each pages}}
             {{!-- Work items wrapper (one for each 9 items) --}}
             <div id="page-{{@key}}" class="wrapper">
                 {{#each page}}
-                    <a id="{{name}}" class="item" tabindex="0" {{#if dark-mode}}data-dark{{/if}} {{#if theme}}data-theme="{{theme}}"{{/if}} role="navigation" aria-label="Open case study for {{title}}">
+                    <a id="{{name}}" class="item" tabindex="0" {{#if dark-mode}}data-dark{{/if}} {{#if theme}}data-theme="{{theme}}"{{/if}} role="navigation" aria-label="Open case study for {{title}}.{{category}} category">
                         <h3 aria-hidden="true">{{category}}</h3>
                         <h2 aria-hidden="true">{{title}}</h2>
                         <div class="view" aria-hidden="true">
