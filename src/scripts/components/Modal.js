@@ -94,6 +94,10 @@ class Modal {
 
     show() {
         this.setState({isVisible: true});
+
+        this.dom.modal.focus();
+
+        console.log(document.activeElement);
     }
 
     hide() {
