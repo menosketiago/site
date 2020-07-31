@@ -51,6 +51,8 @@ class Modal {
 
     eventHandler() {
         document.addEventListener('click', (e) => {
+            e.target.blur();
+
             // Listen to trigger click to open modal
             Array.from(this.triggersArray).forEach(trigger => {
                 if (e.target === trigger) {
@@ -83,7 +85,6 @@ class Modal {
             Array.from(this.triggersArray).forEach(trigger => {
                 if (e.target === trigger && e.key === 'Enter') {
                     this.show();
-
                     this.fetchContent(trigger);
                     this.setModalTheme(trigger);
                 }
