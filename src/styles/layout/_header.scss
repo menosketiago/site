@@ -64,7 +64,10 @@ body > header {
 				color: $blue;
 				border-color: $blue;
 				text-decoration: none;
-				pointer-events: none;
+
+				&:hover {
+					background: transparent;
+				}
 
 				&:focus {
 					background: transparent;

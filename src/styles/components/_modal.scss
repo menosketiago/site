@@ -20,7 +20,7 @@
 
     .container {
         overflow-y: auto;
-        width: calc(100% - (#{$header-width} * 2) - #{$footer-width});
+        width: calc(100% - (#{$header-width} * 2) - #{$footer-width} + 4px);
         min-height: 100vh;
         margin-right: $footer-width;
         margin-left: $header-width * 2;

@@ -14,6 +14,7 @@ const path = {
 	'styles': './src/styles',
 	'fonts': './src/fonts',
 	'images': './src/images',
+	'videos': './src/videos',
 	'scripts': './src/scripts',
 	'templates': './src/templates',
 	'work': './src/templates/work',
@@ -84,6 +85,14 @@ gulp.task('images', function() {
 	.pipe(gulp.dest('./www/images'));
 });
 
+gulp.task('videos', function() {
+	return gulp
+	.src([
+		path.videos + '/**/*.{webm,mp4}'
+	])
+	.pipe(gulp.dest('./www/videos'));
+});
+
 gulp.task('fonts', function() {
 	return gulp
 	.src([
@@ -125,6 +134,9 @@ gulp.task('watch', function() {
 		path.images + '/**/*', {interval: interval}, ['images']
 	).on('change', browserSync.reload);
 	gulp.watch(
+		path.videos + '/**/*', {interval: interval}, ['videos']
+	).on('change', browserSync.reload);
+	gulp.watch(
 		path.scripts + '/**/*.js', {interval: interval}, ['scripts']
 	).on('change', browserSync.reload);
 	gulp.watch(
@@ -148,6 +160,7 @@ gulp.task('clean', function() {
 gulp.task('default', [
 	'styles',
 	'images',
+	'videos',
 	'fonts',
 	'scripts',
 	'templates',
