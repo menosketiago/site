@@ -102,9 +102,12 @@
 
 <figure>
     <picture>
-        <source srcset="./images/work/ericsson/esm-mock.webp" type="image/webp">
-        <source srcset="./images/work/ericsson/esm-mock.jpg" type="image/jpg">
-        <img src="./images/work/ericsson/esm-mock.jpg" alt="Sketch mockup of the map feature in ESM">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/ericsson/esm-mock.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/ericsson/esm-mock.jpg" alt="Sketch mockup of the map feature in ESM">
     </picture>
     <figcaption class="bottom">Sketch mockup of the map feature in ESM</figcaption>
 </figure>
@@ -113,7 +116,7 @@
     <video autoplay loop muted playsinline aria-label="An animated image that was used to illustrate how the VR experience should look and feel like">
         <source src="./videos/ericsson/esm-vr-concept.webm" type="video/webm">
         <source src="./videos/ericsson/esm-vr-concept.mp4" type="video/mp4">
-        <img src="./images/work/ericsson/esm-vr-concept.gif" alt="This is a fallback image in case your browser does not support HTML5">
+        <img src="./images/ericsson/esm-vr-concept.gif" alt="This is a fallback image in case your browser does not support HTML5">
     </video>
     <figcaption>A montage created to conceptualize the VR experience</figcaption>
 </figure>

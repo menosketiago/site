@@ -94,9 +94,12 @@
 
 <figure>
     <picture>
-        <source srcset="./images/work/ericsson/devices.webp" type="image/webp">
-        <source srcset="./images/work/ericsson/devices.jpg" type="image/jpg">
-        <img src="./images/work/ericsson/devices.jpg" alt="Ericsson's UX 2.0 concept shown on different devices">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/ericsson/devices.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/ericsson/devices.jpg" alt="Ericsson's UX 2.0 concept shown on different devices">
     </picture>
     <figcaption>Ericsson's UX 2.0 concept shown on different devices</figcaption>
 </figure>
@@ -110,7 +113,7 @@
     From a technical standpoint, we were very adamant about having features like a monospace option, slashed zeros (to differentiate "o" from "0" easily), and tabular numerals (so that you can compare number greatness visually and for data visualization purposes). After plenty of ideation and iterations, <a href="https://lettersfromsweden.se/ericsson/" target="_blank" rel="noopener">Letters from Sweden</a> delivered <b>Hilda Sans</b>, an homage to Lars Magnus Ericsson's wife.
 </p>
 
-<video controls loop playsinline poster="./images/posters/hilda-sans.jpg" aria-label="A video showcasing the new Hilda Sans typeface">
+<video controls loop playsinline poster="./images/_posters/hilda-sans.jpg" aria-label="A video showcasing the new Hilda Sans typeface">
     <source src="./videos/ericsson/hilda-sans.webm" type="video/webm">
     <source src="./videos/ericsson/hilda-sans.mp4" type="video/mp4">
 </video>
@@ -258,18 +261,24 @@
 
 <figure>
     <picture>
-        <source srcset="./images/work/ericsson/sketch-login.webp" type="image/webp">
-        <source srcset="./images/work/ericsson/sketch-login.jpg" type="image/jpg">
-        <img src="./images/work/ericsson/sketch-login.jpg" alt="Sketch screenshot with the login flow">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/ericsson/sketch-login.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/ericsson/sketch-login.jpg" alt="Sketch screenshot with the login flow">
     </picture>
     <figcaption class="bottom">The login flow in Sketch</figcaption>
 </figure>
 
 <figure>
     <picture>
-        <source srcset="./images/work/ericsson/sketch-launcher.webp" type="image/webp">
-        <source srcset="./images/work/ericsson/sketch-launcher.jpg" type="image/jpg">
-        <img src="./images/work/ericsson/sketch-launcher.jpg" alt="Sketch screenshot with the launcher flow">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/ericsson/sketch-launcher.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/ericsson/sketch-launcher.jpg" alt="Sketch screenshot with the launcher flow">
     </picture>
     <figcaption class="bottom">The launcher flow in Sketch</figcaption>
 </figure>
@@ -290,9 +299,12 @@
 
 <figure>
     <picture>
-        <source srcset="./images/work/ericsson/sketch-esm-flow.webp" type="image/webp">
-        <source srcset="./images/work/ericsson/sketch-esm-flow.jpg" type="image/jpg">
-        <img src="./images/work/ericsson/sketch-esm-flow.jpg" alt="Sketch screenshot with the ESM flow">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/ericsson/sketch-esm-flow.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/ericsson/sketch-esm-flow.jpg" alt="Sketch screenshot with the ESM flow">
     </picture>
     <figcaption class="bottom">The ESM flow in Sketch</figcaption>
 </figure>

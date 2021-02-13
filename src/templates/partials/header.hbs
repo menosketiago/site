@@ -1,7 +1,13 @@
 <div>
     <a id="header-logo" class="logo" href="#home">
-        <source srcset="./images/logo-header.webp 1x, ./images/logo-header@2x.webp 2x" type="image/webp">
-        <source srcset="./images/logo-header.png 1x, ./images/logo-header@2x.png 2x" type="image/png">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="
+                    ./images/logo-header.{{key}} 1x,
+                    ./images/logo-header-2x.{{key}} 2x
+                " type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
         <img src="./images/logo-header.png" alt="Site logo">
     </a>
 

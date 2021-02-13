@@ -29,41 +29,56 @@
 
 <figure>
     <picture>
-        <source srcset="./images/work/nem-tudo/nem-tudo-01.webp" type="image/webp">
-        <source srcset="./images/work/nem-tudo/nem-tudo-01.jpg" type="image/jpg">
-        <img src="./images/work/nem-tudo/nem-tudo-01.jpg">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/nem-tudo/nem-tudo-01.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/nem-tudo/nem-tudo-01.jpg">
     </picture>
     <figcaption>Book cover</figcaption>
 </figure>
 <figure>
     <picture>
-        <source srcset="./images/work/nem-tudo/nem-tudo-02.webp" type="image/webp">
-        <source srcset="./images/work/nem-tudo/nem-tudo-02.jpg" type="image/jpg">
-        <img src="./images/work/nem-tudo/nem-tudo-02.jpg">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/nem-tudo/nem-tudo-02.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/nem-tudo/nem-tudo-02.jpg">
     </picture>
     <figcaption>My illustration</figcaption>
 </figure>
 <figure>
     <picture>
-        <source srcset="./images/work/nem-tudo/nem-tudo-03.webp" type="image/webp">
-        <source srcset="./images/work/nem-tudo/nem-tudo-03.jpg" type="image/jpg">
-        <img src="./images/work/nem-tudo/nem-tudo-03.jpg">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/nem-tudo/nem-tudo-03.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/nem-tudo/nem-tudo-03.jpg">
     </picture>
     <figcaption>My profile page</figcaption>
 </figure>
 <figure>
     <picture>
-        <source srcset="./images/work/nem-tudo/nem-tudo-04.webp" type="image/webp">
-        <source srcset="./images/work/nem-tudo/nem-tudo-04.jpg" type="image/jpg">
-        <img src="./images/work/nem-tudo/nem-tudo-04.jpg">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/nem-tudo/nem-tudo-04.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/nem-tudo/nem-tudo-04.jpg">
     </picture>
     <figcaption>Closer view</figcaption>
 </figure>
 <figure>
     <picture>
-        <source srcset="./images/work/nem-tudo/nem-tudo-05.webp" type="image/webp">
-        <source srcset="./images/work/nem-tudo/nem-tudo-05.jpg" type="image/jpg">
-        <img src="./images/work/nem-tudo/nem-tudo-05.jpg">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/nem-tudo/nem-tudo-05.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/nem-tudo/nem-tudo-05.jpg">
     </picture>
     <figcaption>Close up of the gold ink</figcaption>
 </figure>

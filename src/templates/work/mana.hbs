@@ -62,22 +62,31 @@
 
 <figure>
     <picture>
-        <source srcset="./images/work/mana/mana-01.webp" type="image/webp">
-        <source srcset="./images/work/mana/mana-01.jpg" type="image/jpg">
-        <img src="./images/work/mana/mana-01.jpg" alt="A screenshot from the landing page of the Mana site">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/mana/mana-01.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/mana/mana-01.jpg" alt="A screenshot from the landing page of the Mana site">
     </picture>
 </figure>
 <figure>
     <picture>
-        <source srcset="./images/work/mana/mana-02.webp" type="image/webp">
-        <source srcset="./images/work/mana/mana-02.jpg" type="image/jpg">
-        <img src="./images/work/mana/mana-02.jpg" alt="A screenshot from a game review page">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/mana/mana-02.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/mana/mana-02.jpg" alt="A screenshot from a game review page">
     </picture>
 </figure>
 <figure>
     <picture>
-        <source srcset="./images/work/mana/mana-03.webp" type="image/webp">
-        <source srcset="./images/work/mana/mana-03.jpg" type="image/jpg">
-        <img src="./images/work/mana/mana-03.jpg" alt="A screenshot from a custom produced video about Titanfall">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/mana/mana-03.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/mana/mana-03.jpg" alt="A screenshot from a custom produced video about Titanfall">
     </picture>
 </figure>

@@ -47,7 +47,7 @@
 <video autoplay loop muted playsinline aria-label="A video capture of WannaPlayer's landing page">
     <source src="./videos/wannaplayer.webm" type="video/webm">
     <source src="./videos/wannaplayer.mp4" type="video/mp4">
-    <img src="./images/work/wannaplayer/wannaplayer.gif" alt="This is a fallback image in case your browser does not support HTML5">
+    <img src="./images/wannaplayer/wannaplayer.gif" alt="This is a fallback image in case your browser does not support HTML5">
 </video>
 
 <p>
@@ -59,59 +59,80 @@
 
 <figure>
     <picture>
-        <source srcset="./images/work/wannaplayer/wannaplayer-other-01.webp" type="image/webp">
-        <source srcset="./images/work/wannaplayer/wannaplayer-other-01.jpg" type="image/jpg">
-        <img src="./images/work/wannaplayer/wannaplayer-other-01.jpg">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/wannaplayer/wannaplayer-other-01.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/wannaplayer/wannaplayer-other-01.jpg">
     </picture>
     <figcaption>The brand in different applications</figcaption>
 </figure>
 
 <figure>
     <picture>
-        <source srcset="./images/work/wannaplayer/wannaplayer-mock-01.webp" type="image/webp">
-        <source srcset="./images/work/wannaplayer/wannaplayer-mock-01.jpg" type="image/jpg">
-        <img src="./images/work/wannaplayer/wannaplayer-mock-01.jpg">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/wannaplayer/wannaplayer-mock-01.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/wannaplayer/wannaplayer-mock-01.jpg">
     </picture>
     <figcaption class="bottom">Mockup of the search page</figcaption>
 </figure>
 <figure>
     <picture>
-        <source srcset="./images/work/wannaplayer/wannaplayer-mock-02.webp" type="image/webp">
-        <source srcset="./images/work/wannaplayer/wannaplayer-mock-02.jpg" type="image/jpg">
-        <img src="./images/work/wannaplayer/wannaplayer-mock-02.jpg">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/wannaplayer/wannaplayer-mock-02.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/wannaplayer/wannaplayer-mock-02.jpg">
     </picture>
     <figcaption class="bottom">Exploring different options and ideas</figcaption>
 </figure>
 <figure>
     <picture>
-        <source srcset="./images/work/wannaplayer/wannaplayer-imp-01.webp" type="image/webp">
-        <source srcset="./images/work/wannaplayer/wannaplayer-imp-01.jpg" type="image/jpg">
-        <img src="./images/work/wannaplayer/wannaplayer-imp-01.jpg">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/wannaplayer/wannaplayer-imp-01.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/wannaplayer/wannaplayer-imp-01.jpg">
     </picture>
     <figcaption class="bottom">Implementation</figcaption>
 </figure>
 <figure>
     <picture>
-        <source srcset="./images/work/wannaplayer/wannaplayer-mock-03.webp" type="image/webp">
-        <source srcset="./images/work/wannaplayer/wannaplayer-mock-03.jpg" type="image/jpg">
-        <img src="./images/work/wannaplayer/wannaplayer-mock-03.jpg">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/wannaplayer/wannaplayer-mock-03.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/wannaplayer/wannaplayer-mock-03.jpg">
     </picture>
     <figcaption class="bottom">Mockup of the marketplace feature</figcaption>
 </figure>
 
 <figure>
     <picture>
-        <source srcset="./images/work/wannaplayer/wannaplayer-other-02.webp" type="image/webp">
-        <source srcset="./images/work/wannaplayer/wannaplayer-other-02.jpg" type="image/jpg">
-        <img src="./images/work/wannaplayer/wannaplayer-other-02.jpg">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/wannaplayer/wannaplayer-other-02.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/wannaplayer/wannaplayer-other-02.jpg">
     </picture>
     <figcaption class="bottom">One of the many social media "ads" we created</figcaption>
 </figure>
 <figure>
     <picture>
-        <source srcset="./images/work/wannaplayer/wannaplayer-other-03.webp" type="image/webp">
-        <source srcset="./images/work/wannaplayer/wannaplayer-other-03.jpg" type="image/jpg">
-        <img src="./images/work/wannaplayer/wannaplayer-other-03.jpg">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/wannaplayer/wannaplayer-other-03.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/wannaplayer/wannaplayer-other-03.jpg">
     </picture>
     <figcaption class="bottom">An email campaign with custom illustration</figcaption>
 </figure>
@@ -143,17 +164,23 @@
 
 <figure>
     <picture>
-        <source srcset="./images/work/wannaplayer/nextbigplayer-01.webp" type="image/webp">
-        <source srcset="./images/work/wannaplayer/nextbigplayer-01.jpg" type="image/jpg">
-        <img src="./images/work/wannaplayer/nextbigplayer-01.jpg">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/wannaplayer/nextbigplayer-01.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/wannaplayer/nextbigplayer-01.jpg">
     </picture>
     <figcaption class="bottom">Branding tone and logo</figcaption>
 </figure>
 <figure>
     <picture>
-        <source srcset="./images/work/wannaplayer/nextbigplayer-02.webp" type="image/webp">
-        <source srcset="./images/work/wannaplayer/nextbigplayer-02.jpg" type="image/jpg">
-        <img src="./images/work/wannaplayer/nextbigplayer-02.jpg">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/wannaplayer/nextbigplayer-02.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/wannaplayer/nextbigplayer-02.jpg">
     </picture>
     <figcaption class="bottom">Motion graphic language</figcaption>
 </figure>
@@ -162,33 +189,45 @@
 
 <figure>
     <picture>
-        <source srcset="./images/work/wannaplayer/secret-scout-01.webp" type="image/webp">
-        <source srcset="./images/work/wannaplayer/secret-scout-01.jpg" type="image/jpg">
-        <img src="./images/work/wannaplayer/secret-scout-01.jpg">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/wannaplayer/secret-scout-01.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/wannaplayer/secret-scout-01.jpg">
     </picture>
     <figcaption class="bottom">Secret Scout VS screen</figcaption>
 </figure>
 <figure>
     <picture>
-        <source srcset="./images/work/wannaplayer/secret-scout-02.webp" type="image/webp">
-        <source srcset="./images/work/wannaplayer/secret-scout-02.jpg" type="image/jpg">
-        <img src="./images/work/wannaplayer/secret-scout-02.jpg">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/wannaplayer/secret-scout-02.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/wannaplayer/secret-scout-02.jpg">
     </picture>
     <figcaption class="bottom">Team information</figcaption>
 </figure>
 <figure>
     <picture>
-        <source srcset="./images/work/wannaplayer/secret-scout-03.webp" type="image/webp">
-        <source srcset="./images/work/wannaplayer/secret-scout-03.jpg" type="image/jpg">
-        <img src="./images/work/wannaplayer/secret-scout-03.jpg">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/wannaplayer/secret-scout-03.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/wannaplayer/secret-scout-03.jpg">
     </picture>
     <figcaption class="bottom">Team performance analysis</figcaption>
 </figure>
 <figure>
     <picture>
-        <source srcset="./images/work/wannaplayer/secret-scout-04.webp" type="image/webp">
-        <source srcset="./images/work/wannaplayer/secret-scout-04.jpg" type="image/jpg">
-        <img src="./images/work/wannaplayer/secret-scout-04.jpg">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/wannaplayer/secret-scout-04.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/wannaplayer/secret-scout-04.jpg">
     </picture>
     <figcaption class="bottom">Key decisive factors</figcaption>
 </figure>

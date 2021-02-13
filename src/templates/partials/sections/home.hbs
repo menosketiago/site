@@ -1,7 +1,10 @@
 <section id="home" role="region" aria-label="Home section featuring a background image with a picture of me as a kid on my mom's lap, pointing a finger into the future">
     <picture aria-hidden="true">
-        <source srcset="./images/logo.webp 1x, ./images/logo@2x.webp 2x" type="image/webp">
-        <source srcset="./images/logo.png 1x, ./images/logo@2x.png 2x" type="image/jpg">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/logo.{{key}} 1x, ./images/logo-2x.{{key}} 2x" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
         <img class="logo" src="./images/logo.png" alt="menosketiago™ logo">
     </picture>
 

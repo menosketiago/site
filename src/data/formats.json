@@ -1,0 +1,7 @@
+{
+    "format": [
+        { "key": "avif" },
+        { "key": "webp" },
+        { "key": "jpg" }
+    ]
+}
