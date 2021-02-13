@@ -242,9 +242,9 @@ and (max-device-width: 799px) {
 				}
 			}
 
-			~ #close-modal {
+			#close-modal {
 				top: $space-extra;
-				right: 0;
+				right: $space-extra;
 				left: auto;
 
 				@include transform(translate(0, 0));

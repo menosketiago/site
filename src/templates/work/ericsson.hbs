@@ -94,9 +94,12 @@
 
 <figure>
     <picture>
-        <source srcset="./images/work/ericsson/devices.webp" type="image/webp">
-        <source srcset="./images/work/ericsson/devices.jpg" type="image/jpg">
-        <img src="./images/work/ericsson/devices.jpg" alt="Ericsson's UX 2.0 concept shown on different devices">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/ericsson/devices.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/ericsson/devices.jpg" alt="Ericsson's UX 2.0 concept shown on different devices">
     </picture>
     <figcaption>Ericsson's UX 2.0 concept shown on different devices</figcaption>
 </figure>
@@ -107,10 +110,10 @@
     One of my first tasks was to gather design requirements for a new custom Ericsson typeface meant to be the first building block of the brand rebuild effort. We quickly picked a couple of basic needs. One of our first consensuses was that it had to convey "swedishness", a mix of swiss design with tech modernity that was well illustrated by <a href="https://identity.sweden.se/buildingblocks/secondary-building-blocks-always-use#our-main-typeface" target="_blank" rel="noopener">Sweden Sans</a>.
 </p>
 <p>
-    From a technical standpoint, we were very adamant about having features like a monospaced option, slashed zeros (to differentiate "o" from "0" easily), and tabular numerals (so that you can compare number greatness visually and for data visualization purposes). After plenty of ideation and iterations, <a href="https://lettersfromsweden.se/ericsson/" target="_blank" rel="noopener">Letters from Sweden</a> delivered <b>Hilda Sans</b>, an hommage to Lars Magnus Ericsson's wife.
+    From a technical standpoint, we were very adamant about having features like a monospace option, slashed zeros (to differentiate "o" from "0" easily), and tabular numerals (so that you can compare number greatness visually and for data visualization purposes). After plenty of ideation and iterations, <a href="https://lettersfromsweden.se/ericsson/" target="_blank" rel="noopener">Letters from Sweden</a> delivered <b>Hilda Sans</b>, an homage to Lars Magnus Ericsson's wife.
 </p>
 
-<video controls loop playsinline poster="./images/posters/hilda-sans.jpg" aria-label="A video showcasing the new Hilda Sans typeface">
+<video controls loop playsinline poster="./images/_posters/hilda-sans.jpg" aria-label="A video showcasing the new Hilda Sans typeface">
     <source src="./videos/ericsson/hilda-sans.webm" type="video/webm">
     <source src="./videos/ericsson/hilda-sans.mp4" type="video/mp4">
 </video>
@@ -120,7 +123,7 @@
 <h2>A User Experience first brand</h2>
 
 <p>
-    If we wanted the new brand to have a real transformational and galvanizing effect, we needed to flip the Ericsson gamebook around. We focused on creating design (not designer) principles that would be at the core of everything the company did to move forward into the future.
+    If we wanted the new brand to have a real transformational and galvanizing effect, we needed to flip the Ericsson rule book around. We focused on creating design (not designer) principles that would be at the core of everything the company did to move forward into the future.
 </p>
 <p>
     In the end, three brand principles were adopted as mantras that everyone should mentally recite. <em>Focused simplicity</em>, <em>Delight means performance</em>, and <em>Coherence inside out</em>.
@@ -139,7 +142,7 @@
         </video>
     </div>
     <div class="col col-50 center">
-        <h3>Focused simplitcity</h3>
+        <h3>Focused simplicity</h3>
         <p>
             We should make things as simple as possible, removing unnecessary details and decoration, which might get in the way of the experience.
         </p>
@@ -178,7 +181,7 @@
     <div class="col col-50 center">
         <h3>Progressive disclosure</h3>
         <p>
-            Even data should use the layering concept, turning huge pools of content, into digestible and explorable chunks of information. Information should be categorized and grouped, creating different levels of detail that can be dug into, allowing the user to get invaluable insights.
+            Even data should use the layering concept, turning huge pools of content, into digestible and digestible chunks of information. Information should be categorized and grouped, creating different levels of detail that can be dug into, allowing the user to get invaluable insights.
         </p>
     </div>
     <div class="col col-50 center">
@@ -236,7 +239,7 @@
     Principles like the word suggests (from the Latin word <i>principium</i>) are only the beginning, and they have to be tested and applied so that you can know their mettle. During several weeks, the entire team came together to bring one of the products we were responsible for into this new vision and design language.
 </p>
 
-<h3>Low fidelity prootyping</h3>
+<h3>Low fidelity prototyping</h3>
 
 <p>
     To better explain and get buy-in from management for the layers concept, I created a quick and dirty prototype using <em>Principle</em>. This enabled us to move the conversation from vision to practice, as some stakeholders did not fully grasp the concept until they saw it as moving pixels.
@@ -258,18 +261,24 @@
 
 <figure>
     <picture>
-        <source srcset="./images/work/ericsson/sketch-login.webp" type="image/webp">
-        <source srcset="./images/work/ericsson/sketch-login.jpg" type="image/jpg">
-        <img src="./images/work/ericsson/sketch-login.jpg" alt="Sketch screenshot with the login flow">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/ericsson/sketch-login.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/ericsson/sketch-login.jpg" alt="Sketch screenshot with the login flow">
     </picture>
     <figcaption class="bottom">The login flow in Sketch</figcaption>
 </figure>
 
 <figure>
     <picture>
-        <source srcset="./images/work/ericsson/sketch-launcher.webp" type="image/webp">
-        <source srcset="./images/work/ericsson/sketch-launcher.jpg" type="image/jpg">
-        <img src="./images/work/ericsson/sketch-launcher.jpg" alt="Sketch screenshot with the launcher flow">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/ericsson/sketch-launcher.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/ericsson/sketch-launcher.jpg" alt="Sketch screenshot with the launcher flow">
     </picture>
     <figcaption class="bottom">The launcher flow in Sketch</figcaption>
 </figure>
@@ -290,9 +299,12 @@
 
 <figure>
     <picture>
-        <source srcset="./images/work/ericsson/sketch-esm-flow.webp" type="image/webp">
-        <source srcset="./images/work/ericsson/sketch-esm-flow.jpg" type="image/jpg">
-        <img src="./images/work/ericsson/sketch-esm-flow.jpg" alt="Sketch screenshot with the ESM flow">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/ericsson/sketch-esm-flow.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/ericsson/sketch-esm-flow.jpg" alt="Sketch screenshot with the ESM flow">
     </picture>
     <figcaption class="bottom">The ESM flow in Sketch</figcaption>
 </figure>

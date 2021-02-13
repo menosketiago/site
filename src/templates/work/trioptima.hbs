@@ -10,7 +10,7 @@
 </aside>
 
 <header>
-    <h3>Product Design • Frontend Devolpment</h3>
+    <h3>Product Design • Frontend Development</h3>
     <h1>TriOptima Design System</h1>
 
     <hgroup>
@@ -126,9 +126,12 @@
 
 <figure>
     <picture>
-        <source srcset="./images/work/trioptima/illustration.webp" type="image/webp">
-        <source srcset="./images/work/trioptima/illustration.jpg" type="image/jpg">
-        <img src="./images/work/trioptima/illustration.jpg" alt="The landing page illustration on the TriOptima Design System">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/trioptima/illustration.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/trioptima/illustration.jpg" alt="The landing page illustration on the TriOptima Design System">
     </picture>
 </figure>
 
@@ -149,35 +152,47 @@
 
 <figure>
     <picture>
-        <source srcset="./images/work/trioptima/sketch-library-01.webp" type="image/webp">
-        <source srcset="./images/work/trioptima/sketch-library-01.jpg" type="image/jpg">
-        <img src="./images/work/trioptima/sketch-library-01.jpg" alt="Screenshot of the color and typography assets in Sketch">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/trioptima/sketch-library-01.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/trioptima/sketch-library-01.jpg" alt="Screenshot of the color and typography assets in Sketch">
     </picture>
     <figcaption class="bottom">Colors and typography on the triDS library</figcaption>
 </figure>
 <figure>
     <picture>
-        <source srcset="./images/work/trioptima/sketch-library-02.webp" type="image/webp">
-        <source srcset="./images/work/trioptima/sketch-library-02.jpg" type="image/jpg">
-        <img src="./images/work/trioptima/sketch-library-02.jpg" alt="Screenshot of some of the design components on the Sketch library">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/trioptima/sketch-library-02.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/trioptima/sketch-library-02.jpg" alt="Screenshot of some of the design components on the Sketch library">
     </picture>
     <figcaption class="bottom">Some of the library components</figcaption>
 </figure>
 <figure>
     <picture>
-        <source srcset="./images/work/trioptima/sketch-library-03.webp" type="image/webp">
-        <source srcset="./images/work/trioptima/sketch-library-03.jpg" type="image/jpg">
-        <img src="./images/work/trioptima/sketch-library-03.jpg" alt="A closer look at the datep icker component on the Sketch library">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/trioptima/sketch-library-03.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/trioptima/sketch-library-03.jpg" alt="A closer look at the datep icker component on the Sketch library">
     </picture>
     <figcaption class="bottom">Interchangeable symbols on the date picker component</figcaption>
 </figure>
 <figure>
     <picture>
-        <source srcset="./images/work/trioptima/sketch-library-04.webp" type="image/webp">
-        <source srcset="./images/work/trioptima/sketch-library-04.jpg" type="image/jpg">
-        <img src="./images/work/trioptima/sketch-library-04.jpg" alt="A quickstart template on the Sketch library">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/trioptima/sketch-library-04.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/trioptima/sketch-library-04.jpg" alt="A quickstart template on the Sketch library">
     </picture>
-    <figcaption class="bottom">Quickstart template for new product mockups</figcaption>
+    <figcaption class="bottom">Quick-start template for new product mockups</figcaption>
 </figure>
 
 <h3>A missing library</h3>
@@ -188,9 +203,12 @@
 
 <figure>
     <picture>
-        <source srcset="./images/work/trioptima/sketch-library-wires.webp" type="image/webp">
-        <source srcset="./images/work/trioptima/sketch-library-wires.jpg" type="image/jpg">
-        <img src="./images/work/trioptima/sketch-library-wires.jpg" alt="A screenshot of the Sketch wireframing library">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/trioptima/sketch-library-wires.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/trioptima/sketch-library-wires.jpg" alt="A screenshot of the Sketch wireframing library">
     </picture>
     <figcaption class="bottom">Some components on the wireframing library</figcaption>
 </figure>
@@ -209,9 +227,12 @@
 
 <figure>
     <picture>
-        <source srcset="./images/work/trioptima/class-based-js.webp" type="image/webp">
-        <source srcset="./images/work/trioptima/class-based-js.jpg" type="image/jpg">
-        <img src="./images/work/trioptima/class-based-js.jpg" alt="A screenshot of Visual code with the Dialog JS component and the build terminal running">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/trioptima/class-based-js.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/trioptima/class-based-js.jpg" alt="A screenshot of Visual code with the Dialog JS component and the build terminal running">
     </picture>
     <figcaption class="bottom">The dialog component open on VS Code</figcaption>
 </figure>
@@ -227,9 +248,12 @@
 
 <figure>
     <picture>
-        <source srcset="./images/work/trioptima/trids-home.webp" type="image/webp">
-        <source srcset="./images/work/trioptima/trids-home.jpg" type="image/jpg">
-        <img src="./images/work/trioptima/trids-home.jpg" alt="Screenshot from the design system home page">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/trioptima/trids-home.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/trioptima/trids-home.jpg" alt="Screenshot from the design system home page">
     </picture>
     <figcaption class="bottom">Some of this project can only be shown in private...</figcaption>
 </figure>

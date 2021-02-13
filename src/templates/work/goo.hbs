@@ -126,9 +126,12 @@
 
 <figure>
     <picture>
-        <source srcset="./images/work/goo/goo-devices.webp" type="image/webp">
-        <source srcset="./images/work/goo/goo-devices.jpg" type="image/jpg">
-        <img src="./images/work/goo/goo-devices.jpg" alt="A picture showing a project inside Goo Create and the published result on a phone and tablet">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/goo/goo-devices.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/goo/goo-devices.jpg" alt="A picture showing a project inside Goo Create and the published result on a phone and tablet">
     </picture>
 </figure>
 
@@ -142,25 +145,34 @@
 
 <figure>
     <picture>
-        <source srcset="./images/work/goo/goo-editor-01.webp" type="image/webp">
-        <source srcset="./images/work/goo/goo-editor-01.jpg" type="image/jpg">
-        <img src="./images/work/goo/goo-editor-01.jpg">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/goo/goo-editor-01.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/goo/goo-editor-01.jpg">
     </picture>
-    <figcaption>Clicklable wireframe in UXPin</figcaption>
+    <figcaption>Clickable wireframe in UXPin</figcaption>
 </figure>
 <figure>
     <picture>
-        <source srcset="./images/work/goo/goo-editor-02.webp" type="image/webp">
-        <source srcset="./images/work/goo/goo-editor-02.jpg" type="image/jpg">
-        <img src="./images/work/goo/goo-editor-02.jpg">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/goo/goo-editor-02.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/goo/goo-editor-02.jpg">
     </picture>
     <figcaption>Mockup in Illustrator</figcaption>
 </figure>
 <figure>
     <picture>
-        <source srcset="./images/work/goo/goo-editor-03.webp" type="image/webp">
-        <source srcset="./images/work/goo/goo-editor-03.jpg" type="image/jpg">
-        <img src="./images/work/goo/goo-editor-03.jpg">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/goo/goo-editor-03.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/goo/goo-editor-03.jpg">
     </picture>
     <figcaption>Implementation</figcaption>
 </figure>
@@ -179,49 +191,67 @@
 
 <figure>
     <picture>
-        <source srcset="./images/work/goo/goo-dash-01.webp" type="image/webp">
-        <source srcset="./images/work/goo/goo-dash-01.jpg" type="image/jpg">
-        <img src="./images/work/goo/goo-dash-01.jpg">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/goo/goo-dash-01.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/goo/goo-dash-01.jpg">
     </picture>
     <figcaption>Wireframe prototype in UXPin</figcaption>
 </figure>
 <figure>
     <picture>
-        <source srcset="./images/work/goo/goo-dash-02.webp" type="image/webp">
-        <source srcset="./images/work/goo/goo-dash-02.jpg" type="image/jpg">
-        <img src="./images/work/goo/goo-dash-02.jpg">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/goo/goo-dash-02.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/goo/goo-dash-02.jpg">
     </picture>
     <figcaption>Wireframe prototype in UXPin</figcaption>
 </figure>
 <figure>
     <picture>
-        <source srcset="./images/work/goo/goo-dash-03.webp" type="image/webp">
-        <source srcset="./images/work/goo/goo-dash-03.jpg" type="image/jpg">
-        <img src="./images/work/goo/goo-dash-03.jpg">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/goo/goo-dash-03.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/goo/goo-dash-03.jpg">
     </picture>
     <figcaption>Mockup in Illustrator</figcaption>
 </figure>
 <figure>
     <picture>
-        <source srcset="./images/work/goo/goo-dash-04.webp" type="image/webp">
-        <source srcset="./images/work/goo/goo-dash-04.jpg" type="image/jpg">
-        <img src="./images/work/goo/goo-dash-04.jpg">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/goo/goo-dash-04.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/goo/goo-dash-04.jpg">
     </picture>
     <figcaption>Mockup in Illustrator</figcaption>
 </figure>
 <figure>
     <picture>
-        <source srcset="./images/work/goo/goo-dash-05.webp" type="image/webp">
-        <source srcset="./images/work/goo/goo-dash-05.jpg" type="image/jpg">
-        <img src="./images/work/goo/goo-dash-05.jpg">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/goo/goo-dash-05.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/goo/goo-dash-05.jpg">
     </picture>
     <figcaption>Implementation</figcaption>
 </figure>
 <figure>
     <picture>
-        <source srcset="./images/work/goo/goo-dash-06.webp" type="image/webp">
-        <source srcset="./images/work/goo/goo-dash-02.jpg" type="image/jpg">
-        <img src="./images/work/goo/goo-dash-06.jpg">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/goo/goo-dash-06.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/goo/goo-dash-06.jpg">
     </picture>
     <figcaption>Implementation</figcaption>
 </figure>
@@ -230,7 +260,7 @@
     <video autoplay loop muted playsinline>
         <source src="./videos/goo-new-scene.webm" type="video/webm">
         <source src="./videos/goo-new-scene.mp4" type="video/mp4">
-        <img src="./images/work/goo/goo-new-scene.gif" alt="This is a fallback image in case your browser does not support HTML5">
+        <img src="./images/goo/goo-new-scene.gif" alt="This is a fallback image in case your browser does not support HTML5">
     </video>
     <figcaption>Creating a new scene flow</figcaption>
 </figure>
@@ -246,65 +276,89 @@
 
 <figure>
     <picture>
-        <source srcset="./images/work/goo/goo-details-01.webp" type="image/webp">
-        <source srcset="./images/work/goo/goo-details-01.jpg" type="image/jpg">
-        <img src="./images/work/goo/goo-details-01.jpg">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/goo/goo-details-01.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/goo/goo-details-01.jpg">
     </picture>
     <figcaption>Login screen</figcaption>
 </figure>
 <figure>
     <picture>
-        <source srcset="./images/work/goo/goo-details-02.webp" type="image/webp">
-        <source srcset="./images/work/goo/goo-details-02.jpg" type="image/jpg">
-        <img src="./images/work/goo/goo-details-02.jpg">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/goo/goo-details-02.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/goo/goo-details-02.jpg">
     </picture>
     <figcaption>Pricing modal</figcaption>
 </figure>
 <figure>
     <picture>
-        <source srcset="./images/work/goo/goo-details-03.webp" type="image/webp">
-        <source srcset="./images/work/goo/goo-details-03.jpg" type="image/jpg">
-        <img src="./images/work/goo/goo-details-03.jpg">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/goo/goo-details-03.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/goo/goo-details-03.jpg">
     </picture>
     <figcaption>Getting started modal</figcaption>
 </figure>
 <figure>
     <picture>
-        <source srcset="./images/work/goo/goo-details-04.webp" type="image/webp">
-        <source srcset="./images/work/goo/goo-details-04.jpg" type="image/jpg">
-        <img src="./images/work/goo/goo-details-04.jpg">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/goo/goo-details-04.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/goo/goo-details-04.jpg">
     </picture>
     <figcaption>Shortcuts modal</figcaption>
 </figure>
 <figure>
     <picture>
-        <source srcset="./images/work/goo/goo-details-06.webp" type="image/webp">
-        <source srcset="./images/work/goo/goo-details-06.jpg" type="image/jpg">
-        <img src="./images/work/goo/goo-details-06.jpg">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/goo/goo-details-06.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/goo/goo-details-06.jpg">
     </picture>
     <figcaption>Publishing options</figcaption>
 </figure>
 <figure>
     <picture>
-        <source srcset="./images/work/goo/goo-details-07.webp" type="image/webp">
-        <source srcset="./images/work/goo/goo-details-07.jpg" type="image/jpg">
-        <img src="./images/work/goo/goo-details-07.jpg">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/goo/goo-details-07.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/goo/goo-details-07.jpg">
     </picture>
     <figcaption>Advanced publishing settings</figcaption>
 </figure>
 <figure>
     <picture>
-        <source srcset="./images/work/goo/goo-details-08.webp" type="image/webp">
-        <source srcset="./images/work/goo/goo-details-08.jpg" type="image/jpg">
-        <img src="./images/work/goo/goo-details-08.jpg">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/goo/goo-details-08.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/goo/goo-details-08.jpg">
     </picture>
     <figcaption>Project loading screen</figcaption>
 </figure>
 <figure>
     <picture>
-        <source srcset="./images/work/goo/goo-details-09.webp" type="image/webp">
-        <source srcset="./images/work/goo/goo-details-09.jpg" type="image/jpg">
-        <img src="./images/work/goo/goo-details-09.jpg">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/goo/goo-details-09.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/goo/goo-details-09.jpg">
     </picture>
     <figcaption>Project with Goo footer</figcaption>
 </figure>
@@ -330,9 +384,12 @@
 
 <figure>
     <picture>
-        <source srcset="./images/work/goo/goo-icons.webp" type="image/webp">
-        <source srcset="./images/work/goo/goo-icons.jpg" type="image/jpg">
-        <img src="./images/work/goo/goo-icons.jpg">
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/goo/goo-icons.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/goo/goo-icons.jpg">
     </picture>
 </figure>
 
