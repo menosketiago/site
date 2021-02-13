@@ -2,7 +2,7 @@
     "name": "menosketiago",
     "version": "1.0.0",
     "engines": {
-        "node": "8.x"
+        "node": "10.x"
     },
     "description": "Portfolio site",
     "main": "index.js",
@@ -28,7 +28,8 @@
         "@babel/preset-env": "^7.12.16",
         "browser-sync": "^2.26.14",
         "del": "^5.1.0",
-        "gulp": "^3.9.1",
+        "gulp": "^4.0.2",
+        "gulp-avif": "^0.1.0",
         "gulp-babel": "^8.0.0",
         "gulp-concat": "^2.6.0",
         "gulp-declare": "^0.3.0",
@@ -36,7 +37,7 @@
         "gulp-rename": "^1.4.0",
         "gulp-sass": "^4.1.0",
         "gulp-sitemap": "^7.7.0",
-        "gulp-webp": "^3.0.0",
+        "gulp-webp": "^4.0.1",
         "gulp-wrap": "^0.15.0"
     },
     "dependencies": {
@@ -45,7 +46,7 @@
         "elliptic": "^6.5.4",
         "gulp-csso": "^4.0.1",
         "gulp-htmlmin": "^5.0.1",
-        "gulp-imagemin": "^4.1.0",
+        "gulp-imagemin": "^7.1.0",
         "handlebars": "^4.7.6",
         "imagesloaded": "^4.1.4",
         "kind-of": ">=6.0.3",
