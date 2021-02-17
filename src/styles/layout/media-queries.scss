@@ -244,7 +244,7 @@ and (max-device-width: 799px) {
 
 			#close-modal {
 				top: $space-extra;
-				right: $space-extra;
+				right: $space-large / 2;
 				left: auto;
 
 				@include transform(translate(0, 0));

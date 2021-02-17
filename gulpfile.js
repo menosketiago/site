@@ -24,26 +24,24 @@ const path = {
 
 const supportedImages = '/**/*.{jpg,jpeg,png,gif,svg,webp,avif}';
 
-gulp.task('styles', (done) => {
-	gulp
+gulp.task('styles', () => {
+	return gulp
 		.src(path.styles + '/index.scss')
 		.pipe(sass().on('error', sass.logError))
 		.pipe(gulp.dest('./www/'))
 		.pipe(browserSync.stream())
-	done();
 });
 
-gulp.task('scripts', (done) => {
-	gulp
+gulp.task('scripts', () => {
+	return gulp
 		.src(path.scripts + '/index.js')
 		.pipe(webpack(require('./webpack.config.js')))
 		.pipe(gulp.dest('./www/'))
 		.pipe(browserSync.stream())
-	done();
 });
 
-gulp.task('templates', (done) => {
-	gulp
+gulp.task('templates', () => {
+	return gulp
 		.src(path.templates + '/*.hbs')
 		.pipe(handlebars({
 			data: path.data + '/*.json',
@@ -59,11 +57,10 @@ gulp.task('templates', (done) => {
 		}))
 		.pipe(gulp.dest('./www'))
 		.pipe(browserSync.stream())
-	done();
 });
 
-gulp.task('work', (done) => {
-	gulp
+gulp.task('work', () => {
+	return gulp
 		.src(path.work + '/*.hbs')
 		.pipe(handlebars({
 			data: path.data + '/*.json',
@@ -75,60 +72,66 @@ gulp.task('work', (done) => {
 		}))
 		.pipe(gulp.dest('./www/work/'))
 		.pipe(browserSync.stream())
-	done();
 });
 
-gulp.task('images', (done) => {
-	gulp
+gulp.task('images', () => {
+	return gulp
 		.src(path.images + supportedImages)
 		.pipe(gulp.dest('./www/images'))
-		.pipe(webp())
-		.pipe(gulp.dest('./www/images'))
 		.pipe(browserSync.stream())
-	done();
 });
 
-gulp.task('avif', (done) => {
-	gulp
+gulp.task('webp', () => {
+	return gulp
+		.src(path.images + supportedImages)
+		.pipe(webp())
+		// .pipe(rename((path) => {
+		// 	path.extname = '.webp';
+		// }))
+		.pipe(gulp.dest('./www/images'))
+		.pipe(browserSync.stream())
+});
+
+gulp.task('avif', () => {
+	return gulp
 		.src(path.images + '/**/*.{png}')
 		.pipe(gulpAvif())
+		// .pipe(rename((path) => {
+		// 	path.extname = '.avif';
+		// }))
 		.pipe(gulp.dest('./www/images'))
 		.pipe(browserSync.stream())
 	done();
 });
 
-gulp.task('videos', (done) => {
-	gulp
+gulp.task('videos', () => {
+	return gulp
 		.src(path.videos + '/**/*.{webm,mp4}')
 		.pipe(gulp.dest('./www/videos'))
-	done();
 });
 
-gulp.task('fonts', (done) => {
-	gulp
+gulp.task('fonts', () => {
+	return gulp
 		.src(path.fonts + '/**/*.{eot,svg,ttf,woff,woff2}')
 		.pipe(gulp.dest('./www/fonts'))
 		.pipe(browserSync.stream())
-	done();
 });
 
-gulp.task('files', (done) => {
-	gulp
+gulp.task('files', () => {
+	return gulp
 		.src(path.files + '**/*')
 		.pipe(gulp.dest('./www/'))
 		.pipe(browserSync.stream())
-	done();
 });
 
-gulp.task('sitemap', (done) => {
-    gulp
+gulp.task('sitemap', () => {
+    return gulp
 		.src('www/*.html', { read: false })
 		.pipe(sitemap({
 			siteUrl: 'http://www.menosketiago.com'
 		}))
 		.pipe(gulp.dest('./www/'))
 		.pipe(browserSync.stream())
-	done();
 });
 
 gulp.task('browser-sync', (done) => {
@@ -146,6 +149,7 @@ gulp.task('watch', (done) => {
 	gulp.watch(path.templates + '/**/*.hbs', gulp.series('templates'));
 	gulp.watch(path.work + '/**/*.hbs', gulp.series('work'));
 	gulp.watch(path.images + supportedImages, gulp.series('images'));
+	gulp.watch(path.images + '/**/*.{png}', gulp.series('webp'));
 	gulp.watch(path.images + '/**/*.{png}', gulp.series('avif'));
 	gulp.watch(path.videos + '/**/*.{webm,mp4}', gulp.series('videos'));
 	gulp.watch(path.fonts + '/**/*.{eot,svg,ttf,woff,woff2}', gulp.series('fonts'));
@@ -166,6 +170,7 @@ gulp.task('default',
 		'work',
 		'scripts',
 		'images',
+		'webp',
 		'avif',
 		'files',
 		'sitemap'

@@ -33,13 +33,16 @@
         "gulp-babel": "^8.0.0",
         "gulp-concat": "^2.6.0",
         "gulp-declare": "^0.3.0",
+        "gulp-ext-replace": "^0.3.0",
         "gulp-hb": "^8.0.0",
         "gulp-image": "^6.2.1",
         "gulp-rename": "^1.4.0",
         "gulp-sass": "^4.1.0",
         "gulp-sitemap": "^7.7.0",
         "gulp-webp": "^4.0.1",
-        "gulp-wrap": "^0.15.0"
+        "gulp-wrap": "^0.15.0",
+        "imagemin": "^7.0.1",
+        "imagemin-webp": "^6.0.0"
     },
     "dependencies": {
         "@babel/runtime": "^7.12.13",
@@ -48,7 +51,7 @@
         "gulp-csso": "^4.0.1",
         "gulp-htmlmin": "^5.0.1",
         "gulp-imagemin": "^7.1.0",
-        "handlebars": "^4.7.6",
+        "handlebars": "^4.7.7",
         "imagesloaded": "^4.1.4",
         "kind-of": ">=6.0.3",
         "lodash": ">=4.17.19",
