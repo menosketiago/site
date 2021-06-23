@@ -1,0 +1,18 @@
+.back-to-top {
+    position: fixed;
+    right: $space-extra;
+    bottom: $space-extra;
+    width: 60px;
+    height: 60px;
+    margin: 0;
+    color: var(--main-bg-color);
+    background: var(--main-text-color);
+    border-radius: 50%;
+    font-size: 24px;
+
+    &:hover:not(:active) {
+        color: var(--main-text-color);
+        background: var(--main-bg-color);
+        border-color: var(--main-text-color);
+    }
+}

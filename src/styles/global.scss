@@ -1,3 +1,4 @@
+
 html {
 	scroll-behavior: smooth;
 
@@ -17,12 +18,23 @@ body {
 	width: 100vw;
 	min-height: 100vh;
 	margin: 0;
-	padding: 0;
-	color: $black;
-	background: $body-bg;
-    overflow: hidden;
+	padding: $space-jumbo;
+	color: var(--main-text-color);
+	background: var(--main-bg-color);
 
 	@include flexbox();
+	@include justify-content(center);
+}
+
+a {
+	color: var(--main-text-color);
+	font-weight: $bold;
+
+	&:hover,
+	&:active,
+	&:visited {
+		color: var(--main-text-color);
+	}
 }
 
 img,
@@ -49,6 +61,11 @@ hr {
 	border: 0;
 }
 
+section {
+	margin: $space-jumbo 0;
+	scroll-margin: $space-jumbo;
+}
+
 // NO MARGIN CLASS
 
 .no-margin {
@@ -62,4 +79,17 @@ hr {
 	&-tb { margin-top: $space-base !important; }
 	&-tl { margin-top: $space-large !important; }
 	&-te { margin-top: $space-extra !important; }
+}
+
+// TOOLTIP TRIGGER
+
+[data-tooltip] {
+	cursor: pointer;
+}
+
+// WRAPPER
+
+.wrapper {
+    width: 100%;
+    max-width: 1112px;
 }

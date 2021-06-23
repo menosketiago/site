@@ -1,23 +1,12 @@
-<section id="work" role="region" aria-label="Work section with a grid of thumbnails that link to case studies of my work">
-    {{#work}}
-        {{#each pages}}
-            {{!-- Work items wrapper (one for each 9 items) --}}
-            <div id="page-{{@key}}" class="wrapper">
-                {{#each page}}
-                    <a id="{{name}}" class="item" tabindex="0" {{#if dark-mode}}data-dark{{/if}} {{#if theme}}data-theme="{{theme}}"{{/if}} role="navigation" aria-label="Open case study for {{title}}.{{category}} category">
-                        <h3 aria-hidden="true">{{category}}</h3>
-                        <h2 aria-hidden="true">{{title}}</h2>
-                        <div class="view" aria-hidden="true">
-                            {{> icons/view}}
-                            View
-                        </div>
-                    </a>
-                {{/each}}
-            </div>
-        {{/each}}
-    {{/work}}
-
-    {{!-- Buttons to scroll work items sideways --}}
-    <button class="scroll left is-hidden" tabindex="-1" aria-hidden="true">{{> icons/chevron}}</button>
-    <button class="scroll right is-hidden" tabindex="-1" aria-hidden="true">{{> icons/chevron}}</button>
+<section id="work" role="region" aria-label="Section about companies and projects that I worked at">
+    <h2>Work —</h2>
+    
+    <picture>
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/avatar.{{key}} 1x, ./images/avatar-2x.{{key}} 2x" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img class="logo" src="./images/avatar-halftone.jpg" alt="">
+    </picture>
 </section>

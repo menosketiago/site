@@ -7,31 +7,34 @@
 
 <body>
 	<!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PSWB49G"
-	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<noscript>
+		<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PSWB49G"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe>
+	</noscript>
 	<!-- End Google Tag Manager (noscript) -->
 
-	<header>
-		{{> header}}
-	</header>
+	<div class="wrapper">
+		<header>
+			{{> header}}
+		</header>
 
-	<main>
-		{{!-- Buttons to scroll the content sections --}}
-		<button id="btn-scroll-up" class="scroll up is-hidden" tabindex="-1" aria-hidden="true">{{> icons/arrow}}</button>
-		<button id="btn-scroll-down" class="scroll down" tabindex="-1" aria-hidden="true">{{> icons/arrow}}</button>
-		<button id="btn-scroll-top" class="scroll top is-hidden" tabindex="-1" aria-hidden="true">{{> icons/back-to-top}}</button>
+		<main>
+			{{!-- Scroll to top button --}}
+			<button id="btn-scroll-top" class="back-to-top is-hidden" tabindex="-1" aria-hidden="true">↑</button>
 
-		{{!-- Content sections --}}
-		{{> sections/home}}
-		{{> sections/about}}
-		{{> sections/work}}
-		{{> sections/contact}}
-	</main>
+			{{!-- Content sections --}}
+			{{> sections/about}}
+			{{> sections/work}}
+			{{> sections/writing}}
+			{{> sections/contact}}
+			{{> sections/bye}}
+		</main>
 
-	<footer>
-		{{> footer}}
-	</footer>
-	{{> modal}}
+		<footer>
+			{{> footer}}
+		</footer>
+	</div>
+
 	{{> tooltip}}
 
 	{{!-- JS --}}
