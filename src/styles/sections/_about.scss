@@ -17,6 +17,7 @@
 			width: $avatar-size-large;
 			height: $avatar-size-large;
 			margin: 0;
+			background-color: $yellow;
 			border: $space-tiny solid $white;
 
 			@include transform(translate(-50%, -50%));
