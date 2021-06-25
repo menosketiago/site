@@ -1,3 +1,22 @@
 #writing {
-   
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    column-gap: $space-extra;
+    justify-items: flex-start;
+
+    > * {
+        grid-column-start: 2;
+    }
+
+    article {
+        margin: $space-extra 0;
+
+        &:first-of-type {
+            margin-top: $space-jumbo;
+        }
+        
+        a {
+            margin-top: $space-extra;
+        }
+    }
 }

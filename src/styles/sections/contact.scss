@@ -1,3 +1,17 @@
 #contact {
-    
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    column-gap: $space-extra;
+    justify-items: flex-start;
+
+    > * {
+        grid-column-start: 1;
+    }
+
+    form {
+        margin: 0;
+        margin-top: $space-extra;
+        width: 100%;
+        text-align: right;
+    }
 }

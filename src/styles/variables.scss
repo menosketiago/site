@@ -3,7 +3,8 @@
 :root {
 	--main-bg-color: #F7FF00;
     --main-text-color: #222222;
-    --btn-secondary-bg-color: rgba(34, 34, 34, 0.1);
+    --main-bg-transparency: rgba(34, 34, 34, 0.1);
+    --main-input-transparency: rgba(34, 34, 34, 0.05);
 }
 
 $gold: #FFDD60;
@@ -37,6 +38,12 @@ $space-base: $space-tiny * 3;
 $space-large: $space-base * 2;
 $space-extra: $space-large * 2;
 $space-jumbo: $space-extra * 2;
+
+$input-height: 66px;
+$input-padding: 16px;
+
+$loading-width: $space-extra * 2;
+$tooltip-caret-width: $space-base;
 
 // Z-INDEXES
 

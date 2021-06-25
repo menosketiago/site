@@ -17,7 +17,8 @@ body {
 
 h1, 
 h2, 
-h3 {
+h3,
+h4 {
     margin: 0;
     line-height: 1em;
     text-transform: uppercase;
@@ -39,13 +40,32 @@ h2 {
 }
 
 h3 {
+    margin-bottom: $space-extra;
     font-size: 1.777rem;
     font-weight: $black;
 }
 
+h4 {
+    margin-bottom: $space-small;
+    font-size: 1rem;
+    font-weight: $bold;
+    line-height: 1em;
+
+    span {
+        font-weight: $medium;
+        text-transform: none;
+    }
+}
+
 p {
+    margin: 0;
+    margin-bottom: $space-large;
     font-size: $paragraph-font-size;
 	line-height: 1.6em;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
 
     a {
         font-weight: $extra-bold;

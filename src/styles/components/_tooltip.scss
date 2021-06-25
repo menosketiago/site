@@ -1,18 +1,16 @@
 .tooltip {
     z-index: $z-index-tooltip;
     position: absolute;
-    max-width: $default-width / 3;
-    padding: $space-small $space-base;
-    color: $blue;
-    background: $yellow;
-    font-size: 0.9em; // 16px
-    text-transform: uppercase;
+    max-width: $space-jumbo * 3;
+    padding: $space-base ($space-base + $space-tiny);
+    color: var(--main-bg-color);
+    background: var(--main-text-color);
+    font-size: 1em;
+    font-weight: $medium;
     text-align: center;
-    line-height: 1em;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    box-shadow: $default-box-shadow;
     transition:
         opacity $speed-default ease,
         transform $speed-default ease;
@@ -32,9 +30,6 @@
         background: inherit;
         font-size: 1rem;
         user-select: none;
-        box-shadow:
-            1px 1px 1px 0 rgba($black, .2),
-            1px 2px 4px 0 rgba($black, .1);
 
         @include transform(translate(-50%, 50%) rotate(45deg));
     }

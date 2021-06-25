@@ -1,22 +1,20 @@
 .input {
     position: relative;
     width: 100%;
-    max-width: $input-width;
     margin-bottom: $space-large;
 
-    &:last-child {
-        margin-bottom: 0;
+    &:last-of-type {
+        margin-bottom: $space-extra;
     }
 
     label {
         position: absolute;
-        top: ($input-height / 2) + $text-fix;
+        top: ($input-height / 2);
         left: $input-padding;
-        padding: $space-tiny;
-        color: $gray-mid;
-        background: $white;
-        font-size: 0.8em;
-        font-weight: $regular;
+        margin: 0;
+        color: var(--main-text-color);
+        font-size: 0.875em;
+        font-weight: $bold;
         text-transform: uppercase;
         line-height: 1em;
         pointer-events: none;
@@ -30,160 +28,56 @@
         width: 100%;
         height: $input-height;
         padding: $input-padding;
-        // Fix for text aligment
-        padding-bottom: $space-base - $text-fix;
-        color: $black;
-        background-color: $white;
+        padding-bottom: $space-base;
+        background-color: var(--main-input-transparency);
         background-image: none;
         background-position-x: 150%;
-        font-family: $body-font;
-        font-size: $body-font-size;
-        font-weight: $book;
-        border: 1px solid $border-color;
-        transition:
-            border $speed-default ease,
-            background $speed-default ease;
+        border: 1px solid transparent;
+        font-family: 'Inter', Helvetica, Arial, sans-serif;
+        font-size: 1em;
+        font-weight: $medium;
+        transition: background $speed-default ease;
 
         &:hover {
-            border-color: $blue;
+            border-color: var(--main-text-color);
         }
-
+    
         &:active,
         &:focus {
-            border-color: $blue;
-            outline: $stroke-height solid $blue;
+            border-width: 2px;
+            border-color: var(--main-text-color);
 
             // LABEL CHANGES ON INPUT FOCUS
 
             ~ label {
-                top: $text-fix;
-                left: $input-padding - $text-fix;
-                color: $blue;
-                font-size: 0.7em;
+                top: $input-padding + 2px;
+                left: $input-padding + 2px;
+                font-size: 0.5em;
             }
         }
 
-        &.is-valid,
-        &.is-invalid {
-            background-repeat: no-repeat;
-            background-position-x: calc(100% - #{$input-padding});
-            background-position-y: ($input-height / 2) - ($input-icon-size / 2);
-            background-size: $input-icon-size;
-        }
-
-        &.is-valid  {
-            background-image: url($path-images + 'check.svg');
-        }
-
-       &.is-invalid {
-            border-color: $red;
-            background-image: url($path-images + 'error.svg');
-
-            &:active,
-            &:focus {
-                outline: $stroke-height solid $red;
-            }
-
+         &.has-value {
             ~ label {
-                top: $text-fix;
-                left: $input-padding - $text-fix;
-                color: $red !important;
-                font-size: 0.7em;
+                top: $input-padding + 2px;
+                left: $input-padding + 2px;
+                font-size: 0.5em;
             }
-        }
-
-        // KEEP LABEL FLOATED IF VALUE EXISTS
-
-        &.has-value {
-            ~ label {
-                top: $text-fix;
-                left: $input-padding - $text-fix;
-                color: mix($white, $gray-mid, 33%);
-                font-size: 0.7em;
-            }
-
+            
             &:hover ~ label,
             &:active ~ label,
             &:focus ~ label {
-                color: $blue;
+                top: $input-padding + 2px;
+                left: $input-padding + 2px;
+                font-size: 0.5em;
             }
         }
+            
     }
 
     textarea {
-        max-width: 100%;
-        min-height: $input-height * 3;
-    }
-
-    // CELAN AUTOCOMPLETE STYLES
-
-    input:-webkit-autofill,
-    input:-webkit-autofill:hover,
-    input:-webkit-autofill:focus,
-    textarea:-webkit-autofill,
-    textarea:-webkit-autofill:hover,
-    textarea:-webkit-autofill:focus {
-        transition: background-color 999999s ease 0s;
-    }
-
-    // MEDIA QUERIES
-
-	@media screen and (max-height: $screen-height-average) {
-        margin-bottom: ace-small;
-
-        label {
-            top: ($input-height-small / 2) + $text-fix;
-        }
-
-		input,
-        textarea {
-            height: $input-height-average;
-            font-size: $body-font-size-small;
-
-            &.is-valid,
-            &.is-invalid {
-                background-repeat: no-repeat;
-                background-position-y: ($input-height-small / 2) - ($input-icon-size-small / 2);
-                background-size: $input-icon-size-small;
-            }
-        }
-
-        textarea {
-            min-height: $input-height-average * 2;
-        }
-	}
-
-    @media screen and (max-height: $screen-height-small) {
-        margin-bottom: $space-base;
-
-        label {
-            left: $input-padding-small;
-        }
-
-        input,
-        textarea {
-            height: $input-height-small;
-            padding: $input-padding-small;
-
-            &.is-valid,
-            &.is-invalid {
-                background-position-x: calc(100% - #{$input-padding-small});
-                background-size: 14px;
-            }
-
-            &:active,
-            &:focus,
-            &.is-invalid,
-            &.has-value {
-                ~ label {
-                    left: $input-padding-small - $text-fix;
-                    font-size: 0.8em;
-                }
-            }
-        }
-
-        textarea {
-            min-height: $input-height-small * 2;
-        }
+        height: $input-height * 3;
+        padding: $input-padding;
+        padding-top: $input-padding + $space-small;
+        resize: vertical;
     }
 }

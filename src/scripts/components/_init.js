@@ -1,19 +1,15 @@
 // COMPONENTS
 
 import Focus from './Focus';
-import Input from './Input';
-import Modal from './Modal';
 import Name from './Name';
-import Navigator from './Navigator';
+import BackToTop from './BackToTop';
 import Tooltip from './Tooltip';
 import Year from './Year';
 
 const menos = window.menos = {
     Focus,
-    Input,
-    Modal,
     Name,
-    Navigator,
+    BackToTop,
     Tooltip,
     Year
 };
@@ -24,40 +20,26 @@ export function initComponents() {
 
     focus.init();
 
-    // INPUTS
-    let inputsArray = document.querySelectorAll('.input');
-
-    if (inputsArray) {
-        Array.from(inputsArray).forEach(inputDOM => {
-            let input = new Input(inputDOM);
-            input.init();
-        });
-    }
-
-    // MODAL
-    const workDOM = document.getElementById('modal');
-
-    if (workDOM) {
-        const modal = new Modal(workDOM);
-        modal.init();
-    }
-
     // NAME
     let namesArray = document.getElementsByClassName('name');
 
     if (namesArray) {
         Array.from(namesArray).forEach(nameDOM => {
             let name = new Name(nameDOM);
+            
             name.init();
         });
     }
 
-    // NAVIGATOR
-    const mainDOM = document.querySelector('main');
+    // BACK TO TOP
+    let backToTopArray = document.getElementsByClassName('back-to-top');
 
-    if (mainDOM) {
-        const navigator = new Navigator(mainDOM);
-        navigator.init();
+    if (backToTopArray) {
+        Array.from(backToTopArray).forEach(backToTopDOM => {
+            let backToTop = new BackToTop(backToTopDOM);
+
+            backToTop.init();
+        });
     }
 
     // TOOLTIPS
@@ -66,6 +48,7 @@ export function initComponents() {
     if (tooltipsArray) {
         Array.from(tooltipsArray).forEach(tooltipDOM => {
             let tooltip = new Tooltip(tooltipDOM);
+
             tooltip.init();
         });
     }
@@ -76,6 +59,7 @@ export function initComponents() {
     if (yearArray) {
         Array.from(yearArray).forEach(yearDOM => {
             let year = new Year(yearDOM);
+
             year.init();
         });
     }

@@ -27,6 +27,7 @@ body {
 }
 
 a {
+	display: inline-block;
 	color: var(--main-text-color);
 	font-weight: $bold;
 
@@ -39,7 +40,7 @@ a {
 
 img,
 figure,
-iframe {
+video {
 	max-width: 100%;
 }
 
@@ -84,7 +85,7 @@ section {
 // TOOLTIP TRIGGER
 
 [data-tooltip] {
-	cursor: pointer;
+	cursor: help;
 }
 
 // WRAPPER

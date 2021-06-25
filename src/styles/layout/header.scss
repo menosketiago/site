@@ -1,8 +1,12 @@
 header {
+    .logo {
+        scroll-margin: $space-jumbo;
+    }
+
     section {
         display: grid;
         grid-template-columns: 4fr 1fr;
-        gap: $space-extra;
+        column-gap: $space-extra;
         margin: ($space-jumbo * 2) 0;
 
         nav {
@@ -25,7 +29,7 @@ header {
                 }
 
                 &:hover {
-                    background: var(--btn-secondary-bg-color);
+                    background: var(--main-bg-transparency);
 
                     &::after {
                         opacity: 1;

@@ -1,20 +1,14 @@
 <section id="about" role="region" aria-label="Section with information about me and my design philosophy">
     <div class="avatar">
-        <picture aria-hidden="false">
-            {{#formats}}
-                {{#each format}}
-                    <source srcset="./images/avatar-halftone.{{key}} 1x, ./images/avatar-halftone-2x.{{key}} 2x" type="image/{{key}}">
-                {{/each}}
-            {{/formats}}
-            <img class="logo" src="./images/avatar-halftone.jpg" alt="An halftone image featuring me wearing an hawaian shirt and a really big smile">
+        <picture>
+            <source srcset="./images/avatar-halftone.avif 1x, ./images/avatar-halftone-2x.avif 2x" type="image/avif">
+            <source srcset="./images/avatar-halftone.webp 1x, ./images/avatar-halftone-2x.webp 2x" type="image/webp">
+            <img class="logo" src="./images/avatar-halftone.jpg" alt="">
         </picture>
-        <picture aria-hidden="true">
-            {{#formats}}
-                {{#each format}}
-                    <source srcset="./images/avatar.{{key}} 1x, ./images/avatar-2x.{{key}} 2x" type="image/{{key}}">
-                {{/each}}
-            {{/formats}}
-            <img class="logo" src="./images/avatar-halftone.jpg" alt="An image featuring me wearing an hawaian shirt and a really big smile">
+        <picture>
+            <source srcset="./images/avatar.avif 1x, ./images/avatar-2x.avif 2x" type="image/avif">
+            <source srcset="./images/avatar.webp 1x, ./images/avatar-2x.webp 2x" type="image/webp">
+            <img class="logo" src="./images/avatar.jpg" alt="">
         </picture>
     </div>
 

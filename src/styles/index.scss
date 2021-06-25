@@ -12,6 +12,7 @@
 // LAYOUT
 
 @import 'layout/header';
+@import 'layout/dual-column';
 @import 'layout/footer';
 
 // SECTIONS
@@ -26,11 +27,11 @@
 
 @import 'components/buttons';
 @import 'components/back-to-top';
-// @import 'components/inputs';
+@import 'components/inputs';
 // @import 'components/loading';
 // @import 'components/modal';
 // @import 'components/name';
-// @import 'components/tooltip';
+@import 'components/tooltip';
 
 // RESPONSIVENESS
 

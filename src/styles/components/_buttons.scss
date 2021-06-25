@@ -1,6 +1,6 @@
 button,
 .btn {
-    appearance: none;
+    display: inline-block;
     margin: 0;
     margin-right: $space-base;
     padding: $space-base;
@@ -24,7 +24,7 @@ button,
     }
 
     &.secondary {
-        background: var(--btn-secondary-bg-color);
+        background: var(--main-bg-transparency);
         border: none;
     }
 }

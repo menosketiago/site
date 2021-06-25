@@ -1,0 +1,24 @@
+// DUAL COLUMN COMPONENT
+
+.dual-column {
+	display: grid;
+    grid-template-columns: 2fr 2fr;
+    column-gap: $space-extra;
+
+    article {
+        margin: $space-extra 0;
+        margin-bottom: $space-jumbo;
+
+        hgroup {
+            margin-top: $space-extra;
+
+            h3 {
+                margin-bottom: $space-large;
+            }
+
+            h4 {
+                margin-bottom: $space-extra;
+            }
+        }
+    }
+}
