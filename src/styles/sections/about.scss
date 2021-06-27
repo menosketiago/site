@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: 2fr 3fr;
     column-gap: $space-extra;
+    align-items: flex-start;
 
     p {
         &:last-of-type {
@@ -14,8 +15,12 @@
         cursor: pointer;
 
         picture {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: auto;
+            transition: opacity $speed-slow ease;
 
             img {
                 width: inherit;
@@ -23,16 +28,10 @@
             }
 
             &:nth-child(2) {
-                position: absolute;
-                top: 0;
-                left: 0;
                 opacity: 0;
-                transition: opacity $speed-slow ease;
             }
-        }
-
-        &:hover {
-            picture {
+            
+            &:hover {
                 &:nth-child(2) {
                     opacity: 1;
                 }
