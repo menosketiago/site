@@ -12,6 +12,7 @@
 // LAYOUT
 
 @import 'layout/header';
+@import 'layout/grids';
 @import 'layout/dual-column';
 @import 'layout/footer';
 
@@ -32,6 +33,13 @@
 // @import 'components/modal';
 @import 'components/name';
 @import 'components/tooltip';
+
+// WORK
+
+@import 'work/themes';
+@import 'work/work-header';
+@import 'work/work-main';
+
 
 // RESPONSIVENESS
 

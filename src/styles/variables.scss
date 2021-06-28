@@ -5,10 +5,18 @@
     --main-text-color: #222222;
     --main-bg-transparency: rgba(34, 34, 34, 0.1);
     --main-input-transparency: rgba(34, 34, 34, 0.05);
+
+    --theme-dark-bg-color: #000000;
+    --theme-dark-text-color: #f0f0f0;
+    --theme-dark-accent: #F7FF00;
+    --theme-dark-transparency: rgba(247, 255, 0, 0.1);
+
+    --theme-alien-bg-color: #222222;
+    --theme-alien-accent: #3AA550;
+    --theme-alien-transparency: rgba(58, 165, 80, 0.1);
 }
 
 $gold: #FFDD60;
-$alien-color: #3AA550;
 $mana-color: #fc6104;
 $trids-color: #00afaf;
 $nex-color: #c8cd2d;

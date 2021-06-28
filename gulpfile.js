@@ -65,6 +65,7 @@ gulp.task('work', () => {
 		.pipe(handlebars({
 			data: path.data + '/*.json',
 			helpers: '',
+			partials: path.templates + '/partials/**/*.hbs',
 			bustCache: true
 		}))
 		.pipe(rename((path) => {

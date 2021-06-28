@@ -12,18 +12,17 @@ footer {
                 margin-bottom: $space-extra;
             }
 
-            [data-tooltip] {
-                margin: -$space-tiny 0;
-                padding: $space-tiny $space-small;
-                background: var(--btn-secondary-bg-color);
+            .highlight {
+                margin: -2px 0;
+                padding: 2px $space-tiny;
+                background: var(--main-bg-transparency);
+                font-weight: inherit;
             }
         }
     }
 
     .icon {
-        @include flexbox();
-        @include flex-direction(column);
-        @include justify-content(flex-end);
-        @include align-items(flex-end);
+        justify-self: flex-end;
+        align-self: flex-end;
     }
-}
+}   

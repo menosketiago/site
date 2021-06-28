@@ -1,0 +1,40 @@
+.work-main {
+    margin-bottom: $space-jumbo * 2;
+
+    h1 {
+        margin-bottom: $space-jumbo;
+        font-weight: $black;
+    }
+
+    aside {
+        hgroup {
+            margin-bottom: $space-large;
+
+            p {
+                font-size: 1em;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+       } 
+    }
+
+    article {
+        margin: $space-jumbo 0;
+
+        figure,
+        video {
+            margin: 0;
+        }
+    }
+
+    figure,
+    video {
+        justify-self: center;
+        width: 100%;
+        height: auto;
+        margin: 0;
+        margin-bottom: $space-jumbo;
+    }
+}

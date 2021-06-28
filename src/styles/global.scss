@@ -30,11 +30,24 @@ a {
 	display: inline-block;
 	color: var(--main-text-color);
 	font-weight: $bold;
+	text-underline-offset: .15em;
 
 	&:hover,
 	&:active,
 	&:visited {
 		color: var(--main-text-color);
+	}
+
+	&.arrow-right {
+		&::after {
+			content: '\00a0\00a0→';
+		}
+	}
+
+	&.arrow-left {
+		&::before {
+			content: '←\00a0\00a0';
+		}
 	}
 }
 
@@ -42,6 +55,18 @@ img,
 figure,
 video {
 	max-width: 100%;
+}
+
+figure {
+	figcaption {
+		margin-top: $space-large;
+		color: var(--main-text-color);
+		font-size: 1rem;
+
+		&::before {
+			content: '—\00a0\00a0';
+		}
+	}
 }
 
 svg {

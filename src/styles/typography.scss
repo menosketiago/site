@@ -18,7 +18,8 @@ body {
 h1, 
 h2, 
 h3,
-h4 {
+h4,
+h5 {
     margin: 0;
     line-height: 1em;
     text-transform: uppercase;
@@ -46,7 +47,7 @@ h3 {
 }
 
 h4 {
-    margin-bottom: $space-small;
+    margin-bottom: $space-base;
     font-size: 1rem;
     font-weight: $bold;
     line-height: 1em;
@@ -54,6 +55,22 @@ h4 {
     span {
         font-weight: $medium;
         text-transform: none;
+    }
+}
+
+h5 {
+    margin-bottom: $space-small;
+    font-size: 1rem;
+    font-weight: $medium;
+    text-transform: none;
+
+    a {
+        font-weight: $medium;
+        text-decoration: none;
+
+        &:hover:not(:active) {
+            text-decoration: underline;
+        }
     }
 }
 

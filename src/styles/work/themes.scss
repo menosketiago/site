@@ -1,0 +1,110 @@
+.theme {
+    // DARK THEME
+
+    &-dark {
+        color: var(--theme-dark-text-color);
+        background: var(--theme-dark-bg-color);
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: var(--theme-dark-accent);
+        }
+
+        a {
+            color: var(--theme-dark-accent);
+        }
+
+        figcaption {
+            color: var(--theme-dark-accent);
+        }
+
+        .btn {
+            color: var(--theme-dark-accent);
+            border-color: var(--theme-dark-accent);
+
+            &:hover:not(:active) {
+                background: var(--theme-dark-accent);
+                color: var(--theme-dark-bg-color);
+            }
+
+            &.secondary {
+                background: var(--theme-dark-transparency);
+            }
+        }
+
+        .back-to-top {
+            background: var(--theme-dark-accent);
+            color: var(--theme-dark-bg-color);
+
+            &:hover:not(:active) {
+                background: var(--theme-dark-bg-color);
+                color: var(--theme-dark-accent);
+                border-color: var(--theme-dark-accent);
+            }
+        }
+
+        .highlight {
+            background: var(--theme-dark-transparency);
+        }
+
+        .tooltip {
+            color: var(--theme-dark-accent);
+        }
+    }
+
+    // ALIEN THEME
+
+    &-alien {
+        background: var(--theme-alien-bg-color);
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: var(--theme-alien-accent);
+        }
+
+        a {
+            color: var(--theme-alien-accent);
+        }
+
+        figcaption {
+            color: var(--theme-alien-accent);
+        }
+
+        .btn {
+            color: var(--theme-alien-accent);
+            border-color: var(--theme-alien-accent);
+
+            &:hover:not(:active) {
+                background: var(--theme-alien-accent);
+                color: var(--theme-alien-bg-color);
+            }
+
+            &.secondary {
+                background: var(--theme-alien-transparency);
+            }
+        }
+
+        .back-to-top {
+            background: var(--theme-alien-accent);
+            color: var(--theme-alien-bg-color);
+
+            &:hover:not(:active) {
+                background: var(--theme-alien-bg-color);
+                color: var(--theme-alien-accent);
+                border-color: var(--theme-alien-accent);
+            }
+        }
+
+        .highlight {
+            background: var(--theme-alien-transparency);
+        }
+
+        .tooltip {
+            color: var(--theme-alien-accent);
+        }
+    }
+}
