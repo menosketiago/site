@@ -37,6 +37,10 @@
 }
 
 .m {
+    &-tj {
+        margin-top: $space-jumbo !important;
+    }
+
     &-th {
         margin-top: $space-jumbo * 2 !important;
     }
