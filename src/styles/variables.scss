@@ -14,12 +14,14 @@
     --theme-alien-bg-color: #222222;
     --theme-alien-accent: #3AA550;
     --theme-alien-transparency: rgba(58, 165, 80, 0.1);
-}
 
-$gold: #FFDD60;
-$mana-color: #fc6104;
-$trids-color: #00afaf;
-$nex-color: #c8cd2d;
+    --theme-gold-accent: #FFDD60;
+    --theme-gold-transparency: rgba(255, 221, 96, 0.15);
+
+    --theme-trids-bg-color: #ffffff;
+    --theme-trids-accent: #00afaf;
+    --theme-trids-transparency: rgba(0, 175, 175, 0.1);
+}
 
 // TYPOGRAPHY
 

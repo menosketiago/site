@@ -107,4 +107,108 @@
             color: var(--theme-alien-accent);
         }
     }
+
+    // GOLD THEME
+
+    &-gold {
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: var(--theme-gold-accent);
+        }
+
+        a {
+            color: var(--theme-gold-accent);
+        }
+
+        figcaption {
+            color: var(--theme-gold-accent);
+        }
+
+        .btn {
+            color: var(--theme-gold-accent);
+            border-color: var(--theme-gold-accent);
+
+            &:hover:not(:active) {
+                background: var(--theme-gold-accent);
+            }
+
+            &.secondary {
+                background: var(--theme-gold-transparency);
+            }
+        }
+
+        .back-to-top {
+            background: var(--theme-gold-accent);
+
+            &:hover:not(:active) {
+                color: var(--theme-gold-accent);
+                border-color: var(--theme-gold-accent);
+            }
+        }
+
+        .highlight {
+            background: var(--theme-gold-transparency);
+        }
+
+        .tooltip {
+            color: var(--theme-gold-accent);
+        }
+    }
+
+    // TRIDS THEME
+
+    &-trids {
+        color: var(--theme-trids-text-color);
+        background: var(--theme-trids-bg-color);
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: var(--theme-trids-accent);
+        }
+
+        a {
+            color: var(--theme-trids-accent);
+        }
+
+        figcaption {
+            color: var(--theme-trids-accent);
+        }
+
+        .btn {
+            color: var(--theme-trids-accent);
+            border-color: var(--theme-trids-accent);
+
+            &:hover:not(:active) {
+                background: var(--theme-trids-accent);
+                color: var(--theme-trids-bg-color);
+            }
+
+            &.secondary {
+                background: var(--theme-trids-transparency);
+            }
+        }
+
+        .back-to-top {
+            background: var(--theme-trids-accent);
+            color: var(--theme-trids-bg-color);
+
+            &:hover:not(:active) {
+                background: var(--theme-trids-bg-color);
+                color: var(--theme-trids-accent);
+                border-color: var(--theme-trids-accent);
+            }
+        }
+
+        .highlight {
+            background: var(--theme-trids-transparency);
+        }
+
+        .tooltip {
+            color: var(--theme-trids-accent);
+        }
+    }
 }
