@@ -1,0 +1,139 @@
+{{!-- Prevent search engines from indexing these partials --}}
+<meta name="robots" content="noindex, nofollow">
+
+<aside>
+    <h5>Timeframe</h5>
+    <h6><time>2017</time></h6>
+
+    <h5>Employer</h5>
+    <h6><a href="https://www.ericsson.com" target="_blank" rel="noopener">Ericsson</a></h6>
+</aside>
+
+<header>
+    <h3>Art Direction</h3>
+    <h1>Ericsson Security Manager VR</h1>
+
+    <hgroup>
+        <h5>Tools</h5>
+        <h6>HTC Vive • Cinema 4D • Illustrator • Photoshop • After Effects</h6>
+    </hgroup>
+
+    {{!-- Avatars --}}
+    <section>
+        <h5>Team</h5>
+        <a
+            id="didier"
+            class="avatar"
+            href="https://www.linkedin.com/in/didier-chincholle-public/"
+            target="_blank"
+            rel="noopener"
+            data-initials="DC"
+            data-tooltip="Didier Chincholle"
+            aria-label="Didier Chincholle"
+        ></a>
+        <a
+            id="juan"
+            class="avatar"
+            href="https://www.linkedin.com/in/grecojuan/"
+            target="_blank"
+            rel="noopener"
+            data-initials="JG"
+            data-tooltip="Juan Greco"
+            aria-label="Juan Greco"
+        ></a>
+        <a
+            id="onur"
+            class="avatar"
+            href="https://www.linkedin.com/in/onkurt/"
+            target="_blank"
+            rel="noopener"
+            data-initials="OK"
+            data-tooltip="Onur Kurt"
+            aria-label="Onur Kurt"
+        ></a>
+        <a
+            id="ariane" class="avatar" href="https://www.linkedin.com/in/arianebundoc/"
+            target="_blank"
+            rel="noopener"
+            data-initials="AB"
+            data-tooltip="Ariane Bundoc"
+            aria-label="Ariane Bundoc"
+        ></a>
+        <a
+            id="linda"
+            class="avatar"
+            href="https://www.linkedin.com/in/linda-holmqvist-14222567/"
+            target="_blank"
+            rel="noopener"
+            data-initials="LH"
+            data-tooltip="Linda Holmqvist"
+            aria-label="Linda Holmqvist"
+        ></a>
+    </section>
+</header>
+
+<p>
+    With less than two months to go for the <em>Ericsson Leadership Summit 2017</em>, an event that gathered hundreds of Ericsson top managers from all over the world in Globen, the <em>Ericsson Customer Experience</em> team got a very unusual request from high up in the ladder.
+</p>
+<p>
+    We were asked to craft a VR experience that showed how the new brand could be applied to the new media. And even though our hands were already full with the creation of an end-to-end product flow, helping in the creation of a brand reveal video and doing our presentation of the <em>Ericsson UX 2.0</em> vision, we took up the challenge anyway.
+</p>
+
+<h2>Trying and making VR for the first time</h2>
+
+<p>
+    The main problem was that no one in the team had any previous experience with VR, nor even as users. So our first step was to borrow an <em>HTC Vive</em> and a beefy laptop from the <em>Ericsson Lab</em> and get our feet wet as we sailed previously unknown waters.
+</p>
+<p>
+    We learned a couple of things doing it, but two were critical insights. First, we did not have the necessary skills to develop the experience ourselves (even though we had some game engine experience) on such a short deadline. Secondly, as the first introduction to VR for many of the people at the summit, we needed to keep it simple enough and as motion sickness safe as possible.
+</p>
+<p>
+    To tackle both issues, we created a preliminary concept of what the experience would be like, and after that convincing the stakeholders to allocate a budget, in order to enlist the much more experienced folks at <a href="https://www.mediamonks.com/" target="_blank" rel="noopener">Media Monks Stockholm</a>.
+</p>
+
+<h2>From 2D to 3D</h2>
+
+<p>
+    Rewinding just a bit to the concept phase, we also had the challenge of making something that made reasonable sense, as part of a future Ericsson product portfolio. After some ideation, we decided to adapt the geolocation feature on the <em>Ericsson Security Manager</em> into virtual reality.
+</p>
+<p>
+    To visualize the concept, I created a 3D model of the globe in <em>Cinema 4D</em>, rendered out an image that showed the overall art direction and environment. After that, it was just a matter of mocking up the different HUD (heads up display) UI elements and create a rough experience flow in <em>Illustrator</em>.
+</p>
+
+<figure>
+    <picture>
+        {{#formats}}
+            {{#each format}}
+                <source srcset="./images/ericsson/esm-mock.{{key}}" type="image/{{key}}">
+            {{/each}}
+        {{/formats}}
+        <img src="./images/ericsson/esm-mock.jpg" alt="Sketch mockup of the map feature in ESM">
+    </picture>
+    <figcaption class="bottom">Sketch mockup of the map feature in ESM</figcaption>
+</figure>
+
+<figure>
+    <video autoplay loop muted playsinline aria-label="An animated image that was used to illustrate how the VR experience should look and feel like">
+        <source src="./videos/ericsson/esm-vr-concept.webm" type="video/webm">
+        <source src="./videos/ericsson/esm-vr-concept.mp4" type="video/mp4">
+        <img src="./images/ericsson/esm-vr-concept.gif" alt="This is a fallback image in case your browser does not support HTML5">
+    </video>
+    <figcaption>A montage created to conceptualize the VR experience</figcaption>
+</figure>
+
+<h2>Accessible but memorable</h2>
+
+<p>
+    Thanks to the team at Media Monks, it was smooth sailing until we had a working experience that we could let the summit attendants try. In the meantime, we addressed the logistics by building our own VR ready desktop computer and designing an easy to move tripod setup for all the sensors and cabling. The experience was available to the different groups that cycled through our UX vision presentation, as it was simple enough for everyone to have fun, with just a little bit of coaching.
+</p>
+<p>
+    The experience was available to the different groups that cycled through our UX vision presentation, as it was simple enough for everyone to have fun, with just a little bit of coaching.
+</p>
+<p>
+    The goal was to monitor security threats that would pop around the globe, get details about them, and optionally address them. After a set amount of time, the "software" would enforce the necessary security measures and fix all issues (which is what the product does in reality). Still, the majority of the participants quickly engaged and got around to fixing the incoming threats.
+</p>
+
+<video controls playsinline aria-label="A video that shows the Ericsson Security Manager VR Experience">
+    <source src="./videos/ericsson/esm-vr.webm" type="video/webm">
+    <source src="./videos/ericsson/esm-vr.mp4" type="video/mp4">
+</video>
