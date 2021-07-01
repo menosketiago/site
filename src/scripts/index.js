@@ -6,3 +6,7 @@ import {initComponents} from './components/_init';
 
 window.initComponents = initComponents;
 window.modalContentFetched = false;
+
+window.addEventListener('load', () => {
+    window.initComponents();
+});
