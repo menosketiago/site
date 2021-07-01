@@ -1,0 +1,155 @@
+@media only screen
+and (max-device-width: 799px) {
+	body {
+		padding: $space-extra;
+		font-size: 14px;
+
+		h1 {
+			font-size: 1.602rem;
+		}
+
+		h2 {
+			font-size: 1.424rem;
+		}
+
+		h3 {
+			font-size: 1.266rem;
+		}
+
+		p {
+			font-size: 1.125rem;
+		}
+
+		header {
+			.logo {
+				width: 65px;
+				height: auto;
+			}
+
+			nav {
+				display: none;
+			}
+
+			section {
+				grid-template-columns: auto;
+				column-gap: initial;
+				margin: $space-extra 0;
+
+				.name {
+					margin: 0 -$space-tiny;
+					padding: 0 $space-tiny;
+					background: var(--main-bg-transparency);
+
+					&::after {
+						display: none;
+					}
+				}
+			}
+		}
+
+		#about {
+			grid-template-columns: auto;
+			column-gap: 0;
+			grid-template-rows: 1fr 1fr;
+			row-gap: $space-extra;
+
+			.avatar {
+				picture {
+					:first-of-type {
+						display: none;
+					}
+				}
+			}
+
+			.btn {
+				margin-bottom: 16px;
+			}
+		}
+
+		#work {
+			article {
+				margin-bottom: $space-large;
+
+				> div {
+					grid-template-columns: auto;
+					column-gap: 0;
+
+					h4 {
+						margin-top: $space-extra;
+					}
+				}
+			}
+		}
+
+		#writing,
+		#contact,
+		#bye,
+		.dual-column,
+		.work-header {
+			grid-template-columns: auto;
+			column-gap: 0;
+		}
+
+		.grid {
+			&-1-4,
+			&-2-2,
+			&-2-3,
+			&-3-2 {
+				grid-template-columns: auto;
+				column-gap: 0;
+			}
+		}
+
+		.grid-2-2 {
+			&:nth-child(even) {
+				@include flexbox();
+				@include flex-direction(column-reverse);
+			}
+		}
+
+		.input {
+			margin-bottom: $space-base;
+
+			&:last-of-type {
+				margin-bottom: $space-large;
+			}
+		}
+
+		footer {
+			grid-template-columns: auto;
+			column-gap: 0;
+
+			.icon {
+				justify-self: flex-start;
+
+				svg {
+					width: 50px;
+					height: auto;
+				}
+			}
+		}
+
+		.work-main {
+			h1 {
+				margin-bottom: $space-extra;
+			}
+
+			article {
+				margin: $space-extra 0;
+			}
+
+			aside {
+				margin-top: $space-extra;
+			}
+
+			figure,
+			video {
+				margin-bottom: $space-extra;
+			}
+
+			.m-th {
+				margin-top: $space-jumbo !important;
+			}
+		}
+	}
+}
