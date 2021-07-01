@@ -1,0 +1,32 @@
+#work {
+    h2 {
+        margin-bottom: $space-jumbo;
+    }
+
+    article {
+        margin: $space-extra 0;
+        margin-bottom: $space-jumbo;
+
+        > div {
+            display: grid;
+            grid-template-columns: 4fr 1fr;
+            column-gap: $space-jumbo;
+            justify-items: flex-start;
+            margin-top: $space-extra;
+
+            div:nth-child(2) {
+                b {
+                    margin-bottom: $space-large;
+                }
+
+                p {
+                    font-size: 1em;
+                }
+
+                a {
+                    margin-top: $space-extra;
+                }
+            }
+        }
+    }
+}

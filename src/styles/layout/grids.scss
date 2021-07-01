@@ -1,0 +1,47 @@
+.grid {
+    &-1-4 {
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+        column-gap: $space-extra;
+    }
+
+    &-2-2 {
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        column-gap: $space-extra;
+    }
+
+    &-2-3 {
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        column-gap: $space-extra;
+    }
+
+    &-3-2 {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        column-gap: $space-extra;
+    }
+}
+
+// UTILITY CLASSES
+
+.gap-jumbo {
+    column-gap: $space-jumbo;
+}
+
+.align-center {
+    > * {
+        align-self: center;
+    }
+}
+
+.m {
+    &-tj {
+        margin-top: $space-jumbo !important;
+    }
+
+    &-th {
+        margin-top: $space-jumbo * 2 !important;
+    }
+}

@@ -54,7 +54,7 @@ class Tooltip {
 
         trigger = this.dom.trigger;
         tooltip = this.dom.tooltip;
-        margin = 18;
+        margin = 4;
 
         // Get the trigger location
         triggerRect = this.dom.trigger.getBoundingClientRect();

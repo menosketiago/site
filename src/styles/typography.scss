@@ -1,202 +1,94 @@
-// IMPORT LOCAL FONTS
+// FONT IMPORT
 
-@font-face {
-    font-family: 'Bebas Neue Pro';
-    src: url($path-fonts + 'BebasNeuePro-Bold.woff2') format('woff2'),
-         url($path-fonts + 'BebasNeuePro-Bold.woff') format('woff'),
-         url($path-fonts + 'BebasNeuePro-Bold.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-}
+@import url('https://rsms.me/inter/inter.css');
 
-@font-face {
-    font-family: 'Bebas Neue Pro';
-    src: url($path-fonts + 'BebasNeuePro-Regular.woff2') format('woff2'),
-         url($path-fonts + 'BebasNeuePro-Regular.woff') format('woff'),
-         url($path-fonts + 'BebasNeuePro-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-}
+html { font-family: 'Inter', sans-serif; }
 
-@font-face {
-    font-family: 'Bebas Neue Pro';
-    src: url($path-fonts + 'BebasNeuePro-Book.woff2') format('woff2'),
-         url($path-fonts + 'BebasNeuePro-Book.woff') format('woff'),
-         url($path-fonts + 'BebasNeuePro-Book.ttf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
+@supports (font-variation-settings: normal) {
+	html { font-family: 'Inter var', sans-serif; }
 }
 
 body {
-    font-family: $body-font;
-	font-weight: $regular;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+	font-weight: $medium;
 	font-size: $body-font-size;
+	letter-spacing: -.02em;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, 
+h2, 
+h3,
+h4,
+h5 {
     margin: 0;
-    color: $black;
-    font-family: $header-font;
     line-height: 1em;
     text-transform: uppercase;
 }
 
 h1 {
-    color: $blue;
-    font-size: 2.5em;
-    font-weight: $bold;
+    font-size: 3.157rem;
+    font-weight: $medium;
+
+    b {
+        font-weight: $black;
+    }
 }
 
 h2 {
-    color: $blue;
-    font-size: 1.7em;
-    font-weight: $bold;
+	margin-bottom: $space-extra;
+    font-size: 2.369rem;
+    font-weight: $black;
 }
 
 h3 {
-    font-size: .9em;
-    font-weight: $regular;
+    margin-bottom: $space-extra;
+    font-size: 1.777rem;
+    font-weight: $black;
 }
 
 h4 {
-    display: inline-block;
-    color: $blue;
-    font-size: 1.3em;
+    margin-bottom: $space-base;
+    font-size: 1rem;
+    font-weight: $bold;
+    line-height: 1em;
+
+    span {
+        font-weight: $medium;
+        text-transform: none;
+    }
 }
 
 h5 {
-    display: inline-block;
-    color: $blue;
-    font-size: .7em;
-    font-weight: $bold;
-}
+    margin-bottom: $space-small;
+    font-size: 1rem;
+    font-weight: $medium;
+    text-transform: none;
 
-h6 {
-    display: inline-block;
-    color: $gray-dark;
-    font-size: .7em;
-    font-weight: $book;
-}
+    a {
+        font-weight: $medium;
+        text-decoration: none;
 
-hgroup {
-    line-height: 1em;
+        &:hover:not(:active) {
+            text-decoration: underline;
+        }
+    }
 }
 
 p {
-	margin: 0;
+    margin: 0;
     margin-bottom: $space-large;
-    font-weight: $book;
-    line-height: 1.2em;
+    font-size: $paragraph-font-size;
+	line-height: 1.6em;
 
-    &:last-child {
+    &:last-of-type {
         margin-bottom: 0;
     }
-}
 
-span {
-    font-weight: inherit;
-    line-height: inherit;
-}
-
-a {
-    color: $blue;
-    outline: 0;
-    font-weight: $regular;
-    transition: all $speed-default ease;
-
-    &:hover {
-        background: $yellow;
+    a {
+        font-weight: $extra-bold;
     }
 
-    &:active {
-        color: $white;
-        background: $blue;
-        text-decoration: none;
-    }
-
-    &.has-focus {
-        background: $yellow;
-    }
-}
-
-em {
-    color: $blue;
-    font-weight: $regular;
-    font-style: normal;
-}
-
-mark {
-    padding: 0 $space-tiny;
-    color: $blue;
-    background: $yellow;
-    font-weight: $regular;
-}
-
-blockquote {
-    color: $black;
-    margin: $space-large;
-    font-size: 1.4em;
-    text-transform: uppercase;
-    line-height: 1.2em;
-
-    &::before {
-        content: '';
-        display: block;
-        width: $space-extra * 2;
-        height: $stroke-height + 1px;
-        margin-bottom: $space-small * 2;
-        background: $blue;
-    }
-}
-
-// MEDIA QUERIES
-
-@media screen and (max-height: $screen-height-average) {
-    body {
-        font-size: $body-font-size-average;
-    }
-
-    h1 {
-        font-size: 2em;
-    }
-
-    h4 {
-        font-size: 1.1em;
-    }
-
-    h5, h6 {
-        font-size: 0.8em;
-    }
-}
-
-@media screen and (max-height: $screen-height-small) {
-    body {
-        font-size: $body-font-size-small;
-    }
-
-    h1 {
-        font-size: 2em;
-    }
-
-    h4 {
-        font-size: 1.1em;
-    }
-
-    h5, h6 {
-        font-size: .7em;
-    }
-
-    p {
-        margin-bottom: $space-base;
-    }
-
-    blockquote {
-        font-size: 1.2em;
-
-        &::before {
-            width: $space-extra;
-            height: $stroke-height;
-            margin-bottom: $space-base;
-        }
+    b {
+        font-weight: $extra-bold;
     }
 }

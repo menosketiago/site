@@ -6,36 +6,32 @@
 </head>
 
 <body>
-	<!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PSWB49G"
-	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript) -->
+	<div class="wrapper">
+		<header>
+			{{> layout/header}}
+		</header>
 
-	<header>
-		{{> header}}
-	</header>
+		<main>
+			{{!-- Content sections --}}
+			{{> sections/about}}
+			{{> sections/work}}
+			{{> sections/writing}}
+			{{> sections/contact}}
+			{{> sections/bye}}
+		</main>
 
-	<main>
-		{{!-- Buttons to scroll the content sections --}}
-		<button id="btn-scroll-up" class="scroll up is-hidden" tabindex="-1" aria-hidden="true">{{> icons/arrow}}</button>
-		<button id="btn-scroll-down" class="scroll down" tabindex="-1" aria-hidden="true">{{> icons/arrow}}</button>
-		<button id="btn-scroll-top" class="scroll top is-hidden" tabindex="-1" aria-hidden="true">{{> icons/back-to-top}}</button>
+		{{!-- Back to top button --}}
+		<a href="#top" target="_self" class="back-to-top"></a>
 
-		{{!-- Content sections --}}
-		{{> sections/home}}
-		{{> sections/about}}
-		{{> sections/work}}
-		{{> sections/contact}}
-	</main>
+		<footer>
+			{{> layout/footer}}
+		</footer>
+	</div>
 
-	<footer>
-		{{> footer}}
-	</footer>
-	{{> modal}}
 	{{> tooltip}}
 
 	{{!-- JS --}}
-	<script src="index.js" type="text/javascript"></script>
+	<script src="/index.js" type="text/javascript"></script>
 
 	{{!-- Howler.js --}}
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.core.min.js"></script>

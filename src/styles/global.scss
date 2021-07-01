@@ -1,3 +1,4 @@
+
 html {
 	scroll-behavior: smooth;
 
@@ -17,18 +18,55 @@ body {
 	width: 100vw;
 	min-height: 100vh;
 	margin: 0;
-	padding: 0;
-	color: $black;
-	background: $body-bg;
-    overflow: hidden;
+	padding: $space-jumbo;
+	color: var(--main-text-color);
+	background: var(--main-bg-color);
 
 	@include flexbox();
+	@include justify-content(center);
+}
+
+a {
+	display: inline-block;
+	color: var(--main-text-color);
+	font-weight: $bold;
+	text-underline-offset: .15em;
+
+	&:hover,
+	&:active,
+	&:visited {
+		color: var(--main-text-color);
+	}
+
+	&.arrow-right {
+		&::after {
+			content: '\00a0\00a0→';
+		}
+	}
+
+	&.arrow-left {
+		&::before {
+			content: '←\00a0\00a0';
+		}
+	}
 }
 
 img,
 figure,
-iframe {
+video {
 	max-width: 100%;
+}
+
+figure {
+	figcaption {
+		margin-top: $space-large;
+		color: var(--main-text-color);
+		font-size: 1rem;
+
+		&::before {
+			content: '—\00a0\00a0';
+		}
+	}
 }
 
 svg {
@@ -49,6 +87,11 @@ hr {
 	border: 0;
 }
 
+section {
+	margin: $space-jumbo 0;
+	scroll-margin: $space-jumbo;
+}
+
 // NO MARGIN CLASS
 
 .no-margin {
@@ -62,4 +105,26 @@ hr {
 	&-tb { margin-top: $space-base !important; }
 	&-tl { margin-top: $space-large !important; }
 	&-te { margin-top: $space-extra !important; }
+}
+
+// TOOLTIP TRIGGER
+
+[data-tooltip] {
+	cursor: help;
+}
+
+// WRAPPER
+
+.wrapper {
+    width: 100%;
+    max-width: 1112px;
+}
+
+// VIMEO
+
+.vimeo {
+	position: relative;
+	display: block;
+	width: 100%;
+	padding: 56.25% 0 0 0;
 }

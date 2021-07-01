@@ -1,0 +1,41 @@
+#about {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    column-gap: $space-extra;
+    align-items: flex-start;
+
+    p {
+        &:last-of-type {
+            margin-bottom: $space-extra;
+        }
+    }
+
+    .avatar {
+        position: relative;
+        cursor: pointer;
+
+        picture {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            transition: opacity $speed-slowest ease;
+
+            img {
+                width: inherit;
+                height: inherit;
+            }
+
+            &:nth-child(2) {
+                opacity: 0;
+            }
+            
+            &:hover {
+                &:nth-child(2) {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

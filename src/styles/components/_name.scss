@@ -1,21 +1,24 @@
 .name {
-    position: relative;
     cursor: pointer;
 
     &::after {
-        content: 'Hear' / '';
-        position: absolute;
-        top: 0;
+        content: '←\00a0\00a0Hear';
         display: inline-block;
-        margin-left: $space-tiny;
-        padding: $space-tiny;
-        // Fix for vertical alignment
-        padding-bottom: 2px;
-        color: $blue;
-        background: $yellow;
-        box-shadow: $text-shadow;
-        text-shadow: none;
-        font-size: .3em;
+        margin-left: $space-small;
+        padding: $space-small;
+        border: 2px solid var(--main-text-color);
+        font-weight: $bold;
+        font-size: .2em;
         line-height: 1em;
+        transition: all $speed-default ease;
+        user-select: none;
+        transform: translate(0, -60%);
+    }
+
+    &:hover {
+        &::after {
+            color: var(--main-bg-color);
+            background: var(--main-text-color);
+        }
     }
 }

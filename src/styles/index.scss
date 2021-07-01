@@ -12,30 +12,35 @@
 // LAYOUT
 
 @import 'layout/header';
-@import 'layout/main';
+@import 'layout/grids';
+@import 'layout/dual-column';
 @import 'layout/footer';
-@import 'layout/grid';
 
 // SECTIONS
 
-@import 'sections/home';
 @import 'sections/about';
 @import 'sections/work';
+@import 'sections/writing';
 @import 'sections/contact';
+@import 'sections/bye';
 
 // COMPONENTS
 
-@import 'components/avatars';
 @import 'components/buttons';
-@import 'components/cards';
+@import 'components/back-to-top';
 @import 'components/inputs';
-@import 'components/loading';
-@import 'components/modal';
+// @import 'components/loading';
+// @import 'components/modal';
 @import 'components/name';
-@import 'components/progress';
-@import 'components/timeline';
 @import 'components/tooltip';
+
+// WORK
+
+@import 'work/themes';
+@import 'work/work-header';
+@import 'work/work-main';
+
 
 // RESPONSIVENESS
 
-@import 'layout/media-queries';
+// @import 'layout/media-queries';

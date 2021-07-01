@@ -1,0 +1,41 @@
+header {
+    .logo {
+        scroll-margin: $space-jumbo;
+    }
+
+    section {
+        display: grid;
+        grid-template-columns: 4fr 1fr;
+        column-gap: $space-extra;
+        margin: ($space-jumbo * 2) 0;
+
+        nav {
+            @include flexbox();
+            @include flex-direction(column);
+            @include justify-content(center);
+            @include align-items(flex-start);
+
+            a {
+                margin-left: -$space-base;
+                padding: $space-base;
+                font-weight: $bold;
+                text-decoration: none;
+                transition: all $speed-default ease;
+
+                &::after {
+                    content: "↓";
+                    margin-left: $space-small;
+                    opacity: 0;
+                }
+
+                &:hover {
+                    background: var(--main-bg-transparency);
+
+                    &::after {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}

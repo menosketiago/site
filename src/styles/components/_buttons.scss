@@ -1,240 +1,30 @@
-button {
-    z-index: 0;
-    position: relative;
-    overflow: hidden;
+button,
+.btn {
     display: inline-block;
-    height: $btn-height;
-    // Fix for firefox absolute position bug
-    width: max-content;
-    margin-right: $space-small;
-    padding: $space-base ($space-base + $space-tiny);
-    // Fix for text align
-    padding-bottom: $space-base - 4px;
-    color: $blue;
-    background: $yellow;
-    box-shadow: $default-box-shadow;
-    border: 0;
-    outline: 0;
-    font-family: $body-font;
-    font-size: 1.1em; // 20px
-    text-transform: uppercase;
+    margin: 0;
+    margin-right: $space-base;
+    padding: $space-base;
+    background: none;
+    border: 2px solid var(--main-text-color);
+    font-family: inherit;
+    font-weight: $bold;
+    letter-spacing: normal;
+    text-decoration: none;
+    user-select: none;
     transition: all $speed-default ease;
     cursor: pointer;
 
-    &::before {
-        content: '';
-        // Fix so that the text content can show
-        z-index: -1;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background: $blue;
-        transition: transform $speed-default ease;
-
-        @include transform(translate(101%, 0));
-    }
-
-    &:hover {
-        color: $yellow;
-
-        &::before {
-            @include transform(translate(0, 0));
-        }
-    }
-
-    &:active {
-        color: $blue;
-
-        &::before {
-            background: $yellow;
-        }
-    }
-
-    svg {
-        // Fix for text align
-        margin-top: -($text-fix * 2);
-        margin-right: $space-small;
-        vertical-align: middle;
-        pointer-events: none;
-
-        @include transform(scale(1.1));
-    }
-
-    &.has-focus {
-        outline: $space-tiny solid $blue;
-    }
-
-    // HIDING CLASS
-
-    &.is-hidden {
-        opacity: 0;
-        pointer-events: none;
-    }
-
-    // SCROLL BUTTONS
-
-    &.scroll {
-        z-index: $scroll-btn-index;
-        position: fixed;
-        width: $btn-height;
+    &:last-child {
         margin-right: 0;
-        padding: 0;
-
-        svg {
-            margin: 0;
-        }
-
-        &.up,
-        &.down,
-        &.top {
-            left: 50%;
-        }
-
-        &.up {
-            top: 0;
-
-            &::before {
-                @include transform(translate(0, 101%));
-            }
-
-            &:hover::before {
-                @include transform(translate(0, 0));
-            }
-        }
-
-        &.down {
-            bottom: 0;
-
-            &::before {
-                @include transform(translate(0, -101%));
-            }
-
-            &:hover::before {
-                @include transform(translate(0, 0));
-            }
-
-            svg {
-                @include transform(rotate(180deg));
-            }
-        }
-
-        // BACK TO TOP
-
-        &.top {
-            bottom: 0;
-        }
-
-        // USED WITHIN THE WORK SECTION
-
-        &.left,
-        &.right {
-            position: fixed;
-            top: 50%;
-
-            @include transform(translate(0, -50%));
-        }
-
-        &.left {
-            left: $header-width - ($btn-height / 2);
-
-            svg {
-                @include transform(rotate(180deg));
-            }
-        }
-
-        &.right {
-            right: $footer-width - ($btn-height / 2);
-            left: auto;
-
-            &::before {
-                @include transform(translate(-101%, 0));
-            }
-
-            &:hover::before {
-                @include transform(translate(0, 0));
-            }
-        }
     }
 
-    // INVERTED BUTTONS FOR YELLOW SECTIONS
-
-    &.blue {
-        color: $yellow;
-        background: $blue;
-
-        &:hover {
-            color: $blue;
-
-            &::before {
-                background: $yellow;
-
-                @include transform(translate(101%, 0));
-            }
-        }
-
-        &:active {
-            color: $yellow;
-
-            &::before {
-                background: $blue;
-
-                @include transform(translate(0, 0));
-            }
-        }
-
-        &.has-focus {
-            outline-color: $yellow;
-        }
+    &:hover:not(:active) {
+        background: var(--main-text-color);
+        color: var(--main-bg-color);
     }
 
-    // MEDIA QUERIES
-
-	@media screen and (max-height: $screen-height-average) {
-        height: $btn-height-average;
-        // Fix for text align
-        padding-bottom: $space-small - $text-fix;
-
-        svg {
-            @include transform(scale(.9));
-        }
-
-        &.scroll {
-            width: $btn-height-average;
-
-            &.left {
-                left: $header-width - ($btn-height-average / 2);
-            }
-
-            &.right {
-                right: $footer-width - ($btn-height-average / 2);
-            }
-        }
-    }
-
-    @media screen and (max-height: $screen-height-small) {
-        height: $btn-height-small;
-        padding: $space-small ($space-small + $space-tiny);
-        // Fix for text align
-        padding-bottom: $space-small - $text-fix;
-
-        svg {
-            margin-right: $space-tiny;
-
-            @include transform(scale(.8));
-        }
-
-        &.scroll {
-            width: $btn-height-small;
-
-            &.left {
-                left: $header-width-small - ($btn-height-small / 2);
-            }
-
-            &.right {
-                right: $footer-width-small - ($btn-height-small / 2);
-            }
-        }
+    &.secondary {
+        background: var(--main-bg-transparency);
+        border: none;
     }
 }

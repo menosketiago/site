@@ -1,0 +1,12 @@
+.work-header {
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+    gap: $space-extra;
+    justify-items: flex-start;
+    align-items: flex-start;
+    margin-bottom: $space-jumbo;
+
+    nav {
+        justify-self: flex-end;
+    }
+}

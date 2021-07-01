@@ -1,35 +1,29 @@
-<section id="contact" aria-label="Section featuring a background image with a photo of me with a old looking phone">
-     <div class="card">
-        <h2>Get in touch</h2>
+<section id="contact" aria-label="Section with information about how to contact me">
+    <h2>Contact —</h2>
 
-        <p>
-            Like most wild <mark>designerus millenius</mark>, I can be easily spooked with phone calls, as they are strongly associated with one of our primal predators, the <mark>telemarketerus obnoscius</mark>.
-        </p>
-        <p>
-            But emails are a safe bet, so use the form below or email me at <mark>hello[at]menosketiago.com</mark>
-        </p>
+    <p>
+        Like most wild <b>designerus millenius</b>, I can be easily spooked with phone calls, as they are strongly associated with one of our primal predators, the <b>telemarketerus obnoscius</b>.
+    </p>
+    <p>
+        But emails are a safe bet, so use the form below or email me at <b>hello[at]menosketiago.com</b>
+    </p>
 
-        <form action="https://formspree.io/xyyyddgr" method="POST" role="form" aria-label="A form you can use to contact me">
-            <div class="input">
-                <input type="text" name="name" id="name" minlength="1" maxlength="100" required aria-label="Type your name or alias">
-                <label for="name" aria-hidden="true">Name or alias</label>
-            </div>
+    <form action="https://formspree.io/xyyyddgr" method="POST" role="form" aria-label="A form you can use to contact me">
+        <div class="input">
+            <input type="tarrow-right" name="name" id="name" minlength="1" maxlength="100" required aria-label="Type your name or alias">
+            <label for="name" aria-hidden="true">Name</label>
+        </div>
 
-            <div class="input">
-                <input type="email" name="email" id="email" minlength="5" maxlength="254" required aria-label="Type your email address">
-                <label for="email" aria-hidden="true">Email address</label>
-            </div>
+        <div class="input">
+            <input type="email" name="email" id="email" minlength="5" maxlength="254" required aria-label="Type your email address">
+            <label for="email" aria-hidden="true">Email</label>
+        </div>
 
-            <div class="input">
-                <textarea name="message" id="message" maxlength="2500" required aria-label="Write your message here"></textarea>
-                <label for="message" aria-hidden="true">Write me some lines...</label>
-            </div>
+        <div class="input">
+            <textarea name="message" id="message" maxlength="2500" required aria-label="Write your message here"></textarea>
+            <label for="message" aria-hidden="true">Drop me some lines...</label>
+        </div>
 
-            <button id="btn-submit-message" type="submit" aria-label="Send message">{{> icons/mail}} Send message</button>
-        </form>
-    </div>
-
-    <blockquote>
-        A rare documented sighting of me picking up the phone...
-    </blockquote>
+        <button id="btn-submit-message" type="submit" aria-label="Send message">Send message&nbsp;&nbsp;→</button>
+    </form>
 </section>

@@ -1,32 +1,38 @@
-<section id="about" role="region" aria-label="About section featuring a background image with a picture of me as a kid sitting on a tree with my father and dog on my right side">
-    <div class="card">
-        <div id="me" class="avatar" data-initials="TA" role="figure" aria-hidden="true"></div>
-
-        <header>
-            <h2>About me</h2>
-            <p>
-                I'm a <time data-year data-age>35</time> years old Product Designer with Frontend development knowledge and experience implementing Design Systems
-            </p>
-        </header>
-
-        {{> timeline}}
-
-        <div class="grid">
-             <div class="col col-50">
-                {{> skill-chart}}
-            </div>
-            <div class="col col-50">
-                {{> keywords}}
-            </div>
-        </div>
-
-        <button id="btn-download-cv" onclick="window.open('./files/tiago-almeida.zip')" aria-label="Download CV and Shortfolio">
-            {{> icons/download}}
-            Download CV and "Shortfolio"
-        </button>
+<section id="about" role="region" aria-label="Section with information about me and my design philosophy">
+    <div class="avatar">
+        <picture>
+            <source srcset="./images/avatar-halftone.avif 1x, ./images/avatar-halftone-2x.avif 2x" type="image/avif">
+            <source srcset="./images/avatar-halftone.webp 1x, ./images/avatar-halftone-2x.webp 2x" type="image/webp">
+            <img class="logo" src="./images/avatar-halftone.jpg" alt="">
+        </picture>
+        <picture>
+            <source srcset="./images/avatar.avif 1x, ./images/avatar-2x.avif 2x" type="image/avif">
+            <source srcset="./images/avatar.webp 1x, ./images/avatar-2x.webp 2x" type="image/webp">
+            <img class="logo" src="./images/avatar.jpg" alt="">
+        </picture>
     </div>
 
-    <blockquote>
-        Two generations of designers with a 🐩 named Brownie
-    </blockquote>
+    <div>
+        <h2>About —</h2>
+
+        <p>
+            I was born in <b>1984</b> in <b>Lisbon</b>, <b>Portugal</b>. At 16, I started freelancing as a <b>Digital Colorist</b>, which leads to discovering illustration as one of my passions. And in <b>2008</b> I completed my <b>Master’s in Product Design</b> at <b>Lisbon’s Fine Arts School</b>.
+        </p>
+
+        <p>
+            One of my beliefs is that a designer’s job is to bridge user needs with business and development. Therefore, designers should conduct just enough <b>research</b>, visualize with <b>wireframes</b> or <b>mockups</b>, and <b>prototype</b> as soon as possible to enable stakeholder/development alignment and, just in time <b>usability testing</b>.
+        </p>
+
+        <p>
+            I also advocate that designers should learn to <b>code</b> (I’m a nerd for <b>HTML</b>, <b>CSS</b>, and <b>JS</b>), and that no company is too small to have a <b>Design System</b> (I’ve been a contributor in 5 in the last few years).
+        </p>
+
+        <p>
+            Today, you can find me at <a href="https://www.mentimeter.com/" rel="noopener" target="_blank">Mentimeter</a>, enabling presenters worldwide to create stress-free interactive presentations where all voices get heard.
+        </p>
+
+        <a href="https://www.linkedin.com/in/menosketiago/" rel="noopener" target="_blank" class="btn secondary arrow-right">LinkedIn</a>
+        <a href="https://www.instagram.com/menosketiago" rel="noopener" target="_blank" class="btn secondary arrow-right">Instagram</a>
+        <a href="https://medium.com/@menosketiago" rel="noopener" target="_blank" class="btn secondary arrow-right">Medium</a>
+    </div>
 </section>

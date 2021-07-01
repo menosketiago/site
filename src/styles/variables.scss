@@ -1,45 +1,37 @@
 // COLORS
 
-$white: #ffffff;
-$black: #464646;
+:root {
+	--main-bg-color: #F7FF00;
+    --main-text-color: #222222;
+    --main-bg-transparency: rgba(34, 34, 34, 0.1);
+    --main-input-transparency: rgba(34, 34, 34, 0.05);
 
-$blue: #008BCC;
-$yellow: #FFF800;
-$red: #CC0069;
+    --theme-dark-bg-color: #000000;
+    --theme-dark-text-color: #f0f0f0;
+    --theme-dark-accent: #F7FF00;
+    --theme-dark-transparency: rgba(247, 255, 0, 0.1);
 
-$gray-dark: #666666;
-$gray-mid: mix($white, $gray-dark, 33%);
+    --theme-alien-bg-color: #222222;
+    --theme-alien-accent: #3AA550;
+    --theme-alien-transparency: rgba(58, 165, 80, 0.1);
 
-$body-color: $black;
-$body-bg: $white;
-$body-bg-dark: #1D1D1D;
+    --theme-gold-accent: #FFDD60;
+    --theme-gold-transparency: rgba(255, 221, 96, 0.15);
 
-$border-color: #E0E0E0;
-
-$gold: #FFDD60;
-$alien-color: #3AA550;
-$mana-color: #fc6104;
-$trids-color: #00afaf;
-$nex-color: #c8cd2d;
-
-$progress-fill-color: $blue;
-$progress-bg-color: $border-color;
+    --theme-trids-bg-color: #ffffff;
+    --theme-trids-accent: #00afaf;
+    --theme-trids-transparency: rgba(0, 175, 175, 0.1);
+}
 
 // TYPOGRAPHY
 
-$body-font: 'Bebas Neue Pro', Helvetica, Arial, sans-serif;
-$header-font: 'Bebas Neue Pro', Helvetica, Arial, sans-serif;
+$body-font-size: 16px;
+$paragraph-font-size: 1.333rem;
 
-$body-font-size: 20px;
-
-$book: 300;
-$regular: 400;
-$bold: 500;
-
-$letter-spacing: .02em;
-
-$text-fix: 2px;
-$text-shadow: 0 2px 0 rgba(0, 0, 0, 0.8);
+$medium: 500;
+$bold: 700;
+$extra-bold: 800;
+$black: 900;
 
 // SPEEDS
 
@@ -54,64 +46,22 @@ $space-tiny: 4px;
 $space-small: $space-tiny * 2;
 $space-base: $space-tiny * 3;
 $space-large: $space-base * 2;
-$space-extra: $space-base * 4;
+$space-extra: $space-large * 2;
+$space-jumbo: $space-extra * 2;
 
-$default-width: $space-extra * 11;
-$default-box-shadow:
-    0 1px 1px 0 rgba($black, .2),
-    0 2px 4px 0 rgba($black, .1);
-
-$max-text-width: 700px;
-$max-article-width: 1024px;
-
-$header-width: 120px;
-$footer-width: 66px;
-
-$main-margin: $space-large;
-$main-width: calc(100vw - #{$header-width} - #{$footer-width});
-$main-height: calc(100vh - (#{$main-margin} * 2));
-
-$section-padding: $space-extra;
-$logo-home-size: $space-extra * 6;
-
-$grid-gutter: $space-large;
-
-$btn-height: $space-large * 2;
-
-$avatar-size: $space-large;
-$avatar-size-large: 100px;
-
-$card-width: $default-width;
-$card-space: $space-extra;
+$input-height: 66px;
+$input-padding: 16px;
 
 $loading-width: $space-extra * 2;
 $tooltip-caret-width: $space-base;
 
-$input-width: $space-extra * 8;
-$input-height: $space-extra;
-$input-padding: $space-base;
-$input-icon-size: 18px;
-
-$stroke-height: 2px;
-
-$space-modal: $space-extra;
-$modal-aside-width: 120px;
-
-$timeline-height: 55px;
-$timeline-event-size: $space-base;
-
-$progress-height: $space-large;
-$tag-height: $space-large;
-
 // Z-INDEXES
 
-$scroll-btn-index: 100;
-$modal-index: 9999;
+$z-index-back-to-top: 100;
 $z-index-tooltip: 10000;
 
 // PATHS
 
-$path-fonts: '../fonts/';
 $path-images: '../images/';
 $path-avatars: '../images/_avatars/';
 $path-thumbs: '../images/_thumbs/';
@@ -124,38 +74,3 @@ $screen-width-average: 1024px;
 
 $screen-height-average: 643px;
 $screen-height-small: 475px;
-
-// SMALLER SIZES
-
-$body-font-size-average: 14px;
-$body-font-size-small: 12px;
-
-$header-width-small: 80px;
-$footer-width-small: 48px;
-
-$main-margin-small: $space-base;
-$main-width-small: calc(100vw - #{$header-width-small} - #{$footer-width-small});
-$main-height-small: calc(100vh - (#{$main-margin-small} * 2));
-
-$section-padding-small: $space-large;
-
-$logo-home-size-average: $space-extra * 5;
-$logo-home-size-small: $space-extra * 4;
-
-$btn-height-average: 40px;
-$btn-height-small: 34px;
-
-$avatar-size-small: 60px;
-
-$card-width-average: 480px;
-$card-width-small: 400px;
-$card-space-small: $space-large + $space-small;
-
-$input-height-average: 35px;
-$input-height-small: 30px;
-$input-padding-small: $space-small;
-$input-icon-size-small: 16px;
-
-$timeline-event-size-small: $space-small;
-$progress-height-small: 18px;
-$tag-height-small: 18px;

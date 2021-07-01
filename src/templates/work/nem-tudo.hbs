@@ -1,90 +1,172 @@
 {{!-- Prevent search engines from indexing these partials --}}
-<meta name="robots" content="noindex, nofollow">
+<!DOCTYPE html>
+<html lang="en">
 
-<aside>
-    <h5>Pubication date</h5>
-    <h6><time>2013</time></h6>
+<head>
+	{{> head}}
+</head>
 
-    <h5>Publication</h5>
-    <h6><a href="https://www.behance.net/gallery/8083759/Nem-tudo-que-reluz-Ouro" target="_blank" rel="noopener">Nem Tudo</a></h6>
-</aside>
+<body class="theme-dark theme-gold">
+	<div class="wrapper">
+		<header class="work-header">
+			{{> layout/work-header}}
+		</header>
 
-<header>
-    <h3>Illustration</h3>
-    <h1>Nem Tudo o que Reluz é Ouro</h1>
+		<main class="work-main">
+            <article class="grid-3-2 gap-jumbo">
+                <div>
+                    <h1>Nem Tudo o que Reluz é Ouro</h1>
+                   <p>
+                        <b>Nem Tudo o que Reluz é Ouro</b> or <b>Not all That Shines is Gold</b> is a portuguese saying akin to the more international "You can't judge a book by it's cover". It is also the name of an handmade screen-printed, limited edition illustration fanzine, with work from many other portuguese illustrators.
+                    </p>
+                    <p>
+                        <b>False idol</b> is a critic of society's extreme focus on accumulating wealth, to the detriment of other values, like general welfare, happiness, and our connection to the natural world. The art was heavily inspired by the famous American designer <b>Saul Bass</b>, most known for his posters for <b>Alfred Hitchcock</b>'s movies.
+                    </p>
+                </div>
 
-    <hgroup>
-        <h5>Tools</h5>
-        <h6>Illustrator</h6>
-    </hgroup>
-</header>
+                <aside>
+                    <hgroup>
+                        <h4>Role —</h4>
+                        <h5>Illustrator</h5>
+                    </hgroup>
+                    <hgroup>
+                        <h4>Tools —</h4>
+                        <h5>Adobe Illustrator</h5>
+                    </hgroup>
+                    <hgroup>
+                        <h4>Published —</h4>
+                        <h5>2013</h5>
+                    </hgroup>
+                    <hgroup>
+                        <h4>Credits —</h4>
+                        <h5>
+                            <a href="https://www.behance.net/andresantos" target="_blank" rel="noopener" class="arrow-right">André Santos</a>
+                        </h5>
+                    </hgroup>
+                </aside>
+            </article>
+     
+            <figure>
+                <picture>
+                    {{#formats}}
+                        {{#each format}}
+                            <source srcset="/images/nem-tudo/nem-tudo-01.{{key}}" type="image/{{key}}">
+                        {{/each}}
+                    {{/formats}}
+                    <img src="/images/nem-tudo/nem-tudo-01.jpg">
+                </picture>
+                <figcaption>Book cover</figcaption>
+            </figure>
+            <figure>
+                <picture>
+                    {{#formats}}
+                        {{#each format}}
+                            <source srcset="/images/nem-tudo/nem-tudo-02.{{key}}" type="image/{{key}}">
+                        {{/each}}
+                    {{/formats}}
+                    <img src="/images/nem-tudo/nem-tudo-02.jpg">
+                </picture>
+                <figcaption>My illustration</figcaption>
+            </figure>
+            <figure>
+                <picture>
+                    {{#formats}}
+                        {{#each format}}
+                            <source srcset="/images/nem-tudo/nem-tudo-03.{{key}}" type="image/{{key}}">
+                        {{/each}}
+                    {{/formats}}
+                    <img src="/images/nem-tudo/nem-tudo-03.jpg">
+                </picture>
+                <figcaption>My profile page</figcaption>
+            </figure>
+            <figure>
+                <picture>
+                    {{#formats}}
+                        {{#each format}}
+                            <source srcset="/images/nem-tudo/nem-tudo-04.{{key}}" type="image/{{key}}">
+                        {{/each}}
+                    {{/formats}}
+                    <img src="/images/nem-tudo/nem-tudo-04.jpg">
+                </picture>
+                <figcaption>Closer view</figcaption>
+            </figure>
+            <figure>
+                <picture>
+                    {{#formats}}
+                        {{#each format}}
+                            <source srcset="/images/nem-tudo/nem-tudo-05.{{key}}" type="image/{{key}}">
+                        {{/each}}
+                    {{/formats}}
+                    <img src="/images/nem-tudo/nem-tudo-05.jpg">
+                </picture>
+                <figcaption>Close up of the gold ink</figcaption>
+            </figure>
 
-<p>
-    <em>Nem Tudo o que Reluz é Ouro</em> or <em>Not all That Shines is Gold</em> is a portuguese saying akin to the more international "You can't judge a book by it's cover".
-</p>
+            <h2>Making of video</h2>
 
-<p>
-    It is also the name of an handmade screen-printed fanzine in which I took part with an illustration, among many other great portuguese creatives.
-</p>
+            <div class="vimeo">
+                <iframe src="https://player.vimeo.com/video/78730893?color=FFDD60&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div>
 
-<figure>
-    <picture>
-        {{#formats}}
-            {{#each format}}
-                <source srcset="./images/nem-tudo/nem-tudo-01.{{key}}" type="image/{{key}}">
-            {{/each}}
-        {{/formats}}
-        <img src="./images/nem-tudo/nem-tudo-01.jpg">
-    </picture>
-    <figcaption>Book cover</figcaption>
-</figure>
-<figure>
-    <picture>
-        {{#formats}}
-            {{#each format}}
-                <source srcset="./images/nem-tudo/nem-tudo-02.{{key}}" type="image/{{key}}">
-            {{/each}}
-        {{/formats}}
-        <img src="./images/nem-tudo/nem-tudo-02.jpg">
-    </picture>
-    <figcaption>My illustration</figcaption>
-</figure>
-<figure>
-    <picture>
-        {{#formats}}
-            {{#each format}}
-                <source srcset="./images/nem-tudo/nem-tudo-03.{{key}}" type="image/{{key}}">
-            {{/each}}
-        {{/formats}}
-        <img src="./images/nem-tudo/nem-tudo-03.jpg">
-    </picture>
-    <figcaption>My profile page</figcaption>
-</figure>
-<figure>
-    <picture>
-        {{#formats}}
-            {{#each format}}
-                <source srcset="./images/nem-tudo/nem-tudo-04.{{key}}" type="image/{{key}}">
-            {{/each}}
-        {{/formats}}
-        <img src="./images/nem-tudo/nem-tudo-04.jpg">
-    </picture>
-    <figcaption>Closer view</figcaption>
-</figure>
-<figure>
-    <picture>
-        {{#formats}}
-            {{#each format}}
-                <source srcset="./images/nem-tudo/nem-tudo-05.{{key}}" type="image/{{key}}">
-            {{/each}}
-        {{/formats}}
-        <img src="./images/nem-tudo/nem-tudo-05.jpg">
-    </picture>
-    <figcaption>Close up of the gold ink</figcaption>
-</figure>
+            {{!-- More work section --}}
 
-<h2>Making of video</h2>
+            <h1 class="m-th">—— More work</h1>
 
-<div class="vimeo">
-    <iframe src="https://player.vimeo.com/video/78730893?color=FFDD60&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-</div>
+            <section class="dual-column">
+                <article>
+                    <a href="/work/ericsson.html" target="_self">
+                        <picture>
+                            <source srcset="/images/_thumbs/ericsson.avif 1x, /images/_thumbs/ericsson-2x.avif 2x" type="image/avif">
+                            <source srcset="/images/_thumbs/ericsson.webp 1x, /images/_thumbs/ericsson-2x.webp 2x" type="image/webp">
+                            <img class="logo" src="/images/_thumbs/ericsson.jpg" alt="">
+                        </picture>
+                    </a>
+                
+                    <hgroup>
+                        <h3>Ericsson Design System</h3>
+                        <h4>ROLE — <span>Senior Visual/Interaction Designer</span></h4>
+                    </hgroup>
+
+                    {{> summaries/ericsson}}
+
+                    <a href="/work/ericsson.html" target="_self" class="btn arrow-right">Read more</a>
+                </article>
+                <article>
+                    <a href="/work/trioptima.html" target="_self">
+                        <picture>
+                            <source srcset="/images/_thumbs/trids.avif 1x, /images/_thumbs/trids-2x.avif 2x" type="image/avif">
+                            <source srcset="/images/_thumbs/trids.webp 1x, /images/_thumbs/trids-2x.webp 2x" type="image/webp">
+                            <img class="logo" src="/images/_thumbs/trids.jpg" alt="">
+                        </picture>
+                    </a>
+                
+                    <hgroup>
+                        <h3>TriOptima Design System</h3> 
+                        <h4>ROLE — <span>Product Designer</span></h4>
+                    </hgroup>
+
+                    {{> summaries/trids}}
+
+                    <a href="/work/trioptima.html" target="_self" class="btn arrow-right">Read more</a>
+                </article>
+            </section>
+		</main>
+
+		{{!-- Back to top button --}}
+		<a href="#top" target="_self" class="back-to-top"></a>
+
+		<footer>
+			{{> layout/footer}}
+		</footer>
+	</div>
+
+	{{> tooltip}}
+
+	{{!-- JS --}}
+	<script src="/index.js" type="tarrow-right/javascript"></script>
+
+    {{!-- Howler.js --}}
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.core.min.js"></script>
+</body>
+
+</html>

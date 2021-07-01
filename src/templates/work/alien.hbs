@@ -1,31 +1,119 @@
-{{!-- Prevent search engines from indexing these partials --}}
-<meta name="robots" content="noindex, nofollow">
+<!DOCTYPE html>
+<html lang="en">
 
-<aside>
-    <h5>Created</h5>
-    <h6><time>2018</time></h6>
-</aside>
+<head>
+	{{> head}}
+</head>
 
-<header>
-    <h3>Illustration</h3>
-    <h1>Alien 1979</h1>
+<body class="theme-dark theme-alien">
+	<div class="wrapper">
+		<header class="work-header">
+			{{> layout/work-header}}
+		</header>
 
-    <hgroup>
-        <h5>Tools</h5>
-        <h6>Illustrator • Photoshop</h6>
-    </hgroup>
-</header>
+		<main class="work-main">
+            <article class="grid-3-2 gap-jumbo">
+                <div>
+                    <h1>Alien 1979</h1>
 
-<p>
-    With just a few days to go for <em>Alien Covenant</em>, here is my humble homage poster to the original <em>Alien</em> film that pited Ellen Ripley and Jonesy against the now mytical xenomorph.
-</p>
+                    <p>
+                        High on the hype for the then-upcoming <b>Alien: Covenant</b>, I created this humble homage poster for the original <b>Alien</b> movie.
+                    </p>
 
-<p>
-    You can buy it at <a href="https://goo.gl/8ATQSD" target="_blank" rel="noopener">Society 6</a>
-</p>
+                    <p>
+                        This 1979 cult film pitted Ellen Ripley, her crew of humans, and their cat Jonesy, against the now-classic H.R. Giger-designed xenomorph.
+                    </p>
 
-<video autoplay loop muted playsinline aria-label="An animated image with a stylized illustration of Ellen Ripley in a spacesuit looking at the xenomorph from the 1979 movie Alien">
-    <source src="./videos/alien.webm" type="video/webm">
-    <source src="./videos/alien.mp4" type="video/mp4">
-    <img src="./images/alien/alien.gif" alt="This is a fallback image in case your browser does not support HTML5">
-</video>
+                    <p>
+                        I hoped to capture the original movie poster color palette and typography with a minimal vector-based illustration that shows Ripley in a late film scene, wearing a spacesuit where the helmet offers a brief reflection of the alien creature. The red glow preconizes the upcoming xenomorph ejection into the cold and void of space.
+                    </p>
+
+                    <p>
+                        Buy the poster on → <a href="https://goo.gl/8ATQSD" target="_blank" rel="noopener">Society 6</a>
+                    </p>
+                </div>
+
+                <aside>
+                    <hgroup>
+                        <h4>ROLE —</h4>
+                        <p>Illustrator</p>
+                    </hgroup>
+
+                    <hgroup>
+                        <h4>Tools —</h4>
+                        <p>
+                            Adobe Illustrator<br>
+                            Adobe Photoshop
+                        </p>
+                    </hgroup>
+                </aside>
+            </article>
+
+            <video autoplay loop muted playsinline aria-label="An animated image with a stylized illustration of Ellen Ripley in a spacesuit looking at the xenomorph from the 1979 movie Alien">
+                <source src="/videos/alien.webm" type="video/webm">
+                <source src="/videos/alien.mp4" type="video/mp4">
+                <img src="/images/alien/alien.gif" alt="This is a fallback image in case your browser does not support HTML5">
+            </video>
+
+            {{!-- More work section --}}
+
+            <h1 class="m-th">—— More work</h1>
+
+            <section class="dual-column">
+                <article>
+                    <a href="/work/ericsson.html" target="_self">
+                        <picture>
+                            <source srcset="/images/_thumbs/ericsson.avif 1x, /images/_thumbs/ericsson-2x.avif 2x" type="image/avif">
+                            <source srcset="/images/_thumbs/ericsson.webp 1x, /images/_thumbs/ericsson-2x.webp 2x" type="image/webp">
+                            <img class="logo" src="/images/_thumbs/ericsson.jpg" alt="">
+                        </picture>
+                    </a>
+                
+                    <hgroup>
+                        <h3>Ericsson Design System</h3>
+                        <h4>ROLE — <span>Senior Visual/Interaction Designer</span></h4>
+                    </hgroup>
+
+                    {{> summaries/ericsson}}
+
+                    <a href="/work/ericsson.html" target="_self" class="btn arrow-right">Read more</a>
+                </article>
+                <article>
+                    <a href="/work/trioptima.html" target="_self">
+                        <picture>
+                            <source srcset="/images/_thumbs/trids.avif 1x, /images/_thumbs/trids-2x.avif 2x" type="image/avif">
+                            <source srcset="/images/_thumbs/trids.webp 1x, /images/_thumbs/trids-2x.webp 2x" type="image/webp">
+                            <img class="logo" src="/images/_thumbs/trids.jpg" alt="">
+                        </picture>
+                    </a>
+                
+                    <hgroup>
+                        <h3>TriOptima Design System</h3> 
+                        <h4>ROLE — <span>Product Designer</span></h4>
+                    </hgroup>
+
+                    {{> summaries/trids}}
+
+                    <a href="/work/trioptima.html" target="_self" class="btn arrow-right">Read more</a>
+                </article>
+            </section>
+		</main>
+
+		{{!-- Back to top button --}}
+		<a href="#top" target="_self" class="back-to-top"></a>
+
+		<footer>
+			{{> layout/footer}}
+		</footer>
+	</div>
+
+	{{> tooltip}}
+
+	{{!-- JS --}}
+	<script src="/index.js" type="text/javascript"></script>
+
+    {{!-- Howler.js --}}
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.core.min.js"></script>
+</body>
+
+</html>
