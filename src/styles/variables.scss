@@ -47,7 +47,7 @@ $space-small: $space-tiny * 2;
 $space-base: $space-tiny * 3;
 $space-large: $space-base * 2;
 $space-extra: $space-large * 2;
-$space-jumbo: $space-extra * 2;
+$space-jumbo: $space-large * 4;
 
 $input-height: 66px;
 $input-padding: 16px;
@@ -59,12 +59,6 @@ $tooltip-caret-width: $space-base;
 
 $z-index-back-to-top: 100;
 $z-index-tooltip: 10000;
-
-// PATHS
-
-$path-images: '../images/';
-$path-avatars: '../images/_avatars/';
-$path-thumbs: '../images/_thumbs/';
 
 // MEDIA QUERY SIZES
 
