@@ -34,14 +34,14 @@ and (max-device-width: 799px) {
 				grid-template-columns: auto;
 				column-gap: initial;
 				margin: $space-extra 0;
+				margin-top: $space-jumbo;
 
 				.name {
-					margin: 0 -$space-tiny;
-					padding: 0 $space-tiny;
-					background: var(--main-bg-transparency);
-
 					&::after {
-						display: none;
+						padding: $space-tiny;
+						border-width: 1px;
+						font-size: .3rem;
+						transform: translate(0, -1.5em);
 					}
 				}
 			}
@@ -50,15 +50,9 @@ and (max-device-width: 799px) {
 		#about {
 			grid-template-columns: auto;
 			column-gap: 0;
-			grid-template-rows: 1fr 1fr;
-			row-gap: $space-extra;
 
 			.avatar {
-				picture {
-					:first-of-type {
-						display: none;
-					}
-				}
+				
 			}
 
 			.btn {
