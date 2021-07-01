@@ -15,9 +15,6 @@
         cursor: pointer;
 
         picture {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
             height: auto;
             transition: opacity $speed-slowest ease;
@@ -28,6 +25,11 @@
             }
 
             &:nth-child(2) {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: auto;
                 opacity: 0;
             }
             
