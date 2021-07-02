@@ -1,6 +1,7 @@
 // COMPONENTS
 
 import Focus from './Focus';
+import Input from './Input';
 import Name from './Name';
 import BackToTop from './BackToTop';
 import Tooltip from './Tooltip';
@@ -8,6 +9,7 @@ import Year from './Year';
 
 const menos = window.menos = {
     Focus,
+    Input,
     Name,
     BackToTop,
     Tooltip,
@@ -28,6 +30,16 @@ export function initComponents() {
             let name = new Name(nameDOM);
             
             name.init();
+        });
+    }
+
+    // INPUTS
+    let inputsArray = document.querySelectorAll('.input');
+
+    if (inputsArray) {
+        Array.from(inputsArray).forEach(inputDOM => {
+            let input = new Input(inputDOM);
+            input.init();
         });
     }
 

@@ -56,6 +56,10 @@
             }
         }
 
+        &:-webkit-autofill {
+            transition: background-color 10000s ease-in-out 0s;
+        }
+
          &.has-value {
             ~ label {
                 top: $input-padding + 2px;
