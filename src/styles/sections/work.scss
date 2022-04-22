@@ -7,6 +7,17 @@
         margin: $space-extra 0;
         margin-bottom: $space-jumbo;
 
+        > a {
+            filter: grayscale(1);
+            mix-blend-mode: multiply;
+
+            &:hover,
+            &:active {
+                filter: grayscale(0);
+                mix-blend-mode: normal;
+            }
+        }
+
         > div {
             display: grid;
             grid-template-columns: 4fr 1fr;
