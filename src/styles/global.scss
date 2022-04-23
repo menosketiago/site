@@ -15,7 +15,7 @@ html {
 }
 
 body {
-	width: 100vw;
+	width: 100%;
 	min-height: 100vh;
 	margin: 0;
 	padding: $space-jumbo;
@@ -33,8 +33,7 @@ a {
 	text-underline-offset: .15em;
 
 	&:hover,
-	&:active,
-	&:visited {
+	&:active {
 		color: var(--main-text-color);
 	}
 
