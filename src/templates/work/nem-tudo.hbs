@@ -58,46 +58,46 @@
                 <figcaption>Book cover</figcaption>
             </figure>
             <figure>
-                <picture>
+                <picture loading="lazy">
                     {{#formats}}
                         {{#each format}}
                             <source srcset="/images/nem-tudo/nem-tudo-02.{{key}}" type="image/{{key}}">
                         {{/each}}
                     {{/formats}}
-                    <img src="/images/nem-tudo/nem-tudo-02.jpg">
+                    <img src="/images/nem-tudo/nem-tudo-02.jpg" loading="lazy">
                 </picture>
                 <figcaption>My illustration</figcaption>
             </figure>
             <figure>
-                <picture>
+                <picture loading="lazy">
                     {{#formats}}
                         {{#each format}}
                             <source srcset="/images/nem-tudo/nem-tudo-03.{{key}}" type="image/{{key}}">
                         {{/each}}
                     {{/formats}}
-                    <img src="/images/nem-tudo/nem-tudo-03.jpg">
+                    <img src="/images/nem-tudo/nem-tudo-03.jpg" loading="lazy">
                 </picture>
                 <figcaption>My profile page</figcaption>
             </figure>
             <figure>
-                <picture>
+                <picture loading="lazy">
                     {{#formats}}
                         {{#each format}}
                             <source srcset="/images/nem-tudo/nem-tudo-04.{{key}}" type="image/{{key}}">
                         {{/each}}
                     {{/formats}}
-                    <img src="/images/nem-tudo/nem-tudo-04.jpg">
+                    <img src="/images/nem-tudo/nem-tudo-04.jpg" loading="lazy">
                 </picture>
                 <figcaption>Closer view</figcaption>
             </figure>
             <figure>
-                <picture>
+                <picture loading="lazy">
                     {{#formats}}
                         {{#each format}}
                             <source srcset="/images/nem-tudo/nem-tudo-05.{{key}}" type="image/{{key}}">
                         {{/each}}
                     {{/formats}}
-                    <img src="/images/nem-tudo/nem-tudo-05.jpg">
+                    <img src="/images/nem-tudo/nem-tudo-05.jpg" loading="lazy">
                 </picture>
                 <figcaption>Close up of the gold ink</figcaption>
             </figure>
@@ -115,10 +115,10 @@
             <section class="dual-column">
                 <article>
                     <a href="/work/ericsson.html" target="_self">
-                        <picture>
+                        <picture loading="lazy">
                             <source srcset="/images/_thumbs/ericsson.avif 1x, /images/_thumbs/ericsson-2x.avif 2x" type="image/avif">
                             <source srcset="/images/_thumbs/ericsson.webp 1x, /images/_thumbs/ericsson-2x.webp 2x" type="image/webp">
-                            <img class="logo" src="/images/_thumbs/ericsson.jpg" alt="">
+                            <img class="logo" src="/images/_thumbs/ericsson.jpg" alt="" loading="lazy">
                         </picture>
                     </a>
                 
@@ -133,10 +133,10 @@
                 </article>
                 <article>
                     <a href="/work/trioptima.html" target="_self">
-                        <picture>
+                        <picture loading="lazy">
                             <source srcset="/images/_thumbs/trids.avif 1x, /images/_thumbs/trids-2x.avif 2x" type="image/avif">
                             <source srcset="/images/_thumbs/trids.webp 1x, /images/_thumbs/trids-2x.webp 2x" type="image/webp">
-                            <img class="logo" src="/images/_thumbs/trids.jpg" alt="">
+                            <img class="logo" src="/images/_thumbs/trids.jpg" alt="" loading="lazy">
                         </picture>
                     </a>
                 
@@ -166,9 +166,6 @@
 
 	{{!-- JS --}}
 	<script src="/index.js" type="text/javascript"></script>
-
-    {{!-- Howler.js --}}
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.core.min.js"></script>
 </body>
 
 </html>
