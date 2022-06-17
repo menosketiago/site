@@ -10,4 +10,8 @@
     transform: translate(-50%, -50%);
     transition: all $speed-slow cubic-bezier(0.5, 1, 0.89, 1);
     pointer-events: none;
+
+    @media (hover: none) {
+        display: none;
+    }
 }
