@@ -1,0 +1,13 @@
+.cursor {
+    z-index: $z-index-tooltip;
+    position: absolute;
+    top: -100vh;
+    left: -100vw;
+    width: $cursor-size;
+    height: $cursor-size;
+    border-radius: $cursor-size / 2;
+    backdrop-filter: invert(1) grayscale(1);
+    transform: translate(-50%, -50%);
+    transition: all $speed-slow cubic-bezier(0.5, 1, 0.89, 1);
+    pointer-events: none;
+}
