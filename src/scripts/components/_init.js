@@ -1,22 +1,46 @@
 // COMPONENTS
 
+import BackToTop from './BackToTop';
+import Cursor from './Cursor';
 import Focus from './Focus';
 import Input from './Input';
 import Name from './Name';
-import BackToTop from './BackToTop';
 import Tooltip from './Tooltip';
 import Year from './Year';
 
 const menos = window.menos = {
+    BackToTop,
+    Cursor,
     Focus,
     Input,
     Name,
-    BackToTop,
     Tooltip,
     Year
 };
 
 export function initComponents() {
+    // BACK TO TOP
+    let backToTopArray = document.getElementsByClassName('back-to-top');
+
+    if (backToTopArray) {
+        Array.from(backToTopArray).forEach(backToTopDOM => {
+            let backToTop = new BackToTop(backToTopDOM);
+
+            backToTop.init();
+        });
+    }
+
+    // CURSOR
+    let cursorArray = document.getElementsByClassName('cursor');
+
+    if (cursorArray) {
+        Array.from(cursorArray).forEach(cursorDOM => {
+            let cursor = new Cursor(cursorDOM);
+
+            cursor.init();
+        });
+    }
+
     // FOCUS
     let focus = new Focus(document);
 
@@ -40,17 +64,6 @@ export function initComponents() {
         Array.from(inputsArray).forEach(inputDOM => {
             let input = new Input(inputDOM);
             input.init();
-        });
-    }
-
-    // BACK TO TOP
-    let backToTopArray = document.getElementsByClassName('back-to-top');
-
-    if (backToTopArray) {
-        Array.from(backToTopArray).forEach(backToTopDOM => {
-            let backToTop = new BackToTop(backToTopDOM);
-
-            backToTop.init();
         });
     }
 
