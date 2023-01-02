@@ -46,7 +46,7 @@
     },
     "dependencies": {
         "@babel/runtime": "^7.12.13",
-        "babel-loader": "^8.2.2",
+        "babel-loader": "^8.3.0",
         "elliptic": "^6.5.4",
         "gulp-csso": "^4.0.1",
         "gulp-htmlmin": "^5.0.1",
@@ -58,7 +58,7 @@
         "lodash.template": ">=4.5.0",
         "smoothscroll-polyfill": "^0.4.4",
         "unfetch": "^4.2.0",
-        "webpack": "^4.46.0",
-        "webpack-stream": "^5.2.1"
+        "webpack": "^5.75.0",
+        "webpack-stream": "^7.0.0"
     }
 }
