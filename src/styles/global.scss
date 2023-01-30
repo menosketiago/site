@@ -22,6 +22,7 @@ body {
 	padding: $space-jumbo;
 	color: var(--main-text-color);
 	background: var(--main-bg-color);
+	font-size: $body-font-size;
 
 	@include flexbox();
 	@include justify-content(center);
