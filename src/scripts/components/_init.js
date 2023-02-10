@@ -5,6 +5,7 @@ import Cursor from './Cursor';
 import Focus from './Focus';
 import Input from './Input';
 import Name from './Name';
+import Role from './Role';
 import Tooltip from './Tooltip';
 import Year from './Year';
 
@@ -14,6 +15,7 @@ const menos = window.menos = {
     Focus,
     Input,
     Name,
+    Role,
     Tooltip,
     Year
 };
@@ -45,6 +47,17 @@ export function initComponents() {
     let focus = new Focus(document);
 
     focus.init();
+    
+    // INPUTS
+    let inputsArray = document.querySelectorAll('.input');
+
+    if (inputsArray) {
+        Array.from(inputsArray).forEach(inputDOM => {
+            let input = new Input(inputDOM);
+
+            input.init();
+        });
+    }
 
     // NAME
     let namesArray = document.getElementsByClassName('name');
@@ -57,13 +70,14 @@ export function initComponents() {
         });
     }
 
-    // INPUTS
-    let inputsArray = document.querySelectorAll('.input');
+    // ROLE
+    let rolesArray = document.getElementsByClassName('role');
 
-    if (inputsArray) {
-        Array.from(inputsArray).forEach(inputDOM => {
-            let input = new Input(inputDOM);
-            input.init();
+    if (rolesArray) {
+        Array.from(rolesArray).forEach(roleDOM => {
+            let role = new Role(roleDOM);
+
+            role.init();
         });
     }
 

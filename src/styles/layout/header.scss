@@ -3,6 +3,10 @@ header {
         scroll-margin: $space-jumbo;
     }
 
+    .role {
+        transition: opacity $speed-default ease;
+    }
+
     section {
         display: grid;
         grid-template-columns: 4fr 1fr;
