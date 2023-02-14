@@ -102,7 +102,6 @@ gulp.task('avif', () => {
 		}))
 		.pipe(gulp.dest('./www/images'))
 		.pipe(browserSync.stream())
-	done();
 });
 
 gulp.task('videos', () => {
@@ -135,13 +134,12 @@ gulp.task('sitemap', () => {
 		.pipe(browserSync.stream())
 });
 
-gulp.task('browser-sync', (done) => {
+gulp.task('browser-sync', () => {
     browserSync.init({
         server: './www/',
 		open: false,
 		injectChanges: true
     });
-	done();
 });
 
 gulp.task('watch', (done) => {
@@ -151,7 +149,7 @@ gulp.task('watch', (done) => {
 	gulp.watch(path.work + '/**/*.hbs', gulp.series('work'));
 	gulp.watch(path.images + supportedImages, gulp.series('images'));
 	gulp.watch(path.images + '/**/*.{jpg, jpeg, gif, png}', gulp.series('webp'));
-	gulp.watch(path.images + '/**/*.{jpg, jpeg, png}', gulp.series('avif'));
+	gulp.watch(path.images + '/**/*.{jpg, png}', gulp.series('avif'));
 	gulp.watch(path.videos + '/**/*.{webm,mp4}', gulp.series('videos'));
 	gulp.watch(path.fonts + '/**/*.{eot,svg,ttf,woff,woff2}', gulp.series('fonts'));
 	gulp.watch(path.files + '/**/*', gulp.series('files'));
@@ -172,7 +170,6 @@ gulp.task('default',
 		'scripts',
 		'images',
 		'webp',
-		'avif',
 		'files',
 		'sitemap'
 	)
@@ -183,6 +180,7 @@ gulp.task('serve',
 		'default',
 		'browser-sync',
 		'watch',
+		'avif',
 		'videos'
 	),
 );
