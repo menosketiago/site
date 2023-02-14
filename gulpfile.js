@@ -84,22 +84,22 @@ gulp.task('images', () => {
 
 gulp.task('webp', () => {
 	return gulp
-		.src(path.images + supportedImages)
+		.src(path.images +  '/**/*.{jpg,jpeg,png,gif}')
 		.pipe(webp())
-		// .pipe(rename((path) => {
-		// 	path.extname = '.webp';
-		// }))
+		.pipe(rename((path) => {
+			path.extname = '.webp';
+		}))
 		.pipe(gulp.dest('./www/images'))
 		.pipe(browserSync.stream())
 });
 
 gulp.task('avif', () => {
 	return gulp
-		.src(path.images + '/**/*.{png}')
+		.src(path.images + '/**/*.{jpg,png}')
 		.pipe(gulpAvif())
-		// .pipe(rename((path) => {
-		// 	path.extname = '.avif';
-		// }))
+		.pipe(rename((path) => {
+			path.extname = '.avif';
+		}))
 		.pipe(gulp.dest('./www/images'))
 		.pipe(browserSync.stream())
 	done();
@@ -150,8 +150,8 @@ gulp.task('watch', (done) => {
 	gulp.watch(path.templates + '/**/*.hbs', gulp.series('templates'));
 	gulp.watch(path.work + '/**/*.hbs', gulp.series('work'));
 	gulp.watch(path.images + supportedImages, gulp.series('images'));
-	gulp.watch(path.images + '/**/*.{png}', gulp.series('webp'));
-	gulp.watch(path.images + '/**/*.{png}', gulp.series('avif'));
+	gulp.watch(path.images + '/**/*.{jpg, jpeg, gif, png}', gulp.series('webp'));
+	gulp.watch(path.images + '/**/*.{jpg, jpeg, png}', gulp.series('avif'));
 	gulp.watch(path.videos + '/**/*.{webm,mp4}', gulp.series('videos'));
 	gulp.watch(path.fonts + '/**/*.{eot,svg,ttf,woff,woff2}', gulp.series('fonts'));
 	gulp.watch(path.files + '/**/*', gulp.series('files'));
