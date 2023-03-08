@@ -50,7 +50,7 @@
         "elliptic": "^6.5.4",
         "gulp-csso": "^4.0.1",
         "gulp-htmlmin": "^5.0.1",
-        "gulp-imagemin": "^7.1.0",
+        "gulp-imagemin": "^8.0.0",
         "handlebars": "^4.7.7",
         "imagesloaded": "^4.1.4",
         "kind-of": ">=6.0.3",
