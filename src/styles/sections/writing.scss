@@ -16,7 +16,8 @@
         }
         
         a.btn,
-        iframe {
+        > iframe,
+        .iframe-container {
             margin-top: $space-extra;
         }
     }

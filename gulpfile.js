@@ -79,7 +79,6 @@ gulp.task('images', () => {
 	return gulp
 		.src(path.images + supportedImages)
 		.pipe(gulp.dest('./www/images'))
-		.pipe(browserSync.stream())
 });
 
 gulp.task('webp', () => {
@@ -90,7 +89,6 @@ gulp.task('webp', () => {
 			path.extname = '.webp';
 		}))
 		.pipe(gulp.dest('./www/images'))
-		.pipe(browserSync.stream())
 });
 
 gulp.task('avif', () => {
@@ -101,7 +99,6 @@ gulp.task('avif', () => {
 			path.extname = '.avif';
 		}))
 		.pipe(gulp.dest('./www/images'))
-		.pipe(browserSync.stream())
 });
 
 gulp.task('videos', () => {
@@ -176,11 +173,11 @@ gulp.task('default',
 );
 
 gulp.task('serve',
-	gulp.series(
+	gulp.parallel(
 		'default',
 		'browser-sync',
 		'watch',
-		'avif',
-		'videos'
+		'videos',
+		'avif'
 	),
 );

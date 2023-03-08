@@ -44,5 +44,26 @@
                 }
             }
         }
+
+        > div > div {
+            h3 {
+                margin-top: $space-extra;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            &:last-of-type {
+                h4, p {
+                    display: none;
+                }
+
+                a {
+                    width: auto;
+                    margin-top: $space-extra;
+                }
+            }
+        }
     }
 }

@@ -156,59 +156,63 @@
             color: var(--theme-gold-accent);
         }
     }
+    
+    // KLARNA THEME
 
-    // TRIDS THEME
-
-    &-trids {
-        color: var(--theme-trids-text-color);
-        background: var(--theme-trids-bg-color);
+    &-klarna {
+        background: var(--theme-klarna-bg-color);
 
         h1,
         h2,
         h3,
         h4 {
-            color: var(--theme-trids-accent);
+            color: var(--theme-klarna-text-color);
         }
 
         a {
-            color: var(--theme-trids-accent);
+            color: var(--theme-klarna-accent);
+
+            &.logo,
+            &.icon {
+                color: var(--theme-klarna-text-color);
+            }
         }
 
         figcaption {
-            color: var(--theme-trids-accent);
+            color: var(--theme-klarna-text-color);
         }
 
         .btn {
-            color: var(--theme-trids-accent);
-            border-color: var(--theme-trids-accent);
+            color: var(--theme-klarna-text-color);
+            border-color: var(--theme-klarna-text-color);
 
             &:hover:not(:active) {
-                background: var(--theme-trids-accent);
-                color: var(--theme-trids-bg-color);
+                background: var(--theme-klarna-text-color);
+                color: var(--theme-klarna-bg-color);
             }
 
             &.secondary {
-                background: var(--theme-trids-transparency);
+                background: var(--theme-klarna-transparency);
             }
         }
 
         .back-to-top {
-            background: var(--theme-trids-accent);
-            color: var(--theme-trids-bg-color);
+            background: var(--theme-klarna-text-color);
+            color: var(--theme-klarna-bg-color);
 
             &:hover:not(:active) {
-                background: var(--theme-trids-bg-color);
-                color: var(--theme-trids-accent);
-                border-color: var(--theme-trids-accent);
+                background: var(--theme-klarna-bg-color);
+                color: var(--theme-klarna-text-color);
+                border-color: var(--theme-klarna-text-color);
             }
         }
 
         .highlight {
-            background: var(--theme-trids-transparency);
+            background: var(--theme-klarna-transparency);
         }
 
         .tooltip {
-            color: var(--theme-trids-accent);
+            color: var(--theme-klarna-text-color);
         }
     }
 }
