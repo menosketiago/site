@@ -156,6 +156,61 @@
             color: var(--theme-gold-accent);
         }
     }
+
+    // TRIDS THEME
+
+    &-trids {
+        color: var(--theme-trids-text-color);
+        background: var(--theme-trids-bg-color);
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: var(--theme-trids-accent);
+        }
+
+        a {
+            color: var(--theme-trids-accent);
+        }
+
+        figcaption {
+            color: var(--theme-trids-accent);
+        }
+
+        .btn {
+            color: var(--theme-trids-accent);
+            border-color: var(--theme-trids-accent);
+
+            &:hover:not(:active) {
+                background: var(--theme-trids-accent);
+                color: var(--theme-trids-bg-color);
+            }
+
+            &.secondary {
+                background: var(--theme-trids-transparency);
+            }
+        }
+
+        .back-to-top {
+            background: var(--theme-trids-accent);
+            color: var(--theme-trids-bg-color);
+
+            &:hover:not(:active) {
+                background: var(--theme-trids-bg-color);
+                color: var(--theme-trids-accent);
+                border-color: var(--theme-trids-accent);
+            }
+        }
+
+        .highlight {
+            background: var(--theme-trids-transparency);
+        }
+
+        .tooltip {
+            color: var(--theme-trids-accent);
+        }
+    }
     
     // KLARNA THEME
 

@@ -43,6 +43,17 @@
 
         article {
             margin-top: 0;
+
+            > a {
+                filter: grayscale(1);
+                mix-blend-mode: multiply;
+
+                &:hover,
+                &:active {
+                    filter: grayscale(0);
+                    mix-blend-mode: normal;
+                }
+            }
         }
     }
 }
