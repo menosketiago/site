@@ -20,7 +20,7 @@ class Role {
             "Illustrator",
             "Videogamer",
             "Human being",
-            "Funny guy"
+            "Sitdown comedian"
         ];
 
         let iterator = 0;
