@@ -8,13 +8,25 @@
         margin-bottom: $space-jumbo;
 
         > a {
+            overflow: hidden;
             filter: grayscale(1);
             mix-blend-mode: multiply;
+
+            picture,
+            video {
+                display: block;
+                transition: transform $speed-slow ease-out;
+            }
 
             &:hover,
             &:active {
                 filter: grayscale(0);
                 mix-blend-mode: normal;
+
+                picture,
+                video {
+                    transform: scale(105%);
+                }
             }
         }
 

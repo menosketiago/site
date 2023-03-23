@@ -45,13 +45,24 @@
             margin-top: 0;
 
             > a {
+                overflow: hidden;
                 filter: grayscale(1);
-                mix-blend-mode: multiply;
+
+                picture,
+                video {
+                    display: block;
+                    transform: scale(1);
+                    transition: transform $speed-slow ease-out;
+                }
 
                 &:hover,
                 &:active {
                     filter: grayscale(0);
-                    mix-blend-mode: normal;
+
+                    picture,
+                    video {
+                        transform: scale(1.08);
+                    }
                 }
             }
         }
