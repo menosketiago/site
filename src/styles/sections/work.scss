@@ -15,7 +15,7 @@
             picture,
             video {
                 display: block;
-                transition: transform $speed-slow ease-out;
+                transition: transform $speed-slow ease;
             }
 
             &:hover,

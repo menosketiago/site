@@ -106,6 +106,16 @@
         .tooltip {
             color: var(--theme-alien-accent);
         }
+
+        .work-main .dual-column {
+            article {
+                > a {
+                    &:before {
+                        background: var(--theme-alien-accent);
+                    }
+                }
+            }
+        }
     }
 
     // GOLD THEME
@@ -154,6 +164,16 @@
 
         .tooltip {
             color: var(--theme-gold-accent);
+        }
+
+        .work-main .dual-column {
+            article {
+                > a {
+                    &:before {
+                        background: var(--theme-gold-accent);
+                    }
+                }
+            }
         }
     }
 
@@ -208,7 +228,22 @@
         }
 
         .tooltip {
-            color: var(--theme-trids-accent);
+            color: var(--theme-trids-bg-color);
+        }
+
+        .work-main .dual-column {
+            article {
+                > a {
+                    &:before {
+                        background: var(--theme-trids-accent);
+                    }
+
+                    picture,
+                    video {
+                        mix-blend-mode: screen;
+                    }
+                }
+            }
         }
     }
     
@@ -234,7 +269,7 @@
         }
 
         figcaption {
-            color: var(--theme-klarna-text-color);
+            color: var(--theme-klarna-accent);
         }
 
         .btn {
@@ -267,7 +302,17 @@
         }
 
         .tooltip {
-            color: var(--theme-klarna-text-color);
+            color: var(--theme-klarna-bg-color);
+        }
+
+        .work-main .dual-column {
+            article {
+                > a {
+                    &:before {
+                        background: var(--theme-klarna-pink);
+                    }
+                }
+            }
         }
     }
 }

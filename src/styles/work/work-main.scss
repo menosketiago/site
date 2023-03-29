@@ -45,14 +45,23 @@
             margin-top: 0;
 
             > a {
+                position: relative;
                 overflow: hidden;
-                filter: grayscale(1);
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    inset: 0;
+                    background: var(--theme-dark-accent);
+                }
 
                 picture,
                 video {
-                    display: block;
+                    display: flex;
+                    filter: grayscale(1);
+                    mix-blend-mode: multiply;
                     transform: scale(1);
-                    transition: transform $speed-slow ease-out;
+                    transition: transform $speed-slow ease;
                 }
 
                 &:hover,
@@ -61,6 +70,8 @@
 
                     picture,
                     video {
+                        filter: grayscale(0);
+                        mix-blend-mode: normal;
                         transform: scale(1.08);
                     }
                 }

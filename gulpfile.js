@@ -121,6 +121,13 @@ gulp.task('files', () => {
 		.pipe(browserSync.stream())
 });
 
+gulp.task('robots', () => {
+	return gulp
+		.src('./src/robots.txt')
+		.pipe(gulp.dest('./www/'))
+		.pipe(browserSync.stream())
+});
+
 gulp.task('sitemap', () => {
     return gulp
 		.src('www/*.html', { read: false })
@@ -150,6 +157,7 @@ gulp.task('watch', (done) => {
 	gulp.watch(path.videos + '/**/*.{webm,mp4}', gulp.series('videos'));
 	gulp.watch(path.fonts + '/**/*.{eot,svg,ttf,woff,woff2}', gulp.series('fonts'));
 	gulp.watch(path.files + '/**/*', gulp.series('files'));
+	gulp.watch('src/robots.txt', gulp.series('robots'));
 	gulp.watch('www/*.html', gulp.series('sitemap'));
 	done();
 });
@@ -168,7 +176,8 @@ gulp.task('default',
 		'images',
 		'webp',
 		'files',
-		'sitemap'
+		'sitemap',
+		'robots'
 	)
 );
 

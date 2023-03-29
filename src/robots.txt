@@ -1,0 +1,13 @@
+Sitemap: https://www.menosketiago.com/sitemap.xml
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: ChatGPT
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: OpenAI
+Disallow: /
