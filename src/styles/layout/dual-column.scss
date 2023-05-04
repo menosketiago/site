@@ -13,7 +13,9 @@
             width: 100%;
             height: auto;
 
-            picture {
+            picture, 
+            video {
+                margin: 0;
                 width: inherit;
                 height: inherit;
 

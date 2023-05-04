@@ -5,19 +5,19 @@ and (max-device-width: 799px) {
 		font-size: 14px;
 
 		h1 {
-			font-size: 1.602rem;
+			font-size: 1.602em;
 		}
 
 		h2 {
-			font-size: 1.424rem;
+			font-size: 1.424em;
 		}
 
 		h3 {
-			font-size: 1.266rem;
+			font-size: 1.266em;
 		}
 
 		p {
-			font-size: 1.125rem;
+			font-size: 1.125em;
 		}
 
 		header {
@@ -40,7 +40,7 @@ and (max-device-width: 799px) {
 					&::after {
 						padding: $space-tiny;
 						border-width: 1px;
-						font-size: .3rem;
+						font-size: .3em;
 						transform: translate(0, -1.5em);
 					}
 				}
