@@ -56,6 +56,8 @@ $space-large: $space-base * 2;
 $space-extra: $space-large * 2;
 $space-jumbo: $space-large * 4;
 
+$section-margin: $space-jumbo * 2;
+
 $input-height: 66px;
 $input-padding: 16px;
 
@@ -64,6 +66,11 @@ $tooltip-caret-width: $space-base;
 
 $back-to-top-size: 60px;
 $cursor-size: $back-to-top-size;
+
+// BORDER RADIUS
+
+$border-radius-default: $space-small;
+$border-radius-card: $space-base;
 
 // Z-INDEXES
 

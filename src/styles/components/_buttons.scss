@@ -20,7 +20,8 @@ button,
         margin-bottom: 0;
     }
 
-    &:hover:not(:active) {
+    &:hover:not(:active),
+    &:focus {
         background: var(--main-text-color);
         color: var(--main-bg-color);
     }
@@ -28,5 +29,23 @@ button,
     &.secondary {
         background: var(--main-bg-transparency);
         border: none;
+
+        &:hover:not(:active),
+        &:focus {
+            background: var(--main-text-color);
+            color: var(--main-bg-color);
+        }
     }
+
+    &.arrow-right {
+		&::after {
+			content: '\00a0\00a0→';
+		}
+	}
+
+	&.arrow-left {
+		&::before {
+			content: '←\00a0\00a0';
+		}
+	}
 }

@@ -32,7 +32,8 @@ header {
                     opacity: 0;
                 }
 
-                &:hover {
+                &:hover:not(:active),
+                &:focus {
                     background: var(--main-bg-transparency);
 
                     &::after {

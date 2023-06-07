@@ -12,7 +12,9 @@
             color: var(--theme-dark-accent);
         }
 
-        a {
+        a,
+        a:hover:not(:active),
+        a:focus {
             color: var(--theme-dark-accent);
         }
 
@@ -24,7 +26,8 @@
             color: var(--theme-dark-accent);
             border-color: var(--theme-dark-accent);
 
-            &:hover:not(:active) {
+            &:hover:not(:active),
+            &:focus {
                 background: var(--theme-dark-accent);
                 color: var(--theme-dark-bg-color);
             }
@@ -38,7 +41,8 @@
             background: var(--theme-dark-accent);
             color: var(--theme-dark-bg-color);
 
-            &:hover:not(:active) {
+            &:hover:not(:active),
+            &:focus {
                 background: var(--theme-dark-bg-color);
                 color: var(--theme-dark-accent);
                 border-color: var(--theme-dark-accent);
@@ -66,7 +70,9 @@
             color: var(--theme-alien-accent);
         }
 
-        a {
+        a,
+        a:hover:not(:active),
+        a:focus {
             color: var(--theme-alien-accent);
         }
 
@@ -78,7 +84,8 @@
             color: var(--theme-alien-accent);
             border-color: var(--theme-alien-accent);
 
-            &:hover:not(:active) {
+            &:hover:not(:active),
+            &:focus {
                 background: var(--theme-alien-accent);
                 color: var(--theme-alien-bg-color);
             }
@@ -92,7 +99,8 @@
             background: var(--theme-alien-accent);
             color: var(--theme-alien-bg-color);
 
-            &:hover:not(:active) {
+            &:hover:not(:active),
+            &:focus {
                 background: var(--theme-alien-bg-color);
                 color: var(--theme-alien-accent);
                 border-color: var(--theme-alien-accent);
@@ -128,7 +136,9 @@
             color: var(--theme-gold-accent);
         }
 
-        a {
+        a,
+        a:hover:not(:active),
+        a:focus {
             color: var(--theme-gold-accent);
         }
 
@@ -140,7 +150,8 @@
             color: var(--theme-gold-accent);
             border-color: var(--theme-gold-accent);
 
-            &:hover:not(:active) {
+            &:hover:not(:active),
+            &:focus {
                 background: var(--theme-gold-accent);
             }
 
@@ -152,7 +163,8 @@
         .back-to-top {
             background: var(--theme-gold-accent);
 
-            &:hover:not(:active) {
+            &:hover:not(:active),
+            &:focus {
                 color: var(--theme-gold-accent);
                 border-color: var(--theme-gold-accent);
             }
@@ -190,7 +202,9 @@
             color: var(--theme-trids-accent);
         }
 
-        a {
+        a,
+        a:hover:not(:active),
+        a:focus {
             color: var(--theme-trids-accent);
         }
 
@@ -202,7 +216,8 @@
             color: var(--theme-trids-accent);
             border-color: var(--theme-trids-accent);
 
-            &:hover:not(:active) {
+            &:hover:not(:active),
+            &:focus {
                 background: var(--theme-trids-accent);
                 color: var(--theme-trids-bg-color);
             }
@@ -216,7 +231,8 @@
             background: var(--theme-trids-accent);
             color: var(--theme-trids-bg-color);
 
-            &:hover:not(:active) {
+            &:hover:not(:active),
+            &:focus {
                 background: var(--theme-trids-bg-color);
                 color: var(--theme-trids-accent);
                 border-color: var(--theme-trids-accent);
@@ -259,13 +275,10 @@
             color: var(--theme-klarna-text-color);
         }
 
-        a {
+        a,
+        a:hover:not(:active),
+        a:focus {
             color: var(--theme-klarna-accent);
-
-            &.logo,
-            &.icon {
-                color: var(--theme-klarna-text-color);
-            }
         }
 
         figcaption {
@@ -276,7 +289,8 @@
             color: var(--theme-klarna-text-color);
             border-color: var(--theme-klarna-text-color);
 
-            &:hover:not(:active) {
+            &:hover:not(:active),
+            &:focus {
                 background: var(--theme-klarna-text-color);
                 color: var(--theme-klarna-bg-color);
             }
@@ -290,7 +304,8 @@
             background: var(--theme-klarna-text-color);
             color: var(--theme-klarna-bg-color);
 
-            &:hover:not(:active) {
+            &:hover:not(:active),
+            &:focus {
                 background: var(--theme-klarna-bg-color);
                 color: var(--theme-klarna-text-color);
                 border-color: var(--theme-klarna-text-color);

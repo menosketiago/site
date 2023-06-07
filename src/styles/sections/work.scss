@@ -1,10 +1,5 @@
 #work {
-    h2 {
-        margin-bottom: $space-jumbo;
-    }
-
     article {
-        margin: $space-extra 0;
         margin-bottom: $space-jumbo;
 
         > a {
@@ -50,6 +45,12 @@
                     margin-top: $space-extra;
                 }
             }
+        }
+    }
+
+    .dual-column {
+        article {
+            margin-bottom: 0;
         }
     }
 }

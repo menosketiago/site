@@ -34,8 +34,8 @@ a {
 	font-weight: $bold;
 	text-underline-offset: .15em;
 
-	&:hover,
-	&:active {
+	&:hover:not(:active),
+	&:focus {
 		color: var(--main-text-color);
 	}
 
@@ -104,8 +104,8 @@ hr {
 }
 
 section {
-	margin: $space-jumbo 0;
-	scroll-margin: $space-jumbo;
+	margin: $section-margin 0;
+	scroll-margin: $section-margin / 2;
 }
 
 // NO MARGIN CLASS

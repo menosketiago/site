@@ -1,0 +1,114 @@
+#content {
+    .card-grid {
+        display: grid;
+        justify-items: flex-start;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: $space-large;
+        margin-top: $space-extra;
+
+        .card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: $space-jumbo * 4;
+            padding: $space-small * 4;
+            border: 2px solid transparent;
+            border-radius: $border-radius-card;
+            text-decoration: none;
+            transition: all $speed-default ease;
+
+            // Background image
+            &::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background-image: url(images/pattern.png);
+                background-size: 5%;
+                background-repeat: repeat;
+                opacity: .3;
+            }
+
+            header {
+                margin-bottom: $space-large;
+
+                .icon {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 48px;
+                    height: 48px;
+                    margin-bottom: $space-large;
+                    background: var(--main-bg-transparency);
+                    border-radius: $border-radius-default;
+                }
+
+                h3 {
+                    font-size: 1.4rem;
+                    margin-bottom: $space-small;
+                    text-wrap: balance;
+
+                    &::after {
+                        content: "—";
+                        display: block;
+                        margin-top: $space-small;
+                    }
+                }
+    
+                p {
+                    font-size: $body-font-size;
+                    font-weight: $medium;
+                    line-height: 1.2rem;
+                    text-wrap: balance;
+                }
+            }
+
+            .btn {
+                text-align: center;
+            }
+
+            &:hover:not(:active),
+            &:focus {
+                border-color: var(--main-text-color);
+
+                .btn {
+                    background: var(--main-text-color);
+                    color: var(--main-bg-color);
+                }
+            }
+        }
+
+        // Media queries
+        @media only screen and (max-device-width: 1230px) {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        @media only screen and (max-device-width: 799px) {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: $space-base;
+            margin-top: $space-extra;
+
+            .card {          
+                header {
+                    margin-bottom: $space-large;
+    
+                    h3 {
+                        font-size: 1.2rem;
+                    }
+        
+                    p {
+                        font-size: $body-font-size;
+                    }
+                }
+            }
+        }
+
+        @media only screen and (max-device-width: 470px) {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+
+            .card {
+                min-height: $space-jumbo * 3.5;
+            }
+        }
+    }
+}
