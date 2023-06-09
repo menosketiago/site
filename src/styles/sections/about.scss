@@ -26,19 +26,17 @@
                 height: inherit;
             }
 
-            &:nth-child(2) {
+            &:nth-child(2),
+            &:nth-child(3),
+            &:nth-child(4),
+            &:nth-child(5),
+            &:nth-child(6) {
                 position: absolute;
                 top: 0;
                 left: 0;
                 width: 100%;
                 height: auto;
                 opacity: 0;
-            }
-            
-            &:hover {
-                &:nth-child(2) {
-                    opacity: 1;
-                }
             }
         }
     }

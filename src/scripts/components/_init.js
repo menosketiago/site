@@ -1,5 +1,6 @@
 // COMPONENTS
 
+import Avatar from './Avatar';
 import BackToTop from './BackToTop';
 import Cursor from './Cursor';
 import Focus from './Focus';
@@ -10,6 +11,7 @@ import Tooltip from './Tooltip';
 import Year from './Year';
 
 const menos = window.menos = {
+    Avatar,
     BackToTop,
     Cursor,
     Focus,
@@ -21,6 +23,17 @@ const menos = window.menos = {
 };
 
 export function initComponents() {
+    // AVATAR
+    let avatarsArray = document.getElementsByClassName('avatar');
+
+    if (avatarsArray) {
+        Array.from(avatarsArray).forEach(avatarDOM => {
+            let avatar = new Avatar(avatarDOM);
+
+            avatar.init();
+        });
+    }
+
     // BACK TO TOP
     let backToTopArray = document.getElementsByClassName('back-to-top');
 
