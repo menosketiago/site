@@ -1,0 +1,41 @@
+main {
+	&.standalone-page {
+		h1 {
+			margin-bottom: $space-jumbo;
+			font-size: 6em;
+			font-weight: $black;
+		}
+	}
+
+	&.salary {
+		margin-bottom: $space-jumbo * 2;
+
+        h4 {
+            font-size: $paragraph-font-size;
+			font-weight: $black;
+        }
+
+		h5 {
+			font-size: $paragraph-font-size;
+			font-weight: $bold;
+
+			&:last-of-type {
+				margin-bottom: $space-large;
+			}
+		}
+
+		section {
+			&:not(:first-of-type) {
+				margin-top: 0;
+				margin-bottom: $space-jumbo;
+			}
+		}
+
+        article	{
+			time {
+				font-size: $paragraph-font-size;
+				font-weight: $medium;
+			}
+		}
+	}
+}

@@ -28,6 +28,18 @@ body {
 	@include justify-content(center);
 }
 
+section {
+	margin: $section-margin 0;
+	scroll-margin: $section-margin / 2;
+}
+
+img,
+figure,
+video,
+iframe {
+	width: 100%;
+}
+
 a {
 	display: inline-block;
 	color: var(--main-text-color);
@@ -49,27 +61,6 @@ a {
 		&::before {
 			content: '←\00a0\00a0';
 		}
-	}
-}
-
-img,
-figure,
-video,
-iframe {
-	width: 100%;
-}
-
-.iframe-container {
-	position: relative;
-	width: 100%;
-	padding-bottom: 56.25%; /* 16:9 */
-
-	iframe {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
 	}
 }
 
@@ -103,9 +94,8 @@ hr {
 	border: 0;
 }
 
-section {
-	margin: $section-margin 0;
-	scroll-margin: $section-margin / 2;
+time {
+	font-variant-numeric: slashed-zero;
 }
 
 // NO MARGIN CLASS

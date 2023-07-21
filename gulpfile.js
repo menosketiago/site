@@ -19,6 +19,7 @@ const path = {
 	'scripts': './src/scripts',
 	'templates': './src/templates',
 	'work': './src/templates/work',
+	'pages': './src/templates/pages',
 	'files': './src/files'
 }
 
@@ -72,6 +73,25 @@ gulp.task('work', () => {
 			path.extname = '.html';
 		}))
 		.pipe(gulp.dest('./www/work/'))
+		.pipe(browserSync.stream())
+});
+
+gulp.task('pages', () => {
+	return gulp
+		.src(path.pages + '/*.hbs')
+		.pipe(handlebars({
+			data: path.data + '/*.json',
+			helpers: '',
+			partials: path.templates + '/partials/**/*.hbs',
+			bustCache: true
+		}))
+		.pipe(htmlmin({
+			removeComments: true
+		}))
+		.pipe(rename((path) => {
+			path.extname = '.html';
+		}))
+		.pipe(gulp.dest('./www'))
 		.pipe(browserSync.stream())
 });
 
@@ -151,6 +171,7 @@ gulp.task('watch', (done) => {
 	gulp.watch(path.scripts + '/**/*.js', gulp.series('scripts'));
 	gulp.watch(path.templates + '/**/*.hbs', gulp.series('templates'));
 	gulp.watch(path.work + '/**/*.hbs', gulp.series('work'));
+	gulp.watch(path.pages + '/**/*.hbs', gulp.series('pages'));
 	gulp.watch(path.images + supportedImages, gulp.series('images'));
 	gulp.watch(path.images + '/**/*.{jpg, jpeg, gif, png}', gulp.series('webp'));
 	gulp.watch(path.images + '/**/*.{jpg, png}', gulp.series('avif'));
@@ -172,6 +193,7 @@ gulp.task('default',
 		'styles',
 		'templates',
 		'work',
+		'pages',
 		'scripts',
 		'images',
 		'webp',
