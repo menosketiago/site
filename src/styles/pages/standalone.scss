@@ -17,10 +17,10 @@ main {
 
 		h5 {
 			font-size: $paragraph-font-size;
-			font-weight: $bold;
+			font-weight: $medium;
 
 			&:last-of-type {
-				margin-bottom: $space-large;
+				margin-bottom: $space-extra;
 			}
 		}
 
@@ -33,8 +33,35 @@ main {
 
         article	{
 			time {
+				margin-bottom: $space-large;
 				font-size: $paragraph-font-size;
 				font-weight: $medium;
+			}
+		}
+	}
+
+	@media only screen
+	and (max-device-width: 799px) {
+		&.standalone-page {
+			h1 {
+				margin-bottom: $space-jumbo;
+				font-size: 4em;
+			}
+		}
+
+		&.salary {
+			h4 {
+				margin-bottom: $space-large;
+			}
+
+			h5 {
+				font-size: 1em;
+			}
+
+			article	{
+				time {
+					font-size: 1em;
+				}
 			}
 		}
 	}

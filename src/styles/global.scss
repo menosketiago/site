@@ -94,7 +94,8 @@ hr {
 	border: 0;
 }
 
-time {
+time,
+.money {
 	font-variant-numeric: slashed-zero;
 }
 
@@ -111,6 +112,13 @@ time {
 	&-tb { margin-top: $space-base !important; }
 	&-tl { margin-top: $space-large !important; }
 	&-te { margin-top: $space-extra !important; }
+	&-tj { margin-top: $space-jumbo !important; }
+
+	&-bs { margin-bottom: $space-small !important; }
+	&-bb { margin-bottom: $space-base !important; }
+	&-bl { margin-bottom: $space-large !important; }
+	&-be { margin-bottom: $space-extra !important; }
+	&-bj { margin-bottom: $space-jumbo !important; }
 }
 
 // TOOLTIP TRIGGER
