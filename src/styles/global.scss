@@ -23,6 +23,7 @@ body {
 	color: var(--main-text-color);
 	background: var(--main-bg-color);
 	font-size: $body-font-size;
+	transition: background-color $speed-slowest ease;
 
 	@include flexbox();
 	@include justify-content(center);

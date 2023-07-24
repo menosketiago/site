@@ -4,6 +4,8 @@ class BackToTop {
         this.dom = {
             backToTop: element,
         }
+
+        this.themeToggleFlag = document.querySelector('[data-toggle-theme]');
     }
 
     init() {
@@ -29,10 +31,18 @@ class BackToTop {
 
     show() {
         this.dom.backToTop.classList.add('is-visible');
+
+        if (this.themeToggleFlag) {
+            this.themeToggleFlag.classList.add('theme-white');
+        }
     }
 
     hide() {
         this.dom.backToTop.classList.remove('is-visible');
+
+        if (this.themeToggleFlag) {
+            this.themeToggleFlag.classList.remove('theme-white');
+        }
     }
 
 }

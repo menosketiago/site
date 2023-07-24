@@ -1,4 +1,22 @@
 .theme {
+    // WHITE THEME
+
+    &-white {
+        background: var(--alt-bg-color);
+
+        .back-to-top {
+            background: var(--main-text-color);
+            color: var(--alt-bg-color);
+
+            &:hover:not(:active),
+            &:focus {
+                background: var(--alt-bg-color);
+                color: var(--main-text-color);
+                border-color: var(--main-text-color);
+            }
+        }
+    }
+
     // DARK THEME
 
     &-dark {

@@ -6,6 +6,8 @@
     --main-bg-transparency: rgba(34, 34, 34, 0.1);
     --main-input-transparency: rgba(34, 34, 34, 0.05);
 
+    --alt-bg-color: #ffffff;
+
     --theme-dark-bg-color: #000000;
     --theme-dark-text-color: #f0f0f0;
     --theme-dark-accent: #F7FF00;
@@ -18,11 +20,11 @@
     --theme-gold-accent: #FFDD60;
     --theme-gold-transparency: rgba(255, 221, 96, 0.15);
 
-    --theme-trids-bg-color: #ffffff;
+    --theme-trids-bg-color: var(--alt-bg-color);
     --theme-trids-accent: #00afaf;
     --theme-trids-transparency: rgba(0, 175, 175, 0.1);
 
-    --theme-klarna-bg-color: #ffffff;
+    --theme-klarna-bg-color: var(--alt-bg-color);
     --theme-klarna-text-color: #0E0E0F;
     --theme-klarna-accent: #EE3C6B;
     --theme-klarna-pink: #FFB3C7;
