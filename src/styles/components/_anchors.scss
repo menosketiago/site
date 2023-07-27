@@ -1,0 +1,27 @@
+a {
+	display: inline-block;
+	color: var(--main-text-color);
+	font-weight: $bold;
+	text-underline-offset: .15em;
+
+	&:hover:not(:active),
+	&:focus {
+		color: var(--main-text-color);
+	}
+
+    &:focus {
+        @extend .focus;
+    }
+
+	&.arrow-right {
+		&::after {
+			content: '\00a0\00a0→';
+		}
+	}
+
+	&.arrow-left {
+		&::before {
+			content: '←\00a0\00a0';
+		}
+	}
+}

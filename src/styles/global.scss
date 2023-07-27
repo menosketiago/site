@@ -41,30 +41,6 @@ iframe {
 	width: 100%;
 }
 
-a {
-	display: inline-block;
-	color: var(--main-text-color);
-	font-weight: $bold;
-	text-underline-offset: .15em;
-
-	&:hover:not(:active),
-	&:focus {
-		color: var(--main-text-color);
-	}
-
-	&.arrow-right {
-		&::after {
-			content: '\00a0\00a0→';
-		}
-	}
-
-	&.arrow-left {
-		&::before {
-			content: '←\00a0\00a0';
-		}
-	}
-}
-
 figure {
 	figcaption {
 		margin-top: $space-large;
@@ -100,6 +76,15 @@ time,
 	font-variant-numeric: slashed-zero;
 }
 
+// FOCUS STYLE
+
+.focus {
+	outline-color: var(--main-text-color);
+	outline-style: dashed;
+	outline-offset: 2px;
+	outline-width: 2px;
+}
+
 // NO MARGIN CLASS
 
 .no-margin {
@@ -133,13 +118,4 @@ time,
 .wrapper {
     width: 100%;
     max-width: 1112px;
-}
-
-// VIMEO
-
-.vimeo {
-	position: relative;
-	display: block;
-	width: 100%;
-	padding: 56.25% 0 0 0;
 }
