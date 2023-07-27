@@ -29,9 +29,21 @@ main {
 				margin-top: 0;
 				margin-bottom: $space-jumbo;
 			}
+
+			&:last-child {
+				margin-bottom: $space-jumbo * 2;
+			}
+
+			p {
+				&:last-of-type {
+					margin-bottom: $space-large;
+				}
+			}
 		}
 
         article	{
+			margin-bottom: $space-extra;
+
 			time {
 				margin-bottom: $space-large;
 				font-size: $paragraph-font-size;

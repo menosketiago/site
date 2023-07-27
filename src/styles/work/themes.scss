@@ -15,6 +15,16 @@
                 border-color: var(--main-text-color);
             }
         }
+
+        button,
+        .btn {
+            &.secondary {
+                &:hover:not(:active),
+                &:focus {
+                    color: var(--alt-bg-color);
+                }
+            }
+        }
     }
 
     // DARK THEME
