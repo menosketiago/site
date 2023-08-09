@@ -2,6 +2,10 @@
     article {
         margin-bottom: $space-jumbo;
 
+        h4 {
+            margin-bottom: $space-base;
+        }
+
         > a {
             overflow: hidden;
             filter: grayscale(1);
