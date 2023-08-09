@@ -28,7 +28,7 @@ h5 {
 }
 
 h1 {
-    font-size: 4em;
+    font-size: 3.4rem;
     font-weight: $bold;
 
     b {
@@ -38,19 +38,19 @@ h1 {
 
 h2 {
 	margin-bottom: $space-extra;
-    font-size: 2.369em;
+    font-size: 2.618rem;
     font-weight: $black;
 }
 
 h3 {
-    margin-bottom: $space-extra;
-    font-size: 1.777em;
+    margin-bottom: $space-large + $space-base;
+    font-size: 1.618rem;
     font-weight: $black;
 }
 
 h4 {
-    margin-bottom: $space-base;
-    font-size: 1em;
+    margin-bottom: $space-large;
+    font-size: 1rem;
     font-weight: $bold;
     line-height: 1em;
 
@@ -62,7 +62,7 @@ h4 {
 
 h5 {
     margin-bottom: $space-small;
-    font-size: 1em;
+    font-size: 1rem;
     font-weight: $medium;
     text-transform: none;
 

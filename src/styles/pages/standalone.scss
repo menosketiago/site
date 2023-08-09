@@ -42,7 +42,7 @@ main {
 		}
 
         article	{
-			margin-bottom: $space-extra;
+			margin-bottom: $space-extra + $space-large;
 
 			time {
 				margin-bottom: $space-large;

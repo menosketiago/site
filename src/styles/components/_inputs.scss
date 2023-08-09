@@ -13,7 +13,7 @@
         left: $input-padding;
         margin: 0;
         color: var(--main-text-color);
-        font-size: 0.875em;
+        font-size: .65rem;
         font-weight: $bold;
         text-transform: uppercase;
         line-height: 1em;
@@ -34,7 +34,7 @@
         background-position-x: 150%;
         border: 1px solid transparent;
         font-family: 'Inter', Helvetica, Arial, sans-serif;
-        font-size: 1em;
+        font-size: 1rem;
         font-weight: $medium;
         transition: background $speed-default ease;
 
@@ -52,7 +52,7 @@
             ~ label {
                 top: $input-padding + 2px;
                 left: $input-padding + 2px;
-                font-size: 0.5em;
+                font-size: .5rem;
             }
         }
 

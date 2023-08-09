@@ -2,22 +2,21 @@
 and (max-device-width: 799px) {
 	body {
 		padding: $space-extra;
-		font-size: 14px;
 
 		h1 {
-			font-size: 1.8em;
+			font-size: 1.602rem;
 		}
 
 		h2 {
-			font-size: 1.6em;
+			font-size: 1.266rem;
 		}
 
 		h3 {
-			font-size: 1.4em;
+			font-size: 1.125rem;
 		}
 
 		p {
-			font-size: 1.1em;
+			font-size: 1rem;
 		}
 
 		header {
@@ -41,7 +40,7 @@ and (max-device-width: 799px) {
 						padding: $space-tiny;
 						border-width: 1px;
 						font-size: .3em;
-						transform: translate(0, -1.5em);
+						transform: translate(0, .3em);
 					}
 				}
 			}

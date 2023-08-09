@@ -1,9 +1,10 @@
 .name {
+    position: relative;
     cursor: pointer;
 
     &::after {
         content: '←\00a0\00a0Hear';
-        display: inline-block;
+        position: absolute;
         margin-left: $space-small;
         padding: $space-small;
         border: 2px solid var(--main-text-color);
@@ -12,7 +13,7 @@
         line-height: 1em;
         transition: all $speed-default ease;
         user-select: none;
-        transform: translate(0, -2em);
+        transform: translate(0, .5em);
     }
 
     &:hover {
