@@ -16,11 +16,10 @@ class Role {
 
         const rolesArray = [
             "Product Designer",
-            "Design Mentor",
             "Illustrator",
-            "Videogamer",
-            "Human being",
-            "Sitdown comedian"
+            "Design mentor",
+            "Video gamer",
+            "Human being"
         ];
 
         let iterator = 0;
