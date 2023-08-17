@@ -40,6 +40,10 @@
         height: auto;
         margin: 0;
         margin-bottom: $space-jumbo;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
     }
 
     .dual-column {
