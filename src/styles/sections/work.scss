@@ -46,7 +46,7 @@
                 }
 
                 a {
-                    margin-top: $space-extra;
+                    margin-top: $space-large;
                 }
             }
         }
@@ -55,6 +55,10 @@
     .dual-column {
         article {
             margin-bottom: 0;
+
+            a {
+                margin-top: $space-large;
+            }
         }
     }
 }
