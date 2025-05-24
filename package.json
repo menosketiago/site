@@ -39,7 +39,7 @@
         "gulp-rename": "^1.4.0",
         "gulp-sass": "^6.0.1",
         "gulp-sitemap": "^7.7.0",
-        "gulp-webp": "^5.1.0",
+        "gulp-webp": "^4.0.1",
         "gulp-wrap": "^0.15.0",
         "imagemin": "^7.0.1",
         "imagemin-webp": "^6.1.0"
