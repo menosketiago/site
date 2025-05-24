@@ -27,24 +27,24 @@
             width: 12cqh;
             height: 12cqh;
             margin-right: variables.$space-small;
-            padding: variables.$space-large;
+            padding: variables.$space-base;
             background: var(--main-bg-transparency);
             border-radius: variables.$border-radius-card;
             mix-blend-mode: multiply;
             cursor: pointer;
 
             picture {
-                position: relative;
+                position: absolute;
                 width: 10cqh;
                 height: 10cqh;
                 transition: opacity variables.$speed-slow ease;
 
                 img {
                     position: absolute;
-                    top: 0;
                     left: 0;
                     width: 10cqh;
                     height: 10cqh;
+                    border-radius: 50%;
                     transition: opacity variables.$speed-slow ease;
                 }
 
