@@ -1,43 +1,46 @@
+@use "../mixins/mixins";
+@use "../variables";
+
 .tooltip {
-    z-index: $z-index-tooltip;
+    z-index: variables.$z-index-tooltip;
     position: absolute;
-    max-width: $space-jumbo * 3;
-    padding: $space-base ($space-base + $space-tiny);
+    max-width: variables.$space-jumbo * 3;
+    padding: variables.$space-base (variables.$space-base + variables.$space-tiny);
     color: var(--main-bg-color);
     background: var(--main-text-color);
     font-size: 1em;
-    font-weight: $medium;
+    font-weight: variables.$medium;
     text-align: center;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
     transition:
-        opacity $speed-default ease,
-        transform $speed-default ease;
+        opacity variables.$speed-default ease,
+        transform variables.$speed-default ease;
 
-    @include transform(translate(0, 100%));
+    @include mixins.transform(translate(0, 100%));
 
     &::after {
         content: '';
-        z-index: $z-index-tooltip - 1;
+        z-index: variables.$z-index-tooltip - 1;
         position: absolute;
         top: auto;
         right: auto;
         bottom: 1px;
         left: 50%;
-        width: $tooltip-caret-width;
-        height: $tooltip-caret-width;
+        width: variables.$tooltip-caret-width;
+        height: variables.$tooltip-caret-width;
         background: inherit;
         font-size: 1rem;
         user-select: none;
 
-        @include transform(translate(-50%, 50%) rotate(45deg));
+        @include mixins.transform(translate(-50%, 50%) rotate(45deg));
     }
 
     &.is-visible {
         opacity: 1;
         visibility: visible;
 
-        @include transform(translate(0, 0));
+        @include mixins.transform(translate(0, 0));
     }
 }

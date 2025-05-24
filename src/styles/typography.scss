@@ -1,3 +1,5 @@
+@use "variables";
+
 // FONT IMPORT
 
 @import url('https://rsms.me/inter/inter.css');
@@ -10,8 +12,8 @@ html { font-family: 'Inter', sans-serif; }
 
 body {
     font-family: 'Inter', Helvetica, Arial, sans-serif;
-	font-weight: $medium;
-	font-size: $body-font-size;
+	font-weight: variables.$medium;
+	font-size: variables.$body-font-size;
 	letter-spacing: -.02em;
 }
 
@@ -20,7 +22,7 @@ h2,
 h3,
 h4,
 h5 {
-    max-width: $space-jumbo * 8;
+    max-width: variables.$space-jumbo * 8;
     margin: 0;
     line-height: 1em;
     text-transform: uppercase;
@@ -29,45 +31,42 @@ h5 {
 
 h1 {
     font-size: 3.4rem;
-    font-weight: $bold;
-
-    b {
-        font-weight: $black;
-    }
+    font-weight: variables.$black;
+    line-height: 0.85em;
 }
 
 h2 {
-	margin-bottom: $space-extra;
+	margin-bottom: variables.$space-extra;
     font-size: 2.618rem;
-    font-weight: $black;
+    font-weight: variables.$black;
 }
 
 h3 {
-    margin-bottom: $space-large + $space-base;
+    margin-bottom: variables.$space-large + variables.$space-base;
     font-size: 1.618rem;
-    font-weight: $black;
+    font-weight: variables.$black;
 }
 
 h4 {
-    margin-bottom: $space-large;
+    margin-bottom: variables.$space-large;
     font-size: 1rem;
-    font-weight: $bold;
+    font-weight: variables.$bold;
     line-height: 1em;
 
     span {
-        font-weight: $medium;
+        font-weight: variables.$medium;
         text-transform: none;
     }
 }
 
 h5 {
-    margin-bottom: $space-small;
+    margin-bottom: variables.$space-small;
     font-size: 1rem;
-    font-weight: $medium;
+    font-weight: variables.$medium;
     text-transform: none;
 
     a {
-        font-weight: $medium;
+        font-weight: variables.$medium;
         text-decoration: none;
 
         &:hover:not(:active) {
@@ -77,10 +76,10 @@ h5 {
 }
 
 p {
-    max-width: $space-jumbo * 8;
+    max-width: variables.$space-jumbo * 8;
     margin: 0;
-    margin-bottom: $space-large;
-    font-size: $paragraph-font-size;
+    margin-bottom: variables.$space-large;
+    font-size: variables.$paragraph-font-size;
 	line-height: 1.6em;
 
     &:last-of-type {
@@ -88,10 +87,10 @@ p {
     }
 
     a {
-        font-weight: $extra-bold;
+        font-weight: variables.$extra-bold;
     }
 
     b {
-        font-weight: $extra-bold;
+        font-weight: variables.$extra-bold;
     }
 }

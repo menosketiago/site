@@ -1,14 +1,16 @@
+@use "../variables";
+
 .cursor {
-    z-index: $z-index-tooltip;
+    z-index: variables.$z-index-tooltip;
     position: absolute;
     top: -100vh;
     left: -100vw;
-    width: $cursor-size;
-    height: $cursor-size;
-    border-radius: $cursor-size / 2;
+    width: variables.$cursor-size;
+    height: variables.$cursor-size;
+    border-radius: variables.$cursor-size * 0.5;
     backdrop-filter: invert(1) grayscale(1);
     transform: translate(-50%, -50%);
-    transition: all $speed-slow cubic-bezier(0.5, 1, 0.89, 1);
+    transition: all variables.$speed-slow cubic-bezier(0.5, 1, 0.89, 1);
     pointer-events: none;
 
     @media (hover: none) {

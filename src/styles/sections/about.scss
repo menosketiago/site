@@ -1,43 +1,14 @@
+@use "../variables";
+
 #about {
     display: grid;
     grid-template-columns: 2fr 3fr;
-    column-gap: $space-extra;
+    column-gap: variables.$space-extra;
     align-items: flex-start;
 
     p {
         &:last-of-type {
-            margin-bottom: $space-extra;
-        }
-    }
-
-    .avatar {
-        position: relative;
-        width: 80%;
-        justify-self: center;
-        cursor: pointer;
-
-        picture {
-            width: 100%;
-            height: auto;
-            transition: opacity $speed-slow ease;
-
-            img {
-                width: inherit;
-                height: inherit;
-            }
-
-            &:nth-child(2),
-            &:nth-child(3),
-            &:nth-child(4),
-            &:nth-child(5),
-            &:nth-child(6) {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: auto;
-                opacity: 0;
-            }
+            margin-bottom: variables.$space-extra;
         }
     }
 }

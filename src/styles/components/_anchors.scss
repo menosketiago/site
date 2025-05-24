@@ -1,7 +1,9 @@
+@use "../variables";
+
 a {
 	display: inline-block;
 	color: var(--main-text-color);
-	font-weight: $bold;
+	font-weight: variables.$bold;
 	text-underline-offset: .15em;
 
 	&:hover:not(:active),
@@ -10,7 +12,7 @@ a {
 	}
 
     &:focus {
-        @extend .focus;
+        @extend .focus !optional;
     }
 
 	&.arrow-right {

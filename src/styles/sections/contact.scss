@@ -1,7 +1,9 @@
+@use "../variables";
+
 #contact {
     display: grid;
     grid-template-columns: 3fr 2fr;
-    column-gap: $space-extra;
+    column-gap: variables.$space-extra;
     justify-items: flex-start;
 
     > * {
@@ -10,7 +12,7 @@
 
     form {
         margin: 0;
-        margin-top: $space-extra;
+        margin-top: variables.$space-extra;
         width: 100%;
         text-align: right;
     }

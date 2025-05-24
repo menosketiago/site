@@ -1,9 +1,11 @@
+@use "../variables";
+
 // DUAL COLUMN COMPONENT
 
 .dual-column {
 	display: grid;
     grid-template-columns: 2fr 2fr;
-    column-gap: $space-extra;
+    column-gap: variables.$space-extra;
 
     article {
         a:first-of-type {
@@ -24,29 +26,29 @@
         }
 
         hgroup {
-            margin-top: $space-extra;
+            margin-top: variables.$space-extra;
 
             h3 {
-                margin-bottom: $space-large;
+                margin-bottom: variables.$space-large;
             }
 
             h4 {
-                margin-bottom: $space-extra;
+                margin-bottom: variables.$space-extra;
             }
 
             ~ p {
-                margin-bottom: $space-large;
+                margin-bottom: variables.$space-large;
                 font-size: 1rem;
 
                 + a {
-                    margin-top: $space-large;
+                    margin-top: variables.$space-large;
                 }
             }
         }
 
         > div > div {
             h3 {
-                margin-top: $space-extra;
+                margin-top: variables.$space-extra;
             }
 
             p {
@@ -60,7 +62,7 @@
 
                 a {
                     width: auto;
-                    margin-top: $space-extra;
+                    margin-top: variables.$space-extra;
                 }
             }
         }

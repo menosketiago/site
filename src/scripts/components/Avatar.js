@@ -20,8 +20,8 @@ class Avatar {
             // Do nothing!
         }
         else {
-            this.dom.avatar.addEventListener('mouseover', (e) => this.showPictures());
-            this.dom.avatar.addEventListener('click', (e) => this.showPictures());
+            this.dom.avatar.addEventListener('mouseenter', (e) => this.showPictures());
+            // this.dom.avatar.addEventListener('click', (e) => this.showPictures());
         }
     }
 
@@ -37,8 +37,8 @@ class Avatar {
         });
 
         // Listen to the mouseout or second touch
-        this.dom.avatar.addEventListener('mouseout', (e) => this.hidePictures());
-        this.dom.avatar.addEventListener('click', (e) => this.hidePictures());
+        this.dom.avatar.addEventListener('mouseleave', (e) => this.hidePictures());
+        // this.dom.avatar.addEventListener('click', (e) => this.hidePictures());
     }
 
     hidePictures() {

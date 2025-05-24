@@ -1,50 +1,51 @@
 // MIXINS
 
-@import 'mixins/mixins';
-@import 'mixins/flexbox';
+@use 'mixins/mixins';
+@use 'mixins/flexbox';
 
 // GLOBALS
 
-@import 'variables';
-@import 'typography';
-@import 'global';
+@use 'variables';
+@use 'typography';
+@use 'global';
 
 // LAYOUT
 
-@import 'layout/header';
-@import 'layout/grids';
-@import 'layout/dual-column';
-@import 'layout/footer';
+@use 'layout/header';
+@use 'layout/grids';
+@use 'layout/dual-column';
+@use 'layout/footer';
 
 // SECTIONS
 
-@import 'sections/about';
-@import 'sections/work';
-@import 'sections/content';
-@import 'sections/contact';
-@import 'sections/bye';
+@use 'sections/splash';
+@use 'sections/about';
+@use 'sections/work';
+@use 'sections/content';
+@use 'sections/contact';
+@use 'sections/bye';
 
 // COMPONENTS
 
-@import 'components/anchors';
-@import 'components/buttons';
-@import 'components/back-to-top';
-@import 'components/cursor';
-@import 'components/inputs';
-@import 'components/name';
-@import 'components/tooltip';
+@use 'components/anchors';
+@use 'components/buttons';
+@use 'components/back-to-top';
+@use 'components/cursor';
+@use 'components/inputs';
+@use 'components/name';
+@use 'components/tooltip';
 
 // WORK
 
-@import 'work/themes';
-@import 'work/work-header';
-@import 'work/work-main';
+@use 'work/themes';
+@use 'work/work-header';
+@use 'work/work-main';
 
 // PAGES
 
-@import 'pages/standalone';
+@use 'pages/standalone';
 
 
 // RESPONSIVENESS
 
-@import 'layout/media-queries';
+@use 'layout/media-queries';

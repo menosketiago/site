@@ -1,9 +1,11 @@
+@use "../variables";
+
 #work {
     article {
-        margin-bottom: $space-jumbo;
+        margin-bottom: variables.$space-jumbo;
 
         h4 {
-            margin-bottom: $space-base;
+            margin-bottom: variables.$space-base;
         }
 
         > a {
@@ -14,7 +16,7 @@
             picture,
             video {
                 display: block;
-                transition: transform $speed-slow ease;
+                transition: transform variables.$speed-slow ease;
             }
 
             &:hover,
@@ -32,13 +34,13 @@
         > div {
             display: grid;
             grid-template-columns: 4fr 1fr;
-            column-gap: $space-jumbo;
+            column-gap: variables.$space-jumbo;
             justify-items: flex-start;
-            margin-top: $space-extra;
+            margin-top: variables.$space-extra;
 
             div:nth-child(2) {
                 b {
-                    margin-bottom: $space-large;
+                    margin-bottom: variables.$space-large;
                 }
 
                 p {
@@ -46,7 +48,7 @@
                 }
 
                 a {
-                    margin-top: $space-large;
+                    margin-top: variables.$space-large;
                 }
             }
         }
@@ -57,7 +59,7 @@
             margin-bottom: 0;
 
             a {
-                margin-top: $space-large;
+                margin-top: variables.$space-large;
             }
         }
     }

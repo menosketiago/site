@@ -1,7 +1,9 @@
+@use "../variables";
+
 footer {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: $space-extra;
+    gap: variables.$space-extra;
     margin: 96px 0;
 
     section {
@@ -9,12 +11,12 @@ footer {
 
         p {
             &:last-of-type {
-                margin-bottom: $space-extra;
+                margin-bottom: variables.$space-extra;
             }
 
             .highlight {
                 margin: -2px 0;
-                padding: 2px $space-tiny;
+                padding: 2px variables.$space-tiny;
                 background: var(--main-bg-transparency);
                 font-weight: inherit;
                 cursor: help;

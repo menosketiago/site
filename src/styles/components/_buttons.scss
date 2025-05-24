@@ -1,18 +1,20 @@
+@use "../variables";
+
 button,
 .btn {
     display: inline-block;
     margin: 0;
-    margin-right: $space-base;
-    margin-bottom: $space-base;
-    padding: $space-base;
+    margin-right: variables.$space-base;
+    margin-bottom: variables.$space-base;
+    padding: variables.$space-base;
     background: none;
     border: 2px solid var(--main-text-color);
     font-family: inherit;
-    font-weight: $bold;
+    font-weight: variables.$bold;
     letter-spacing: normal;
     text-decoration: none;
     user-select: none;
-    transition: all $speed-default ease;
+    transition: all variables.$speed-default ease;
     cursor: pointer;
 
     &:last-child {
@@ -27,7 +29,7 @@ button,
     }
 
     &:focus {
-        @extend .focus;
+        @extend .focus !optional;
     }
 
     &.secondary {

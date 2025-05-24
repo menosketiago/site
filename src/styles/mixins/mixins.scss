@@ -1,3 +1,7 @@
+@use "sass:color";
+@use "sass:list";
+@use "sass:meta";
+@use "sass:string";
 /* -------------------------------------------------------------
   Sass CSS3 Mixins! The Cross-Browser CSS3 Sass Library
   By: Matthieu Aussaguel, http://www.mynameismatthieu.com, @matthieu_tweets
@@ -72,7 +76,7 @@
 /// @require {mixin} css3-prefix
 
 @mixin background-size($width: 100%, $height: $width) {
-    @if type-of($width)=='number'and $height !=null {
+    @if meta.type-of($width)=='number'and $height !=null {
         @include css3-prefix('background-size', $width $height);
     }
 
@@ -318,7 +322,7 @@
 
 @mixin transition($properties...) {
 
-    @if length($properties)>=1 {
+    @if list.length($properties)>=1 {
         @include css3-prefix('transition', $properties);
     }
 
@@ -383,7 +387,7 @@
 /// @param {Number} $percentage - percentage of `$color` in returned color
 /// @return {Color}
 @function tint($color, $percentage) {
-    @return mix(white, $color, $percentage);
+    @return color.mix(white, $color, $percentage);
 }
 
 /// Slightly darken a color
@@ -392,7 +396,7 @@
 /// @param {Number} $percentage - percentage of `$color` in returned color
 /// @return {Color}
 @function shade($color, $percentage) {
-    @return mix(black, $color, $percentage);
+    @return color.mix(black, $color, $percentage);
 }
 
 // https://dvcs.w3.org/hg/FXTF/raw-file/tip/filters/index.html
@@ -407,11 +411,11 @@
 // blur           ex: filter: blur(2px);
 
 @mixin filter($filter-type,$filter-amount) {
-    -webkit-filter: $filter-type+unquote('(#{$filter-amount})');
-    -moz-filter: $filter-type+unquote('(#{$filter-amount})');
-    -ms-filter: $filter-type+unquote('(#{$filter-amount})');
-    -o-filter: $filter-type+unquote('(#{$filter-amount})');
-    filter: $filter-type+unquote('(#{$filter-amount})');
+    -webkit-filter: $filter-type+string.unquote('(#{$filter-amount})');
+    -moz-filter: $filter-type+string.unquote('(#{$filter-amount})');
+    -ms-filter: $filter-type+string.unquote('(#{$filter-amount})');
+    -o-filter: $filter-type+string.unquote('(#{$filter-amount})');
+    filter: $filter-type+string.unquote('(#{$filter-amount})');
 }
 
 /// Mixin to customize scrollbars
@@ -423,7 +427,7 @@
 /// @example scss - Scrollbar styling
 ///   @include scrollbars(.5em, slategray);
 
-@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {
+@mixin scrollbars($size, $foreground-color, $background-color: color.mix($foreground-color, white,  50%)) {
     // For Google Chrome
     ::-webkit-scrollbar {
         width:  $size;

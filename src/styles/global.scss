@@ -1,9 +1,13 @@
+@use "mixins/flexbox";
+@use "mixins/mixins";
+@use "variables";
+
 
 html {
 	scroll-behavior: smooth;
 
-    @include box-sizing(border-box);
-	@include scrollbars(0, transparent, transparent);
+    @include mixins.box-sizing(border-box);
+	@include mixins.scrollbars(0, transparent, transparent);
 }
 
 *,
@@ -11,7 +15,7 @@ html {
 *::after {
 	outline: 0;
 
-    @include box-sizing(inherit);
+    @include mixins.box-sizing(inherit);
 }
 
 body {
@@ -19,19 +23,19 @@ body {
 	width: 100vw;
 	min-height: 100vh;
 	margin: 0;
-	padding: $space-jumbo;
+	padding: variables.$space-jumbo;
 	color: var(--main-text-color);
 	background: var(--main-bg-color);
-	font-size: $body-font-size;
-	transition: background-color $speed-slowest ease;
+	font-size: variables.$body-font-size;
+	transition: background-color variables.$speed-slowest ease;
 
-	@include flexbox();
-	@include justify-content(center);
+	@include flexbox.flexbox();
+	@include flexbox.justify-content(center);
 }
 
 section {
-	margin: $section-margin 0;
-	scroll-margin: $section-margin / 2;
+	margin: variables.$section-margin 0;
+	scroll-margin: variables.$section-margin * 0.5;
 }
 
 img,
@@ -43,7 +47,7 @@ iframe {
 
 figure {
 	figcaption {
-		margin-top: $space-large;
+		margin-top: variables.$space-large;
 		color: var(--main-text-color);
 		font-size: 1rem;
 
@@ -58,7 +62,7 @@ svg {
 }
 
 form {
-	margin-top: $space-large;
+	margin-top: variables.$space-large;
 
 	&:first-child {
 		margin-top: 0;
@@ -67,7 +71,7 @@ form {
 
 hr {
 	width: 100%;
-	margin-top: $space-large;
+	margin-top: variables.$space-large;
 	border: 0;
 }
 
@@ -94,17 +98,17 @@ time,
 // SPACING CLASSES
 
 .margin {
-	&-ts { margin-top: $space-small !important; }
-	&-tb { margin-top: $space-base !important; }
-	&-tl { margin-top: $space-large !important; }
-	&-te { margin-top: $space-extra !important; }
-	&-tj { margin-top: $space-jumbo !important; }
+	&-ts { margin-top: variables.$space-small !important; }
+	&-tb { margin-top: variables.$space-base !important; }
+	&-tl { margin-top: variables.$space-large !important; }
+	&-te { margin-top: variables.$space-extra !important; }
+	&-tj { margin-top: variables.$space-jumbo !important; }
 
-	&-bs { margin-bottom: $space-small !important; }
-	&-bb { margin-bottom: $space-base !important; }
-	&-bl { margin-bottom: $space-large !important; }
-	&-be { margin-bottom: $space-extra !important; }
-	&-bj { margin-bottom: $space-jumbo !important; }
+	&-bs { margin-bottom: variables.$space-small !important; }
+	&-bb { margin-bottom: variables.$space-base !important; }
+	&-bl { margin-bottom: variables.$space-large !important; }
+	&-be { margin-bottom: variables.$space-extra !important; }
+	&-bj { margin-bottom: variables.$space-jumbo !important; }
 }
 
 // TOOLTIP TRIGGER
@@ -127,4 +131,17 @@ time,
 	display: block;
 	width: 100%;
 	padding: 56.25% 0 0 0;
+}
+
+// PATTERN TEXT
+
+.pattern {
+	background-image: url("../images/pattern.png");
+	background-repeat: repeat;
+	background-position: left top;
+	background-size: 12px;
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	opacity: 80%;
 }

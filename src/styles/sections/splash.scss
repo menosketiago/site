@@ -1,0 +1,61 @@
+@use "../variables";
+
+#splash {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: variables.$space-large 0;
+        font-size: 16cqh;
+        text-align: center;
+
+        span:first-of-type {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .avatar {
+            position: relative;
+            display: flex;
+            justify-items: center;
+            align-items: center;
+            width: 12cqh;
+            height: 12cqh;
+            margin-right: variables.$space-small;
+            padding: variables.$space-large;
+            background: var(--main-bg-transparency);
+            border-radius: variables.$border-radius-card;
+            mix-blend-mode: multiply;
+            cursor: pointer;
+
+            picture {
+                position: relative;
+                width: 10cqh;
+                height: 10cqh;
+                transition: opacity variables.$speed-slow ease;
+
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 10cqh;
+                    height: 10cqh;
+                    transition: opacity variables.$speed-slow ease;
+                }
+
+                &:nth-child(2),
+                &:nth-child(3),
+                &:nth-child(4),
+                &:nth-child(5),
+                &:nth-child(6) {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}

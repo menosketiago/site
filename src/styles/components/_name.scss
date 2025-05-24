@@ -1,3 +1,5 @@
+@use "../variables";
+
 .name {
     position: relative;
     cursor: pointer;
@@ -5,13 +7,13 @@
     &::after {
         content: '←\00a0\00a0Hear';
         position: absolute;
-        margin-left: $space-small;
-        padding: $space-small;
+        margin-left: variables.$space-small;
+        padding: variables.$space-small;
         border: 2px solid var(--main-text-color);
-        font-weight: $bold;
+        font-weight: variables.$bold;
         font-size: .2em;
         line-height: 1em;
-        transition: all $speed-default ease;
+        transition: all variables.$speed-default ease;
         user-select: none;
         transform: translate(0, .5em);
     }

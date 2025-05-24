@@ -1,7 +1,10 @@
+@use "../mixins/flexbox";
+@use "../variables";
+
 @media only screen
 and (max-device-width: 799px) {
 	body {
-		padding: $space-extra;
+		padding: variables.$space-extra;
 
 		h1 {
 			font-size: 1.602rem;
@@ -32,12 +35,12 @@ and (max-device-width: 799px) {
 			section {
 				grid-template-columns: auto;
 				column-gap: initial;
-				margin: $space-extra 0;
-				margin-top: $space-jumbo;
+				margin: variables.$space-extra 0;
+				margin-top: variables.$space-jumbo;
 
 				.name {
 					&::after {
-						padding: $space-tiny;
+						padding: variables.$space-tiny;
 						border-width: 1px;
 						font-size: .3em;
 						transform: translate(0, .3em);
@@ -47,7 +50,7 @@ and (max-device-width: 799px) {
 		}
 
 		section {
-			margin: $space-jumbo 0;
+			margin: variables.$space-jumbo 0;
 		}
 
 		#about {
@@ -55,27 +58,27 @@ and (max-device-width: 799px) {
 			column-gap: 0;
 
 			.avatar {
-				margin-bottom: $space-extra;
+				margin-bottom: variables.$space-extra;
 			}
 		}
 
 		#work {
 			article {
-				margin-bottom: $space-extra;
+				margin-bottom: variables.$space-extra;
 
 				> div {
 					grid-template-columns: auto;
 					column-gap: 0;
 
 					h4 {
-						margin-top: $space-extra;
+						margin-top: variables.$space-extra;
 					}
 				}
 			}
 
 			.dual-column {
 				article {
-					margin-bottom: $space-extra;
+					margin-bottom: variables.$space-extra;
 
 					&:last-child {
 						margin-bottom: 0;
@@ -104,16 +107,16 @@ and (max-device-width: 799px) {
 
 		.grid-2-2 {
 			&:nth-child(even) {
-				@include flexbox();
-				@include flex-direction(column-reverse);
+				@include flexbox.flexbox();
+				@include flexbox.flex-direction(column-reverse);
 			}
 		}
 
 		.input {
-			margin-bottom: $space-base;
+			margin-bottom: variables.$space-base;
 
 			&:last-of-type {
-				margin-bottom: $space-large;
+				margin-bottom: variables.$space-large;
 			}
 		}
 
@@ -133,24 +136,24 @@ and (max-device-width: 799px) {
 
 		.work-main {
 			h1 {
-				margin-bottom: $space-extra;
+				margin-bottom: variables.$space-extra;
 			}
 
 			article {
-				margin: $space-extra 0;
+				margin: variables.$space-extra 0;
 			}
 
 			aside {
-				margin-top: $space-extra;
+				margin-top: variables.$space-extra;
 			}
 
 			figure,
 			video {
-				margin-bottom: $space-extra;
+				margin-bottom: variables.$space-extra;
 			}
 
 			.m-th {
-				margin-top: $space-jumbo !important;
+				margin-top: variables.$space-jumbo !important;
 			}
 		}
 	}

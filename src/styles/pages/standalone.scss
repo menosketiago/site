@@ -1,53 +1,55 @@
+@use "../variables";
+
 main {
 	&.standalone-page {
 		h1 {
-			margin-bottom: $space-jumbo;
+			margin-bottom: variables.$space-jumbo;
 			font-size: 6em;
-			font-weight: $black;
+			font-weight: variables.$black;
 		}
 	}
 
 	&.salary {
-		margin-bottom: $space-jumbo * 2;
+		margin-bottom: variables.$space-jumbo * 2;
 
         h4 {
-            font-size: $paragraph-font-size;
-			font-weight: $black;
+            font-size: variables.$paragraph-font-size;
+			font-weight: variables.$black;
         }
 
 		h5 {
-			font-size: $paragraph-font-size;
-			font-weight: $medium;
+			font-size: variables.$paragraph-font-size;
+			font-weight: variables.$medium;
 
 			&:last-of-type {
-				margin-bottom: $space-extra;
+				margin-bottom: variables.$space-extra;
 			}
 		}
 
 		section {
 			&:not(:first-of-type) {
 				margin-top: 0;
-				margin-bottom: $space-jumbo;
+				margin-bottom: variables.$space-jumbo;
 			}
 
 			&:last-child {
-				margin-bottom: $space-jumbo * 2;
+				margin-bottom: variables.$space-jumbo * 2;
 			}
 
 			p {
 				&:last-of-type {
-					margin-bottom: $space-large;
+					margin-bottom: variables.$space-large;
 				}
 			}
 		}
 
         article	{
-			margin-bottom: $space-extra + $space-large;
+			margin-bottom: variables.$space-extra + variables.$space-large;
 
 			time {
-				margin-bottom: $space-large;
-				font-size: $paragraph-font-size;
-				font-weight: $medium;
+				margin-bottom: variables.$space-large;
+				font-size: variables.$paragraph-font-size;
+				font-weight: variables.$medium;
 			}
 		}
 	}
@@ -56,14 +58,14 @@ main {
 	and (max-device-width: 799px) {
 		&.standalone-page {
 			h1 {
-				margin-bottom: $space-jumbo;
+				margin-bottom: variables.$space-jumbo;
 				font-size: 4em;
 			}
 		}
 
 		&.salary {
 			h4 {
-				margin-bottom: $space-large;
+				margin-bottom: variables.$space-large;
 			}
 
 			h5 {

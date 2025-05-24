@@ -1,42 +1,45 @@
+@use "../mixins/mixins";
+@use "../variables";
+
 .input {
     position: relative;
     width: 100%;
-    margin-bottom: $space-large;
+    margin-bottom: variables.$space-large;
 
     &:last-of-type {
-        margin-bottom: $space-extra;
+        margin-bottom: variables.$space-extra;
     }
 
     label {
         position: absolute;
-        top: ($input-height / 2);
-        left: $input-padding;
+        top: (variables.$input-height * 0.5);
+        left: variables.$input-padding;
         margin: 0;
         color: var(--main-text-color);
         font-size: .65rem;
-        font-weight: $bold;
+        font-weight: variables.$bold;
         text-transform: uppercase;
         line-height: 1em;
         pointer-events: none;
-        transition: all $speed-default ease;
+        transition: all variables.$speed-default ease;
 
-        @include transform(translate(0, -50%));
+        @include mixins.transform(translate(0, -50%));
     }
 
     input,
     textarea {
         width: 100%;
-        height: $input-height;
-        padding: $input-padding;
-        padding-bottom: $space-base;
+        height: variables.$input-height;
+        padding: variables.$input-padding;
+        padding-bottom: variables.$space-base;
         background-color: var(--main-input-transparency);
         background-image: none;
         background-position-x: 150%;
         border: 1px solid transparent;
         font-family: 'Inter', Helvetica, Arial, sans-serif;
         font-size: 1rem;
-        font-weight: $medium;
-        transition: background $speed-default ease;
+        font-weight: variables.$medium;
+        transition: background variables.$speed-default ease;
 
         &:hover {
             border-color: var(--main-text-color);
@@ -50,8 +53,8 @@
             // LABEL CHANGES ON INPUT FOCUS
 
             ~ label {
-                top: $input-padding + 2px;
-                left: $input-padding + 2px;
+                top: variables.$input-padding + 2px;
+                left: variables.$input-padding + 2px;
                 font-size: .5rem;
             }
         }
@@ -62,16 +65,16 @@
 
          &.has-value {
             ~ label {
-                top: $input-padding + 2px;
-                left: $input-padding + 2px;
+                top: variables.$input-padding + 2px;
+                left: variables.$input-padding + 2px;
                 font-size: 0.5em;
             }
             
             &:hover ~ label,
             &:active ~ label,
             &:focus ~ label {
-                top: $input-padding + 2px;
-                left: $input-padding + 2px;
+                top: variables.$input-padding + 2px;
+                left: variables.$input-padding + 2px;
                 font-size: 0.5em;
             }
         }
@@ -79,9 +82,9 @@
     }
 
     textarea {
-        height: $input-height * 3;
-        padding: $input-padding;
-        padding-top: $input-padding + $space-small;
+        height: variables.$input-height * 3;
+        padding: variables.$input-padding;
+        padding-top: variables.$input-padding + variables.$space-small;
         resize: vertical;
     }
 }
