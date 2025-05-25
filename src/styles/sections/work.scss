@@ -1,6 +1,16 @@
 @use "../variables";
 
 #work {
+    h2 {
+        margin-bottom: var(--space-large);
+        justify-self: center;
+        text-align: center;
+    }
+
+    > .pill {
+        margin-bottom: var(--space-jumbo);
+    }
+
     article {
         margin-bottom: var(--space-jumbo);
 

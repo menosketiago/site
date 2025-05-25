@@ -21,18 +21,20 @@ header {
             text-decoration: none;
             transition: all var(--speed-default) ease;
 
-            &::after {
-                content: "↓";
-                margin-left: var(--space-small);
-                opacity: 0;
-            }
-
-            &:hover:not(:active),
-            &:focus {
-                background: var(--main-bg-transparency);
-
+            &.arrow-down {
                 &::after {
-                    opacity: 1;
+                    content: "↓";
+                    margin-left: var(--space-small);
+                    opacity: 0;
+                }
+
+                &:hover:not(:active),
+                &:focus {
+                    background: var(--main-bg-transparency);
+
+                    &::after {
+                        opacity: 1;
+                    }
                 }
             }
         }

@@ -14,7 +14,7 @@ body {
     font-family: 'Inter', Helvetica, Arial, sans-serif;
 	font-weight: var(--regular);
 	font-size: var(--body-font-size);
-	letter-spacing: -.02em;
+	letter-spacing: -0.02em;
 }
 
 h1, 
@@ -25,6 +25,7 @@ h5 {
     max-width: calc(var(--space-jumbo) * 8);
     margin: 0;
     line-height: 1em;
+    letter-spacing: -0.04em;
     text-transform: uppercase;
     text-wrap: balance;
 }
@@ -95,4 +96,16 @@ p {
     b {
         font-weight: var(--bold);
     }
+}
+
+// PATTERN TEXT
+.pattern {
+	background-image: url("../images/pattern.png");
+	background-repeat: repeat;
+	background-position: left top;
+	background-size: 8px;
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	opacity: 80%;
 }

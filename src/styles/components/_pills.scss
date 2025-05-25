@@ -10,7 +10,7 @@
     font-weight: var(--medium);
     backdrop-filter: blur(16px);
 
-    &.first-of-type {
+    &:first-of-type {
         margin-left: 0;
     }
 

@@ -9,6 +9,7 @@ import Name from './Name';
 import Role from './Role';
 import Tooltip from './Tooltip';
 import Year from './Year';
+import YearsInSweden from './YearsInSweden';
 
 const menos = window.menos = {
     Avatar,
@@ -19,7 +20,8 @@ const menos = window.menos = {
     Name,
     Role,
     Tooltip,
-    Year
+    Year,
+    YearsInSweden
 };
 
 export function initComponents() {
@@ -109,6 +111,17 @@ export function initComponents() {
     let yearArray = document.querySelectorAll('[data-year]');
 
     if (yearArray) {
+        Array.from(yearArray).forEach(yearDOM => {
+            let year = new Year(yearDOM);
+
+            year.init();
+        });
+    }
+
+    // YEARS IN SWEDEN
+    let yearsSwedenArray = document.querySelectorAll('[data-years-sweden]');
+
+    if (yearsSwedenArray) {
         Array.from(yearArray).forEach(yearDOM => {
             let year = new Year(yearDOM);
 
