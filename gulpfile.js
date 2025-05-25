@@ -138,7 +138,7 @@ gulp.task('fonts', function fonts() {
 gulp.task('files', function files() {
     return gulp
         .src(path.files + '/**/*')
-        .pipe(gulp.dest('./www/'))
+        .pipe(gulp.dest('./www/files'))
         .pipe(browserSync.stream());
 });
 

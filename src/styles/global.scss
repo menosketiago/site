@@ -81,7 +81,6 @@ time,
 }
 
 // FOCUS STYLE
-
 .focus {
 	outline-color: var(--main-text-color);
 	outline-style: dashed;
@@ -90,13 +89,11 @@ time,
 }
 
 // NO MARGIN CLASS
-
 .no-margin {
 	margin: 0 !important;
 }
 
 // SPACING CLASSES
-
 .margin {
 	&-ts { margin-top: var(--space-small) !important; }
 	&-tb { margin-top: var(--space-base) !important; }
@@ -112,20 +109,22 @@ time,
 }
 
 // TOOLTIP TRIGGER
-
 [data-tooltip] {
 	cursor: help;
 }
 
-// WRAPPER
+// NAME TRIGGER
+[data-name] {
+	cursor: pointer;
+}
 
+// WRAPPER
 .wrapper {
     width: 100%;
     max-width: 1112px;
 }
 
 // VIMEO
-
 .vimeo {
 	position: relative;
 	display: block;
@@ -134,12 +133,11 @@ time,
 }
 
 // PATTERN TEXT
-
 .pattern {
 	background-image: url("../images/pattern.png");
 	background-repeat: repeat;
 	background-position: left top;
-	background-size: 12px;
+	background-size: 8px;
 	background-clip: text;
 	-webkit-background-clip: text;
 	color: transparent;

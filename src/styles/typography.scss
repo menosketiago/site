@@ -12,7 +12,7 @@ html { font-family: 'Inter', sans-serif; }
 
 body {
     font-family: 'Inter', Helvetica, Arial, sans-serif;
-	font-weight: var(--medium);
+	font-weight: var(--regular);
 	font-size: var(--body-font-size);
 	letter-spacing: -.02em;
 }
@@ -30,20 +30,20 @@ h5 {
 }
 
 h1 {
-    font-size: 3.4rem;
+    font-size: 11.391rem;
     font-weight: var(--black);
     line-height: 0.85em;
 }
 
 h2 {
 	margin-bottom: var(--space-extra);
-    font-size: 2.618rem;
+    font-size: 7.594rem;
     font-weight: var(--black);
 }
 
 h3 {
     margin-bottom: calc(var(--space-large) + var(--space-base));
-    font-size: 1.618rem;
+    font-size: 5.063rem;
     font-weight: var(--black);
 }
 
@@ -87,10 +87,10 @@ p {
     }
 
     a {
-        font-weight: var(--extra-bold);
+        font-weight: var(--bold);
     }
 
     b {
-        font-weight: var(--extra-bold);
+        font-weight: var(--bold);
     }
 }

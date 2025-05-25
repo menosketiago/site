@@ -1,0 +1,33 @@
+@use "../variables";
+
+.pill {
+    display: block;
+    margin-left: var(--space-small);
+    padding: var(--space-small) var(--space-base);
+    background: var(--main-bg-transparency);
+    border-radius: 100vw;
+    font-size: var(--body-font-size);
+    font-weight: var(--medium);
+    backdrop-filter: blur(16px);
+
+    &.first-of-type {
+        margin-left: 0;
+    }
+
+    &.black {
+        background: var(--main-text-color);
+        color: var(--main-bg-color);
+    }
+
+     &.arrow-right {
+		&::after {
+			content: '\00a0\00a0→';
+		}
+	}
+
+	&.arrow-left {
+		&::before {
+			content: '←\00a0\00a0';
+		}
+	}
+}

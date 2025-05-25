@@ -73,7 +73,7 @@ export function initComponents() {
     }
 
     // NAME
-    let namesArray = document.getElementsByClassName('name');
+    let namesArray = document.querySelectorAll('[data-name]');
 
     if (namesArray) {
         Array.from(namesArray).forEach(nameDOM => {
