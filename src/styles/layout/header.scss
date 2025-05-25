@@ -1,20 +1,19 @@
-@use "../mixins/flexbox";
 @use "../variables";
 
 header {
-    @include flexbox.flexbox();
-    @include flexbox.justify-content(space-between);
-    @include flexbox.align-items(center);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     .logo {
         scroll-margin: var(--space-jumbo);
     }
 
     nav {
-        @include flexbox.flexbox();
-        @include flexbox.flex-direction(row);
-        @include flexbox.justify-content(center);
-        @include flexbox.align-items(flex-start);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
 
         a {
             padding: var(--space-base);

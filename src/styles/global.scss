@@ -1,4 +1,3 @@
-@use "mixins/flexbox";
 @use "mixins/mixins";
 @use "variables";
 
@@ -29,8 +28,8 @@ body {
 	font-size: var(--body-font-size);
 	transition: background-color var(--speed-slowest) ease;
 
-	@include flexbox.flexbox();
-	@include flexbox.justify-content(center);
+	display: flex;
+	justify-content: center;
 }
 
 section {
