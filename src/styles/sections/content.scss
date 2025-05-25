@@ -5,20 +5,20 @@
         display: grid;
         justify-items: flex-start;
         grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: variables.$space-large;
-        margin-top: variables.$space-extra;
+        gap: var(--space-large);
+        margin-top: var(--space-extra);
 
         .card {
             position: relative;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            min-height: variables.$space-jumbo * 4;
-            padding: variables.$space-small * 4;
+            min-height: calc(var(--space-jumbo) * 4);
+            padding: calc(var(--space-small) * 4);
             border: 2px solid transparent;
-            border-radius: variables.$border-radius-card;
+            border-radius: var(--border-radius-card);
             text-decoration: none;
-            transition: all variables.$speed-default ease;
+            transition: all var(--speed-default) ease;
 
             // Background image
             &::before {
@@ -32,7 +32,7 @@
             }
 
             header {
-                margin-bottom: variables.$space-large;
+                margin-bottom: var(--space-large);
 
                 .icon {
                     display: flex;
@@ -40,26 +40,26 @@
                     justify-content: center;
                     width: 48px;
                     height: 48px;
-                    margin-bottom: variables.$space-large;
+                    margin-bottom: var(--space-large);
                     background: var(--main-bg-transparency);
-                    border-radius: variables.$border-radius-default;
+                    border-radius: var(--border-radius-default);
                 }
 
                 h3 {
                     font-size: 1.25rem;
-                    margin-bottom: variables.$space-small;
+                    margin-bottom: var(--space-small);
                     text-wrap: balance;
 
                     &::after {
                         content: "—";
                         display: block;
-                        margin-top: variables.$space-small;
+                        margin-top: var(--space-small);
                     }
                 }
     
                 p {
                     font-size: 1rem;
-                    font-weight: variables.$medium;
+                    font-weight: var(--medium);
                     line-height: 1.2em;
                     text-wrap: balance;
                 }
@@ -87,19 +87,19 @@
 
         @media only screen and (max-device-width: 799px) {
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: variables.$space-base;
-            margin-top: variables.$space-extra;
+            gap: var(--space-base);
+            margin-top: var(--space-extra);
 
             .card {          
                 header {
-                    margin-bottom: variables.$space-large;
+                    margin-bottom: var(--space-large);
     
                     h3 {
                         font-size: 1.2rem;
                     }
         
                     p {
-                        font-size: variables.$body-font-size;
+                        font-size: var(--body-font-size);
                     }
                 }
             }
@@ -109,7 +109,7 @@
             grid-template-columns: repeat(1, minmax(0, 1fr));
 
             .card {
-                min-height: variables.$space-jumbo * 3.5;
+                min-height: calc(var(--space-jumbo) * 3.5);
             }
         }
     }

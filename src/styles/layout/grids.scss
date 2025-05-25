@@ -1,35 +1,33 @@
-@use "../variables";
-
 .grid {
     &-1-4 {
         display: grid;
         grid-template-columns: 1fr 4fr;
-        column-gap: variables.$space-extra;
+        column-gap: var(--space-extra);
     }
 
     &-2-2 {
         display: grid;
         grid-template-columns: 2fr 2fr;
-        column-gap: variables.$space-extra;
+        column-gap: var(--space-extra);
     }
 
     &-2-3 {
         display: grid;
         grid-template-columns: 2fr 3fr;
-        column-gap: variables.$space-extra;
+        column-gap: var(--space-extra);
     }
 
     &-3-2 {
         display: grid;
         grid-template-columns: 3fr 2fr;
-        column-gap: variables.$space-extra;
+        column-gap: var(--space-extra);
     }
 }
 
 // UTILITY CLASSES
 
 .gap-jumbo {
-    column-gap: variables.$space-jumbo;
+    column-gap: var(--space-jumbo);
 }
 
 .align-center {
@@ -40,10 +38,10 @@
 
 .m {
     &-tj {
-        margin-top: variables.$space-jumbo !important;
+        margin-top: var(--space-jumbo) !important;
     }
 
     &-th {
-        margin-top: variables.$space-jumbo * 2 !important;
+        margin-top: calc(var(--space-jumbo) * 2) !important;
     }
 }

@@ -5,12 +5,19 @@
     flex-direction: column;
     align-items: center;
 
+    div {
+        p {
+            font-size: var(--paragraph-font-size);
+            font-weight: var(--bold);
+        }
+    }
+
     h1 {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: variables.$space-large 0;
-        font-size: 16cqh;
+        margin: var(--space-large) 0;
+        font-size: clamp(8cqw, 16cqw, 200px);
         text-align: center;
 
         span:first-of-type {
@@ -24,28 +31,32 @@
             display: flex;
             justify-items: center;
             align-items: center;
-            width: 12cqh;
-            height: 12cqh;
-            margin-right: variables.$space-small;
-            padding: variables.$space-base;
+            width: 12cqb;
+            height: auto;
+            aspect-ratio: 1 / 1;
+            margin-right: var(--space-small);
+            padding: var(--space-base);
             background: var(--main-bg-transparency);
-            border-radius: variables.$border-radius-card;
+            border-radius: var(--border-radius-card);
             mix-blend-mode: multiply;
             cursor: pointer;
 
             picture {
                 position: absolute;
-                width: 10cqh;
-                height: 10cqh;
-                transition: opacity variables.$speed-slow ease;
+                width: calc(12cqb - (var(--space-base) * 2));
+                height: auto;
+                aspect-ratio: 1 / 1;
+                mix-blend-mode: darken;
+                transition: opacity var(--speed-slow) ease;
 
                 img {
                     position: absolute;
+                    top: 0;
                     left: 0;
-                    width: 10cqh;
-                    height: 10cqh;
+                    width: inherit;
+                    height: inherit;    
                     border-radius: 50%;
-                    transition: opacity variables.$speed-slow ease;
+                    transition: opacity var(--speed-slow) ease;
                 }
 
                 &:nth-child(2),
@@ -57,5 +68,10 @@
                 }
             }
         }
+    }
+
+    p {
+        font-size: var(--body-font-size);
+        text-align: center;
     }
 }

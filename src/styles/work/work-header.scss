@@ -1,12 +1,10 @@
-@use "../variables";
-
 .work-header {
     display: grid;
     grid-template-columns: 4fr 2fr;
-    gap: variables.$space-extra;
+    gap: var(--space-extra);
     justify-items: flex-start;
     align-items: flex-start;
-    margin-bottom: variables.$space-jumbo;
+    margin-bottom: var(--space-jumbo);
 
     nav {
         justify-self: flex-end;

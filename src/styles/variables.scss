@@ -1,6 +1,5 @@
-// COLORS
-
 :root {
+    // COLORS
 	--main-bg-color: #F7FF00;
     --main-text-color: #222222;
     --main-bg-transparency: rgba(34, 34, 34, 0.1);
@@ -29,61 +28,55 @@
     --theme-klarna-accent: #EE3C6B;
     --theme-klarna-pink: #FFB3C7;
     --theme-klarna-transparency: rgba(255, 179, 199, 0.15);
+
+    // TYPOGRAPHY
+    --body-font-size: 14px;
+    --paragraph-font-size: 1.1rem;
+
+    --regular: 400;
+    --medium: 500;
+    --bold: 700;
+    --extra-bold: 800;
+    --black: 900;
+
+    // SPEEDS
+    --speed-default: .2s;
+    --speed-slow: .4s;
+    --speed-slowest: .8s;
+    --speed-loading: 3s;
+
+    // SIZES
+    --space-tiny: 4px;
+    --space-small: calc(var(--space-tiny) * 2);
+    --space-base: calc(var(--space-tiny) * 3);
+    --space-large: calc(var(--space-base) * 2);
+    --space-extra: calc(var(--space-large) * 2);
+    --space-jumbo: calc(var(--space-large) * 4);
+
+    --section-margin: calc(var(--space-jumbo) * 2);
+
+    --input-height: 66px;
+    --input-padding: 16px;
+
+    --loading-width: calc(var(--space-extra) * 2);
+    --tooltip-caret-width: var(--space-base);
+
+    --back-to-top-size: 60px;
+    --cursor-size: var(--back-to-top-size);
+
+    // BORDER RADIUS
+    --border-radius-default: var(--space-small);
+    --border-radius-card: var(--space-base);
+
+    // Z-INDEXES
+    --z-index-back-to-top: 100;
+    --z-index-tooltip: 10000;
+
+    // MEDIA QUERY SIZES
+    --screen-width-full-hd: 1920px;
+    --screen-width-laptop: 1366px;
+    --screen-width-average: 1024px;
+
+    --screen-height-average: 643px;
+    --screen-height-small: 475px;
 }
-
-// TYPOGRAPHY
-
-$body-font-size: 14px;
-$paragraph-font-size: 1.1rem;
-
-$regular: 400;
-$medium: 500;
-$bold: 700;
-$extra-bold: 800;
-$black: 900;
-
-// SPEEDS
-
-$speed-default: .2s;
-$speed-slow: .4s;
-$speed-slowest: .8s;
-$speed-loading: 3s;
-
-// SIZES
-
-$space-tiny: 4px;
-$space-small: $space-tiny * 2;
-$space-base: $space-tiny * 3;
-$space-large: $space-base * 2;
-$space-extra: $space-large * 2;
-$space-jumbo: $space-large * 4;
-
-$section-margin: $space-jumbo * 2;
-
-$input-height: 66px;
-$input-padding: 16px;
-
-$loading-width: $space-extra * 2;
-$tooltip-caret-width: $space-base;
-
-$back-to-top-size: 60px;
-$cursor-size: $back-to-top-size;
-
-// BORDER RADIUS
-
-$border-radius-default: $space-small;
-$border-radius-card: $space-base;
-
-// Z-INDEXES
-
-$z-index-back-to-top: 100;
-$z-index-tooltip: 10000;
-
-// MEDIA QUERY SIZES
-
-$screen-width-full-hd: 1920px;
-$screen-width-laptop: 1366px;
-$screen-width-average: 1024px;
-
-$screen-height-average: 643px;
-$screen-height-small: 475px;

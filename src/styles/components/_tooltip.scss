@@ -2,34 +2,34 @@
 @use "../variables";
 
 .tooltip {
-    z-index: variables.$z-index-tooltip;
+    z-index: var(--z-index-tooltip);
     position: absolute;
-    max-width: variables.$space-jumbo * 3;
-    padding: variables.$space-base (variables.$space-base + variables.$space-tiny);
+    max-width: calc(var(--space-jumbo) * 3);
+    padding: var(--space-base) calc(var(--space-base) + var(--space-tiny));
     color: var(--main-bg-color);
     background: var(--main-text-color);
     font-size: 1em;
-    font-weight: variables.$medium;
+    font-weight: var(--medium);
     text-align: center;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
     transition:
-        opacity variables.$speed-default ease,
-        transform variables.$speed-default ease;
+        opacity var(--speed-default) ease,
+        transform var(--speed-default) ease;
 
     @include mixins.transform(translate(0, 100%));
 
     &::after {
         content: '';
-        z-index: variables.$z-index-tooltip - 1;
+        z-index: calc(var(--z-index-tooltip) - 1);
         position: absolute;
         top: auto;
         right: auto;
         bottom: 1px;
         left: 50%;
-        width: variables.$tooltip-caret-width;
-        height: variables.$tooltip-caret-width;
+        width: var(--tooltip-caret-width);
+        height: var(--tooltip-caret-width);
         background: inherit;
         font-size: 1rem;
         user-select: none;

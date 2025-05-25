@@ -7,7 +7,7 @@ header {
     @include flexbox.align-items(center);
 
     .logo {
-        scroll-margin: variables.$space-jumbo;
+        scroll-margin: var(--space-jumbo);
     }
 
     nav {
@@ -17,14 +17,14 @@ header {
         @include flexbox.align-items(flex-start);
 
         a {
-            padding: variables.$space-base;
-            font-weight: variables.$bold;
+            padding: var(--space-base);
+            font-weight: var(--bold);
             text-decoration: none;
-            transition: all variables.$speed-default ease;
+            transition: all var(--speed-default) ease;
 
             &::after {
                 content: "↓";
-                margin-left: variables.$space-small;
+                margin-left: var(--space-small);
                 opacity: 0;
             }
 

@@ -3,19 +3,19 @@
 
 .back-to-top {
     position: fixed;
-    right: variables.$space-extra;
-    bottom: variables.$space-extra;
-    width: variables.$back-to-top-size;
-    height: variables.$back-to-top-size;
+    right: var(--space-extra);
+    bottom: var(--space-extra);
+    width: var(--back-to-top-size);
+    height: var(--back-to-top-size);
     margin: 0;
     color: var(--main-bg-color);
     background: var(--main-text-color);
     border: 2px solid transparent;
-    border-radius: variables.$back-to-top-size * 0.5;
+    border-radius: calc(var(--back-to-top-size) * 0.5);
     font-size: 24px;
     text-decoration: none;
     user-select: none;
-    transition: all variables.$speed-default ease;
+    transition: all var(--speed-default) ease;
     opacity: 0;
     pointer-events: none;
 

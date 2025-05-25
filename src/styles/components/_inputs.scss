@@ -4,24 +4,24 @@
 .input {
     position: relative;
     width: 100%;
-    margin-bottom: variables.$space-large;
+    margin-bottom: var(--space-large);
 
     &:last-of-type {
-        margin-bottom: variables.$space-extra;
+        margin-bottom: var(--space-extra);
     }
 
     label {
         position: absolute;
-        top: (variables.$input-height * 0.5);
-        left: variables.$input-padding;
+        top: calc(var(--input-height) * 0.5);
+        left: var(--input-padding);
         margin: 0;
         color: var(--main-text-color);
         font-size: .65rem;
-        font-weight: variables.$bold;
+        font-weight: var(--bold);
         text-transform: uppercase;
         line-height: 1em;
         pointer-events: none;
-        transition: all variables.$speed-default ease;
+        transition: all var(--speed-default) ease;
 
         @include mixins.transform(translate(0, -50%));
     }
@@ -29,17 +29,17 @@
     input,
     textarea {
         width: 100%;
-        height: variables.$input-height;
-        padding: variables.$input-padding;
-        padding-bottom: variables.$space-base;
+        height: var(--input-height);
+        padding: var(--input-padding);
+        padding-bottom: var(--space-base);
         background-color: var(--main-input-transparency);
         background-image: none;
         background-position-x: 150%;
         border: 1px solid transparent;
         font-family: 'Inter', Helvetica, Arial, sans-serif;
         font-size: 1rem;
-        font-weight: variables.$medium;
-        transition: background variables.$speed-default ease;
+        font-weight: var(--medium);
+        transition: background var(--speed-default) ease;
 
         &:hover {
             border-color: var(--main-text-color);
@@ -53,8 +53,8 @@
             // LABEL CHANGES ON INPUT FOCUS
 
             ~ label {
-                top: variables.$input-padding + 2px;
-                left: variables.$input-padding + 2px;
+                top: calc(var(--input-padding) + 2px);
+                left: calc(var(--input-padding) + 2px);
                 font-size: .5rem;
             }
         }
@@ -65,16 +65,16 @@
 
          &.has-value {
             ~ label {
-                top: variables.$input-padding + 2px;
-                left: variables.$input-padding + 2px;
+                top: calc(var(--input-padding) + 2px);
+                left: calc(var(--input-padding) + 2px);
                 font-size: 0.5em;
             }
             
             &:hover ~ label,
             &:active ~ label,
             &:focus ~ label {
-                top: variables.$input-padding + 2px;
-                left: variables.$input-padding + 2px;
+                top: calc(var(--input-padding) + 2px);
+                left: calc(var(--input-padding) + 2px);
                 font-size: 0.5em;
             }
         }
@@ -82,9 +82,9 @@
     }
 
     textarea {
-        height: variables.$input-height * 3;
-        padding: variables.$input-padding;
-        padding-top: variables.$input-padding + variables.$space-small;
+        height: calc(var(--input-height) * 3);
+        padding: var(--input-padding);
+        padding-top: calc(var(--input-padding) + var(--space-small));
         resize: vertical;
     }
 }

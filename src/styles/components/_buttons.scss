@@ -4,17 +4,17 @@ button,
 .btn {
     display: inline-block;
     margin: 0;
-    margin-right: variables.$space-base;
-    margin-bottom: variables.$space-base;
-    padding: variables.$space-base;
+    margin-right: var(--space-base);
+    margin-bottom: var(--space-base);
+    padding: var(--space-base);
     background: none;
     border: 2px solid var(--main-text-color);
     font-family: inherit;
-    font-weight: variables.$bold;
+    font-weight: var(--bold);
     letter-spacing: normal;
     text-decoration: none;
     user-select: none;
-    transition: all variables.$speed-default ease;
+    transition: all var(--speed-default) ease;
     cursor: pointer;
 
     &:last-child {

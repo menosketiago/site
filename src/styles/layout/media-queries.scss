@@ -4,7 +4,7 @@
 @media only screen
 and (max-device-width: 799px) {
 	body {
-		padding: variables.$space-extra;
+		padding: var(--space-extra);
 
 		h1 {
 			font-size: 1.602rem;
@@ -35,12 +35,12 @@ and (max-device-width: 799px) {
 			section {
 				grid-template-columns: auto;
 				column-gap: initial;
-				margin: variables.$space-extra 0;
-				margin-top: variables.$space-jumbo;
+				margin: var(--space-extra) 0;
+				margin-top: var(--space-jumbo);
 
 				.name {
 					&::after {
-						padding: variables.$space-tiny;
+						padding: var(--space-tiny);
 						border-width: 1px;
 						font-size: .3em;
 						transform: translate(0, .3em);
@@ -50,7 +50,7 @@ and (max-device-width: 799px) {
 		}
 
 		section {
-			margin: variables.$space-jumbo 0;
+			margin: var(--space-jumbo) 0;
 		}
 
 		#about {
@@ -58,27 +58,27 @@ and (max-device-width: 799px) {
 			column-gap: 0;
 
 			.avatar {
-				margin-bottom: variables.$space-extra;
+				margin-bottom: var(--space-extra);
 			}
 		}
 
 		#work {
 			article {
-				margin-bottom: variables.$space-extra;
+				margin-bottom: var(--space-extra);
 
 				> div {
 					grid-template-columns: auto;
 					column-gap: 0;
 
 					h4 {
-						margin-top: variables.$space-extra;
+						margin-top: var(--space-extra);
 					}
 				}
 			}
 
 			.dual-column {
 				article {
-					margin-bottom: variables.$space-extra;
+					margin-bottom: var(--space-extra);
 
 					&:last-child {
 						margin-bottom: 0;
@@ -113,10 +113,10 @@ and (max-device-width: 799px) {
 		}
 
 		.input {
-			margin-bottom: variables.$space-base;
+			margin-bottom: var(--space-base);
 
 			&:last-of-type {
-				margin-bottom: variables.$space-large;
+				margin-bottom: var(--space-large);
 			}
 		}
 
@@ -136,24 +136,24 @@ and (max-device-width: 799px) {
 
 		.work-main {
 			h1 {
-				margin-bottom: variables.$space-extra;
+				margin-bottom: var(--space-extra);
 			}
 
 			article {
-				margin: variables.$space-extra 0;
+				margin: var(--space-extra) 0;
 			}
 
 			aside {
-				margin-top: variables.$space-extra;
+				margin-top: var(--space-extra);
 			}
 
 			figure,
 			video {
-				margin-bottom: variables.$space-extra;
+				margin-bottom: var(--space-extra);
 			}
 
 			.m-th {
-				margin-top: variables.$space-jumbo !important;
+				margin-top: var(--space-jumbo) !important;
 			}
 		}
 	}

@@ -3,7 +3,7 @@
 a {
 	display: inline-block;
 	color: var(--main-text-color);
-	font-weight: variables.$bold;
+	font-weight: var(--bold);
 	text-underline-offset: .15em;
 
 	&:hover:not(:active),

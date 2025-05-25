@@ -3,8 +3,8 @@
 #bye {
     display: grid;
     grid-template-columns: 2fr 3fr;
-    column-gap: variables.$space-extra;
-    margin: variables.$space-jumbo 0;
+    column-gap: var(--space-extra);
+    margin: var(--space-jumbo) 0;
 
     h1 {
         grid-column-start: 2;

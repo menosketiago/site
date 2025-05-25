@@ -3,7 +3,7 @@
 #contact {
     display: grid;
     grid-template-columns: 3fr 2fr;
-    column-gap: variables.$space-extra;
+    column-gap: var(--space-extra);
     justify-items: flex-start;
 
     > * {
@@ -12,7 +12,7 @@
 
     form {
         margin: 0;
-        margin-top: variables.$space-extra;
+        margin-top: var(--space-extra);
         width: 100%;
         text-align: right;
     }

@@ -3,12 +3,12 @@
 #about {
     display: grid;
     grid-template-columns: 2fr 3fr;
-    column-gap: variables.$space-extra;
+    column-gap: var(--space-extra);
     align-items: flex-start;
 
     p {
         &:last-of-type {
-            margin-bottom: variables.$space-extra;
+            margin-bottom: var(--space-extra);
         }
     }
 }

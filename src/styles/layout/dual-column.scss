@@ -5,7 +5,7 @@
 .dual-column {
 	display: grid;
     grid-template-columns: 2fr 2fr;
-    column-gap: variables.$space-extra;
+    column-gap: var(--space-extra);
 
     article {
         a:first-of-type {
@@ -26,29 +26,29 @@
         }
 
         hgroup {
-            margin-top: variables.$space-extra;
+            margin-top: var(--space-extra);
 
             h3 {
-                margin-bottom: variables.$space-large;
+                margin-bottom: var(--space-large);
             }
 
             h4 {
-                margin-bottom: variables.$space-extra;
+                margin-bottom: var(--space-extra);
             }
 
             ~ p {
-                margin-bottom: variables.$space-large;
+                margin-bottom: var(--space-large);
                 font-size: 1rem;
 
                 + a {
-                    margin-top: variables.$space-large;
+                    margin-top: var(--space-large);
                 }
             }
         }
 
         > div > div {
             h3 {
-                margin-top: variables.$space-extra;
+                margin-top: var(--space-extra);
             }
 
             p {
@@ -62,7 +62,7 @@
 
                 a {
                     width: auto;
-                    margin-top: variables.$space-extra;
+                    margin-top: var(--space-extra);
                 }
             }
         }

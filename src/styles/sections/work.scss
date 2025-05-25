@@ -2,10 +2,10 @@
 
 #work {
     article {
-        margin-bottom: variables.$space-jumbo;
+        margin-bottom: var(--space-jumbo);
 
         h4 {
-            margin-bottom: variables.$space-base;
+            margin-bottom: var(--space-base);
         }
 
         > a {
@@ -16,7 +16,7 @@
             picture,
             video {
                 display: block;
-                transition: transform variables.$speed-slow ease;
+                transition: transform var(--speed-slow) ease;
             }
 
             &:hover,
@@ -34,13 +34,13 @@
         > div {
             display: grid;
             grid-template-columns: 4fr 1fr;
-            column-gap: variables.$space-jumbo;
+            column-gap: var(--space-jumbo);
             justify-items: flex-start;
-            margin-top: variables.$space-extra;
+            margin-top: var(--space-extra);
 
             div:nth-child(2) {
                 b {
-                    margin-bottom: variables.$space-large;
+                    margin-bottom: var(--space-large);
                 }
 
                 p {
@@ -48,7 +48,7 @@
                 }
 
                 a {
-                    margin-top: variables.$space-large;
+                    margin-top: var(--space-large);
                 }
             }
         }
@@ -59,7 +59,7 @@
             margin-bottom: 0;
 
             a {
-                margin-top: variables.$space-large;
+                margin-top: var(--space-large);
             }
         }
     }

@@ -3,53 +3,53 @@
 main {
 	&.standalone-page {
 		h1 {
-			margin-bottom: variables.$space-jumbo;
+			margin-bottom: var(--space-jumbo);
 			font-size: 6em;
-			font-weight: variables.$black;
+			font-weight: var(--black);
 		}
 	}
 
 	&.salary {
-		margin-bottom: variables.$space-jumbo * 2;
+		margin-bottom: calc(var(--space-jumbo) * 2);
 
         h4 {
-            font-size: variables.$paragraph-font-size;
-			font-weight: variables.$black;
+            font-size: var(--paragraph-font-size);
+			font-weight: var(--black);
         }
 
 		h5 {
-			font-size: variables.$paragraph-font-size;
-			font-weight: variables.$medium;
+			font-size: var(--paragraph-font-size);
+			font-weight: var(--medium);
 
 			&:last-of-type {
-				margin-bottom: variables.$space-extra;
+				margin-bottom: var(--space-extra);
 			}
 		}
 
 		section {
 			&:not(:first-of-type) {
 				margin-top: 0;
-				margin-bottom: variables.$space-jumbo;
+				margin-bottom: var(--space-jumbo);
 			}
 
 			&:last-child {
-				margin-bottom: variables.$space-jumbo * 2;
+				margin-bottom: calc(var(--space-jumbo) * 2);
 			}
 
 			p {
 				&:last-of-type {
-					margin-bottom: variables.$space-large;
+					margin-bottom: var(--space-large);
 				}
 			}
 		}
 
         article	{
-			margin-bottom: variables.$space-extra + variables.$space-large;
+			margin-bottom: calc(var(--space-extra) + var(--space-large));
 
 			time {
-				margin-bottom: variables.$space-large;
-				font-size: variables.$paragraph-font-size;
-				font-weight: variables.$medium;
+				margin-bottom: var(--space-large);
+				font-size: var(--paragraph-font-size);
+				font-weight: var(--medium);
 			}
 		}
 	}
@@ -58,14 +58,14 @@ main {
 	and (max-device-width: 799px) {
 		&.standalone-page {
 			h1 {
-				margin-bottom: variables.$space-jumbo;
+				margin-bottom: var(--space-jumbo);
 				font-size: 4em;
 			}
 		}
 
 		&.salary {
 			h4 {
-				margin-bottom: variables.$space-large;
+				margin-bottom: var(--space-large);
 			}
 
 			h5 {

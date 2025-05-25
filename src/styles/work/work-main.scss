@@ -1,16 +1,16 @@
 @use "../variables";
 
 .work-main {
-    margin-bottom: variables.$space-jumbo;
+    margin-bottom: var(--space-jumbo);
 
     h1 {
-        margin-bottom: variables.$space-jumbo;
-        font-weight: variables.$black;
+        margin-bottom: var(--space-jumbo);
+        font-weight: var(--black);
     }
 
     aside {
         hgroup {
-            margin-bottom: variables.$space-extra;
+            margin-bottom: var(--space-extra);
 
             p {
                 font-size: 1em;
@@ -23,10 +23,10 @@
     }
 
     article {
-        margin: variables.$space-jumbo 0;
+        margin: var(--space-jumbo) 0;
 
         &:nth-of-type(2) {
-            margin-top: variables.$space-jumbo * 2;
+            margin-top: calc(var(--space-jumbo) * 2);
         }
 
         figure,
@@ -41,7 +41,7 @@
         width: 100%;
         height: auto;
         margin: 0;
-        margin-bottom: variables.$space-jumbo;
+        margin-bottom: var(--space-jumbo);
 
         &:last-of-type {
             margin-bottom: 0;
@@ -71,7 +71,7 @@
                     filter: grayscale(1);
                     mix-blend-mode: multiply;
                     transform: scale(1);
-                    transition: transform variables.$speed-slow ease;
+                    transition: transform var(--speed-slow) ease;
                 }
 
                 &:hover,
