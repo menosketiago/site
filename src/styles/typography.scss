@@ -44,7 +44,7 @@ h2 {
 }
 
 h3 {
-    margin-bottom: calc(var(--space-large) + var(--space-base));
+    margin-bottom: var(--space-large);
     font-size: 5.063rem;
     font-weight: var(--black);
     line-height: 0.85em;
@@ -52,8 +52,8 @@ h3 {
 
 h4 {
     margin-bottom: var(--space-large);
-    font-size: 1rem;
-    font-weight: var(--bold);
+    font-size: 1.5rem;
+    font-weight: var(--black);
     line-height: 1em;
 
     span {
@@ -102,10 +102,9 @@ p {
 .pattern {
 	background-image: url("../images/pattern.png");
 	background-repeat: repeat;
-	background-position: left top;
 	background-size: 8px;
 	background-clip: text;
 	-webkit-background-clip: text;
 	color: transparent;
-	opacity: 80%;
+	opacity: 0.8;
 }

@@ -86,6 +86,13 @@
                     }
                 }
             }
+
+            aside {
+                h4,
+                .pill {
+                    display: none;
+                }
+            }
         }
     }
 }
