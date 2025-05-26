@@ -1,13 +1,116 @@
 @use "../variables";
 
 #bye {
-    display: grid;
-    grid-template-columns: 2fr 3fr;
-    column-gap: var(--space-extra);
-    margin: var(--space-jumbo) 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-items: flex-start;
 
-    h1 {
-        grid-column-start: 2;
-        text-align: right;
+    h2 {
+        margin-bottom: var(--space-large);
+        text-align: center;
+    }
+
+    .wrapper {
+        position: relative;
+        width: auto;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .pill {
+        text-wrap: nowrap;
+    }
+
+    #bye-se,
+    #bye-pt,
+    #bye-en {
+        position: absolute;
+
+        span:nth-child(2) {
+            display: none;
+        }
+    }
+
+    #bye-se {
+        top: 32px;
+        right: -28px;
+    }
+
+    #bye-pt {
+        top: 134px;
+        left: -44px;
+    }
+
+    #bye-en {
+        top: 260px;
+        right: -32px;
+    }
+
+    // MEDIA QUERIES
+    @media only screen and (max-device-width: 1200px) {
+        #bye-se {
+            top: 21px;
+            right: -47px;
+        }
+
+        #bye-pt {
+            top: 96px;
+            left: -60px;
+        }
+
+        #bye-en {
+            top: 182px;
+            right: -64px;
+        }
+    }
+
+    @media only screen and (max-device-width: 799px) {
+        #bye-se {
+            top: 11px;
+            right: -64px;
+        }
+
+        #bye-pt {
+            top: 67px;
+            left: -74px;
+        }
+
+        #bye-en {
+            top: 128px;
+            right: -82px;
+        }
+    }
+
+    @media only screen and (max-device-width: 580px) {
+        #bye-se,
+        #bye-pt,
+        #bye-en {
+            span:nth-child(1) {
+                display: none;
+            }
+            
+            span:nth-child(2) {
+                display: initial;
+            }
+        }
+
+        #bye-se {
+            top: 1px;
+            right: -30px;
+        }
+
+        #bye-pt {
+            top: 38px;
+            left: -22px;
+        }
+
+        #bye-en {
+            top: 75px;
+            right: -7px;
+        }
     }
 }

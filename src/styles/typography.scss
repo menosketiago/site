@@ -27,7 +27,7 @@ h5 {
     line-height: 1.2em;
     letter-spacing: -0.04em;
     text-transform: uppercase;
-    text-wrap: balance;
+    text-wrap: pretty;
 }
 
 h1 {
@@ -79,7 +79,7 @@ h5 {
 }
 
 p {
-    max-width: calc(var(--space-jumbo) * 8);
+    max-width: calc(var(--space-jumbo) * 6);
     margin: 0;
     margin-bottom: var(--space-large);
     font-size: var(--paragraph-font-size);

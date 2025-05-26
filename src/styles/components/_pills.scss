@@ -3,11 +3,12 @@
 .pill {
     display: block;
     margin-right: var(--space-small);
+    margin-bottom: var(--space-small);
     padding: var(--space-small) var(--space-base);
     background: var(--main-bg-transparency);
     border-radius: 100vw;
     font-size: var(--body-font-size);
-    font-weight: var(--medium);
+    font-weight: var(--regular);
     backdrop-filter: blur(16px);
     
     &:last-of-type {

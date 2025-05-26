@@ -137,10 +137,6 @@
 							flex-wrap: wrap;
 							align-items: flex-start;
                         }
-
-                        .pill {
-                            margin-bottom: 0;
-                        }
                     }
                 }
             }
@@ -170,6 +166,12 @@
                 margin-bottom: var(--space-extra);
             }
         }
+
+		#contact {
+			h2 {
+				max-width: 50%;
+			}
+		}
 
         #contact,
         #bye,
@@ -207,6 +209,11 @@
         footer {
             grid-template-columns: auto;
             column-gap: 0;
+			margin-bottom: 0;
+
+			section {
+				margin: 0;
+			}
 
             .icon {
                 justify-self: flex-start;
@@ -298,6 +305,25 @@
 
 @media only screen and (max-device-width: 410px) {
     body {
+		padding: calc(var(--space-large) * 1.5);
+
+		h1 {
+            font-size: 3.9rem;
+        }
+
+        h2 {
+            font-size: 2.4rem;
+			margin-bottom: var(--space-large);
+        }
+
+        h3 {
+            font-size: 1.3rem;
+        }
+
+        h4 {
+            font-size: 0.9rem;
+        }
+		
         #splash {
             .pill {
                 &:not(.black) {

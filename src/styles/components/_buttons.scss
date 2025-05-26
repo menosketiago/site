@@ -8,9 +8,9 @@ button,
     margin-bottom: var(--space-base);
     padding: var(--space-base);
     background: none;
-    border: 1px solid var(--main-text-color);
+    border: 1.5px solid var(--main-text-color);
     font-family: inherit;
-    font-weight: var(--medium);
+    font-weight: var(--bold);
     letter-spacing: normal;
     text-decoration: none;
     user-select: none;
@@ -54,4 +54,9 @@ button,
 			content: '←\00a0\00a0';
 		}
 	}
+
+    // MEDIA QUERIES
+    @media only screen and (max-device-width: 580px) {
+        font-size: 0.8rem;
+    }
 }

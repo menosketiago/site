@@ -43,7 +43,7 @@
 
         > div {
             display: grid;
-            grid-template-columns: 3fr 1fr;
+            grid-template-columns: 2.5fr 1.5fr;
             column-gap: var(--space-jumbo);
             justify-items: flex-start;
             margin-top: var(--space-extra);

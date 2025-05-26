@@ -6,9 +6,23 @@
     column-gap: var(--space-extra);
     align-items: flex-start;
 
+    h2 {
+        margin-bottom: var(--space-large);
+    }
+
     form {
         margin: 0;
         width: 100%;
         text-align: right;
+    }
+
+    // MEDIA QUERIES
+    @media only screen and (max-device-width: 1200px) {
+        grid-template-columns: auto;
+        row-gap: var(--space-extra);
+
+        form {
+            max-width: calc(var(--space-jumbo) * 6);
+        }
     }
 }
