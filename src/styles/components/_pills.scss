@@ -2,16 +2,16 @@
 
 .pill {
     display: block;
-    margin-left: var(--space-small);
+    margin-right: var(--space-small);
     padding: var(--space-small) var(--space-base);
     background: var(--main-bg-transparency);
     border-radius: 100vw;
     font-size: var(--body-font-size);
     font-weight: var(--medium);
     backdrop-filter: blur(16px);
-
-    &:first-of-type {
-        margin-left: 0;
+    
+    &:last-of-type {
+        margin-right: 0;
     }
 
     &.black {

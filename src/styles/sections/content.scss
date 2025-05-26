@@ -16,7 +16,6 @@
         justify-items: flex-start;
         grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: var(--space-large);
-        margin-top: var(--space-extra);
 
         .card {
             position: relative;
@@ -55,6 +54,7 @@
                     margin-bottom: var(--space-large);
                     background: var(--main-bg-transparency);
                     border-radius: var(--border-radius-default);
+                    z-index: var(--z-index-tooltip);
                 }
 
                 h3 {
@@ -78,7 +78,9 @@
             }
 
             .btn {
+                background: var(--main-bg-color);
                 text-align: center;
+                z-index: var(--z-index-tooltip);
             }
 
             &:hover:not(:active),
@@ -92,7 +94,7 @@
             }
         }
 
-        // Media queries
+        // MEDIA QUERIES
         @media only screen and (max-device-width: 1230px) {
             grid-template-columns: repeat(3, minmax(0, 1fr));
         }
@@ -100,7 +102,6 @@
         @media only screen and (max-device-width: 799px) {
             grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: var(--space-base);
-            margin-top: var(--space-extra);
 
             .card {          
                 header {

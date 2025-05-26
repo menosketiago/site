@@ -11,7 +11,11 @@
         }
 
         h3 {
-            font-size: 3.998remm;
+            font-size: 3.998rem;
+        }
+
+        h4 {
+            font-size: 1.414rem;
         }
 
         .avatar {
@@ -38,6 +42,10 @@
 
         h3 {
             font-size: 3.157rem;
+        }
+
+        h4 {
+            font-size: 1.333rem;
         }
 
         p {
@@ -75,45 +83,64 @@
             margin: var(--space-jumbo) 0;
         }
 
-		.avatar {
+        .avatar {
             width: 72px;
-			padding: var(--space-small);
+            padding: var(--space-small);
 
             picture {
                 width: calc(72px - (var(--space-small) * 2));
             }
         }
-		
 
         .pattern {
             background-size: 6px;
         }
 
-		#splash {
-			h1 {
-				margin: var(--space-base) 0;
-			}
-		}
+        #splash {
+            h1 {
+                margin: var(--space-base) 0;
+            }
+        }
 
         #about {
             grid-template-columns: auto;
             column-gap: 0;
 
-            .avatar {
-                margin-bottom: var(--space-extra);
+            .wrapper {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+				align-items: flex-start;
             }
         }
 
         #work {
+            > .pill {
+				margin-right: 0;
+                margin-bottom: var(--space-extra);
+            }
+
             article {
                 margin-bottom: var(--space-extra);
 
                 > div {
                     grid-template-columns: auto;
                     column-gap: 0;
+                    margin-top: var(--space-large);
 
-                    h4 {
-                        margin-top: var(--space-extra);
+                    aside {
+                        margin-top: var(--space-large);
+
+                        .wrapper {
+                            display: flex;
+                            flex-direction: row;
+							flex-wrap: wrap;
+							align-items: flex-start;
+                        }
+
+                        .pill {
+                            margin-bottom: 0;
+                        }
                     }
                 }
             }
@@ -125,7 +152,22 @@
                     &:last-child {
                         margin-bottom: 0;
                     }
+
+                    > div {
+						margin-top: var(--space-large);
+
+                        aside {
+                            margin-top: 0;
+                        }
+                    }
                 }
+            }
+        }
+
+        #content {
+            > .pill {
+				margin-right: 0;
+                margin-bottom: var(--space-extra);
             }
         }
 
@@ -203,69 +245,70 @@
 
 @media only screen and (max-device-width: 580px) {
     body {
+        padding: calc(var(--space-large) * 2);
+
         h1 {
             font-size: 4.11rem;
         }
 
         h2 {
             font-size: 2.709rem;
+			margin-bottom: var(--space-large);
         }
 
         h3 {
             font-size: 1.657rem;
         }
 
-		#splash {
-			p {
-				font-size: .8rem;
-			}
-		}
+        h4 {
+            font-size: 1rem;
+        }
 
-		.pill {
-			font-size: .8rem;
-		}
+        p {
+            font-size: 0.8rem;
+        }
 
-		.avatar {
-			width: 55px;
-			margin-right: var(--space-tiny);
-			padding: var(--space-small);
+        .pill {
+            font-size: 0.8rem;
+        }
 
-			picture {
-				width: calc(55px - (var(--space-small) * 2));
-			}
-		}
+        .avatar {
+            width: 55px;
+            margin-right: var(--space-tiny);
+            padding: var(--space-small);
 
-		.pattern {
+            picture {
+                width: calc(55px - (var(--space-small) * 2));
+            }
+        }
+
+        .pattern {
             background-size: 4px;
         }
+
+		#about {
+			p {
+				&:last-of-type {
+					margin-bottom: var(--space-large);
+				}
+			}
+		}
     }
 }
 
 @media only screen and (max-device-width: 410px) {
     body {
-		h1 {
-            font-size: 3.11rem;
-        }
-
-        h2 {
-            font-size: 1.709rem;
-        }
-
-        h3 {
-            font-size: 0.657rem;
-        }
-
         #splash {
-			.pill {
-				&:not(.black) {
-					display: none;
-				}
-			}
-		}
+            .pill {
+                &:not(.black) {
+                    display: none;
+                }
+            }
+        }
 
-		.avatar {
+        .avatar {
             width: 40px;
-			padding: var(--space-tiny);
+            padding: var(--space-tiny);
 
             picture {
                 width: calc(40px - (var(--space-tiny) * 2));

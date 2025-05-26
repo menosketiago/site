@@ -55,6 +55,7 @@
 
                 h4 {
                     margin-top: var(--space-large);
+                    margin-right: var(--space-base);
 
                     &:first-child {
                         margin-top: 0;
@@ -83,8 +84,8 @@
 
                 aside {
                     display: flex;
-                    flex-direction: row;
-                    align-items: center;
+                    flex-direction: column;
+                    justify-items: flex-start;
 
                     div {
                         display: flex;
@@ -99,11 +100,6 @@
                         .pill {
                             margin-left: var(--space-small);
                         }
-                    }
-
-                    a {
-                        margin-top: 0;
-                        margin-left: var(--space-large);
                     }
                 }
             }
