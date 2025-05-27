@@ -65,6 +65,11 @@
             }
         }
 
+        .pill {
+            background-color: var(--theme-dark-text-color);
+            color: var(--theme-dark-bg-color);
+        }
+
         .back-to-top {
             background: var(--theme-dark-accent);
             color: var(--theme-dark-bg-color);

@@ -4,35 +4,14 @@
     margin-bottom: var(--space-jumbo);
 
     h1 {
-        margin-bottom: var(--space-jumbo);
+        max-width: initial;
+        margin-bottom: var(--space-extra);
         font-weight: var(--black);
     }
 
-    aside {
-        hgroup {
-            margin-bottom: var(--space-extra);
-
-            p {
-                font-size: 1em;
-            }
-
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
-    }
-
-    article {
-        margin: var(--space-jumbo) 0;
-
-        &:nth-of-type(2) {
-            margin-top: calc(var(--space-jumbo) * 2);
-        }
-
-        figure,
-        video {
-            margin: 0;
-        }
+    h2 {
+        justify-self: center;
+        text-align: center;
     }
 
     figure,
@@ -43,15 +22,42 @@
         margin: 0;
         margin-bottom: var(--space-jumbo);
 
-        &:last-of-type {
+        &:last-child {
             margin-bottom: 0;
+        }
+
+        &:not(:only-of-type) {
+            margin-bottom: var(--space-extra);
+        }
+    }
+
+    .summary {
+        align-items: stretch;
+        margin: var(--space-jumbo) 0;
+
+        aside {
+            hgroup {
+                margin-bottom: var(--space-extra);
+
+                h4 {
+                    margin-bottom: var(--space-base);
+                }
+
+                p {
+                    font-size: 1em;
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
         }
     }
 
     .dual-column {
         margin-top: 0;
 
-        article {
+        section {
             margin-top: 0;
 
             > a {
@@ -102,7 +108,7 @@
             margin-bottom: var(--space-extra);
         }
 
-        article {
+        section {
             margin: var(--space-extra) 0;
         }
 

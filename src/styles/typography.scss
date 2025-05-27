@@ -70,11 +70,11 @@ h4 {
 h5 {
     margin-bottom: var(--space-small);
     font-size: 1rem;
-    font-weight: var(--medium);
+    font-weight: var(--regular);
     text-transform: none;
 
     a {
-        font-weight: var(--medium);
+        font-weight: var(--regular);
         text-decoration: none;
 
         &:hover:not(:active) {

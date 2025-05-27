@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>menosketiago™ — TriOptima Design System</title>
+    <title>menosketiago™ TriOptima Design System</title>
 
 	{{> head/meta}}
 	{{> head/og}}
@@ -16,7 +16,7 @@
 		</header>
 
 		<main class="work-main">
-            <article class="grid-3-2 gap-jumbo margin-bl">
+            <section class="grid-3-2 gap-jumbo margin-bl">
                 <div>
                     <h1>TriOptima Design System</h1>
                     <p>
@@ -29,12 +29,12 @@
 
                 <aside>
                     <hgroup>
-                        <h4>ROLE —</h4>
+                        <h4>ROLE</h4>
                         <h5>Product Designer</h5>
                         <h5>Frontend Developer</h5>
                     </hgroup>
                     <hgroup>
-                        <h4>Tools —</h4>
+                        <h4>Tools</h4>
                         <h5>Sketch</h5>
                         <h5>Adobe Illustrator</h5>
                         <h5>HTML</h5>
@@ -42,7 +42,7 @@
                         <h5>JS</h5>
                     </hgroup>
                     <hgroup>
-                        <h4>Team —</h4>
+                        <h4>Team</h4>
                         <h5>
                             <a href="https://www.linkedin.com/in/mikaellindbergswe/" target="_blank" rel="noopener" class="arrow-right">Mikael Lindberg</a>
                         </h5>
@@ -72,7 +72,7 @@
                         </h5>
                     </hgroup>
                 </aside>
-            </article>
+            </section>
 
             <figure>
                 <picture>
@@ -83,8 +83,8 @@
                 <figcaption>The TriOptima Design System Sketch library</figcaption>
             </figure>
 
-            <article class="grid-2-3">
-                <h2>Creating a Design System —</h2>
+            <section class="grid-2-3">
+                <h2>Creating a Design System</h2>
                 <div>
                     <p>
                         Using a templating and documentation generation tool called <a href="https://fbrctr.github.io/" target="_blank" rel="noopener">Fabricator</a> and an object-oriented vanilla JS design pattern, both of which I had experience from when I worked on the <b>Loki</b> CSS framework (the seed of the <b>Ericsson Design System</b>), I was able to release the first version of the design system in little over two months.
@@ -93,16 +93,16 @@
                         The <b>TriOptima Design System</b> (<b>triDS</b> for short) is composed of design and technical writing documentation, a <b>Sketch</b> library, and, most importantly, a technology stack agnostic CSS/JS framework.
                     </p>
                 </div>
-            </article>
+            </section>
 
-            <article class="grid-2-3">
-                <h2>One library to rule them all —</h2>
+            <section class="grid-2-3">
+                <h2>One library to rule them all</h2>
                 <div>
                     <p>
                         Having a library allowed the entire team to quickly produce new design ideas and high fidelity mockups, thanks to very modular components made of interchangeable symbols that could be switched to reflect different UI  state changes. It also meant that design changes could be made in the shared library file and inherited by the different mockups with minimal effort doing design updates.
                     </p>
                 </div>
-            </article>
+            </section>
 
             <figure>
                 <picture loading="lazy">
@@ -131,14 +131,14 @@
                 <figcaption class="bottom">Quick-start template for new product mockups</figcaption>
             </figure>
 
-            <article class="grid-2-3">
-                <h2>Wireframing library —</h2>
+            <section class="grid-2-3">
+                <h2>Wireframing library</h2>
                 <div>
                     <p>
                         Some weeks later, I also created a second library for wireframing, dropping all colors and detailed graphics so that we could keep the initial conversations with stakeholders focused on the right things, such as user flow and interaction patterns.
                     </p>
                 </div>
-            </article>
+            </section>
 
             <figure>
                 <picture loading="lazy">
@@ -149,8 +149,8 @@
                 <figcaption class="bottom">Some components on the wireframing library</figcaption>
             </figure>
 
-            <article class="grid-2-3">
-                <h2>Implementing a CSS/JS framework —</h2>
+            <section class="grid-2-3">
+                <h2>Implementing a CSS/JS framework</h2>
                 <div>
                     <p>
                         At <b>TriOptima</b>, we had five independent product teams that made their own technology choices, and even within the same product, there were different javascript libraries (one used <b>Elm</b>, another language altogether) or frameworks that coexisted. What this meant was that applying a new design forced five different teams with varying levels of frontend knowledge to redo the same interface elements and interaction patterns.
@@ -162,7 +162,7 @@
                         <b>triDS.js</b> followed a class-based, object-oriented design pattern that allowed the creation of interface components that could be enabled or disable at will with a data attribute (data-nojs) on the <b>HTML</b> side. Thanks to contributions from my developer colleagues, later releases of the framework also featured a <b>React</b> inspired state object that could be read by other frameworks and even basic markup structure validation tests. I even include an automated "design review" feature that advised teams of optional but easy to add improvements to their component implementation.
                     </p>
                 </div>
-            </article>
+            </section>
 
             <figure>
                 <picture loading="lazy">
@@ -173,8 +173,8 @@
                 <figcaption class="bottom">The dialog component open on VS Code</figcaption>
             </figure>
 
-            <article class="grid-2-3">
-                <h2>Systematic documentation —</h2>
+            <section class="grid-2-3">
+                <h2>Systematic documentation</h2>
                 <div>
                     <p>
                         A design system is not complete without well-written documentation, compiled into a single source that could be accessed by everyone in the organization, from designers and developers but also project management, customer support, and any other stakeholder. The idea is to create a shared understanding of what the intended design and user experience should be, even across organizational silos.
@@ -183,7 +183,7 @@
                         This translated into an ever-green documentation site hosted on company subdomain, that was available for anyone within the company virtual private network and gathered not only design guidelines, but also UI writing recommendations and even development instructions. To top it off, you could even preview the different components and their <b>HTML</b> and <b>JS</b> structure under their explanatory documentation.
                     </p>
                 </div>
-            </article>
+            </section>
 
             <figure>
                 <picture loading="lazy">
@@ -194,8 +194,8 @@
                 <figcaption class="bottom">Due to my NDA clause with TriOptima I can only show most of this project in private</figcaption>
             </figure>
 
-            <article class="grid-2-3">
-                <h2>Prototyping with code —</h2>
+            <section class="grid-2-3">
+                <h2>Prototyping with code</h2>
                 <div>
                     <p>
                         Having a design library saved the UX team enough time to create clickable prototypes with <b>Sketch</b>, and using <b>Zeplin</b> allowed us to deliver detailed and inspectable hand-offs for development teams.
@@ -207,7 +207,7 @@
                         It also worked as a great resource to help teams understand how the layouts were built and reinforce proper markup syntax and structuring on less knowledgeable developers.
                     </p>
                 </div>
-            </article>
+            </section>
 
             {{!-- More work section --}}
 

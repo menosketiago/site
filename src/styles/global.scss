@@ -51,13 +51,10 @@ iframe {
 
 figure {
 	figcaption {
-		margin-top: var(--space-large);
+		margin-top: var(--space-extra);
 		color: var(--main-text-color);
-		font-size: 1rem;
-
-		&::before {
-			content: '—\00a0\00a0';
-		}
+		font-size: 0.9rem;
+		text-align: center;
 	}
 }
 
