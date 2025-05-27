@@ -25,4 +25,10 @@
             max-width: calc(var(--space-jumbo) * 6);
         }
     }
+
+    @media only screen and (max-device-width: 799px) {
+        h2 {
+            max-width: 50%;
+        }
+    }
 }

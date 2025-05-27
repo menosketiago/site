@@ -1,131 +1,12 @@
 @use "../variables";
 
-@media only screen and (max-device-width: 1200px) {
-    body {
-        h1 {
-            font-size: 7.993rem;
-        }
-
-        h2 {
-            font-size: 5.653rem;
-        }
-
-        h3 {
-            font-size: 3.998rem;
-        }
-
-        h4 {
-            font-size: 1.414rem;
-        }
-
-        .avatar {
-            width: 100px;
-
-            picture {
-                width: calc(100px - (var(--space-base) * 2));
-            }
-        }
-    }
-}
-
 @media only screen and (max-device-width: 799px) {
     body {
         padding: var(--space-extra);
 
-        h1 {
-            font-size: 5.61rem;
-        }
-
-        h2 {
-            font-size: 4.209rem;
-        }
-
-        h3 {
-            font-size: 3.157rem;
-        }
-
-        h4 {
-            font-size: 1.333rem;
-        }
-
-        p {
-            font-size: 1rem;
-        }
-
-        header {
-            .logo {
-                width: 65px;
-                height: auto;
-            }
-
-            nav {
-                display: none;
-            }
-
-            section {
-                grid-template-columns: auto;
-                column-gap: initial;
-                margin: var(--space-extra) 0;
-                margin-top: var(--space-jumbo);
-
-                .name {
-                    &::after {
-                        padding: var(--space-tiny);
-                        border-width: 1px;
-                        font-size: 0.3em;
-                        transform: translate(0, 0.3em);
-                    }
-                }
-            }
-        }
-
         section {
             margin: var(--space-jumbo) 0;
         }
-
-        .avatar {
-            width: 72px;
-            padding: var(--space-small);
-
-            picture {
-                width: calc(72px - (var(--space-small) * 2));
-            }
-        }
-
-        .pattern {
-            background-size: 6px;
-        }
-
-        #splash {
-            h1 {
-                margin: var(--space-base) 0;
-            }
-        }
-
-        #about {
-            grid-template-columns: auto;
-            column-gap: 0;
-
-            .wrapper {
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-				align-items: flex-start;
-            }
-        }
-
-        #content {
-            > .pill {
-				margin-right: 0;
-                margin-bottom: var(--space-extra);
-            }
-        }
-
-		#contact {
-			h2 {
-				max-width: 50%;
-			}
-		}
 
         #contact,
         #bye,
@@ -134,165 +15,17 @@
             grid-template-columns: auto;
             column-gap: 0;
         }
-
-        .grid {
-            &-1-4,
-            &-2-2,
-            &-2-3,
-            &-3-2 {
-                grid-template-columns: auto;
-                column-gap: 0;
-            }
-        }
-
-        .grid-2-2 {
-            &:nth-child(even) {
-                display: flex;
-                flex-direction: column-reverse;
-            }
-        }
-
-        .input {
-            margin-bottom: var(--space-base);
-
-            &:last-of-type {
-                margin-bottom: var(--space-large);
-            }
-        }
-
-        footer {
-            grid-template-columns: auto;
-            column-gap: 0;
-			margin-bottom: 0;
-
-			section {
-				margin: 0;
-			}
-
-            .icon {
-                justify-self: flex-start;
-
-                svg {
-                    width: 50px;
-                    height: auto;
-                }
-            }
-        }
-
-        .work-main {
-            h1 {
-                margin-bottom: var(--space-extra);
-            }
-
-            article {
-                margin: var(--space-extra) 0;
-            }
-
-            aside {
-                margin-top: var(--space-extra);
-            }
-
-            figure,
-            video {
-                margin-bottom: var(--space-extra);
-            }
-
-            .m-th {
-                margin-top: var(--space-jumbo) !important;
-            }
-        }
     }
 }
 
 @media only screen and (max-device-width: 580px) {
     body {
         padding: calc(var(--space-large) * 2);
-
-        h1 {
-            font-size: 4.11rem;
-        }
-
-        h2 {
-            font-size: 2.709rem;
-			margin-bottom: var(--space-large);
-        }
-
-        h3 {
-            font-size: 1.657rem;
-        }
-
-        h4 {
-            font-size: 1rem;
-        }
-
-        p {
-            font-size: 0.8rem;
-        }
-
-        .pill {
-            font-size: 0.8rem;
-        }
-
-        .avatar {
-            width: 55px;
-            margin-right: var(--space-tiny);
-            padding: var(--space-small);
-
-            picture {
-                width: calc(55px - (var(--space-small) * 2));
-            }
-        }
-
-        .pattern {
-            background-size: 4px;
-        }
-
-		#about {
-			p {
-				&:last-of-type {
-					margin-bottom: var(--space-large);
-				}
-			}
-		}
     }
 }
 
 @media only screen and (max-device-width: 410px) {
     body {
 		padding: calc(var(--space-large) * 1.5);
-
-		h1 {
-            font-size: 3.9rem;
-        }
-
-        h2 {
-            font-size: 2.4rem;
-			margin-bottom: var(--space-large);
-        }
-
-        h3 {
-            font-size: 1.3rem;
-        }
-
-        h4 {
-            font-size: 0.9rem;
-        }
-		
-        #splash {
-            .pill {
-                &:not(.black) {
-                    display: none;
-                }
-            }
-        }
-
-        .avatar {
-            width: 40px;
-            padding: var(--space-tiny);
-
-            picture {
-                width: calc(40px - (var(--space-tiny) * 2));
-            }
-        }
     }
 }

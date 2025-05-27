@@ -2,23 +2,27 @@
 
 // FONT IMPORT
 
-@import url('https://rsms.me/inter/inter.css');
+@import url("https://rsms.me/inter/inter.css");
 
-html { font-family: 'Inter', sans-serif; }
+html {
+    font-family: "Inter", sans-serif;
+}
 
 @supports (font-variation-settings: normal) {
-	html { font-family: 'Inter var', sans-serif; }
+    html {
+        font-family: "Inter var", sans-serif;
+    }
 }
 
 body {
-    font-family: 'Inter', Helvetica, Arial, sans-serif;
-	font-weight: var(--regular);
-	font-size: var(--body-font-size);
-	letter-spacing: -0.02em;
+    font-family: "Inter", Helvetica, Arial, sans-serif;
+    font-weight: var(--regular);
+    font-size: var(--body-font-size);
+    letter-spacing: -0.02em;
 }
 
-h1, 
-h2, 
+h1,
+h2,
 h3,
 h4,
 h5 {
@@ -28,6 +32,7 @@ h5 {
     letter-spacing: -0.04em;
     text-transform: uppercase;
     text-wrap: balance;
+    text-wrap: pretty;
 }
 
 h1 {
@@ -37,7 +42,7 @@ h1 {
 }
 
 h2 {
-	margin-bottom: var(--space-extra);
+    margin-bottom: var(--space-extra);
     font-size: 7.594rem;
     font-weight: var(--black);
     line-height: 0.85em;
@@ -83,7 +88,7 @@ p {
     margin: 0;
     margin-bottom: var(--space-large);
     font-size: var(--paragraph-font-size);
-	line-height: 1.6em;
+    line-height: 1.6em;
 
     &:last-of-type {
         margin-bottom: 0;
@@ -100,11 +105,102 @@ p {
 
 // PATTERN TEXT
 .pattern {
-	background-image: url("../images/pattern.png");
-	background-repeat: repeat;
-	background-size: 8px;
-	background-clip: text;
-	-webkit-background-clip: text;
-	color: transparent;
-	opacity: 0.8;
+    background-image: url("../images/pattern.png");
+    background-repeat: repeat;
+    background-size: 8px;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    opacity: 0.8;
+}
+
+// MEDIA QUERIES
+@media only screen and (max-device-width: 1200px) {
+    h1 {
+        font-size: 7.993rem;
+    }
+
+    h2 {
+        font-size: 5.653rem;
+    }
+
+    h3 {
+        font-size: 3.998rem;
+    }
+
+    h4 {
+        font-size: 1.414rem;
+    }
+}
+
+@media only screen and (max-device-width: 799px) {
+    h1 {
+        font-size: 5.61rem;
+    }
+
+    h2 {
+        font-size: 4.209rem;
+    }
+
+    h3 {
+        font-size: 3.157rem;
+    }
+
+    h4 {
+        font-size: 1.333rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .pattern {
+        background-size: 6px;
+    }
+}
+
+@media only screen and (max-device-width: 580px) {
+    h1 {
+        font-size: 4.11rem;
+    }
+
+    h2 {
+        font-size: 2.709rem;
+        margin-bottom: var(--space-large);
+    }
+
+    h3 {
+        font-size: 1.657rem;
+    }
+
+    h4 {
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: 0.8rem;
+    }
+
+    .pattern {
+        background-size: 4px;
+    }
+}
+
+@media only screen and (max-device-width: 410px) {
+    h1 {
+        font-size: 3.9rem;
+    }
+
+    h2 {
+        font-size: 2.4rem;
+        margin-bottom: var(--space-large);
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    h4 {
+        font-size: 0.9rem;
+    }
 }

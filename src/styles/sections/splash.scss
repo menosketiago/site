@@ -35,4 +35,19 @@
         font-size: var(--body-font-size);
         text-align: center;
     }
+
+    // MEDIA QUERIES
+    @media only screen and (max-device-width: 799px) {
+        h1 {
+            margin: var(--space-base) 0;
+        }
+    }
+
+    @media only screen and (max-device-width: 410px) {
+        .pill {
+            &:not(.black) {
+                display: none;
+            }
+        }
+    }
 }

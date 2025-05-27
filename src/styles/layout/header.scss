@@ -43,4 +43,32 @@ header {
     .mobile-only {
         display: none;
     }
+
+    // MEDIA QUERIES
+    @media only screen and (max-device-width: 799px) {
+        .logo {
+            width: 65px;
+            height: auto;
+        }
+
+        nav {
+            display: none;
+        }
+
+        section {
+            grid-template-columns: auto;
+            column-gap: initial;
+            margin: var(--space-extra) 0;
+            margin-top: var(--space-jumbo);
+
+            .name {
+                &::after {
+                    padding: var(--space-tiny);
+                    border-width: 1px;
+                    font-size: 0.3em;
+                    transform: translate(0, 0.3em);
+                }
+            }
+        }
+    }
 }

@@ -31,4 +31,9 @@
 			content: '←\00a0\00a0';
 		}
 	}
+
+    // MEDIA QUERIES
+    @media only screen and (max-device-width: 580px) {
+        font-size: 0.8rem;
+    }
 }

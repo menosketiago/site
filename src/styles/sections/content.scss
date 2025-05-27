@@ -37,7 +37,7 @@
                 background-image: url(images/pattern.png);
                 background-size: 5%;
                 background-repeat: repeat;
-                opacity: .3;
+                opacity: 0.3;
             }
 
             header {
@@ -68,7 +68,7 @@
                         margin-top: var(--space-small);
                     }
                 }
-    
+
                 p {
                     font-size: 1rem;
                     font-weight: var(--medium);
@@ -93,32 +93,43 @@
                 }
             }
         }
+    }
 
-        // MEDIA QUERIES
-        @media only screen and (max-device-width: 1230px) {
+    // MEDIA QUERIES
+    @media only screen and (max-device-width: 1230px) {
+        .card-grid {
             grid-template-columns: repeat(3, minmax(0, 1fr));
         }
+    }
 
-        @media only screen and (max-device-width: 799px) {
+    @media only screen and (max-device-width: 799px) {
+        > .pill {
+            margin-right: 0;
+            margin-bottom: var(--space-extra);
+        }
+
+        .card-grid {
             grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: var(--space-base);
 
-            .card {          
+            .card {
                 header {
                     margin-bottom: var(--space-large);
-    
+
                     h3 {
                         font-size: 1.2rem;
                     }
-        
+
                     p {
                         font-size: var(--body-font-size);
                     }
                 }
             }
         }
+    }
 
-        @media only screen and (max-device-width: 470px) {
+    @media only screen and (max-device-width: 470px) {
+        .card-grid {
             grid-template-columns: repeat(1, minmax(0, 1fr));
 
             .card {

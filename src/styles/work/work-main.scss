@@ -19,7 +19,7 @@
             &:last-child {
                 margin-bottom: 0;
             }
-       } 
+        }
     }
 
     article {
@@ -93,6 +93,30 @@
                     display: none;
                 }
             }
+        }
+    }
+
+    // MEDIA QUERIES
+    @media only screen and (max-device-width: 799px) {
+        h1 {
+            margin-bottom: var(--space-extra);
+        }
+
+        article {
+            margin: var(--space-extra) 0;
+        }
+
+        aside {
+            margin-top: var(--space-extra);
+        }
+
+        figure,
+        video {
+            margin-bottom: var(--space-extra);
+        }
+
+        .m-th {
+            margin-top: var(--space-jumbo) !important;
         }
     }
 }
