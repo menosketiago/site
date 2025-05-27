@@ -36,7 +36,8 @@
         h1,
         h2,
         h3,
-        h4 {
+        h4,
+        h5 {
             color: var(--theme-dark-accent);
         }
 
@@ -66,8 +67,8 @@
         }
 
         .pill {
-            background-color: var(--theme-dark-text-color);
-            color: var(--theme-dark-bg-color);
+            background: var(--theme-dark-transparency);
+            color: var(--theme-dark-text-color);
         }
 
         .back-to-top {
@@ -99,7 +100,8 @@
         h1,
         h2,
         h3,
-        h4 {
+        h4,
+        h5 {
             color: var(--theme-alien-accent);
         }
 
@@ -165,7 +167,8 @@
         h1,
         h2,
         h3,
-        h4 {
+        h4,
+        h5 {
             color: var(--theme-gold-accent);
         }
 
@@ -231,7 +234,8 @@
         h1,
         h2,
         h3,
-        h4 {
+        h4,
+        h5 {
             color: var(--theme-trids-accent);
         }
 
@@ -304,7 +308,8 @@
         h1,
         h2,
         h3,
-        h4 {
+        h4,
+        h5 {
             color: var(--theme-klarna-text-color);
         }
 

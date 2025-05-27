@@ -57,7 +57,7 @@ h3 {
 
 h4 {
     margin-bottom: var(--space-large);
-    font-size: 1.5rem;
+    font-size: 3.375rem;
     font-weight: var(--black);
     line-height: 1em;
 
@@ -69,18 +69,8 @@ h4 {
 
 h5 {
     margin-bottom: var(--space-small);
-    font-size: 1rem;
-    font-weight: var(--regular);
-    text-transform: none;
-
-    a {
-        font-weight: var(--regular);
-        text-decoration: none;
-
-        &:hover:not(:active) {
-            text-decoration: underline;
-        }
-    }
+    font-size: 1.5rem;
+    font-weight: var(--black);
 }
 
 p {
@@ -129,6 +119,10 @@ p {
     }
 
     h4 {
+        font-size: 2.827rem;
+    }
+
+    h5 {
         font-size: 1.414rem;
     }
 }
@@ -147,6 +141,10 @@ p {
     }
 
     h4 {
+        font-size: 2.369rem;
+    }
+
+    h5 {
         font-size: 1.333rem;
     }
 
@@ -177,6 +175,10 @@ p {
         font-size: 1rem;
     }
 
+    h5 {
+        font-size: 1rem;
+    }
+
     p {
         font-size: 0.8rem;
     }
@@ -201,6 +203,10 @@ p {
     }
 
     h4 {
+        font-size: 0.9rem;
+    }
+
+    h5 {
         font-size: 0.9rem;
     }
 }

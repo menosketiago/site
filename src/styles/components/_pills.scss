@@ -20,17 +20,9 @@
         color: var(--main-bg-color);
     }
 
-     &.arrow-right {
-		&::after {
-			content: '\00a0\00a0→';
-		}
-	}
-
-	&.arrow-left {
-		&::before {
-			content: '←\00a0\00a0';
-		}
-	}
+    &:is(a) {
+        text-decoration: none;
+    }
 
     // MEDIA QUERIES
     @media only screen and (max-device-width: 580px) {

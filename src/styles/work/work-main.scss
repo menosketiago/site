@@ -1,4 +1,4 @@
-@use "../variables";
+@use '../variables';
 
 .work-main {
     margin-bottom: var(--space-jumbo);
@@ -14,6 +14,21 @@
         text-align: center;
     }
 
+    section {
+        article {
+            margin-bottom: var(--space-jumbo);
+
+            &:only-child {
+                margin-bottom: 0;
+            }
+
+            figure,
+            video {
+                margin-bottom: 0;
+            }
+        }
+    }
+
     figure,
     video {
         justify-self: center;
@@ -22,6 +37,7 @@
         margin: 0;
         margin-bottom: var(--space-jumbo);
 
+        &:only-child,
         &:last-child {
             margin-bottom: 0;
         }
@@ -33,31 +49,33 @@
 
     .summary {
         align-items: stretch;
-        margin: var(--space-jumbo) 0;
+        margin-top: var(--space-jumbo);
+        align-items: flex-start;
 
         aside {
-            hgroup {
-                margin-bottom: var(--space-extra);
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            column-gap: var(--space-extra);
+            align-self: stretch;
+            margin-bottom: var(--space-extra);
 
-                h4 {
-                    margin-bottom: var(--space-base);
-                }
+            h5 {
+                margin-top: var(--space-large);
+                margin-bottom: var(--space-base);
 
-                p {
-                    font-size: 1em;
+                &:first-of-type {
+                    margin-top: 0;
                 }
+            }
 
-                &:last-child {
-                    margin-bottom: 0;
-                }
+            .pill {
+                justify-self: flex-start;
             }
         }
     }
 
     .dual-column {
-        margin-top: 0;
-
-        section {
+        article {
             margin-top: 0;
 
             > a {
@@ -65,7 +83,7 @@
                 overflow: hidden;
 
                 &:before {
-                    content: "";
+                    content: '';
                     position: absolute;
                     inset: 0;
                     background: var(--theme-dark-accent);
@@ -94,7 +112,7 @@
             }
 
             aside {
-                h4,
+                h5,
                 .pill {
                     display: none;
                 }
