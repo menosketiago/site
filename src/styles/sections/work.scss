@@ -43,7 +43,7 @@
 
         > div {
             display: grid;
-            grid-template-columns: 2.5fr 1.5fr;
+            grid-template-columns: 3fr 1fr;
             column-gap: var(--space-jumbo);
             justify-items: flex-start;
             margin-top: var(--space-extra);
@@ -100,6 +100,61 @@
                         .pill {
                             margin-left: var(--space-small);
                         }
+                    }
+                }
+            }
+        }
+    }
+
+    // MEDIA QUERIES
+    @media only screen and (max-device-width: 1200px) {
+        article {
+            > div {
+                grid-template-columns: 2.5fr 1.5fr;
+            }
+        }
+    }
+
+    @media only screen and (max-device-width: 799px) {
+        > .pill {
+            margin-right: 0;
+            margin-bottom: var(--space-extra);
+        }
+
+        article {
+            margin-bottom: var(--space-extra);
+
+            > div {
+                grid-template-columns: auto;
+                column-gap: 0;
+                margin-top: var(--space-large);
+
+                aside {
+                    margin-top: var(--space-large);
+
+                    .wrapper {
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        align-items: flex-start;
+                    }
+                }
+            }
+        }
+
+        .dual-column {
+            article {
+                margin-bottom: var(--space-extra);
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                > div {
+                    margin-top: var(--space-large);
+
+                    aside {
+                        margin-top: 0;
                     }
                 }
             }

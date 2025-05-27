@@ -1,11 +1,10 @@
 class Avatar {
-
     constructor(element) {
         this.dom = {
-            avatar: element
+            avatar: element,
         };
 
-        this.picturesArray = this.dom.avatar.getElementsByTagName('picture');
+        this.picturesArray = this.dom.avatar.getElementsByTagName("picture");
     }
 
     init() {
@@ -14,21 +13,26 @@ class Avatar {
 
     eventHandler() {
         // Check if users prefer to not have motion
-        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+        const reducedMotion = window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        );
 
         if (!reducedMotion || reducedMotion.matches) {
             // Do nothing!
-        }
-        else {
-            this.dom.avatar.addEventListener('mouseenter', (e) => this.showPictures());
-            this.dom.avatar.addEventListener('click', (e) => this.showPictures());
+        } else {
+            this.dom.avatar.addEventListener("mouseenter", (e) =>
+                this.showPictures()
+            );
+            this.dom.avatar.addEventListener("click", (e) =>
+                this.showPictures()
+            );
         }
     }
 
     showPictures() {
         let delay = 0;
 
-        Array.from(this.picturesArray).forEach(picture => {
+        Array.from(this.picturesArray).forEach((picture) => {
             setTimeout(() => {
                 picture.style.opacity = 1;
             }, delay);
@@ -37,14 +41,20 @@ class Avatar {
         });
 
         // Listen to the mouseout or second touch
-        this.dom.avatar.addEventListener('mouseleave', (e) => this.hidePictures());
-        this.dom.avatar.addEventListener('click', (e) => this.hidePictures());
+        this.dom.avatar.addEventListener("mouseleave", (e) =>
+            this.hidePictures()
+        );
+        this.dom.avatar.addEventListener("click", (e) => this.hidePictures());
+
+        setTimeout(() => {
+            this.hidePictures()
+        }, "5000");
     }
 
     hidePictures() {
         const originalPicture = this.picturesArray[0];
 
-        Array.from(this.picturesArray).forEach(picture => {
+        Array.from(this.picturesArray).forEach((picture) => {
             if (picture !== originalPicture) {
                 picture.style.opacity = 0;
             }

@@ -114,52 +114,6 @@
             }
         }
 
-        #work {
-            > .pill {
-				margin-right: 0;
-                margin-bottom: var(--space-extra);
-            }
-
-            article {
-                margin-bottom: var(--space-extra);
-
-                > div {
-                    grid-template-columns: auto;
-                    column-gap: 0;
-                    margin-top: var(--space-large);
-
-                    aside {
-                        margin-top: var(--space-large);
-
-                        .wrapper {
-                            display: flex;
-                            flex-direction: row;
-							flex-wrap: wrap;
-							align-items: flex-start;
-                        }
-                    }
-                }
-            }
-
-            .dual-column {
-                article {
-                    margin-bottom: var(--space-extra);
-
-                    &:last-child {
-                        margin-bottom: 0;
-                    }
-
-                    > div {
-						margin-top: var(--space-large);
-
-                        aside {
-                            margin-top: 0;
-                        }
-                    }
-                }
-            }
-        }
-
         #content {
             > .pill {
 				margin-right: 0;
