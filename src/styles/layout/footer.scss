@@ -4,7 +4,7 @@ footer {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: var(--space-extra);
-    margin: 96px 0;
+    margin: var(--section-margin) 0;
 
     section {
         margin: 0;
