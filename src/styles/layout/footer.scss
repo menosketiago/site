@@ -6,7 +6,7 @@ footer {
     gap: var(--space-extra);
     margin: var(--section-margin) 0;
 
-    section {
+    > div {
         margin: 0;
         align-items: flex-start;
 
@@ -36,7 +36,7 @@ footer {
         column-gap: 0;
         margin-bottom: 0;
 
-        section {
+        > div {
             margin: 0;
         }
 

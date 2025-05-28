@@ -20,6 +20,18 @@
         color: var(--main-bg-color);
     }
 
+    &.arrow-right {
+		&::after {
+			content: '\00a0\00a0→';
+		}
+	}
+
+	&.arrow-left {
+		&::before {
+			content: '←\00a0\00a0';
+		}
+	}
+
     &:is(a) {
         text-decoration: none;
     }
@@ -27,5 +39,17 @@
     // MEDIA QUERIES
     @media only screen and (max-device-width: 580px) {
         font-size: 0.8rem;
+    }
+}
+
+// PILL GROUP
+.pill-group {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: flex-start;
+
+    @media only screen and (max-device-width: 799px) {
+        flex-direction: row;
     }
 }

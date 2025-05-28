@@ -38,6 +38,8 @@
 
     // MEDIA QUERIES
     @media only screen and (max-device-width: 799px) {
+        align-items: center ;
+        
         h1 {
             margin: var(--space-base) 0;
         }

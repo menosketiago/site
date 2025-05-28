@@ -4,14 +4,10 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    align-items: center;
     justify-items: flex-start;
 
-    h2 {
-        margin-bottom: var(--space-large);
-        text-align: center;
-    }
-
-    .wrapper {
+    > div {
         position: relative;
         width: auto;
         max-width: 100%;
@@ -19,6 +15,11 @@
         flex-direction: column;
         flex-wrap: wrap;
         align-items: center;
+    }
+
+    h2 {
+        margin-bottom: var(--space-large);
+        text-align: center;
     }
 
     .pill {
@@ -92,7 +93,7 @@
             span:nth-child(1) {
                 display: none;
             }
-            
+
             span:nth-child(2) {
                 display: initial;
             }

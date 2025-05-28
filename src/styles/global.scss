@@ -109,6 +109,16 @@ time,
 	&-bj { margin-bottom: var(--space-jumbo) !important; }
 }
 
+// FLEX UTILITIES
+.align-center {
+	align-items: center !important;
+}
+
+// GRID UTILITIES
+.gap-jumbo {
+	column-gap: var(--space-jumbo) !important;
+}
+
 // TOOLTIP TRIGGER
 [data-tooltip] {
 	cursor: help;
@@ -123,7 +133,7 @@ time,
 .wrapper {
 	align-items: flex-start;
     width: 100%;
-    max-width: 1112px;
+    max-width: 1200px;
 }
 
 // VIMEO
