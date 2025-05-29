@@ -29,7 +29,21 @@ main {
 
 		hgroup {
 			h4 {
-				margin-bottom: var(--space-small);
+				margin-bottom: var(--space-large);
+			}
+		}
+
+		.money {
+			&:before {
+				content: '💵';
+				margin-right: var(--space-small);
+			}
+
+			span {
+				&:before {
+					content: '💰';
+					margin-right: var(--space-small);
+				}
 			}
 		}
 	}
