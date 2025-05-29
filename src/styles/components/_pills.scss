@@ -1,7 +1,6 @@
 @use "../variables";
 
 .pill {
-    display: block;
     margin-right: var(--space-small);
     margin-bottom: var(--space-small);
     padding: var(--space-small) var(--space-base);
@@ -55,5 +54,14 @@
 
     @media only screen and (max-device-width: 799px) {
         flex-direction: row;
+    }
+}
+
+// PILL AFTER HEADINGS
+h1,
+h2 {
+    ~ .pill {
+        justify-self: center;
+        margin-right: 0;
     }
 }

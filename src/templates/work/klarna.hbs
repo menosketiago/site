@@ -1,107 +1,116 @@
-<!DOCTYPE html>
-<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
 
-<head>
-    <title>menosketiago™ Klarna Website Design System</title>
+    <head>
+        <title>menosketiago™ Klarna Website Design System</title>
 
-	{{> head/meta}}
-	{{> head/og}}
-	{{> head/links-scripts}}
-</head>
+        {{> head/meta}}
+        {{> head/og}}
+        {{> head/links-scripts}}
+    </head>
 
-<body class="theme-klarna">
-	<div class="wrapper">
-		<header class="work-header">
-			{{> layout/work-header}}
-		</header>
+    <body class="theme-klarna">
+        <div class="wrapper">
+            <header class="work-header">
+                {{> layout/work-header}}
+            </header>
 
-		<main class="work-main">
-            <section class="grid-3-2 gap-jumbo">
-                <div>
-                    <h1>Klarna Website Design System</h1>
+            <main class="work-main">
+                <section class="summary">
+                    <h1>Klarna Web Design System</h1>
 
-                    <p>
-                        Can a Design System make it as
-                        <i>smoooth</i>
-                        to design, implement, and maintain 37+ multi-language websites
-                        (as well as dozens of bespoke campaign pages per year) as it is
-                        to buy with
-                        <b>Klarna</b>? How about providing full support for multiple
-                        brands and sub-brands?
-                    </p>
-                </div>
+                    <figure>
+                        <picture>
+                            <source srcset="/images/ericsson/before-after.avif 1x, /images/ericsson/before-after-2x.avif 2x" type="image/avif">
+                            <source srcset="/images/ericsson/before-after.webp 1x, /images/ericsson/before-after-2x.webp 2x" type="image/webp">
+                            <img src="/images/ericsson/before-after.jpg" alt="XXXXXX XXXXXX XXXXX">
+                        </picture>
+                        <figcaption>XXXXX XXX XXXXXXXXX XXXXXX XXX</figcaption>
+                    </figure>
 
-                <aside>
-                    <hgroup>
-                        <h4>ROLE</h4>
-                        <h5>Design System Manager</h5>
-                        <h5>Senior Product Designer</h5>
-                        <h5>Frontend Developer</h5>
-                    </hgroup>
+                    <aside>
+                        <div>
+                            <h5>Role</h5>
 
-                    <hgroup>
-                        <h4>Tools</h4>
-                        <h5>JIRA</h5>
-                        <h5>Figma and FigJam</h5>
-                        <h5>Storybook</h5>
-                        <h5>React</h5>
-                        <h5>HTML, CSS and JS</h5>
-                    </hgroup><hgroup>
-                        <h4>Team</h4>
-                        <h5>
-                            <a href="https://www.linkedin.com/in/cut-olo/" target="_blank" rel="noopener" class="arrow-right">Francesco Cutolo</a>
-                        </h5>
-                        <h5>
-                            <a href="https://www.linkedin.com/in/%F0%9F%8E%AE-werner-van-ghent-0b4947114/" target="_blank" rel="noopener" class="arrow-right">Werner Van Ghent</a>
-                        </h5>
-                        <h5>
-                            <a href="https://www.linkedin.com/in/karl-westerman-949a7924/" target="_blank" rel="noopener" class="arrow-right">Karl Westerman</a>
-                        </h5>
-                        <h5>
-                            <a href="https://www.linkedin.com/in/olle-a-87150a1a7/" target="_blank" rel="noopener" class="arrow-right">Olle Alm</a>
-                        </h5>
-                        <h5>
-                            <a href="https://www.linkedin.com/in/setarehfarahnak/" target="_blank" rel="noopener" class="arrow-right">Setareh Farahnak</a>
-                        </h5>
-                        <h5>
-                            <a href="https://www.linkedin.com/in/mmartindaniel/" target="_blank" rel="noopener" class="arrow-right">Daniel Martin Martinez</a>
-                        </h5>
-                </aside>
-            </section>
+                            <div class="pill-group">
+                                <div class="pill">Design System Manager</div>
+                                <div class="pill">Senior Product Designer</div>
+                                <div class="pill">👨🏻‍💻 Frontend Developer</div>
+                            </div>
+                        </div>
 
-             <figure>
-                <picture>
-                    <source srcset="/images/ericsson/before-after.avif 1x, /images/ericsson/before-after.avif 2x" type="image/avif">
-                    <source srcset="/images/ericsson/before-after.webp 1x, /images/ericsson/before-after.webp 1x" type="image/webp">
-                    <img src="/images/ericsson/before-after.jpg" alt="Before and after the Ericsson Design System">
-                </picture>
-                <figcaption>XXXXX XXX XXXXXXXXX XXXXXX XXX</figcaption>
-            </figure>
+                        <div>
+                            <h5>Tools</h5>
 
-            {{!-- More work section --}}
+                            <div class="pill-group masonry">
+                                <div class="pill">JIRA</div>
+                                <div class="pill">Figma</div>
+                                <div class="pill">Figjam</div>
+                                <div class="pill">Storybook.js</div>
+                                <div class="pill">React.js</div>
+                                <div class="pill">Adobe Illustrator</div>
+                                <div class="pill">Adobe Photoshop</div>
+                            </div>
+                        </div>
 
-            <h2 class="m-th">More work</h2>
+                        <div>
+                            <h5>Team</h5>
+                            
+                            <div class="pill-group masonry">
+                                <a class="pill arrow-right" href="https://www.linkedin.com/in/cut-olo" target="_blank" rel="noopener">Francesco Cutolo</a>
+                                <a class="pill arrow-right" href="https://www.linkedin.com/in/%F0%9F%8E%AE-werner-van-ghent-0b4947114" target="_blank" rel="noopener">Werner Van Ghent</a>
+                                <a class="pill arrow-right" href="https://www.linkedin.com/in/karl-westerman-949a7924" target="_blank" rel="noopener">Karl Westerman</a>
+                                <a class="pill arrow-right" href="https://www.linkedin.com/in/olle-a-87150a1a7" target="_blank" rel="noopener">Olle Alm</a>
+                                <a class="pill arrow-right" href="https://www.linkedin.com/in/setarehfarahnak" target="_blank" rel="noopener">Setareh Farahnak</a>
+                                <a class="pill arrow-right" href="https://www.linkedin.com/in/mmartindaniel" target="_blank" rel="noopener">Daniel Martin Martinez</a>
+                            </div>
+                        </div>
+                    </aside>
 
-            <section class="dual-column">
-                {{> summaries/ericsson}}
-                {{> summaries/trids}}
-            </section>
-		</main>
+                    <article class="grid-2-2">
+                        <h3>Some key context</h3>
 
-		{{!-- Back to top button --}}
-		<a href="#top" target="_self" class="back-to-top"></a>
+                        <div>
+                            <p>
+                                Can a Design System make it as
+                                <i>smoooth</i>
+                                to design, implement, and maintain 37+ multi-language websites
+                                (as well as dozens of bespoke campaign pages per year) as it is
+                                to buy with
+                                <b>Klarna</b>? How about providing full support for multiple
+                                brands and sub-brands?
+                            </p>
+                            <p>
+                                The answer is the <i>smooothest</i> yes!
+                            </p>
+                        </div>
+                    </article>
+                </section>
 
-		<footer>
-			{{> layout/footer}}
-		</footer>
-	</div>
+                {{!-- More work section --}}
 
-	{{> tooltip}}
+                <h2 class="m-th">More work</h2>
 
-    <div class="cursor"></div>
+                <section class="dual-column">
+                    {{> summaries/ericsson}}
+                    {{> summaries/trids}}
+                </section>
+            </main>
 
-	{{!-- JS --}}
-	<script src="/index.js" type="text/javascript"></script>
-</body>
+            {{!-- Back to top button --}}
+            <a href="#top" target="_self" class="back-to-top"></a>
 
-</html>
+            <footer>
+                {{> layout/footer}}
+            </footer>
+        </div>
+
+        {{> tooltip}}
+
+        <div class="cursor"></div>
+
+        {{!-- JS --}}
+        <script src="/index.js" type="text/javascript"></script>
+    </body>
+
+    </html>

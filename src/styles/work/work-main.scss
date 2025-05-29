@@ -5,7 +5,6 @@
 
     h1 {
         max-width: initial;
-        margin-bottom: var(--space-extra);
         font-weight: var(--black);
     }
 
@@ -82,7 +81,7 @@
             article {
                 width: 100%;
             }
-            
+
             aside {
                 grid-template-columns: auto;
             }

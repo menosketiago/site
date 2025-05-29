@@ -1,6 +1,8 @@
 @use "../variables";
 
 #work {
+    align-items: center;
+
     h2 {
         margin-bottom: var(--space-large);
         justify-self: center;

@@ -16,13 +16,18 @@
             }
         }
 
-        button,
         .btn {
+            color: var(--main-text-color);
+            border-color: var(--main-text-color);
+
+            &:hover:not(:active),
+            &:focus {
+                background: var(--main-text-color);
+                color: var(--alt-bg-color);
+            }
+
             &.secondary {
-                &:hover:not(:active),
-                &:focus {
-                    color: var(--alt-bg-color);
-                }
+                background: var(--main-bg-transparency);
             }
         }
     }
@@ -275,7 +280,7 @@
         }
 
         .pill {
-            background: var( --theme-trids-transparency);
+            background: var(--theme-trids-transparency);
             color: var(--main-text-color);
         }
 
@@ -314,7 +319,7 @@
             }
         }
     }
-    
+
     // KLARNA THEME
 
     &-klarna {
@@ -331,11 +336,19 @@
         a,
         a:hover:not(:active),
         a:focus {
-            color: var(--theme-klarna-accent);
+            color: var(--theme-klarna-text-color);
+
+            &.pill {
+                &:hover:not(:active),
+                &:focus {
+                    background: var(--theme-klarna-text-color);
+                    color: var(--theme-klarna-bg-color);
+                }
+            }
         }
 
         figcaption {
-            color: var(--theme-klarna-accent);
+            color: var(--theme-klarna-text-color);
         }
 
         .btn {
@@ -351,6 +364,11 @@
             &.secondary {
                 background: var(--theme-klarna-transparency);
             }
+        }
+
+        .pill {
+            background: var(--theme-klarna-transparency);
+            color: var(--theme-klarna-text-color);
         }
 
         .back-to-top {

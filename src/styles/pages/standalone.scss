@@ -1,82 +1,44 @@
 @use "../variables";
 
 main {
-	&.standalone-page {
-		h1 {
-			margin-bottom: var(--space-jumbo);
-			font-size: 6em;
-			font-weight: var(--black);
-		}
-	}
-
-	&.salary {
-		margin-bottom: calc(var(--space-jumbo) * 2);
-
-        h4 {
-            font-size: var(--paragraph-font-size);
-			font-weight: var(--black);
-        }
-
-		h5 {
-			font-size: var(--paragraph-font-size);
-			font-weight: var(--medium);
-
-			&:last-of-type {
-				margin-bottom: var(--space-extra);
-			}
+	&.standalone {
+		h2 {
+			justify-self: center;
+			margin-bottom: var(--space-large);
+   			text-align: center;
 		}
 
 		section {
-			&:not(:first-of-type) {
-				margin-top: 0;
-				margin-bottom: var(--space-jumbo);
-			}
+            article {
+                margin-bottom: var(--space-jumbo);
+            }
+        }
+	}
 
-			&:last-child {
-				margin-bottom: calc(var(--space-jumbo) * 2);
-			}
+	&.salary {
+		time {
+			margin-bottom: var(--space-large);
+			font-size: var(--paragraph-font-size);
+			font-weight: var(--medium);
 
-			p {
-				&:last-of-type {
-					margin-bottom: var(--space-large);
-				}
+			&::before {
+				content: '🗓️';
+				margin-right: var(--space-small);
 			}
 		}
 
-        article	{
-			margin-bottom: calc(var(--space-extra) + var(--space-large));
-
-			time {
-				margin-bottom: var(--space-large);
-				font-size: var(--paragraph-font-size);
-				font-weight: var(--medium);
+		hgroup {
+			h4 {
+				margin-bottom: var(--space-small);
 			}
 		}
 	}
 
-	@media only screen
-	and (max-device-width: 799px) {
-		&.standalone-page {
-			h1 {
-				margin-bottom: var(--space-jumbo);
-				font-size: 4em;
-			}
-		}
-
-		&.salary {
-			h4 {
-				margin-bottom: var(--space-large);
-			}
-
-			h5 {
-				font-size: 1em;
-			}
-
-			article	{
-				time {
-					font-size: 1em;
-				}
-			}
-		}
+	@media only screen and (max-device-width: 799px) {
+		section {
+            article {
+                margin-bottom: var(--space-extra);
+            }
+        }
 	}
 }

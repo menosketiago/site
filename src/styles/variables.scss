@@ -1,6 +1,6 @@
 :root {
     // COLORS
-	--main-bg-color: #F7FF00;
+    --main-bg-color: #f7ff00;
     --main-text-color: #222222;
     --main-bg-transparency: rgba(34, 34, 34, 0.1);
     --main-input-transparency: rgba(34, 34, 34, 0.05);
@@ -9,25 +9,24 @@
 
     --theme-dark-bg-color: #000000;
     --theme-dark-text-color: #f0f0f0;
-    --theme-dark-accent: #F7FF00;
+    --theme-dark-accent: #f7ff00;
     --theme-dark-transparency: rgba(247, 255, 0, 0.15);
 
     --theme-alien-bg-color: #222222;
-    --theme-alien-accent: #3AA550;
+    --theme-alien-accent: #3aa550;
     --theme-alien-transparency: rgba(58, 165, 80, 0.1);
 
-    --theme-gold-accent: #FFDD60;
+    --theme-gold-accent: #ffdd60;
     --theme-gold-transparency: rgba(255, 221, 96, 0.15);
 
     --theme-trids-bg-color: var(--alt-bg-color);
     --theme-trids-accent: #00afaf;
     --theme-trids-transparency: rgba(0, 175, 175, 0.1);
 
-    --theme-klarna-bg-color: var(--alt-bg-color);
-    --theme-klarna-text-color: #0E0E0F;
-    --theme-klarna-accent: #EE3C6B;
-    --theme-klarna-pink: #FFB3C7;
-    --theme-klarna-transparency: rgba(255, 179, 199, 0.15);
+    --theme-klarna-bg-color: #ffb3c7;
+    --theme-klarna-text-color: #1a0007;
+    --theme-klarna-pink: #ffb3c7;
+    --theme-klarna-transparency: rgba(255, 255, 255, 0.2);
 
     // TYPOGRAPHY
     --body-font-size: 14px;
@@ -40,9 +39,9 @@
     --black: 900;
 
     // SPEEDS
-    --speed-default: .2s;
-    --speed-slow: .4s;
-    --speed-slowest: .8s;
+    --speed-default: 0.2s;
+    --speed-slow: 0.4s;
+    --speed-slowest: 0.8s;
     --speed-loading: 3s;
 
     // SIZES

@@ -11,8 +11,8 @@
     article {
         margin-bottom: 0;
 
-        > a {
-            display: block;
+        a {
+            margin-top: var(--space-large);
         }
 
         > div {
@@ -25,10 +25,6 @@
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
-
-                a {
-                    margin-top: var(--space-large);
-                }
             }
         }
     }

@@ -35,6 +35,7 @@ h5 {
 }
 
 h1 {
+    margin-bottom: var(--space-extra);
     font-size: 11.391rem;
     font-weight: var(--black);
     line-height: 0.85em;
@@ -73,7 +74,7 @@ h5 {
 }
 
 p {
-    max-width: calc(var(--space-jumbo) * 6);
+    max-width: calc(var(--space-jumbo) * 8);
     margin: 0;
     margin-bottom: var(--space-large);
     font-size: var(--paragraph-font-size);
@@ -90,6 +91,10 @@ p {
     b {
         font-weight: var(--bold);
     }
+}
+
+hgroup {
+    margin-bottom: var(--space-large);
 }
 
 // PATTERN TEXT

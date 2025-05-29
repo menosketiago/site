@@ -1,6 +1,8 @@
 @use "../variables";
 
 #content {
+    align-items: center;
+    
     h2 {
         margin-bottom: var(--space-large);
         justify-self: center;
@@ -104,7 +106,7 @@
 
     @media only screen and (max-device-width: 799px) {
         align-items: center ;
-        
+
         > .pill {
             margin-right: 0;
             margin-bottom: var(--space-extra);
