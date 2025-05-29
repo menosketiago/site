@@ -130,6 +130,11 @@
             }
         }
 
+        .pill {
+            background: var(--theme-alien-transparency);
+            color: var(--theme-dark-text-color);
+        }
+
         .back-to-top {
             background: var(--theme-alien-accent);
             color: var(--theme-alien-bg-color);
@@ -194,6 +199,11 @@
             &.secondary {
                 background: var(--theme-gold-transparency);
             }
+        }
+
+        .pill {
+            background: var(--theme-gold-transparency);
+            color: var(--theme-dark-text-color);
         }
 
         .back-to-top {

@@ -77,6 +77,16 @@
         article {
             margin-top: var(--space-jumbo);
         }
+
+        &.short {
+            article {
+                width: 100%;
+            }
+            
+            aside {
+                grid-template-columns: auto;
+            }
+        }
     }
 
     .dual-column {
