@@ -28,7 +28,7 @@
 
 	&.arrow-left {
 		&::before {
-			content: '\2197\00a0\00a0';
+			content: '\2190\00a0\00a0';
 		}
 	}
 
@@ -48,6 +48,10 @@
 	flex-direction: column;
 	flex-wrap: wrap;
 	align-items: flex-start;
+
+    &.masonry {
+        flex-direction: row;
+    }
 
     @media only screen and (max-device-width: 799px) {
         flex-direction: row;

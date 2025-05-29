@@ -19,6 +19,7 @@ body {
     font-weight: var(--regular);
     font-size: var(--body-font-size);
     letter-spacing: -0.02em;
+    text-wrap: balance;
 }
 
 h1,
@@ -30,8 +31,7 @@ h5 {
     margin: 0;
     line-height: 1.2em;
     letter-spacing: -0.04em;
-    text-transform: uppercase;  
-    text-wrap: balance;
+    text-transform: uppercase;
 }
 
 h1 {

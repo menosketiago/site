@@ -73,6 +73,10 @@
                 justify-self: flex-start;
             }
         }
+
+        article {
+            margin-top: var(--space-jumbo);
+        }
     }
 
     .dual-column {

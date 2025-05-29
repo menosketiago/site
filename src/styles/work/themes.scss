@@ -264,6 +264,11 @@
             }
         }
 
+        .pill {
+            background: var( --theme-trids-transparency);
+            color: var(--main-text-color);
+        }
+
         .back-to-top {
             background: var(--theme-trids-accent);
             color: var(--theme-trids-bg-color);
