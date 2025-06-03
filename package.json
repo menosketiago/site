@@ -28,7 +28,7 @@
         "@babel/preset-env": "^7.27.2",
         "browser-sync": "^2.29.3",
         "del": "^5.1.0",
-        "gulp": "^4.0.2",
+        "gulp": "^5.0.1",
         "gulp-avif": "^1.1.1",
         "gulp-babel": "^8.0.0",
         "gulp-concat": "^2.6.0",
@@ -60,7 +60,7 @@
         "sharp": "^0.34.2",
         "smoothscroll-polyfill": "^0.4.4",
         "unfetch": "^4.2.0",
-        "webpack": "^4.47.0",
-        "webpack-stream": "^5.2.1"
+        "webpack": "^5.99.9",
+        "webpack-stream": "^7.0.0"
     }
 }
