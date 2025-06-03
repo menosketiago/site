@@ -16,7 +16,7 @@ main {
 	}
 
 	&.salary {
-		time {
+		.date {
 			margin-bottom: var(--space-large);
 			font-size: var(--paragraph-font-size);
 			font-weight: var(--medium);
