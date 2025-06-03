@@ -41,10 +41,6 @@
         &:last-child {
             margin-bottom: 0;
         }
-
-        &:not(:only-of-type) {
-            margin-bottom: var(--space-extra);
-        }
     }
 
     .summary {

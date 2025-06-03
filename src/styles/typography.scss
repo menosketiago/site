@@ -99,6 +99,7 @@ hgroup {
 
 // PATTERN TEXT
 .pattern {
+    background-color: var(--main-bg-transparency);
     background-image: url("../images/pattern.png");
     background-repeat: repeat;
     background-size: 8px;
@@ -157,7 +158,7 @@ hgroup {
     }
 
     .pattern {
-        background-size: 6px;
+        background-size: 7px;
     }
 }
 
@@ -188,7 +189,7 @@ hgroup {
     }
 
     .pattern {
-        background-size: 4px;
+        background-size: 5px;
     }
 }
 

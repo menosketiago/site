@@ -7,6 +7,7 @@ import Focus from './Focus';
 import Input from './Input';
 import Name from './Name';
 import Role from './Role';
+import Sticker from './Sticker';
 import Tooltip from './Tooltip';
 import Year from './Year';
 import YearsInSweden from './YearsInSweden';
@@ -19,6 +20,7 @@ const menos = window.menos = {
     Input,
     Name,
     Role,
+    Sticker,
     Tooltip,
     Year,
     YearsInSweden
@@ -93,6 +95,17 @@ export function initComponents() {
             let role = new Role(roleDOM);
 
             role.init();
+        });
+    }
+
+    // STICKER
+    let stickerArray = document.getElementsByClassName('sticker');
+
+    if (stickerArray) {
+        Array.from(stickerArray).forEach(stickerDOM => {
+            let sticker = new Sticker(stickerDOM);
+
+            sticker.init();
         });
     }
 

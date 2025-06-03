@@ -12,7 +12,7 @@
     border-radius: var(--border-radius-card);
     mix-blend-mode: multiply;
     cursor: pointer;
-    z-index: var(--z-index-back-to-top);
+    z-index: var(--z-index-float);
 
     picture {
         position: absolute;
