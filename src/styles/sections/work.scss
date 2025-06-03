@@ -21,9 +21,10 @@
         }
 
         > a {
+            display: block;
             overflow: hidden;
-            filter: grayscale(1);
             mix-blend-mode: multiply;
+            filter: grayscale(1);
 
             picture,
             video {
@@ -33,8 +34,8 @@
 
             &:hover,
             &:active {
-                filter: grayscale(0);
                 mix-blend-mode: normal;
+                filter: grayscale(0);
 
                 picture,
                 video {

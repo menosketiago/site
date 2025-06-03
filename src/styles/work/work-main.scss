@@ -91,6 +91,7 @@
             > a {
                 position: relative;
                 overflow: hidden;
+                display: block;
 
                 &:before {
                     content: '';
