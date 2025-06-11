@@ -55,7 +55,7 @@
             align-self: stretch;
             margin-bottom: var(--space-extra);
 
-            h5 {
+            .h-s {
                 margin-top: var(--space-large);
                 margin-bottom: var(--space-base);
 
@@ -124,7 +124,7 @@
             }
 
             aside {
-                h5,
+                .h-s,
                 .pill {
                     display: none;
                 }
