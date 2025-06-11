@@ -1,21 +1,17 @@
 @use "variables";
 
-// FONT IMPORT
-
-@import url("https://rsms.me/inter/inter.css");
-
 html {
-    font-family: "Inter", sans-serif;
+    font-family: "Inter", Helvetica, Arial, sans-serif;
+    font-display: swap;
 }
 
 @supports (font-variation-settings: normal) {
     html {
-        font-family: "Inter var", sans-serif;
+        font-family: "Inter", Helvetica, Arial, sans-serif;
     }
 }
 
 body {
-    font-family: "Inter", Helvetica, Arial, sans-serif;
     font-weight: var(--regular);
     font-size: var(--body-font-size);
     letter-spacing: -0.02em;

@@ -163,7 +163,11 @@ gulp.task('browser-sync', function browserSyncTask() {
     browserSync.init({
         server: './www/',
         open: false,
-        injectChanges: true
+        injectChanges: true,
+        // Do not transpile or polyfill ES6 features, serve as-is
+        serveStaticOptions: {
+            extensions: ['js', 'css', 'html']
+        }
     });
 });
 
