@@ -1,6 +1,10 @@
 @use "../variables";
 
 .pill {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-self: flex-start;
     margin-right: var(--space-small);
     margin-bottom: var(--space-small);
     padding: var(--space-small) var(--space-base);

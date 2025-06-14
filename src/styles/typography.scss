@@ -1,8 +1,14 @@
 @use "variables";
 
+@import url("https://rsms.me/inter/inter.css");
+
 html {
     font-family: "Inter", Helvetica, Arial, sans-serif;
     font-display: swap;
+    font-weight: var(--regular);
+    font-size: var(--body-font-size);
+    letter-spacing: -0.02em;
+    text-wrap: balance;
 }
 
 @supports (font-variation-settings: normal) {
@@ -11,24 +17,20 @@ html {
     }
 }
 
-body {
-    font-weight: var(--regular);
-    font-size: var(--body-font-size);
-    letter-spacing: -0.02em;
-    text-wrap: balance;
-}
-
 h1,
 h2,
 h3,
 h4,
-h4,
-.h-s {
+h5 {
     max-width: calc(var(--space-jumbo) * 8);
     margin: 0;
     line-height: 1.2em;
     letter-spacing: -0.04em;
     text-transform: uppercase;
+
+    &::before {
+        line-height: inherit;
+    }
 }
 
 h1,
@@ -134,6 +136,11 @@ hgroup {
 
     h4,
     .h-s {
+        font-size: 1.999rem;
+    }
+
+    h5,
+    .h-s {
         font-size: 1.414rem;
     }
 }
@@ -159,13 +166,9 @@ hgroup {
         font-size: 2.369rem;
     }
 
-    h4,
+    h5,
     .h-s {
-        font-size: 1.333rem;
-    }
-
-    p {
-        font-size: 1rem;
+        font-size: 1.777rem;
     }
 
     .pattern {
@@ -195,13 +198,9 @@ hgroup {
         font-size: 1.953rem;
     }
 
-    h4,
+    h5,
     .h-s {
         font-size: 1.563rem;
-    }
-
-    p {
-        font-size: 0.8rem;
     }
 
     .pattern {
@@ -230,7 +229,7 @@ hgroup {
         font-size: 1.728rem;
     }
 
-    h4,
+    h5,
     .h-s {
         font-size: 1.44rem;
     }

@@ -1,58 +1,90 @@
 @use "../variables";
 
 main {
-	&.standalone {
-		h2 {
-			justify-self: center;
-			margin-bottom: var(--space-large);
-   			text-align: center;
-		}
+    &.standalone {
+        h2,
+        .h-xl {
+            justify-self: center;
+            margin-bottom: var(--space-large);
+            text-align: center;
+        }
 
-		section {
+        section {
             article {
                 margin-bottom: var(--space-jumbo);
             }
         }
-	}
+    }
 
-	&.salary {
-		.date {
-			margin-bottom: var(--space-large);
-			font-size: var(--paragraph-font-size);
-			font-weight: var(--medium);
+    &.salary {
+        .date {
+            margin-bottom: var(--space-large);
+            font-size: var(--paragraph-font-size);
+            font-weight: var(--medium);
 
-			&::before {
-				content: '🗓️';
-				margin-right: var(--space-small);
-			}
-		}
+            &::before {
+                content: "🗓️";
+                margin-right: var(--space-small);
+            }
+        }
 
-		hgroup {
-			h4 {
-				margin-bottom: var(--space-large);
-			}
-		}
+        hgroup {
+            h4,
+            .h-m {
+                margin-bottom: var(--space-base);
+            }
 
-		.money {
-			&:before {
-				content: '💵';
-				margin-right: var(--space-small);
-			}
+            h5,
+            .h-s {
+                margin-top: 0;
+                margin-bottom: var(--space-extra);
+            }
+        }
 
-			span {
-				&:before {
-					content: '💰';
-					margin-right: var(--space-small);
-				}
-			}
-		}
-	}
+        .money {
+            &:before {
+                content: "💵";
+                margin-right: var(--space-small);
+            }
 
-	@media only screen and (max-device-width: 799px) {
-		section {
+            span {
+                &:before {
+                    content: "💰";
+                    margin-right: var(--space-small);
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-device-width: 1200px) {
+        &.salary {
+            section {
+                h3,
+                .h-l {
+                    margin-bottom: var(--space-base);
+                }
+            }
+
+            hgroup {
+                h4,
+                .h-m {
+                    margin-bottom: var(--space-small);
+                }
+
+                h5,
+                .h-s,
+                .money {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-device-width: 799px) {
+        section {
             article {
                 margin-bottom: var(--space-extra);
             }
         }
-	}
+    }
 }
