@@ -8,8 +8,9 @@ const rename = require('gulp-rename');
 const sass = require('sass');
 const gulpSass = require('gulp-sass')(sass);
 const sitemap = require('gulp-sitemap');
-const webp = require('gulp-webp'); // Ensure gulp-webp is installed
+const webp = require('gulp-webp');
 const webpack = require('webpack-stream');
+const concat = require('gulp-concat');
 
 const path = {
     data: './src/data',
@@ -192,6 +193,13 @@ gulp.task('clean', function clean() {
     return del(['./www/*']);
 });
 
+gulp.task('bundle-howler', function () {
+    return gulp
+        .src(['node_modules/howler/dist/howler.js']) // or howler.min.js for production
+        .pipe(concat('howler.bundle.js'))
+        .pipe(gulp.dest('./www/scripts'));
+});
+
 gulp.task('default',
     gulp.parallel(
         'fonts',
@@ -199,6 +207,7 @@ gulp.task('default',
         'templates',
         'work',
         'pages',
+        'bundle-howler', // Add this here
         'scripts',
         'images',
         'webp',

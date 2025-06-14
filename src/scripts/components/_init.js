@@ -12,6 +12,9 @@ import Tooltip from './Tooltip';
 import Year from './Year';
 import YearsInSweden from './YearsInSweden';
 
+// Import Howler for client-side use
+import 'howler';
+
 const menos = window.menos = {
     Avatar,
     BackToTop,
