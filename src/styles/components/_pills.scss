@@ -26,12 +26,14 @@
     &.arrow-right {
 		&::after {
 			content: '\00a0\00a0\2192';
+            line-height: 1em;
 		}
 	}
 
 	&.arrow-left {
 		&::before {
 			content: '\2190\00a0\00a0';
+            line-height: 1em;
 		}
 	}
 
