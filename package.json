@@ -61,7 +61,7 @@
         "sharp": "^0.34.2",
         "smoothscroll-polyfill": "^0.4.4",
         "unfetch": "^4.2.0",
-        "webpack": "^4.47.0",
+        "webpack": "^5.99.9",
         "webpack-stream": "^5.2.1"
     }
 }
