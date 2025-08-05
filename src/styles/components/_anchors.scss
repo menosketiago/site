@@ -17,12 +17,14 @@ a {
 	&.arrow-right {
 		&::after {
 			content: '\00a0\00a0→';
+			line-height: 1em;
 		}
 	}
 
 	&.arrow-left {
 		&::before {
 			content: '←\00a0\00a0';
+			line-height: 1em;
 		}
 	}
 }
