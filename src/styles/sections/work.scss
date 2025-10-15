@@ -24,21 +24,23 @@
             display: block;
             overflow: hidden;
             mix-blend-mode: multiply;
-            filter: grayscale(1);
 
             picture,
+            img,
             video {
                 display: block;
+                filter: grayscale(1);
                 transition: transform var(--speed-slow) ease;
             }
 
             &:hover,
             &:active {
                 mix-blend-mode: normal;
-                filter: grayscale(0);
 
                 picture,
+                img,
                 video {
+                    filter: grayscale(0);
                     transform: scale(105%);
                 }
             }
