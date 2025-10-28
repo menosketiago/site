@@ -31,6 +31,11 @@
             text-decoration: none;
             transition: all var(--speed-default) ease;
 
+            // SQUIRCLES
+            @supports(corner-shape: squircle) {
+                corner-shape: squircle;
+            }
+
             // Background image
             &::before {
                 content: "";

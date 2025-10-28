@@ -57,6 +57,12 @@ button,
 		}
 	}
 
+    // SQUIRCLES
+    @supports(corner-shape: squircle) {
+        corner-shape: squircle;
+        border-radius: var(--border-radius-card);
+    }
+
     // MEDIA QUERIES
     @media only screen and (max-device-width: 580px) {
         font-size: 0.8rem;
