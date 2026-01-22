@@ -138,8 +138,8 @@ export function initComponents() {
     let yearsSwedenArray = document.querySelectorAll('[data-years-sweden]');
 
     if (yearsSwedenArray) {
-        Array.from(yearArray).forEach(yearDOM => {
-            let year = new Year(yearDOM);
+        Array.from(yearsSwedenArray).forEach(yearDOM => {
+            let year = new YearsInSweden(yearDOM);
 
             year.init();
         });

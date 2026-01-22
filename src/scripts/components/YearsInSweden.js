@@ -8,6 +8,8 @@ class YearsInSweden {
 
     init() {
         this.calculateYear();
+
+        console.log("years in sweden ran")
     }
 
     calculateYear() {
