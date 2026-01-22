@@ -43,4 +43,10 @@
 
         @include mixins.transform(translate(0, 0));
     }
+
+    // SQUIRCLES
+    @supports(corner-shape: squircle) {
+        corner-shape: squircle;
+        border-radius: var(--border-radius-default);
+    }
 }
