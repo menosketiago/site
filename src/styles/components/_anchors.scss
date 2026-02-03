@@ -17,6 +17,7 @@ a {
 	&.arrow-right {
 		&::after {
 			content: '\00a0\00a0→';
+			margin-top: -2px;
 			line-height: 1em;
 		}
 	}
@@ -24,6 +25,7 @@ a {
 	&.arrow-left {
 		&::before {
 			content: '←\00a0\00a0';
+			margin-top: -2px;
 			line-height: 1em;
 		}
 	}

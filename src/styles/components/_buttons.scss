@@ -2,15 +2,15 @@
 
 button,
 .btn {
-    display: inline-block;
+    display: flex;
     margin: 0;
     margin-right: var(--space-base);
     margin-bottom: var(--space-base);
-    padding: var(--space-base);
+    padding: var(--space-base) calc(var(--space-base) + var(--space-tiny));
     background: none;
     border: 1.5px solid var(--main-text-color);
     font-family: inherit;
-    font-weight: var(--bold);
+    font-weight: var(--medium);
     letter-spacing: normal;
     text-decoration: none;
     user-select: none;
@@ -46,14 +46,14 @@ button,
     &.arrow-right {
 		&::after {
 			content: '\00a0\00a0\2192';
-            line-height: 1em;
+            margin-top: 1px;
 		}
 	}
 
 	&.arrow-left {
 		&::before {
 			content: '\2190\00a0\00a0';
-            line-height: 1em;
+            margin-top: 1px;
 		}
 	}
 
