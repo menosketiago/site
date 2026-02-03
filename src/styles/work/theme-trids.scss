@@ -1,0 +1,79 @@
+.theme {
+    &-trids {
+        color: var(--theme-trids-text-color);
+        background: var(--theme-trids-bg-color);
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            color: var(--theme-trids-accent);
+        }
+
+        a,
+        a:hover:not(:active),
+        a:focus {
+            color: var(--theme-trids-accent);
+        }
+
+        figcaption {
+            color: var(--theme-trids-accent);
+        }
+
+        .btn {
+            color: var(--theme-trids-accent);
+            border-color: var(--theme-trids-accent);
+
+            &:hover:not(:active),
+            &:focus {
+                background: var(--theme-trids-accent);
+                color: var(--theme-trids-bg-color);
+            }
+
+            &.secondary {
+                background: var(--theme-trids-transparency);
+            }
+        }
+
+        .pill {
+            background: var(--theme-trids-transparency);
+            color: var(--main-text-color);
+        }
+
+        .back-to-top {
+            background: var(--theme-trids-accent);
+            color: var(--theme-trids-bg-color);
+
+            &:hover:not(:active),
+            &:focus {
+                background: var(--theme-trids-bg-color);
+                color: var(--theme-trids-accent);
+                border-color: var(--theme-trids-accent);
+            }
+        }
+
+        .highlight {
+            background: var(--theme-trids-transparency);
+        }
+
+        .tooltip {
+            color: var(--theme-trids-bg-color);
+        }
+
+        .work-main .dual-column {
+            article {
+                > a {
+                    &:before {
+                        background: var(--theme-trids-accent);
+                    }
+
+                    picture,
+                    video {
+                        mix-blend-mode: screen;
+                    }
+                }
+            }
+        }
+    }
+}

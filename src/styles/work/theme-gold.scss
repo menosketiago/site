@@ -1,0 +1,68 @@
+.theme {
+    &-gold {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            color: var(--theme-gold-accent);
+        }
+
+        a,
+        a:hover:not(:active),
+        a:focus {
+            color: var(--theme-gold-accent);
+        }
+
+        figcaption {
+            color: var(--theme-gold-accent);
+        }
+
+        .btn {
+            color: var(--theme-gold-accent);
+            border-color: var(--theme-gold-accent);
+
+            &:hover:not(:active),
+            &:focus {
+                background: var(--theme-gold-accent);
+            }
+
+            &.secondary {
+                background: var(--theme-gold-transparency);
+            }
+        }
+
+        .pill {
+            background: var(--theme-gold-transparency);
+            color: var(--theme-dark-text-color);
+        }
+
+        .back-to-top {
+            background: var(--theme-gold-accent);
+
+            &:hover:not(:active),
+            &:focus {
+                color: var(--theme-gold-accent);
+                border-color: var(--theme-gold-accent);
+            }
+        }
+
+        .highlight {
+            background: var(--theme-gold-transparency);
+        }
+
+        .tooltip {
+            color: var(--theme-gold-accent);
+        }
+
+        .work-main .dual-column {
+            article {
+                > a {
+                    &:before {
+                        background: var(--theme-gold-accent);
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,64 @@
+.theme {
+    &-volvo {
+        color: var(--theme-volvo-text-color);
+        background: var(--theme-volvo-bg-color);
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            color: var(--theme-volvo-accent);
+        }
+
+        a,
+        a:hover:not(:active),
+        a:focus {
+            color: var(--theme-volvo-accent);
+        }
+
+        figcaption {
+            color: var(--theme-volvo-accent);
+        }
+
+        .btn {
+            color: var(--theme-volvo-accent);
+            border-color: var(--theme-volvo-accent);
+
+            &:hover:not(:active),
+            &:focus {
+                background: var(--theme-volvo-accent);
+                color: var(--theme-volvo-bg-color);
+            }
+
+            &.secondary {
+                background: var(--theme-volvo-transparency);
+            }
+        }
+
+        .pill {
+            background: var(--theme-volvo-transparency);
+            color: var(--theme-volvo-text-color);
+        }
+
+        .back-to-top {
+            background: var(--theme-volvo-accent);
+            color: var(--theme-volvo-bg-color);
+
+            &:hover:not(:active),
+            &:focus {
+                background: var(--theme-volvo-bg-color);
+                color: var(--theme-volvo-accent);
+                border-color: var(--theme-volvo-accent);
+            }
+        }
+
+        .highlight {
+            background: var(--theme-volvo-transparency);
+        }
+
+        .tooltip {
+            color: var(--theme-volvo-accent);
+        }
+    }
+}

@@ -9,11 +9,8 @@
         text-align: center;
     }
 
-    > .pill {
-        margin-bottom: var(--space-jumbo);
-    }
-
     article {
+        margin-top: var(--space-jumbo);
         margin-bottom: var(--space-jumbo);
 
         h4 {
@@ -110,10 +107,10 @@
 
         > .pill {
             margin-right: 0;
-            margin-bottom: var(--space-extra);
         }
 
         article {
+            margin-top: var(--space-extra);
             margin-bottom: var(--space-extra);
 
             > div {
