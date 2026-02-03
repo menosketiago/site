@@ -58,7 +58,7 @@
         "lodash": ">=4.17.19",
         "lodash.template": ">=4.5.0",
         "sass": "^1.89.0",
-        "sharp": "^0.34.3",
+        "sharp": "^0.34.4",
         "smoothscroll-polyfill": "^0.4.4",
         "unfetch": "^4.2.0",
         "webpack": "^5.99.9",
