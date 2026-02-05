@@ -1,14 +1,16 @@
+const debug = require('gulp-debug').default;
+const plumber = require('gulp-plumber');
 const browserSync = require('browser-sync').create();
 const del = require('del');
 const gulp = require('gulp');
-const gulpAvif = require('gulp-avif');
+const sharp = require('sharp');
 const handlebars = require('gulp-hb');
 const htmlmin = require('gulp-htmlmin');
 const rename = require('gulp-rename');
 const sass = require('sass');
 const gulpSass = require('gulp-sass')(sass);
 const sitemap = require('gulp-sitemap');
-const webp = require('gulp-webp').default;
+const gulpWebp = require('gulp-webp');
 const webpack = require('webpack-stream');
 const concat = require('gulp-concat');
 
@@ -97,36 +99,101 @@ gulp.task('pages', function pages() {
         .pipe(browserSync.stream());
 });
 
-gulp.task('images', function images() {
-    return gulp
-        .src(path.images + supportedImages)
-        .pipe(gulp.dest('./www/images'));
+gulp.task('images', async function images() {
+    const fs = require('fs').promises;
+    const path_module = require('path');
+    const globby = require('globby');
+    
+    const imageFiles = await globby([
+        path.images + supportedImages
+    ]);
+    
+    for (const file of imageFiles) {
+        try {
+            const outputPath = path_module.join('./www/images', path_module.relative(path.images, file));
+            const outputDir = path_module.dirname(outputPath);
+            await fs.mkdir(outputDir, { recursive: true });
+            await fs.copyFile(file, outputPath);
+        } catch (err) {
+            console.error(`[Image Error] ${file}: ${err.message}`);
+        }
+    }
+    
+    browserSync.reload();
 });
 
 gulp.task('webp', function webpTask() {
     return gulp
-        .src(path.images + '/**/*.{jpg,jpeg,png,gif}')
-        .pipe(webp())
+        .src([
+            path.images + '/**/*.{jpg,jpeg,png,gif}',
+            '!' + path.images + '/_posters/**/*',
+            '!' + path.images + '/pattern.png',
+            '!' + path.images + '/favicon.png'
+        ])
+        .pipe(gulpWebp())
         .pipe(rename((path) => {
             path.extname = '.webp';
         }))
         .pipe(gulp.dest('./www/images'));
 });
 
-gulp.task('avif', function avifTask() {
-    return gulp
-        .src(path.images + '/**/*.{jpg,png}')
-        .pipe(gulpAvif())
-        .pipe(rename((path) => {
-            path.extname = '.avif';
-        }))
-        .pipe(gulp.dest('./www/images'));
+gulp.task('avif', async function avifTask() {
+    const fs = require('fs').promises;
+    const path_module = require('path');
+    const globby = require('globby');
+    
+    const imageFiles = await globby([
+        path.images + '/**/*.jpg',
+        path.images + '/**/*.jpeg',
+        path.images + '/**/*.png',
+        '!' + path.images + '/_posters/**/*',
+        '!' + path.images + '/pattern.png',
+        '!' + path.images + '/favicon.png'
+    ]);
+    
+    for (const file of imageFiles) {
+        try {
+            const outputPath = path_module.join('./www/images', path_module.relative(path.images, file).replace(/\.[^.]+$/, '.avif'));
+            const outputDir = path_module.dirname(outputPath);
+            
+            // Skip if output file already exists
+            try {
+                await fs.access(outputPath);
+                continue; // File exists, skip conversion
+            } catch {
+                // File doesn't exist, proceed with conversion
+            }
+            
+            await fs.mkdir(outputDir, { recursive: true });
+            await sharp(file).avif({ quality: 70 }).toFile(outputPath);
+        } catch (err) {
+            console.error(`[AVIF Error] ${file}: ${err.message}`);
+        }
+    }
 });
 
-gulp.task('videos', function videos() {
-    return gulp
-        .src(path.videos + '/**/*.{webm,mp4}')
-        .pipe(gulp.dest('./www/videos'));
+gulp.task('videos', async function videos() {
+    const fs = require('fs').promises;
+    const path_module = require('path');
+    const globby = require('globby');
+    
+    const videoFiles = await globby([
+        path.videos + '/**/*.webm',
+        path.videos + '/**/*.mp4'
+    ]);
+    
+    for (const file of videoFiles) {
+        try {
+            const outputPath = path_module.join('./www/videos', path_module.relative(path.videos, file));
+            const outputDir = path_module.dirname(outputPath);
+            await fs.mkdir(outputDir, { recursive: true });
+            await fs.copyFile(file, outputPath);
+        } catch (err) {
+            console.error(`[Video Error] ${file}: ${err.message}`);
+        }
+    }
+    
+    browserSync.reload();
 });
 
 gulp.task('fonts', function fonts() {
@@ -167,7 +234,7 @@ gulp.task('browser-sync', function browserSyncTask() {
         injectChanges: true,
         // Do not transpile or polyfill ES6 features, serve as-is
         serveStaticOptions: {
-            extensions: ['js', 'css', 'html']
+            extensions: ['js', 'css', 'html', 'mp4', 'webm', 'jpg', 'jpeg', 'png', 'gif', 'svg', 'avif', 'webp', 'eot', 'ttf', 'woff', 'woff2']
         }
     });
 });
@@ -195,7 +262,7 @@ gulp.task('clean', function clean() {
 
 gulp.task('bundle-howler', function () {
     return gulp
-        .src(['node_modules/howler/dist/howler.js']) // or howler.min.js for production
+        .src(['node_modules/howler/dist/howler.min.js'])
         .pipe(concat('howler.bundle.js'))
         .pipe(gulp.dest('./www/scripts'));
 });
@@ -207,10 +274,11 @@ gulp.task('default',
         'templates',
         'work',
         'pages',
-        'bundle-howler', // Add this here
+        'bundle-howler',
         'scripts',
         'images',
         'webp',
+        'avif',
         'files',
         'sitemap',
         'robots'

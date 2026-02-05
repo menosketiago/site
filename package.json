@@ -32,10 +32,12 @@
         "gulp-avif": "^1.1.1",
         "gulp-babel": "^8.0.0",
         "gulp-concat": "^2.6.0",
+        "gulp-debug": "^5.0.1",
         "gulp-declare": "^0.3.0",
         "gulp-ext-replace": "^0.3.0",
         "gulp-hb": "^8.0.0",
         "gulp-image": "^6.3.1",
+        "gulp-plumber": "^1.2.1",
         "gulp-rename": "^1.4.0",
         "gulp-sass": "^6.0.1",
         "gulp-sitemap": "^7.7.0",
@@ -43,6 +45,7 @@
         "gulp-wrap": "^0.15.0",
         "howler": "^2.2.4",
         "imagemin": "^7.0.1",
+        "imagemin-avif": "^0.1.6",
         "imagemin-webp": "^6.1.0"
     },
     "dependencies": {
