@@ -8,7 +8,7 @@ const rename = require('gulp-rename');
 const sass = require('sass');
 const gulpSass = require('gulp-sass')(sass);
 const sitemap = require('gulp-sitemap');
-const webp = require('gulp-webp');
+const webp = require('gulp-webp').default;
 const webpack = require('webpack-stream');
 const concat = require('gulp-concat');
 
