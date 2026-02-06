@@ -45,6 +45,12 @@
         transform: rotate(-6deg);
     }
 
+     &#sticker-new {
+        top: 364px;
+        left: 36px;
+        transform: rotate(-10deg);
+    }
+
     // REMOVE STICKERS ON SMALLER SCREENS
     @media only screen and (max-device-width: 1400px) {
         display: none;

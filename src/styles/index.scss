@@ -15,7 +15,7 @@
 @use 'themes/theme-gold';
 @use 'themes/theme-klarna';
 @use 'themes/theme-trids';
-@use 'themes/theme-volvo';
+// @use 'themes/theme-volvo';
 
 // LAYOUT
 
@@ -42,6 +42,7 @@
 @use 'components/cursor';
 @use 'components/inputs';
 @use 'components/pills';
+@use 'components/stickers';
 @use 'components/tooltip';
 
 // WORK
