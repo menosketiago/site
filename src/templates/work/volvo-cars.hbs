@@ -38,8 +38,8 @@
 
                         <div class="pill-group">
                             <div class="pill">Design System Manager</div>
-                            <div class="pill">Product Manager</div>
                             <div class="pill">Staff Product Designer</div>
+                            <div class="pill">Product Manager</div>
                         </div>
                     </div>
 
@@ -66,6 +66,7 @@
                             <div class="pill">Martin Delin</div>
                             <div class="pill">Richard Landérus</div>
                             <div class="pill">Richard Jarrett</div>
+                            <div class="pill">Fabian Fredholm</div>
                         </div>
                     </div>
                 </aside>
@@ -99,6 +100,104 @@
             </section>
 
             <h2>Full story</h2>
+
+            <section>
+                <article class="grid-2-2">
+                    <h3>From WIP to ship</h3>
+
+                    <div>
+                        <p>
+                            When I started at <b>Volvo Cars</b>, we had old mobile <b>Figma</b> libraries, with outdated
+                            color and typography foundations, hard-to-find and overly complex components built without
+                            leveraging Figma capabilities like variants and properties, and almost non-existent
+                            documentation.
+                        </p>
+                        <p>
+                            There were a lot of great insights collected from the design team about their experience
+                            with the system, and a work-in-progress library that my colleagues had put together
+                            over the previous year.
+                        </p>
+                        <p>
+                            After a few days of refactoring, I presented the improvements in a design show-and-tell.
+                            There was a lot of excitement from the team, and the Head of Mobile UX asked, "When can you
+                            publish this?". My reply was, "Give me 2/3 weeks."
+                        </p>
+                        <p>
+                            Two weeks later, I hit publish on a new Mobile Design System library, set the old library to
+                            deprecated, and communicated to Designers that they should migrate components in their work
+                            progressively to profit from all the improvements.
+                        </p>
+                    </div>
+                </article>
+            </section>
+
+            <section>
+                <article class="grid-2-2 reverse-order">
+                    <h3>Missing alignment</h3>
+
+                    <div>
+                        <p>
+                            After a few weeks of support requests from designers and engineers, I started noticing a
+                            repeating pattern. The components in the code did match the ones in the Figma library, and
+                            some were available only on Android or iOS.
+                        </p>
+                        <p>
+                            To understand the depth of the problem, I created a Notion database where we could track the
+                            alignment status of all components in the system. Out of 35 components in the design
+                            library, Android had only 7 fully aligned, and iOS had up to 9.
+                        </p>
+                    </div>
+                </article>
+
+                <figure>
+                    <picture loading="lazy">
+                        <source srcset="/images/volvo/implementation-tracker.avif" type="image/avif">
+                        <source srcset="/images/volvo/implementation-tracker.webp" type="image/webp">
+                        <img src="/images/volvo/implementation-tracker.jpg"
+                            alt="Screenshot from a Notion table showing different component names and statuses over Figma, Android, and iOS"
+                            loading="lazy">
+                    </picture>
+                    <figcaption class="bottom">The component implementation status tracker (around summer 2025)
+                    </figcaption>
+                </figure>
+            </section>
+
+            <section>
+                <article class="grid-2-2">
+                    <h3>The devils is in the docs</h3>
+
+                    <div>
+                        <p>
+                            One of the leading issues found in user research efforts completed before I joined the
+                            mobile team was that there was a lack of information about how and when to use components.
+                        </p>
+                        <p>
+                            In fact, the only thing available for each component was a short description present on the
+                            component page and the component metadata in Figma (available in the UI panels).
+                        </p>
+                        <p>
+                            Good documentation allows Designers, Engineers, and stakeholders to make sounder decisions
+                            and understand the constraints that enable coherent experiences. It's also a great source of
+                            context to help LLMs generate designs and prototypes that follow your brand and design
+                            language.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="grid-2-2 reverse-order">
+                    <h3>Crafting the context</h3>
+
+                    <div>
+                        <p>
+                            My first step was creating a getting-started guide that detailed key concepts for utilizing
+                            the Design System, with quick start information, but also details on governance, support
+                            channels, bug reporting, and more. I also created a changelog where everyone could see
+                            additions, changes, and deprecations, and documentation describing how to document
+                            components (very meta, I know).
+                        </p>
+                    </div>
+                </article>
+            </section>
 
             {{!-- More work section --}}
 

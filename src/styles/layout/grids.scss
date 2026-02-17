@@ -9,6 +9,12 @@
         column-gap: var(--space-extra);
         flex-wrap: wrap;
         align-items: flex-start;
+
+        &.reverse-order {
+            > :first-child {
+                order: 1;
+            }
+        }
     }
     
     &-1-4 {
@@ -40,6 +46,12 @@
         &-3-2 {
             grid-template-columns: auto;
             column-gap: 0;
+
+            &.reverse-order {
+            > :first-child {
+                order: 0;
+            }
+        }
         }
     }
 }

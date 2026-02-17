@@ -20,17 +20,6 @@
             grid-template-columns: auto;
             column-gap: 0;
         }
-
-		// GRID ORDER INVERSION UTILITY
-		.mobile-invert {
-            :nth-child(1) {
-				order: 2;
-			}
-
-			:nth-child(2) {
-				order: 1;
-			}
-        }
     }
 }
 
