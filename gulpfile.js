@@ -17,7 +17,6 @@ const concat = require("gulp-concat");
 const path = {
     data: "./src/data",
     styles: "./src/styles",
-    fonts: "./src/fonts",
     images: "./src/images",
     videos: "./src/videos",
     scripts: "./src/scripts",
@@ -218,13 +217,6 @@ gulp.task("videos", async function videos() {
     browserSync.reload();
 });
 
-gulp.task("fonts", function fonts() {
-    return gulp
-        .src(path.fonts + "/**/*.{eot,svg,ttf,woff,woff2}")
-        .pipe(gulp.dest("./www/fonts"))
-        .pipe(browserSync.stream());
-});
-
 gulp.task("files", function files() {
     return gulp
         .src(path.files + "/**/*")
@@ -290,10 +282,6 @@ gulp.task("watch", function watchTask(done) {
     gulp.watch(path.images + "/**/*.{jpg,jpeg,gif,png}", gulp.series("webp"));
     gulp.watch(path.images + "/**/*.{jpg,png}", gulp.series("avif"));
     gulp.watch(path.videos + "/**/*.{webm,mp4}", gulp.series("videos"));
-    gulp.watch(
-        path.fonts + "/**/*.{eot,svg,ttf,woff,woff2}",
-        gulp.series("fonts"),
-    );
     gulp.watch(path.files + "/**/*", gulp.series("files"));
     gulp.watch("src/robots.txt", gulp.series("robots"));
     gulp.watch("www/*.html", gulp.series("sitemap"));
@@ -314,7 +302,6 @@ gulp.task("bundle-howler", function () {
 gulp.task(
     "default",
     gulp.parallel(
-        "fonts",
         "styles",
         "templates",
         "work",
@@ -332,5 +319,8 @@ gulp.task(
 
 gulp.task(
     "serve",
-    gulp.parallel("default", "browser-sync", "watch", "videos", "avif"),
+    gulp.series(
+        "default",
+        gulp.parallel("browser-sync", "watch", "videos", "avif", "sitemap"),
+    ),
 );
