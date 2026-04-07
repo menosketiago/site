@@ -10,7 +10,6 @@ const rename = require("gulp-rename");
 const sass = require("sass");
 const gulpSass = require("gulp-sass")(sass);
 const sitemap = require("gulp-sitemap");
-const gulpWebp = require("gulp-webp");
 const webpack = require("webpack-stream");
 const concat = require("gulp-concat");
 
@@ -138,16 +137,45 @@ gulp.task("images", async function images() {
     browserSync.reload();
 });
 
-gulp.task("webp", function webpTask() {
-    return gulp
-        .src([path.images + "/**/*.{jpg,jpeg,png,gif}"])
-        .pipe(gulpWebp())
-        .pipe(
-            rename((path) => {
-                path.extname = ".webp";
-            }),
-        )
-        .pipe(gulp.dest("./www/images"));
+gulp.task("webp", async function webpTask() {
+    const fs = require("fs").promises;
+    const path_module = require("path");
+    const globby = require("globby");
+
+    const imageFiles = await globby([
+        path.images + "/**/*.jpg",
+        path.images + "/**/*.jpeg",
+        path.images + "/**/*.png",
+        path.images + "/**/*.gif",
+        "!" + path.images + "/_posters/**/*",
+        "!" + path.images + "/pattern.png",
+        "!" + path.images + "/favicon.png",
+    ]);
+
+    for (const file of imageFiles) {
+        try {
+            const outputPath = path_module.join(
+                "./www/images",
+                path_module
+                    .relative(path.images, file)
+                    .replace(/\.[^.]+$/, ".webp"),
+            );
+            const outputDir = path_module.dirname(outputPath);
+
+            // Skip if output file already exists
+            try {
+                await fs.access(outputPath);
+                continue; // File exists, skip conversion
+            } catch {
+                // File doesn't exist, proceed with conversion
+            }
+
+            await fs.mkdir(outputDir, { recursive: true });
+            await sharp(file).webp({ quality: 80 }).toFile(outputPath);
+        } catch (err) {
+            console.error(`[WebP Error] ${file}: ${err.message}`);
+        }
+    }
 });
 
 gulp.task("avif", async function avifTask() {
