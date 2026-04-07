@@ -68,7 +68,6 @@
         "webpack-stream": "^7.0.0"
     },
     "resolutions": {
-        "file-type": "^21.3.1",
         "handlebars": "^4.7.9"
     }
 }
