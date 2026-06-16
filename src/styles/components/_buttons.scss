@@ -32,7 +32,7 @@ button,
         @extend .focus !optional;
     }
 
-    &.secondary {
+    &.secondary {   
         background: var(--main-bg-transparency);
         border: none;
 
@@ -46,14 +46,12 @@ button,
     &.arrow-right {
 		&::after {
 			content: '\00a0\00a0\2192';
-            margin-top: 1px;
 		}
 	}
 
 	&.arrow-left {
 		&::before {
 			content: '\2190\00a0\00a0';
-            margin-top: 1px;
 		}
 	}
 

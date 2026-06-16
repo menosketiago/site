@@ -50,6 +50,10 @@
             align-self: stretch;
             margin-bottom: var(--space-extra);
 
+            &:last-child {
+                margin-bottom: 0;
+            }
+
             .h-s {
                 margin-top: var(--space-large);
                 margin-bottom: var(--space-base);
