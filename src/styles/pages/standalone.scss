@@ -2,17 +2,22 @@
 
 main {
     &.standalone {
-        h2,
-        .h-xl {
-            justify-self: center;
-            margin-bottom: var(--space-large);
-            text-align: center;
-        }
-
         section {
             align-items: flex-start;
-            gap: var(--space-large);
             width: 100%;
+
+            .section-heading {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                text-align: center;
+
+                h2 {
+                    margin-bottom: var(--space-large);
+                }
+            }
         }
     }
 
@@ -79,12 +84,4 @@ main {
             }
         }
     }
-
-    // @media only screen and (max-device-width: 799px) {
-    //     section {
-    //         article {
-    //             margin-bottom: var(--space-extra);
-    //         }
-    //     }
-    // }
 }
