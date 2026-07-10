@@ -1,14 +1,13 @@
-@use "../mixins/mixins";
 @use "../variables";
 
 .input {
     position: relative;
     width: 100%;
-    margin-bottom: var(--space-large);
+    // margin-bottom: var(--space-large);
 
-    &:last-of-type {
-        margin-bottom: var(--space-extra);
-    }
+    // &:last-of-type {
+    //     margin-bottom: var(--space-extra);
+    // }
 
     label {
         position: absolute;
@@ -23,7 +22,7 @@
         pointer-events: none;
         transition: all var(--speed-default) ease;
 
-        @include mixins.transform(translate(0, -50%));
+        transform: translate(0, -50%);
     }
 
     input,
@@ -88,11 +87,11 @@
     }
 
     // MEDIA QUERIES
-    @media only screen and (max-device-width: 799px) {
-        margin-bottom: var(--space-base);
+    // @media only screen and (max-device-width: 799px) {
+    //     margin-bottom: var(--space-base);
 
-        &:last-of-type {
-            margin-bottom: var(--space-large);
-        }
-    }
+    //     &:last-of-type {
+    //         margin-bottom: var(--space-large);
+    //     }
+    // }
 }

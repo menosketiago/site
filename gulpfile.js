@@ -247,8 +247,8 @@ gulp.task("videos", async function videos() {
 
 gulp.task("files", function files() {
     return gulp
-        .src(path.files + "/**/*")
-        .pipe(gulp.dest("./www/files"))
+        .src(path.files + "/**/*", { encoding: false })
+        .pipe(gulp.dest("./www/files", { encoding: false }))
         .pipe(browserSync.stream());
 });
 
@@ -320,13 +320,6 @@ gulp.task("clean", function clean() {
     return del(["./www/*"]);
 });
 
-gulp.task("bundle-howler", function () {
-    return gulp
-        .src(["node_modules/howler/dist/howler.min.js"])
-        .pipe(concat("howler.bundle.js"))
-        .pipe(gulp.dest("./www/scripts"));
-});
-
 gulp.task(
     "default",
     gulp.parallel(
@@ -334,7 +327,6 @@ gulp.task(
         "templates",
         "work",
         "pages",
-        "bundle-howler",
         "scripts",
         "images",
         "webp",

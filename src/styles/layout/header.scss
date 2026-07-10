@@ -4,6 +4,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: var(--space-large);
+	margin-bottom: var(--space-gojira);
 
     .logo {
         scroll-margin: var(--space-jumbo);
@@ -40,12 +42,9 @@ header {
         }
     }
 
-    .mobile-only {
-        display: none;
-    }
-
     // MEDIA QUERIES
-    @media only screen and (max-device-width: 799px) {
+    @media only screen and (max-width: 799px) {
+
         .logo {
             width: 65px;
             height: auto;
@@ -57,9 +56,7 @@ header {
 
         section {
             grid-template-columns: auto;
-            column-gap: initial;
-            margin: var(--space-extra) 0;
-            margin-top: var(--space-jumbo);
+            gap: initial;
 
             .name {
                 &::after {

@@ -10,15 +10,15 @@ main {
         }
 
         section {
-            article {
-                margin-bottom: var(--space-jumbo);
-            }
+            align-items: flex-start;
+            gap: var(--space-large);
+            width: 100%;
         }
     }
 
     &.salary {
         .date {
-            margin-bottom: var(--space-large);
+            justify-self: flex-start;
             font-size: var(--paragraph-font-size);
             font-weight: var(--medium);
 
@@ -80,11 +80,11 @@ main {
         }
     }
 
-    @media only screen and (max-device-width: 799px) {
-        section {
-            article {
-                margin-bottom: var(--space-extra);
-            }
-        }
-    }
+    // @media only screen and (max-device-width: 799px) {
+    //     section {
+    //         article {
+    //             margin-bottom: var(--space-extra);
+    //         }
+    //     }
+    // }
 }

@@ -3,26 +3,26 @@
 #about {
     display: grid;
     grid-template-columns: 2fr 2fr;
-    column-gap: var(--space-extra);
+    gap: var(--space-extra);
     align-items: flex-start;
 
-    p {
-        &:last-of-type {
-            margin-bottom: var(--space-extra);
-        }
-    }
+    // p {
+    //     &:last-of-type {
+    //         margin-bottom: var(--space-extra);
+    //     }
+    // }
 
     // MEDIA QUERIES
     @media only screen and (max-device-width: 799px) {
         grid-template-columns: auto;
-        column-gap: 0;
+        gap: 0;
     }
 
-    @media only screen and (max-device-width: 580px) {
-        p {
-            &:last-of-type {
-                margin-bottom: var(--space-large);
-            }
-        }
-    }
+    // @media only screen and (max-device-width: 580px) {
+    //     p {
+    //         &:last-of-type {
+    //             margin-bottom: var(--space-large);
+    //         }
+    //     }
+    // }
 }

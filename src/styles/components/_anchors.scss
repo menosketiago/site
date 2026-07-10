@@ -28,3 +28,14 @@ a {
 		}
 	}
 }
+
+.anchor-group {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	gap: var(--space-base);
+
+	 &.row {
+		flex-direction: row;
+	}	
+}

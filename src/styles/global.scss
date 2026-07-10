@@ -1,44 +1,53 @@
-@use "mixins/mixins";
 @use "variables";
 
-
-html {
-	scroll-behavior: smooth;
-
-    @include mixins.box-sizing(border-box);
-	@include mixins.scrollbars(0, transparent, transparent);
-}
-
+// RESETS
 *,
 *::before,
 *::after {
+	margin: 0;
 	outline: 0;
+	box-sizing: inherit;
+}
 
-    @include mixins.box-sizing(inherit);
+html {
+	scroll-behavior: smooth;
+	box-sizing: border-box;
+	scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+	display: none;
 }
 
 body {
 	position: relative;
+	display: flex;
+	justify-content: center;
 	width: 100vw;
 	min-height: 100vh;
+	gap: var(--space-gojira);
 	margin: 0;
 	padding: var(--space-jumbo);
 	color: var(--main-text-color);
 	background: var(--main-bg-color);
 	font-size: var(--body-font-size);
 	transition: background-color var(--speed-slowest) ease;
+}
 
+main {
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--space-gojira);
 }
 
 section {
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	align-items: flex-start;
+	align-items: center;
 	flex-wrap: wrap;
-	margin: var(--section-margin) 0;
+	gap: var(--space-jumbo);
 	scroll-margin: calc(var(--section-margin) * 0.5);
 }
 
@@ -62,14 +71,6 @@ svg {
 	pointer-events: none;
 }
 
-form {
-	margin-top: var(--space-large);
-
-	&:first-child {
-		margin-top: 0;
-	}
-}
-
 hr {
 	width: 100%;
 	margin-top: var(--space-large);
@@ -77,7 +78,7 @@ hr {
 }
 
 time,
-.money {
+.money {	
 	font-variant-numeric: slashed-zero;
 }
 
@@ -89,34 +90,63 @@ time,
 	outline-width: 2px;
 }
 
-// NO MARGIN CLASS
-.no-margin {
+// UTILITY CLASSES
+.margin-0 {
 	margin: 0 !important;
 }
 
-// SPACING CLASSES
 .margin {
-	&-ts { margin-top: var(--space-small) !important; }
-	&-tb { margin-top: var(--space-base) !important; }
-	&-tl { margin-top: var(--space-large) !important; }
-	&-te { margin-top: var(--space-extra) !important; }
-	&-tj { margin-top: var(--space-jumbo) !important; }
+	&-ts {
+		margin-top: var(--space-small) !important;
+	}
 
-	&-bs { margin-bottom: var(--space-small) !important; }
-	&-bb { margin-bottom: var(--space-base) !important; }
-	&-bl { margin-bottom: var(--space-large) !important; }
-	&-be { margin-bottom: var(--space-extra) !important; }
-	&-bj { margin-bottom: var(--space-jumbo) !important; }
+	&-tb {
+		margin-top: var(--space-base) !important;
+	}
+
+	&-tl {
+		margin-top: var(--space-large) !important;
+	}
+
+	&-te {
+		margin-top: var(--space-extra) !important;
+	}
+
+	&-tj {
+		margin-top: var(--space-jumbo) !important;
+	}
+
+	&-bs {
+		margin-bottom: var(--space-small) !important;
+	}
+
+	&-bb {
+		margin-bottom: var(--space-base) !important;
+	}
+
+	&-bl {
+		margin-bottom: var(--space-large) !important;
+	}
+
+	&-be {
+		margin-bottom: var(--space-extra) !important;
+	}
+
+	&-bj {
+		margin-bottom: var(--space-jumbo) !important;
+	}
 }
 
-// FLEX UTILITIES
 .align-center {
 	align-items: center !important;
 }
 
-// GRID UTILITIES
 .gap-jumbo {
-	column-gap: var(--space-jumbo) !important;
+	gap: var(--space-jumbo) !important;
+}
+
+.row {
+	flex-direction: row !important;
 }
 
 // TOOLTIP TRIGGER
@@ -132,8 +162,8 @@ time,
 // WRAPPER
 .wrapper {
 	align-items: flex-start;
-    width: 100%;
-    max-width: 1200px;
+	width: 100%;
+	max-width: 1200px;
 }
 
 // VIMEO

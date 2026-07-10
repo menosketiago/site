@@ -4,23 +4,20 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-self: flex-start;
-    margin-right: var(--space-small);
-    margin-bottom: var(--space-small);
+    justify-self: center;
     padding: var(--space-small) var(--space-base);
     background: var(--main-bg-transparency);
     border-radius: 100vw;
     font-size: var(--body-font-size);
     font-weight: var(--regular);
-    backdrop-filter: blur(16px);
     
-    &:last-of-type {
-        margin-right: 0;
-    }
-
     &.black {
         background: var(--main-text-color);
         color: var(--main-bg-color);
+    }
+
+    &.blur {
+        backdrop-filter: blur(16px);
     }
 
     &.arrow-right {
@@ -44,32 +41,26 @@
     }
 
     // MEDIA QUERIES
+    
     @media only screen and (max-device-width: 580px) {
         font-size: 0.8rem;
     }
 }
 
 // PILL GROUP
+
 .pill-group {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
 	align-items: flex-start;
+    gap: var(--space-base);
 
-    &.masonry {
+    &.row {
         flex-direction: row;
     }
 
     @media only screen and (max-device-width: 799px) {
         flex-direction: row;
-    }
-}
-
-// PILL AFTER HEADINGS
-h1,
-h2 {
-    ~ .pill {
-        justify-self: center;
-        margin-right: 0;
     }
 }

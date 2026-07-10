@@ -4,7 +4,7 @@ footer {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: var(--space-extra);
-    margin: var(--section-margin) 0;
+    margin-top: var(--space-gojira);
 
     > div {
         margin: 0;
@@ -31,14 +31,8 @@ footer {
     }
 
     // MEDIA QUERIES
-    @media only screen and (max-device-width: 799px) {
+    @media only screen and (max-width: 799px) {
         grid-template-columns: auto;
-        column-gap: 0;
-        margin-bottom: 0;
-
-        > div {
-            margin: 0;
-        }
 
         .icon {
             justify-self: flex-start;

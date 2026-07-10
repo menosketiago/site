@@ -84,7 +84,7 @@ p {
     font-size: var(--paragraph-font-size);
     line-height: 1.6em;
 
-    &:last-of-type {
+    &:last-child {
         margin-bottom: 0;
     }
 

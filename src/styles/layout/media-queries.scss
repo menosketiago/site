@@ -4,22 +4,28 @@
     body {
         padding: var(--space-extra);
 
+        main {
+            gap: var(--space-jumbo);
+        }
+
         section {
-			align-items: flex-start;
-            margin: var(--space-jumbo) 0;
+            align-items: flex-start;
+            gap: var(--space-extra);
         }
 
-		footer {
-			margin-top: var(--space-jumbo);
-		}
-
-        #contact,
-        #bye,
-        .dual-column,
-        .work-header {
-            grid-template-columns: auto;
-            column-gap: 0;
+        img,
+        figure,
+        video {
+            width: 100%;
+            height: auto;
         }
+    }
+
+    #contact,
+    #bye,
+    .dual-column,
+    .work-header {
+        grid-template-columns: auto;
     }
 }
 
@@ -31,6 +37,6 @@
 
 @media only screen and (max-device-width: 410px) {
     body {
-		padding: calc(var(--space-large) * 1.5);
+        padding: calc(var(--space-large) * 1.5);
     }
 }

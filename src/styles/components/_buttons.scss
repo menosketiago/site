@@ -4,8 +4,6 @@ button,
 .btn {
     display: inline-flex;
     margin: 0;
-    margin-right: var(--space-base);
-    margin-bottom: var(--space-base);
     padding: var(--space-base) calc(var(--space-base) + var(--space-tiny));
     background: none;
     border: 1.5px solid var(--main-text-color);
@@ -16,11 +14,6 @@ button,
     user-select: none;
     transition: all var(--speed-default) ease;
     cursor: pointer;
-
-    &:last-child {
-        margin-right: 0;
-        margin-bottom: 0;
-    }
 
     &:hover:not(:active),
     &:focus {

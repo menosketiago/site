@@ -1,21 +1,20 @@
 @use '../variables';
 
 .work-main {
-    margin-bottom: var(--space-jumbo);
+    align-items: flex-start;
 
     h1 {
         max-width: initial;
+        margin-bottom: 0;
         font-weight: var(--black);
+    }
+
+    h2 {
+        margin-bottom: 0;
     }
 
     section {
         article {
-            margin-bottom: var(--space-jumbo);
-
-            &:last-child,
-            &:only-child {
-                margin-bottom: 0;
-            }
 
             figure,
             video {
@@ -29,8 +28,6 @@
         justify-self: center;
         width: 100%;
         height: auto;
-        margin: 0;
-        margin-bottom: var(--space-jumbo);
 
         &:only-child,
         &:last-child {
@@ -39,37 +36,21 @@
     }
 
     .summary {
-        align-items: stretch;
-        margin-top: var(--space-jumbo);
         align-items: flex-start;
 
         aside {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            column-gap: var(--space-extra);
+            gap: var(--space-large);
             align-self: stretch;
-            margin-bottom: var(--space-extra);
+            align-content: start;
 
-            &:last-child {
-                margin-bottom: 0;
+            div {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--space-base);
             }
-
-            .h-s {
-                margin-top: var(--space-large);
-                margin-bottom: var(--space-base);
-
-                &:first-of-type {
-                    margin-top: 0;
-                }
-            }
-
-            .pill {
-                justify-self: flex-start;
-            }
-        }
-
-        article {
-            margin-top: var(--space-jumbo);
         }
 
         &.short {
@@ -87,7 +68,7 @@
         article {
             margin: 0;
 
-            > a {
+            >a {
                 position: relative;
                 overflow: hidden;
                 display: block;
@@ -123,6 +104,7 @@
             }
 
             aside {
+
                 .h-s,
                 .pill {
                     display: none;
@@ -133,42 +115,41 @@
 
     // MEDIA QUERIES
     @media only screen and (max-device-width: 799px) {
-        h1 {
-            margin-bottom: var(--space-extra);
-        }
+        // h1 {
+        //     margin-bottom: var(--space-extra);
+        // }
 
-        section {
-            article {
-                margin-bottom: var(--space-extra);
-            }
-        }
+        // section {
+        //     article {
+        //         margin-bottom: var(--space-extra);
+        //     }
+        // }
 
-        figure,
-        video {
-            margin-bottom: var(--space-extra);
-        }
+        // figure,
+        // video {
+        //     margin-bottom: var(--space-extra);
+        // }
 
         .summary {
             aside {
                 grid-template-columns: 2fr 2fr;
-                column-gap: var(--space-large);
-                row-gap: var(--space-large);
+                gap: var(--space-large);
             }
         }
 
         .dual-column {
             article {
-                &:first-child {
-                    margin-bottom: var(--space-extra);
-                }
+                // &:first-child {
+                //     margin-bottom: var(--space-extra);
+                // }
 
-                aside {
-                    margin-top: var(--space-large);
+                // aside {
+                //     margin-top: var(--space-large);
 
-                    a {
-                        margin-top: 0;
-                    }
-                }
+                //     a {
+                //         margin-top: 0;
+                //     }
+                // }
             }
         }
     }

@@ -3,17 +3,14 @@
 #contact {
     display: grid;
     grid-template-columns: 2fr 2fr;
-    column-gap: var(--space-extra);
+    gap: var(--space-extra);
     align-items: flex-start;
 
-    h2 {
-        margin-bottom: var(--space-large);
-    }
-
     form {
-        margin: 0;
-        width: 100%;
-        text-align: right;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: var(--space-large);
     }
 
     // MEDIA QUERIES

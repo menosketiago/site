@@ -4,13 +4,9 @@
     align-items: center;
     
     h2 {
-        margin-bottom: var(--space-large);
         justify-self: center;
+        margin-bottom: var(--space-large);
         text-align: center;
-    }
-
-    > .pill {
-        margin-bottom: var(--space-jumbo);
     }
 
     .card-grid {

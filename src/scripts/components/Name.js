@@ -1,3 +1,5 @@
+import { Howl } from 'howler';
+
 class Name {
 
     constructor(element) {
@@ -16,7 +18,7 @@ class Name {
 
     playName() {
         const name = new Howl({
-            src: ['./files/name.mp3']
+            src: ['/files/name.mp3']
         });
 
         name.play();
