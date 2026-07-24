@@ -3,6 +3,7 @@
 button,
 .btn {
     display: inline-flex;
+    align-items: center;
     margin: 0;
     padding: var(--space-base) calc(var(--space-base) + var(--space-tiny));
     background: none;
