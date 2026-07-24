@@ -13,6 +13,8 @@ html {
 	scroll-behavior: smooth;
 	box-sizing: border-box;
 	scrollbar-width: none;
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
 }
 
 ::-webkit-scrollbar {
